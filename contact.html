@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ - ぽすとそに工房</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            max-width: 100%;
+        }
+        
+        body {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #ffd89b 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .form-container {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 3px solid #ff9a76;
+        }
+        
+        h1 {
+            font-size: 32px;
+            color: #ff6b6b;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px dashed #ffd4c4;
+            padding-bottom: 15px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            font-size: 18px;
+            color: #ff6b6b;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            font-size: 16px;
+            border: 2px solid #ffd4c4;
+            border-radius: 8px;
+            font-family: 'Zen Maru Gothic', sans-serif;
+            transition: border-color 0.3s;
+        }
+        
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #ff9a76;
+        }
+        
+        textarea {
+            min-height: 200px;
+            resize: vertical;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        button {
+            flex: 1;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: 700;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Zen Maru Gothic', sans-serif;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #ff9a76 0%, #ff6b6b 100%);
+            color: white;
+        }
+        
+        .submit-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+        
+        .submit-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .cancel-btn {
+            background: #e0e0e0;
+            color: #666;
+        }
+        
+        .cancel-btn:hover {
+            background: #d0d0d0;
+            transform: translateY(-2px);
+        }
+        
+        .alert {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+            display: none;
+        }
+        
+        .alert.success {
+            background: #d4edda;
+            color: #155724;
+            border: 2px solid #c3e6cb;
+        }
+        
+        .alert.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 2px solid #f5c6cb;
+        }
+        
+        .error-text {
+            color: #ff6b6b;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .form-container {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .button-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>📧 お問い合わせフォーム</h1>
+        
+        <div id="alertBox" class="alert"></div>
+        
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="from_name">ハンドルネーム *</label>
+                <input type="text" id="from_name" name="from_name" required>
+                <p class="error-text" id="nameError">ハンドルネームを入力してください</p>
+            </div>
+            
+            <div class="form-group">
+                <label for="user_email">メールアドレス *</label>
+                <input type="email" id="user_email" name="user_email" required>
+                <p class="error-text" id="emailError">有効なメールアドレスを入力してください</p>
+            </div>
+            
+            <div class="form-group">
+                <label for="user_message">お問い合わせ内容 *</label>
+                <textarea id="user_message" name="message" required></textarea>
+                <p class="error-text" id="messageError">お問い合わせ内容を入力してください</p>
+            </div>
+            
+            <div class="button-group">
+                <button type="submit" class="submit-btn" id="submitBtn">送信</button>
+                <button type="button" class="cancel-btn" onclick="closeWindow()">キャンセル</button>
+            </div>
+        </form>
+    </div>
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        // EmailJS初期化
+        (function() {
+            emailjs.init("C2FrybtHNcX163rHk");
+        })();
+        
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const alertBox = document.getElementById('alertBox');
+        
+        // フォーム送信
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            console.log('フォーム送信開始');
+            
+            // バリデーション
+            if (!validateForm()) {
+                console.log('バリデーションエラー');
+                return;
+            }
+            
+            // ボタン無効化
+            submitBtn.disabled = true;
+            submitBtn.textContent = '送信中...';
+            
+            console.log('EmailJS送信開始');
+            
+            // EmailJS送信
+            emailjs.sendForm('service_dy4kkhw', 'template_67kxcmc', form)
+                .then(function(response) {
+                    console.log('送信成功!', response.status, response.text);
+                    showAlert('success', '✅ お問い合わせを送信しました！ご連絡ありがとうございます。');
+                    form.reset();
+                    
+                    // 3秒後にタブを閉じる
+                    setTimeout(function() {
+                        window.close();
+                    }, 3000);
+                }, function(error) {
+                    console.log('送信失敗...', error);
+                    showAlert('error', '❌ 送信に失敗しました。もう一度お試しください。エラー: ' + JSON.stringify(error));
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = '送信';
+                });
+        });
+        
+        // バリデーション
+        function validateForm() {
+            let isValid = true;
+            
+            const name = document.getElementById('from_name').value.trim();
+            const email = document.getElementById('user_email').value.trim();
+            const message = document.getElementById('user_message').value.trim();
+            
+            // エラーメッセージリセット
+            document.querySelectorAll('.error-text').forEach(el => el.style.display = 'none');
+            
+            if (name === '') {
+                document.getElementById('nameError').style.display = 'block';
+                isValid = false;
+            }
+            
+            if (email === '' || !isValidEmail(email)) {
+                document.getElementById('emailError').style.display = 'block';
+                isValid = false;
+            }
+            
+            if (message === '') {
+                document.getElementById('messageError').style.display = 'block';
+                isValid = false;
+            }
+            
+            return isValid;
+        }
+        
+        // メールアドレス検証
+        function isValidEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+        
+        // アラート表示
+        function showAlert(type, text) {
+            alertBox.className = 'alert ' + type;
+            alertBox.textContent = text;
+            alertBox.style.display = 'block';
+        }
+        
+        // キャンセル（タブを閉じる）
+        function closeWindow() {
+            if (confirm('お問い合わせをキャンセルしてタブを閉じますか？')) {
+                window.close();
+            }
+        }
+    </script>
+</body>
+</html>

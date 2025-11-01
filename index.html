@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO基本設定 -->
+    <title>ぽすとそに工房 | ラジコン修理・メンテナンス・AI活用サポート【札幌】初心者大歓迎</title>
+    <meta name="description" content="札幌でラジコン（RC）の修理・メンテナンス・サポートを行う「ぽすとそに工房」。カー・飛行機・ヘリ全般対応。初心者から復帰者まで一緒に成長します。AI活用で最適なプラン提案。18年の経験と100台以上の修理実績。オンライン相談可能。地域ボランティア精神に基づく活動。">
+    <meta name="keywords" content="ラジコン,RC,修理,サポート,支援,メンテナンス,札幌,初心者,ラジコンカー,ラジコン飛行機,ラジコンヘリ,AI,ボランティア,タミヤ,京商,ヨコモ,Futaba,JR,ぽすとそに">
+    <meta name="author" content="ぽすとそに">
+    <meta name="robots" content="index, follow">
+    
+    <!-- OGP（SNSシェア用） -->
+    <meta property="og:title" content="ぽすとそに工房 | ラジコン修理・メンテナンス・AI活用サポート【札幌】">
+    <meta property="og:description" content="札幌でラジコンの修理・メンテナンス・サポートを行う「ぽすとそに工房」。初心者から経験者まで一緒に成長します。18年の経験、100台以上の修理実績。地域ボランティア精神に基づく活動。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://postsoni.netlify.app/">
+    <meta property="og:image" content="https://postsoni.netlify.app/rc-plane-header.jpg">
+    <meta property="og:site_name" content="ぽすとそに工房">
+    <meta property="og:locale" content="ja_JP">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ぽすとそに工房 | ラジコン修理・メンテナンス・AI活用サポート【札幌】">
+    <meta name="twitter:description" content="札幌でラジコンの修理・メンテナンス・サポートを行う「ぽすとそに工房」。初心者から経験者まで一緒に成長します。">
+    <meta name="twitter:image" content="https://postsoni.netlify.app/rc-plane-header.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://postsoni.netlify.app/">
+    
+    <!-- 構造化データ（JSON-LD） -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "ぽすとそに工房",
+      "description": "ラジコン（RC）の修理・メンテナンス・サポート（地域ボランティア精神に基づく活動）",
+      "url": "https://postsoni.netlify.app/",
+      "logo": "https://postsoni.netlify.app/postsoni-icon.png",
+      "image": "https://postsoni.netlify.app/rc-plane-header.jpg",
+      "telephone": "",
+      "email": "",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "札幌市",
+        "addressRegion": "北海道",
+        "addressCountry": "JP"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "43.0642",
+        "longitude": "141.3469"
+      },
+      "priceRange": "¥0-¥¥",
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "43.0642",
+          "longitude": "141.3469"
+        },
+        "geoRadius": "50000"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "ぽすとそに",
+        "jobTitle": "RC技術者・サポーター"
+      },
+      "sameAs": [
+        "https://www.youtube.com/@postsoni",
+        "https://x.com/postsoni"
+      ]
+    }
+    </script>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Yomogi&family=Zen+Kurenaido&family=Shippori+Antique&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="site-header">
+        <div class="header-image">
+            <img src="rc-plane-header.jpg" alt="RC飛行機">
+        </div>
+        <div class="header-content">
+            <div class="logo-title">
+                <img src="postsoni-icon.png" alt="ぽすとそにアイコン" class="logo-icon">
+                <a href="#" class="main-title-link" data-tab="top">
+                    <h1 class="main-title">ぽすとそに工房</h1>
+                </a>
+            </div>
+            <p class="subtitle">RC技術と情熱の融合 - 次世代へ繋ぐラジコン文化</p>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <div class="main-wrapper">
+        <!-- 左サイドバー：ナビゲーション -->
+        <aside class="sidebar">
+            <div class="nav-card">
+                <h3 class="nav-title">📌 目次</h3>
+                <nav class="navigation">
+                    <a href="#" class="nav-item active" data-tab="top">🏠 TOP</a>
+                    <a href="#" class="nav-item" data-tab="gallery">📸 活動ギャラリー</a>
+                    <a href="#" class="nav-item" data-tab="roadmap">🛤️ 初めての方へ</a>
+                    <a href="#" class="nav-item" data-tab="profile">👤 プロフィール</a>
+                    <a href="#" class="nav-item" data-tab="sns">📱 SNS</a>
+                    <a href="#" class="nav-item" data-tab="activity">📝 活動記録</a>
+                    <a href="#" class="nav-item" data-tab="goods">🛍️ グッズ</a>
+                    <a href="#" class="nav-item" data-tab="support">🤝 RC支援・サポート</a>
+                    <a href="#" class="nav-item" data-tab="testimonials">🎉 サポートを受けた方の声</a>
+                    <a href="#" class="nav-item" data-tab="faq">❓ よくある質問</a>
+                    <a href="#" class="nav-item" data-tab="contact">✉️ お問い合わせ</a>
+                </nav>
+            </div>
+            
+            <!-- 訪問者カウンター -->
+            <div class="counter-card">
+                <h3 class="counter-title">📊 訪問者数</h3>
+                <div class="counter-display">
+                    <span id="visitorCount" class="counter-number">0</span>
+                </div>
+                <p id="visitorText" class="counter-text">読み込み中...</p>
+                <div class="counter-date">
+                    <p>開設日: 2025年1月</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- 右側：コンテンツエリア -->
+        <main class="content-area">
+            
+            <!-- TOPセクション -->
+            <section id="top" class="content-section tab-content active">
+                <div class="section-header">
+                    <h2 class="section-title">🏠 ようこそ、ぽすとそに工房へ</h2>
+                </div>
+                <div class="greeting-card">
+                    <h3 class="greeting-title">ぽすとそに ご挨拶</h3>
+                    <div class="greeting-content">
+                        <p>はじめまして。「ぽすとそに」と申します。2025年現在、33歳の男性であり、まだ若輩者ではございますが、AI技術を積極的に取り入れながら、ラジコン(以下、RC)の魅力と技術を広めていきたいと考えております。</p>
+                        
+                        <p>私は、心身ともにいくつかの制約を抱えながらも、それを理由に立ち止まるのではなく、AIという新たな可能性を通じて乗り越えようと日々取り組んでおります。</p>
+                        
+                        <p>RCという世界は、単なる「趣味」にとどまらず、機械と人の感覚が交わる"リアル"の領域だと感じています。人によっては便利さが進むほどに寂しさを覚える現代社会において、RCは手に取れる技術と体験が共存する、温かみのある文化だと思うのです。</p>
+                        
+                        <p>私は、このRCの魅力を次の世代へと繋ぐ一人の担い手でありたいと考えています。現代技術と人の情熱が交わる場所にこそ、次の時代に残す価値があると信じています。</p>
+                        
+                        <p>「ぽすとそに工房」では、私自身のRC活動の記録や試行錯誤の軌跡を発信しております。もしご興味をお持ちいただけましたら、ぜひ一度ご覧ください。そこには、懐かしさと近未来が共存する不思議な世界が広がっています。</p>
+                        
+                        <p class="greeting-closing">RCが持つ本来の楽しさと、その奥にある「人と技術の融合の美しさ」を、今後も発信し続けてまいります。</p>
+                    </div>
+                </div>
+                
+                <!-- ビジュアルセクション -->
+                <div class="top-visual-section">
+                    <h3 class="visual-intro">これは、ぽすとそに自身が所有しているラジコンの一部です</h3>
+                    
+                    <div class="visual-grid">
+                        <!-- 画像1 -->
+                        <div class="visual-item">
+                            <img src="top_homepage1.jpg" alt="JR PROPO E8 ヘリと入門用高翼機" class="visual-image">
+                            <p class="visual-caption">JR PROPO E8 を修理したりメンテナンスしていくうちにMIXされた他機種からの流用パーツがてんこ盛りになったヘリと、EPPの入門用高翼機たちです。</p>
+                        </div>
+                        
+                        <!-- 画像2 -->
+                        <div class="visual-item">
+                            <img src="top_homepage2.jpg" alt="INFERNO MP9 TKI3 カスタム塗装" class="visual-image">
+                            <p class="visual-caption">INFERNO MP9 TKI3をベースにボディの塗装を変えて懐かしい色合いにした状態です。</p>
+                        </div>
+                        
+                        <!-- 画像3 -->
+                        <div class="visual-item">
+                            <img src="top_homepage3.jpg" alt="RC-Factory Super Extra L 組み立て前" class="visual-image">
+                            <p class="visual-caption">RC-Factory Super Extra Lの組み立て前写真で、組み立て動画はYouTubeにあがっています。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-link">
+                        <a href="#" class="gallery-link-button" data-tab="gallery">
+                            活動ギャラリーをもっとみる →
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 数字で見る活動記録 -->
+                <div class="top-stats-section">
+                    <h3 class="stats-title">数字で見る分かりやすい活動記録</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">18年</div>
+                            <div class="stat-label">RC活動歴</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label">修理依頼により<br>直ったラジコンの数</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">20社+</div>
+                            <div class="stat-label">対応メーカー</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">2年間</div>
+                            <div class="stat-label">サポート活動</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 月間活動レポート -->
+                <div class="monthly-report-section">
+                    <h3 class="report-title">📅 今月の活動</h3>
+                    <p class="report-date">2025年10月29日更新</p>
+                    
+                    <div class="report-grid">
+                        <div class="report-item">
+                            <div class="report-icon">🔧</div>
+                            <div class="report-content">
+                                <h4>修理・改善されたラジコン</h4>
+                                <p class="report-number">3台</p>
+                            </div>
+                        </div>
+                        
+                        <div class="report-item">
+                            <div class="report-icon">🤝</div>
+                            <div class="report-content">
+                                <h4>サポートした人数</h4>
+                                <p class="report-number">3名</p>
+                            </div>
+                        </div>
+                        
+                        <div class="report-item report-highlight">
+                            <div class="report-icon">✨</div>
+                            <div class="report-content">
+                                <h4>新作機体</h4>
+                                <p class="report-detail">RC-Factory Super Extra Lの作成</p>
+                            </div>
+                        </div>
+                        
+                        <div class="report-item report-highlight">
+                            <div class="report-icon">📰</div>
+                            <div class="report-content">
+                                <h4>新着その他情報</h4>
+                                <p class="report-detail">Heli-Xのシミュレーター調整、RealFlight Evolutionの新機体導入とモデル設定</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CTAボタン -->
+                <div class="top-cta-section">
+                    <a href="#" class="cta-button cta-primary" data-tab="contact">
+                        👉 ご相談はこちらから
+                    </a>
+                </div>
+            </section>
+
+            <!-- 活動ギャラリーセクション -->
+            <section id="gallery" class="content-section tab-content">
+                <div class="section-header">
+                    <h2 class="section-title">📸 今までの活動ギャラリー</h2>
+                </div>
+                <div class="gallery-card">
+                    <div class="gallery-grid">
+                        <!-- 画像1 -->
+                        <div class="gallery-item">
+                            <img src="work1.jpg" alt="OSエンジン分解清掃メンテナンス" class="gallery-image">
+                            <p class="gallery-caption">平成初期の陸モノOSエンジンを分解清掃メンテで再始動可能を確認しました。</p>
+                        </div>
+                        
+                        <!-- 画像2（修理前） -->
+                        <div class="gallery-item gallery-related">
+                            <div class="related-badge">修理前</div>
+                            <img src="work2.jpg" alt="変速ギア故障" class="gallery-image">
+                            <p class="gallery-caption">こちらは変速ギアがなめています</p>
+                        </div>
+                        
+                        <!-- 画像3（修理後） -->
+                        <div class="gallery-item gallery-related">
+                            <div class="related-badge related-after">修理後</div>
+                            <img src="work3.jpg" alt="変速ギア交換完了" class="gallery-image">
+                            <p class="gallery-caption">変速ギアを交換し、走行チェック後変速タイミングの設定完了</p>
+                        </div>
+                        
+                        <!-- 画像4（墜落直後） -->
+                        <div class="gallery-item gallery-related">
+                            <div class="related-badge">墜落直後</div>
+                            <img src="work4.jpg" alt="ヘリ墜落" class="gallery-image">
+                            <p class="gallery-caption">過去の動画でヘリが墜落した瞬間の切り抜き（私の機体で墜落した機体名はJRのE8です。なかなか今から見ると古くなってきた機体でパーツも少ないです。）</p>
+                        </div>
+                        
+                        <!-- 画像5（修理完了） -->
+                        <div class="gallery-item gallery-related">
+                            <div class="related-badge related-after">修理完了</div>
+                            <img src="work5.jpg" alt="ヘリ修理完了" class="gallery-image">
+                            <p class="gallery-caption">現在発売されているヘリとMIXして、飛行可能状態にしております。詳しくはYouTubeの遊覧フライト動画にて閲覧可能です。</p>
+                        </div>
+                        
+                        <!-- 画像6 -->
+                        <div class="gallery-item">
+                            <img src="work6.jpg" alt="K110S分解清掃メンテナンス" class="gallery-image">
+                            <p class="gallery-caption">K110Sを分解清掃メンテを行い、マストの軸が見えないレベルでずれていることを確認。修理中の画像です。</p>
+                        </div>
+                        
+                        <!-- 画像7 -->
+                        <div class="gallery-item">
+                            <img src="work7.jpg" alt="ファンフライ機制作" class="gallery-image">
+                            <p class="gallery-caption">次世代のファンフライ機の制作です。作成の説明書は日本語ではありません、少々難しい図面でも作成しております。（バルサ機も同じように行えます。）</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 初心者向けロードマップセクション -->
+            <section id="roadmap" class="content-section tab-content">
+                <div class="section-header">
+                    <h2 class="section-title">🛤️ ラジコンを始める5つのステップ</h2>
+                </div>
+                <div class="roadmap-card">
+                    <p class="roadmap-intro">RCを始めたい方、復帰したい方に向けた、安心のステップガイドです。あなたのペースに合わせてサポートします。</p>
+                    
+                    <!-- ステップ1 -->
+                    <div class="roadmap-step">
+                        <div class="step-header">
+                            <span class="step-number">STEP 1</span>
+                            <h3 class="step-title">💬 相談</h3>
+                        </div>
+                        <div class="step-content">
+                            <ul class="step-list">
+                                <li>初期にかかるRCに対しての費用相談！</li>
+                                <li>連絡に気づき次第即日決定を目指します！（悩まれる場合は、もちろんゆっくりで問題ございません。）</li>
+                                <li>具体的にあなたの興味がわいたラジコンの種類の話を聞きます、それを元に何が必要かを一緒に検討します。</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- ステップ2 -->
+                    <div class="roadmap-step">
+                        <div class="step-header">
+                            <span class="step-number">STEP 2</span>
+                            <h3 class="step-title">🎯 選ぶRCジャンル</h3>
+                        </div>
+                        <div class="step-content">
+                            <ul class="step-list">
+                                <li>選んだジャンルにおいての平均の始める初期費用を概算で出しつつ、相談を続けます。</li>
+                                <li>同じく即日決定を目指します！（ここで悩まれても、ゆっくりペースを合わせます。）</li>
+                                <li>初心者なのか、復帰者なのかを区分けし、レベルに応じて選ぶRCの選定を一緒に検討します。</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- ステップ3 -->
+                    <div class="roadmap-step">
+                        <div class="step-header">
+                            <span class="step-number">STEP 3</span>
+                            <h3 class="step-title">🤝 購入後のサポート</h3>
+                        </div>
+                        <div class="step-content">
+                            <ul class="step-list">
+                                <li>選んだ内容に応じたRCの走行、飛行可能な場所を一緒に検討します。（事前検討も可能です。）</li>
+                                <li>近場のクラブを一緒に検討します。（クラブはまだ…という方にも場所のアドバイスを続けます。）</li>
+                                <li>現在の法律に合わせて、適切な場所を選びます。</li>
+                                <li>近場であれば、一人ひとりに合わせて場所を決めて待ち合わせなどをし、一緒に走るところや飛行するところを見て怖くないようにサポートします。（遠方であれば、初めて遊んだときにどのようなことが起きたか困ったかなどを聞き、改善をサポートします。）</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- ステップ4 -->
+                    <div class="roadmap-step">
+                        <div class="step-header">
+                            <span class="step-number">STEP 4</span>
+                            <h3 class="step-title">🔧 基本メンテナンス</h3>
+                        </div>
+                        <div class="step-content">
+                            <ul class="step-list">
+                                <li>メンテナンスに必要なものをお好きなRCに合わせて予算別で一緒に検討します。（おすすめは今までの私の知識とAIを合わせて、主観が入らないように適切なものを選んでいきます。もちろん事前検討も可能です。）</li>
+                                <li>メンテナンスの基礎知識などをお伝えし、自分でもRCを触れるようにサポートします。</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- ステップ5 -->
+                    <div class="roadmap-step roadmap-final">
+                        <div class="step-header">
+                            <span class="step-number">STEP 5</span>
+                            <h3 class="step-title">🚀 RCの世界へ</h3>
+                        </div>
+                        <div class="step-content">
+                            <ul class="step-list">
+                                <li>STEP1～4まで終えた方はおそらく1人でも遊べる状況になっているはずです。復帰者のパターンでも、現在のRCの知識に追いつける状態にまでなっていると思われます。</li>
+                                <li>近場であれば、お困りの際はいつでもお声をかけてください。遠方でも、同じくなるべくすぐに対応します。</li>
+                                <li>これでRCについての初期段階は終了です！マイペースに遊ぶもよし、たくさん練習するもよし、いざRCの世界へ！</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <p class="roadmap-note">※目安のSTEPです。それぞれの遊び方のニーズに合わせてどこまでも真摯に向き合います。いつでもお問い合わせフォームからご連絡ください。</p>
+                </div>
+            </section>
+
+            <!-- プロフィールセクション -->
+            <section id="profile" class="content-section tab-content">
+                <div class="section-header">
+                    <h2 class="section-title">👤 プロフィール</h2>
+                </div>
+                <div class="profile-card">
+                    <div class="profile-item">
+                        <span class="profile-label">名前</span>
+                        <span class="profile-value">ぽすとそに</span>
+                    </div>
+                    <div class="profile-item">
+                        <span class="profile-label">年齢</span>
+                        <span class="profile-value">33歳 (2025年現在)</span>
+                    </div>
+                    <div class="profile-item">
+                        <span class="profile-label">専門分野</span>
+                        <div class="profile-value profile-list">
+                            <ul>
+                                <li>ラジコン（カー、飛行機、ヘリ）の操作</li>
+                                <li>設計（カー、飛行機）</li>
+                                <li>修理（カー、各種メカ類）</li>
+                                <li>基礎知識サポート（安全のための配慮etc...）</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="profile-item">
+                        <span class="profile-label">特技</span>
+                        <div class="profile-value profile-list">
+                            <ul>
+                                <li>ラジコンとAIの融合</li>
+                                <li>最新機種などの情報収集</li>
+                                <li>メカ類の相性などの細かな部分</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="profile-item">
+                        <span class="profile-label">活動理念</span>
+                        <span class="profile-value">AI技術とRC文化の融合により、次世代へ技術を継承</span>
+                    </div>
+                </div>
+                
+                <!-- 今までの活動 -->
+                <div class="achievements-section">
+                    <h3 class="achievements-title">📊 今までの活動</h3>
+                    <div class="achievements-grid">
+                        <div class="achievement-item">
+                            <div class="achievement-number">100+</div>
+                            <div class="achievement-label">陸モノ修理</div>
+                            <div class="achievement-sublabel">車種以上</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-number">30+</div>
+                            <div class="achievement-label">メカ類修理</div>
+                            <div class="achievement-sublabel">件以上</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-number">20+</div>
+                            <div class="achievement-label">空モノ修理</div>
+                            <div class="achievement-sublabel">件以上</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-number">18年</div>
+                            <div class="achievement-label">RC活動歴</div>
+                            <div class="achievement-sublabel">経験豊富</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-number">2年</div>
+                            <div class="achievement-label">サポート活動</div>
+                            <div class="achievement-sublabel">継続中</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-number">20社</div>
+                            <div class="achievement-label">対応メーカー</div>
+                            <div class="achievement-sublabel">多様な経験</div>
+                        </div>
+                    </div>
+                    
+                    <!-- メーカー一覧 -->
+                    <div class="makers-section">
+                        <h4 class="makers-title">🔧 対応可能メーカー（一部）</h4>
+                        <div class="makers-list">
+                            <span class="maker-tag">タミヤ</span>
+                            <span class="maker-tag">京商</span>
+                            <span class="maker-tag">ヨコモ</span>
+                            <span class="maker-tag">HPI</span>
+                            <span class="maker-tag">G-Force</span>
+                            <span class="maker-tag">KAWADA</span>
+                            <span class="maker-tag">Futaba</span>
+                            <span class="maker-tag">KO PROPO</span>
+                            <span class="maker-tag">Sanwa</span>
+                            <span class="maker-tag">Hitec</span>
+                            <span class="maker-tag">JR PROPO</span>
+                            <span class="maker-tag">Traxxas</span>
+                            <span class="maker-tag">Team Associated</span>
+                            <span class="maker-tag">Losi</span>
+                            <span class="maker-tag">E-flite</span>
+                            <span class="maker-tag">FMS</span>
+                            <span class="maker-tag">Dynam</span>
+                            <span class="maker-tag">SAB</span>
+                            <span class="maker-tag">Align</span>
+                            <span class="maker-tag">XLPower</span>
+                        </div>
+                        <p class="makers-note">※記載以外のメーカーもお気軽にご相談ください</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SNSセクション -->
+            <section id="sns" class="content-section tab-content">
+                <div class="section-header">
+                    <h2 class="section-title">📱 SNS・チャンネル</h2>
+                </div>
+                <div class="sns-card">
+                    <!-- YouTubeバナー -->
+                    <a href="https://www.youtube.com/@postsoni" target="_blank" class="youtube-banner-link">
+                        <img src="youtube-banner.png" alt="ぽすとそに工房 YouTubeチャンネル" class="youtube-banner">
+                    </a>
+                    
+                    <div class="sns-item youtube">
+                        <div class="sns-icon">📺</div>
+                        <div class="sns-content">
+                            <h3>YouTube チャンネル</h3>
+                            <p>RC製作・飛行動画を配信中</p>
+                            <p class="sns-note">（私が所有・運営しています）</p>
+                            <p class="banner-guide">↑↑上記バナーをクリックorタップでチャンネルに飛びます↑↑</p>
+                            <a href="https://www.youtube.com/@postsoni" target="_blank" class="sns-link">
+                                https://www.youtube.com/@postsoni
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- X（旧Twitter）バナー -->
+                    <div class="x-banner-section">
+                        <a href="https://x.com/postsoni" target="_blank" class="x-banner-link">
+                            <img src="x-banner.png" alt="ぽすとそに X（旧Twitter）" class="x-banner">
+                        </a>
+                        <p class="banner-guide-small">↑↑上記バナーをクリックorタップでXに飛びます↑↑</p>
+                    </div>
+                    
+                    <!-- Xリンク -->
+                    <div class="sns-item x-item">
+                        <div class="sns-icon" style="font-size: 48px;">𝕏</div>
+                        <div class="sns-content">
+                            <h3>X（旧Twitter）</h3>
+                            <p>RC活動の日々の記録や最新情報を発信中</p>
+                            <a href="https://x.com/postsoni" target="_blank" class="sns-link">
+                                https://x.com/postsoni
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 活動記録セクション -->
+            <section id="activity" class="content-section tab-content">
+                <div class="section-header">
+                    <h2 class="section-title">📝 活動記録</h2>
+                </div>
+                
+                <!-- noteブログ -->
+                <div class="note-blog-main">
+                    <h3 class="blog-title">📖 技術ブログ（note）</h3>
+                    <p class="blog-description">修理工程、パーツレビュー、技術的な備忘録など、SNSでは伝えきれない詳細な情報を発信しています。</p>
+                    
+                    <!-- noteリンク -->
+                    <div class="note-link-box">
+                        <div class="note-icon">📝</div>
+                        <div>
+                            <h4>note</h4>
+                            <p>修理工程や技術解説を詳しく記録中</p>
+                            <a href="https://note.com/postsoni" target="_blank" class="note-link">
+                                https://note.com/postsoni
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- note最新記事埋め込み -->
+                    <div class="note-embed">
+                        <h4 class="note-embed-title">📌 最新のブログ記事</h4>
+                        <iframe 
+                            class="note-embed-iframe"
+                            src="https://note.com/embed/notes/ne3c94b84494c" 
+                            style="border: 0; display: block; max-width: 99%; width: 494px; padding: 0px; margin: 10px 0px; position: static; visibility: visible;" 
+                            height="400">
+                        </iframe>
+                        <p class="note-more-link">
+                            <a href="https://note.com/postsoni" target="_blank">
+                                もっと記事を見る →
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- グッズセクション -->
+            <section id="goods" class="content-section tab-content">
+                <div class="section-header">
+                    <h2 class="section-title">🛍️ グッズ</h2>
+                </div>
+                <div class="goods-card">
+                    <p class="coming-soon">🚧 準備中です 🚧</p>
+                    <p>オリジナルグッズ、RC関連商品などを今後展開予定です。</p>
+                </div>
+            </section>
+
+            <!-- RC支援・サポートセクション -->
+            <section id="support" class="content-section tab-content">
+                <div class="section-header">
+                    <h2 class="section-title">🤝 RC支援・サポートについて</h2>
+                </div>
+                <div class="support-card">
+                    <h3>RC初心者の方へのサポート</h3>
+                    <div class="support-content">
+                        <!-- 初心者支援 -->
+                        <div class="support-item">
+                            <span class="support-icon">✏️</span>
+                            <div>
+                                <h4>初心者の方たちへの支援</h4>
+                                <p>ラジコンを初めて触る人にも優しく丁寧にプランを一緒に試行錯誤します。</p>
+                            </div>
+                        </div>
+                        
+                        <!-- 修理メンテナンス -->
+                        <div class="support-item">
+                            <span class="support-icon">🔧</span>
+                            <div>
+                                <h4>修理メンテナンスについて</h4>
+                                <p>基礎的なメンテナンスは初めての場合一緒に行います。高度な修理については、お問い合わせからご連絡お願いします。出来ないものもありますが、基本的には誠実にお答えします。</p>
+                                <p class="support-detail">時間がかかったりパーツが別途必要な場合のみ、近場の修理店の紹介や、私が得意な分野では私自身と場合分けしお直しします。（修理費用が掛かる場合もございますが、相談などはいくらでも受け付けておりますし、基本的には無料で行うことをベースとしています。）</p>
+                                <p class="support-example">※修理費用がかかってしまう一例：ラジコン飛行機の墜落→メカトラブルの点検＋微細な割れの発見＋木材の調達＋フィルムや塗装直し＋乾燥を待つことによる時間のかかる工程＝木材代金＋フィルム代金（自分持ち込み可）＋少々の手間賃（お問い合わせで相談します。）</p>
+                            </div>
+                        </div>
+                        
+                        <!-- 操縦技術 -->
+                        <div class="support-item">
+                            <span class="support-icon">🎓</span>
+                            <div>
+                                <h4>操縦技術の向上</h4>
+                                <p>私もまだ若輩者なので、全ての操作ができるわけではありません。しかし、タミグラやF3A、F3Cについては少々理解のある方かと思われます。（操縦技術は大目に見ていただけると助かります。）</p>
+                                <p class="support-detail">その人に合った最適な練習方法や、欲しい商品と自分の手持ちのラジコンを比較しながらの向上練習or商品の購入順番の最適化をAIを活用しながら、最後に笑顔になれるように尽力します。</p>
+                                <div class="support-conversation">
+                                    <p class="conversation-example">※ラジコン飛行機とラジコンカー、どちらも好きだけど、どちらも中途半端だからどのようにそれぞれ時間を割くのが自分には向いてたりするんですか？</p>
+                                    <p class="conversation-answer">→〇〇に何割、〇〇に何割、自分との心次第では一部変わりますが、恐らく納得いくのではないかと思われる形は〇〇な状態かと思われます！ですので、今は〇〇が必要ではなく実は〇〇の考え方が重要かもしれませんので、時間をかけてゆっくり練習しましょう！〇〇週間後に自分ここまでできた、などありましたら、〇〇を購入してみるのもまた一つの手かもしれませんね(*´ω｀)</p>
+                                </div>
+                                <p class="support-detail">などという形式で、一人ひとりに向き合います。（お助けにならなかったり、過度に干渉してしまった場合は大変申し訳ございません。いつでもおっしゃっていただければ、本音は真剣に受け止めます。）</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="support-note">詳細はお問い合わせください</p>
+                </div>
+            </section>
+
+            <!-- サポートを受けた方の声セクション -->
+            <section id="testimonials" class="content-section tab-content">
+                <div class="section-header">
+                    <h2 class="section-title">🎉 サポートを受けた方の声</h2>
+                </div>
+                <div class="testimonials-card">
+                    <p class="testimonials-intro">実際にサポートを受けてくださった方々の体験談です。ホームページ開設にあたり、ご協力いただきました。</p>
+                    
+                    <!-- 体験談1 -->
+                    <div class="testimonial-item">
+                        <div class="testimonial-header">
+                            <h3 class="testimonial-name">Yさんの体験談</h3>
+                            <span class="testimonial-tag">10代・未経験・陸モノ（バギー）</span>
+                        </div>
+                        <div class="testimonial-content">
+                            <p>個人的には、バギーの中でも旧車が好きでした。しかし、旧車にはパーツ問題などが多く初めていいものか分かりませんでした。しかし、新旧合わせてパーツを確保し今では練習には2台とも愛車になりました。難しいアンプのセッティングも場所を変えてPCから操作方法を学び、自分でもできるようになりました。いつも一緒に走ってくれたり、コツなども伝えてくれて感謝の限りです。</p>
+                        </div>
+                    </div>
+
+                    <!-- 体験談2 -->
+                    <div class="testimonial-item">
+                        <div class="testimonial-header">
+                            <h3 class="testimonial-name">Oさんの体験談</h3>
+                            <span class="testimonial-tag">50代・復帰者・陸モノ＆空モノ</span>
+                        </div>
+                        <div class="testimonial-content">
+                            <p>突然の飛び込みの修理で、原因が初期不良で購入店にあることが分かり、すぐに購入店に新品に交換してもらえました。それからは各種設定や久しぶりのラジコンで浦島太郎状態なのにも関わらず、今のラジコンについての知識を精一杯教えてもらい、四苦八苦ではありましたがなんとか覚えることが出来ました。今では次のステップである飛行機を飛ばすために相談を続けていますが、LINEなども使ってメールよりも迅速にお返事がくるので解決が早く嬉しいです。今度飛ばすときは是非ご一緒していただきたいです。ありがたい限りです。</p>
+                        </div>
+                    </div>
+
+                    <!-- 体験談3 -->
+                    <div class="testimonial-item">
+                        <div class="testimonial-header">
+                            <h3 class="testimonial-name">Kさんの体験談</h3>
+                            <span class="testimonial-tag">60代・経験者・空モノ（飛行機、ヘリ）</span>
+                        </div>
+                        <div class="testimonial-content">
+                            <p>経験していても、情報についていくことが難しく、どのように設定したらいいか分からないときがあります。しかし横で説明書をみながら、私のレベルに合わせた最適なセッティングを出していただき、飛ばしては降りてすぐに調整を繰り返し、私にもできなかったことがすぐに理解できました。お陰様でメインは飛行機でしたがヘリも楽しいものですね、はまってしまいました。まだホバリングぐらいしかできませんが、ここまで歳をとっても新しい発見があることはとても貴重です。有難うございます。</p>
+                        </div>
+                    </div>
+
+                    <!-- 体験談4 -->
+                    <div class="testimonial-item">
+                        <div class="testimonial-header">
+                            <h3 class="testimonial-name">Aさんの体験談</h3>
+                            <span class="testimonial-tag">30代・ドローン歴2年・空モノ（ヘリ）</span>
+                        </div>
+                        <div class="testimonial-content">
+                            <p>ドローンは飛ばしたこともありましたが、ラジコンヘリの難しさは別格です。最初は離陸すら難しく怖がりながらやりましたね。全て1から10まで懇切丁寧に教えていただきありがとうございます。もっと時間のかかる成長しかできないと思っていましたが、仕組みを理解しながら飛ばしていくうちにどんどん安定し、ホバリングと旋回程度なら私にもできます。ぽすとそにさんのような難しいスキルはまだありませんが、いずれ追いついて抜かせるぐらいどっぷりとハマってしまいました笑、ぜひご一緒しながら温かいお茶でも飲み、ラジコン談義しつつ一緒にラジコン楽しみましょう！</p>
+                        </div>
+                    </div>
+
+                    <!-- 体験談5 -->
+                    <div class="testimonial-item">
+                        <div class="testimonial-header">
+                            <h3 class="testimonial-name">Sさんの体験談</h3>
+                            <span class="testimonial-tag">30代・未経験・陸モノ</span>
+                        </div>
+                        <div class="testimonial-content">
+                            <p>最初はバギー一択で大会に出るんだと言いましたね。しかし、私はその気持ちばかり先行し、童心の夢中さを忘れていたようです。もちろん速さもたのしいですが、今の車種にはこんなに振り回しても故障が少ないモデルもあるとは知らなかったです。もちろん私の整備のスキルを上げてくれたことも一因ですね笑。今ではたまに速いバギーを走らせつつ一緒にメンテナンスをしてもらったり、オフロードトラックも頑丈にカスタマイズを自分なりにも進めております。まさかその手があったとは！と毎度驚かされます。若くても知識が豊富過ぎて、私の手の届かない範囲も手助けをしてくださり、いつもありがとうございます。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQセクション -->
+            <section id="faq" class="content-section tab-content">
+                <div class="section-header">
+                    <h2 class="section-title">❓ よくある質問コーナー</h2>
+                </div>
+                <div class="faq-card">
+                    <p class="faq-intro">皆様からよくいただく質問をまとめました。気になることがあれば、まずこちらをご覧ください。</p>
+                    
+                    <!-- 質問1 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="faq-icon">Q1</span>
+                            <h3>完全初心者ですが大丈夫ですか？</h3>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>もちろんです。何もわからなくても問題ございません！</p>
+                        </div>
+                    </div>
+
+                    <!-- 質問2 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="faq-icon">Q2</span>
+                            <h3>費用はどのくらいかかりますか？</h3>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>お問い合わせから必要最低限な金額でご提案します。少なくとも店舗よりは安く済むことが多くなります。理念はラジコンを広めたいがモットーです。</p>
+                        </div>
+                    </div>
+
+                    <!-- 質問3 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="faq-icon">Q3</span>
+                            <h3>どこで活動していますか？対応エリアは？</h3>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>札幌が基本となります。ネット対応も可能な限り致します。</p>
+                        </div>
+                    </div>
+
+                    <!-- 質問4 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="faq-icon">Q4</span>
+                            <h3>どんなラジコンに対応していますか？</h3>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>車、飛行機、ヘリ、戦車、トラック、ボート、トイラジ（対象年齢が低いラジコンなどを指します。）です。ドローンは要相談です。</p>
+                        </div>
+                    </div>
+
+                    <!-- 質問5 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="faq-icon">Q5</span>
+                            <h3>AIってどう使うんですか？</h3>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>最適な機体選びや練習プラン作成に活用します。</p>
+                        </div>
+                    </div>
+
+                    <!-- 質問6 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="faq-icon">Q6</span>
+                            <h3>修理にはどのくらい時間がかかりますか？</h3>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>物にはよりますが、即日出来上がることが多いですが、大きいものかつパーツのお取り寄せまでになると1か月ぐらいの場合もあります。要相談となります。</p>
+                        </div>
+                    </div>
+
+                    <!-- 質問7 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="faq-icon">Q7</span>
+                            <h3>オンラインでも相談できますか？</h3>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>もちろんです。概要を詳しく知りたい、お試しでお問い合わせしてみた、なども是非お待ちしております。</p>
+                        </div>
+                    </div>
+
+                    <!-- 質問8 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="faq-icon">Q8</span>
+                            <h3>古い機体でも対応できますか？</h3>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>可能な限り対応します。（パーツがなくとも自作していく場合もございます。）一例としては、初代タミヤ発売のホーネットを修理し、Uコンの一部も修理しました。</p>
+                        </div>
+                    </div>
+
+                    <!-- 質問9 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="faq-icon">Q9</span>
+                            <h3>一緒に活動できますか？</h3>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>人はたくさんいたほうが活気づくので、あくまでも私と同じく理念を元に活動することも可能です！</p>
+                        </div>
+                    </div>
+
+                    <!-- 質問10 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="faq-icon">Q10</span>
+                            <h3>クラブへの加入も検討しているのですが…</h3>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>自身に合わせたレベルの近場のクラブの紹介や、近場であれば私の所属しているクラブを紹介することも可能です。私のところのクラブでは、コースや飛行場を利用するにあたってビジター料金などもございますので、お気軽に質問お待ちしております。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- お問い合わせセクション -->
+            <section id="contact" class="content-section tab-content">
+                <div class="section-header">
+                    <h2 class="section-title">✉️ お問い合わせ</h2>
+                </div>
+                <div class="contact-card">
+                    <p class="contact-description">お問い合わせは以下のフォームからお願いいたします。</p>
+                    <p class="contact-description">RC関連のご質問、修理のご依頼、サポートのご相談など、お気軽にお問い合わせください。</p>
+                    <button onclick="openContactForm()" class="contact-button">
+                        📧 お問い合わせフォームを開く
+                    </button>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- フッター -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p class="footer-copyright">© 2025 Postsoni. 一部コンテンツはAI支援により生成されています. All Rights Reserved.</p>
+            <p class="footer-note">出典: ぽすとそに工房 オリジナルコンテンツ</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
