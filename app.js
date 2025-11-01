@@ -118,41 +118,8 @@ function initTabs() {
     const navItems = document.querySelectorAll('.nav-item');
     const tabContents = document.querySelectorAll('.tab-content');
     
-    // デバイスがモバイルかどうかを判定
-    function isMobile() {
-        return window.innerWidth <= 768;
-    }
-    
-    // タブ切り替えの共通処理
+    // タブ切り替えの共通処理（PC・スマホ共通）
     function switchTab(targetTab) {
-        // モバイルの場合：スクロール処理
-        if (isMobile()) {
-            const targetContent = document.getElementById(targetTab);
-            if (targetContent) {
-                // 目次を閉じる（モバイルメニューがあれば）
-                const sidebar = document.querySelector('.sidebar');
-                if (sidebar) {
-                    sidebar.style.display = 'none';
-                }
-                
-                // 対象セクションまでスクロール
-                targetContent.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-                
-                // ナビゲーションのハイライトを更新
-                navItems.forEach(nav => nav.classList.remove('active'));
-                navItems.forEach(nav => {
-                    if (nav.getAttribute('data-tab') === targetTab) {
-                        nav.classList.add('active');
-                    }
-                });
-            }
-            return;
-        }
-        
-        // PC版：タブ切り替え処理（既存の動作）
         // 全てのナビゲーションアイテムから active クラスを削除
         navItems.forEach(nav => nav.classList.remove('active'));
         
@@ -176,6 +143,11 @@ function initTabs() {
             if (contentArea) {
                 contentArea.scrollTop = 0;
             }
+            
+            // スマホの場合、ページ全体も最上部にスクロール
+            if (window.innerWidth <= 768) {
+                window.scrollTo(0, 0);
+            }
         }
     }
     
@@ -195,19 +167,6 @@ function initTabs() {
             e.preventDefault();
             const targetTab = target.getAttribute('data-tab');
             switchTab(targetTab);
-        }
-    });
-    
-    // ウィンドウリサイズ時の処理
-    window.addEventListener('resize', function() {
-        // モバイルからPCに切り替わった場合、タブ表示に戻す
-        if (!isMobile()) {
-            // 最初のタブをアクティブにする
-            tabContents.forEach(content => content.classList.remove('active'));
-            const firstContent = tabContents[0];
-            if (firstContent) {
-                firstContent.classList.add('active');
-            }
         }
     });
 }

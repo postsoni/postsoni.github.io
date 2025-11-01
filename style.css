@@ -2520,6 +2520,12 @@ body {
     .sidebar {
         display: flex;
         flex-direction: column;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: white;
+        padding: 15px 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
     
     /* ナビゲーションを先に表示 */
@@ -2544,15 +2550,25 @@ body {
         font-size: 12px;
     }
     
-    /* タブコンテンツをすべて表示（スクロール用） */
+    /* タブコンテンツの表示制御（PCと同じ） */
     .tab-content {
-        display: block !important;
-        opacity: 1 !important;
+        display: none;
+        opacity: 0;
     }
     
-    /* タブコンテンツ間に余白を追加 */
+    .tab-content.active {
+        display: block;
+        opacity: 1;
+        animation: fadeIn 0.3s ease-in;
+    }
+    
+    /* コンテンツエリア */
+    .content-area {
+        padding-top: 10px;
+    }
+    
+    /* セクション間の余白 */
     .content-section {
-        margin-bottom: 30px;
-        scroll-margin-top: 20px; /* スクロール時の上部余白 */
+        margin-bottom: 20px;
     }
 }
