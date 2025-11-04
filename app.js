@@ -522,3 +522,205 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+// ===== 多言語対応 =====
+const translations = {
+    ja: {
+        title: 'ぽすとそに工房',
+        subtitle: 'RC技術と情熱の融合 - 次世代へ繋ぐラジコン文化',
+        nav: {
+            top: 'TOP',
+            news: '最新の活動報告',
+            gallery: '活動ギャラリー',
+            roadmap: '初めての方へ',
+            profile: 'プロフィール',
+            sns: 'SNS',
+            activity: '活動記録',
+            goods: 'グッズ',
+            support: 'RC支援・サポート',
+            testimonials: 'サポートを受けた方の声',
+            faq: 'よくある質問',
+            contact: 'お問い合わせ'
+        }
+    },
+    en: {
+        title: 'Postsoni Workshop',
+        subtitle: 'RC Technology & Passion - Connecting RC Culture to the Next Generation',
+        nav: {
+            top: 'TOP',
+            news: 'Latest Updates',
+            gallery: 'Activity Gallery',
+            roadmap: 'For Beginners',
+            profile: 'Profile',
+            sns: 'SNS',
+            activity: 'Activity Log',
+            goods: 'Goods',
+            support: 'RC Support',
+            testimonials: 'Testimonials',
+            faq: 'FAQ',
+            contact: 'Contact'
+        }
+    },
+    zh: {
+        title: 'Postsoni工作室',
+        subtitle: 'RC技术与热情的融合 - 将RC文化传承给下一代',
+        nav: {
+            top: '首页',
+            news: '最新活动报告',
+            gallery: '活动画廊',
+            roadmap: '新手指南',
+            profile: '简介',
+            sns: '社交媒体',
+            activity: '活动记录',
+            goods: '商品',
+            support: 'RC支援',
+            testimonials: '用户评价',
+            faq: '常见问题',
+            contact: '联系我们'
+        }
+    }
+};
+
+function initLanguageSwitcher() {
+    const langButtons = document.querySelectorAll('.lang-btn');
+    const currentLang = localStorage.getItem('language') || 'ja';
+    
+    // 初期言語を設定
+    setLanguage(currentLang);
+    
+    langButtons.forEach(btn => {
+        if (btn.getAttribute('data-lang') === currentLang) {
+            btn.classList.add('active');
+        }
+        
+        btn.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            
+            // ボタンのアクティブ状態を更新
+            langButtons.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            // 言語を変更
+            setLanguage(lang);
+            localStorage.setItem('language', lang);
+        });
+    });
+}
+
+function setLanguage(lang) {
+    const trans = translations[lang];
+    if (!trans) return;
+    
+    // タイトルとサブタイトル
+    const mainTitle = document.querySelector('.main-title');
+    const subtitle = document.querySelector('.subtitle');
+    if (mainTitle) mainTitle.textContent = trans.title;
+    if (subtitle) subtitle.textContent = trans.subtitle;
+    
+    // ナビゲーション
+    Object.keys(trans.nav).forEach(key => {
+        const navItem = document.querySelector(`[data-tab="${key}"]`);
+        if (navItem) {
+            const icon = navItem.textContent.split(' ')[0]; // アイコンを保持
+            navItem.textContent = icon + ' ' + trans.nav[key];
+        }
+    });
+    
+    // ページタイトル
+    document.title = trans.title + ' | RC Support & Repair';
+}
+
+
+// ===== PWA対応 =====
+function initPWA() {
+    // Service Worker登録
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/postori-site/sw.js')
+                .then(registration => {
+                    console.log('Service Worker登録成功:', registration);
+                })
+                .catch(error => {
+                    console.log('Service Worker登録失敗:', error);
+                });
+        });
+    }
+    
+    // インストールプロンプト
+    let deferredPrompt;
+    
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        
+        // インストールバナーを表示（任意）
+        showInstallBanner();
+    });
+    
+    function showInstallBanner() {
+        // すでにインストール済みかチェック
+        if (window.matchMedia('(display-mode: standalone)').matches) {
+            return;
+        }
+        
+        // バナーを作成して表示
+        const banner = document.createElement('div');
+        banner.className = 'pwa-install-banner show';
+        banner.innerHTML = `
+            <div class="pwa-banner-content">
+                <div class="pwa-banner-title">📱 ホーム画面に追加</div>
+                <div class="pwa-banner-text">オフラインでも閲覧できます</div>
+            </div>
+            <div class="pwa-banner-buttons">
+                <button class="pwa-install-btn" id="pwaInstallBtn">インストール</button>
+                <button class="pwa-close-btn" id="pwaCloseBtn">閉じる</button>
+            </div>
+        `;
+        document.body.appendChild(banner);
+        
+        // インストールボタン
+        document.getElementById('pwaInstallBtn').addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                console.log('インストール:', outcome);
+                deferredPrompt = null;
+                banner.remove();
+            }
+        });
+        
+        // 閉じるボタン
+        document.getElementById('pwaCloseBtn').addEventListener('click', () => {
+            banner.remove();
+        });
+    }
+}
+
+
+// ===== ページ読み込み時の初期化（最終版） =====
+document.addEventListener('DOMContentLoaded', () => {
+    // 既存の初期化
+    initTabs();
+    initFAQ();
+    initVisitorCounter();
+    initBackToTop();
+    initLoadingScreen();
+    initDarkMode();
+    initScrollAnimations();
+    initVisitorStats();
+    initSiteSearch();
+    
+    // 新機能の初期化
+    initLanguageSwitcher();
+    initPWA();
+    
+    // タブ切り替え時にパンくずリスト更新
+    const navItems = document.querySelectorAll('.nav-item');
+    navItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const targetTab = this.getAttribute('data-tab');
+            updateBreadcrumbEnhanced(targetTab);
+        });
+    });
+});

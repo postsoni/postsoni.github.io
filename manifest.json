@@ -1,0 +1,27 @@
+{
+  "name": "ぽすとそに工房 - RC技術と情熱の融合",
+  "short_name": "ぽすとそに工房",
+  "description": "札幌でラジコン（RC）の修理・メンテナンス・サポートを行う「ぽすとそに工房」。初心者から経験者まで一緒に成長します。",
+  "start_url": "/postori-site/",
+  "display": "standalone",
+  "background_color": "#ffecd2",
+  "theme_color": "#ff9a76",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "postsoni-icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "postsoni-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["hobby", "education", "lifestyle"],
+  "lang": "ja-JP",
+  "dir": "ltr"
+}

@@ -12,6 +12,14 @@
     <meta name="author" content="ぽすとそに">
     <meta name="robots" content="index, follow">
     
+    <!-- PWA設定 -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ff9a76">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="ぽすとそに工房">
+    <link rel="apple-touch-icon" href="postsoni-icon.png">
+    
     <!-- OGP（SNSシェア用） -->
     <meta property="og:title" content="ぽすとそに工房 | ラジコン修理・メンテナンス・AI活用サポート【札幌】">
     <meta property="og:description" content="札幌でラジコンの修理・メンテナンス・サポートを行う「ぽすとそに工房」。初心者から経験者まで一緒に成長します。18年の経験、100台以上の修理実績。地域ボランティア精神に基づく活動。">
@@ -167,6 +175,12 @@
                 <span class="light-icon">☀️</span>
                 <span class="dark-icon">🌙</span>
             </button>
+            <!-- 言語切り替えボタン -->
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="ja">🇯🇵 日本語</button>
+                <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+                <button class="lang-btn" data-lang="zh">🇨🇳 中文</button>
+            </div>
         </div>
     </header>
 
@@ -188,6 +202,7 @@
                 <h3 class="nav-title">📌 目次</h3>
                 <nav class="navigation">
                     <a href="#" class="nav-item active" data-tab="top">🏠 TOP</a>
+                    <a href="#" class="nav-item" data-tab="news">📰 最新の活動報告</a>
                     <a href="#" class="nav-item" data-tab="gallery">📸 活動ギャラリー</a>
                     <a href="#" class="nav-item" data-tab="roadmap">🛤️ 初めての方へ</a>
                     <a href="#" class="nav-item" data-tab="profile">👤 プロフィール</a>
@@ -343,6 +358,32 @@
                     <a href="#" class="cta-button cta-primary" data-tab="contact">
                         👉 ご相談はこちらから
                     </a>
+                </div>
+            </section>
+
+            <!-- 最新の活動報告セクション -->
+            <section id="news" class="content-section tab-content">
+                <!-- パンくずリスト -->
+                <nav class="breadcrumb" aria-label="パンくずリスト">
+                    <a href="#" data-tab="top" class="breadcrumb-link">🏠 TOP</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <span class="breadcrumb-item">📰 最新の活動報告</span>
+                </nav>
+                
+                <div class="section-header">
+                    <h2 class="section-title">📰 最新の活動報告</h2>
+                </div>
+                <div class="news-card">
+                    <div class="coming-soon-wrapper">
+                        <div class="coming-soon-icon">🚧</div>
+                        <h3 class="coming-soon-title">Coming Soon...</h3>
+                        <p class="coming-soon-text">最新の活動報告を準備中です。<br>もうしばらくお待ちください。</p>
+                        <div class="coming-soon-animation">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
