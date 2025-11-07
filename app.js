@@ -1,273 +1,141 @@
-// ===== 訪問者カウンター（Persistent Storage使用） =====
-async function initVisitorCounter() {
-    try {
-        // ユニークな訪問者IDを生成または取得（ブラウザごとに固有）
-        let visitorId = localStorage.getItem('visitorId');
-        if (!visitorId) {
-            visitorId = 'visitor_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-            localStorage.setItem('visitorId', visitorId);
-        }
-        
-        // 総訪問者数を取得
-        let totalVisitors = 0;
-        let visitorsList = [];
-        
-        try {
-            // 訪問者リストを取得
-            const result = await window.storage.get('visitors_list', true);
-            if (result && result.value) {
-                visitorsList = JSON.parse(result.value);
-                totalVisitors = visitorsList.length;
-            }
-        } catch (error) {
-            console.log('初回カウンター作成');
-            visitorsList = [];
-            totalVisitors = 0;
-        }
-        
-        // このvisitorIdが既に訪問済みかチェック
-        const hasVisited = visitorsList.includes(visitorId);
-        
-        // 初回訪問の場合のみカウントアップ
-        if (!hasVisited) {
-            visitorsList.push(visitorId);
-            totalVisitors = visitorsList.length;
-            
-            // 永続ストレージに保存（shared: true で全ユーザーで共有）
-            await window.storage.set('visitors_list', JSON.stringify(visitorsList), true);
-            
-            console.log('新規訪問者を記録しました。総訪問者数:', totalVisitors);
-        } else {
-            console.log('既存の訪問者です。総訪問者数:', totalVisitors);
-        }
-        
-        // カウンターに表示
-        const counterElement = document.getElementById('visitorCount');
-        const counterText = document.getElementById('visitorText');
-        
-        if (counterElement && counterText) {
-            // アニメーション付きでカウントアップ
-            animateCounter(counterElement, 0, totalVisitors, 1000);
-            counterText.textContent = 'あなたは今までで ' + totalVisitors.toLocaleString() + ' 人目の訪問者です';
-        }
-        
-    } catch (error) {
-        console.error('カウンターエラー:', error);
-        // エラー時はローカルストレージにフォールバック
-        fallbackCounter();
-    }
-}
-
-// フォールバック用カウンター（window.storageが使えない場合）
-function fallbackCounter() {
-    let visitorCount = localStorage.getItem('fallbackVisitorCount');
-    
-    if (!visitorCount) {
-        visitorCount = 1;
-    } else {
-        visitorCount = parseInt(visitorCount);
-    }
-    
-    localStorage.setItem('fallbackVisitorCount', visitorCount);
-    
-    const counterElement = document.getElementById('visitorCount');
-    const counterText = document.getElementById('visitorText');
-    
-    if (counterElement && counterText) {
-        animateCounter(counterElement, 0, visitorCount, 1000);
-        counterText.textContent = 'あなたは今までで ' + visitorCount.toLocaleString() + ' 人目の訪問者です';
-    }
-}
-
-// カウンターアニメーション
-function animateCounter(element, start, end, duration) {
-    const range = end - start;
-    const increment = range / (duration / 16);
-    let current = start;
-    
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= end) {
-            current = end;
-            clearInterval(timer);
-        }
-        element.textContent = Math.floor(current).toLocaleString();
-    }, 16);
-}
-
-// ===== ページ読み込み時の初期化 =====
-document.addEventListener('DOMContentLoaded', () => {
-    // タブ切り替え機能初期化
-    initTabs();
-    
-    // FAQ アコーディオン機能初期化
-    initFAQ();
-    
-    // 訪問者カウンター初期化
-    initVisitorCounter();
-});
-
-// お問い合わせフォームを開く
-function openContactForm() {
-    window.open('contact.html', '_blank', 'width=700,height=800');
-}
-
+// ===== グローバル変数 =====
+let currentTab = 'top';
 
 // ===== タブ切り替え機能 =====
 function initTabs() {
     const navItems = document.querySelectorAll('.nav-item');
     const tabContents = document.querySelectorAll('.tab-content');
     
-    // タブ切り替えの共通処理（PC・スマホ共通）
-    function switchTab(targetTab) {
-        // 全てのナビゲーションアイテムから active クラスを削除
-        navItems.forEach(nav => nav.classList.remove('active'));
-        
-        // 対応するナビゲーションアイテムに active クラスを追加
-        navItems.forEach(nav => {
-            if (nav.getAttribute('data-tab') === targetTab) {
-                nav.classList.add('active');
-            }
-        });
-        
-        // 全てのタブコンテンツから active クラスを削除
-        tabContents.forEach(content => content.classList.remove('active'));
-        
-        // 対応するタブコンテンツに active クラスを追加
-        const targetContent = document.getElementById(targetTab);
-        if (targetContent) {
-            targetContent.classList.add('active');
-            
-            // コンテンツエリアを最上部にスクロール
-            const contentArea = document.querySelector('.content-area');
-            if (contentArea) {
-                contentArea.scrollTop = 0;
-            }
-            
-            // スマホの場合、コンテンツエリアの先頭までスクロール
-            if (window.innerWidth <= 768) {
-                // 少し待ってからスクロール（コンテンツの描画を待つ）
-                setTimeout(() => {
-                    const contentArea = document.querySelector('.content-area');
-                    if (contentArea) {
-                        // コンテンツエリアの位置を取得
-                        const contentRect = contentArea.getBoundingClientRect();
-                        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-                        
-                        // コンテンツエリアの上端までスクロール
-                        window.scrollTo({
-                            top: currentScroll + contentRect.top,
-                            behavior: 'smooth'
-                        });
-                    }
-                }, 100);
-            }
-        }
-    }
-    
-    // ナビゲーションアイテムのクリックイベント
     navItems.forEach(item => {
         item.addEventListener('click', function(e) {
             e.preventDefault();
+            navItems.forEach(nav => nav.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            this.classList.add('active');
             const targetTab = this.getAttribute('data-tab');
-            switchTab(targetTab);
-        });
-    });
-    
-    // data-tab属性を持つすべてのリンク/ボタンに対応
-    document.addEventListener('click', function(e) {
-        const target = e.target.closest('[data-tab]');
-        if (target && !target.classList.contains('nav-item')) {
-            e.preventDefault();
-            const targetTab = target.getAttribute('data-tab');
-            switchTab(targetTab);
-        }
-    });
-}
-
-
-// ===== FAQ アコーディオン機能 =====
-function initFAQ() {
-    const faqItems = document.querySelectorAll('.faq-item');
-    
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        
-        question.addEventListener('click', () => {
-            // 既に開いている場合は閉じる
-            const isActive = item.classList.contains('active');
-            
-            // 全てのFAQを閉じる
-            faqItems.forEach(faq => faq.classList.remove('active'));
-            
-            // クリックされたFAQが閉じていた場合は開く
-            if (!isActive) {
-                item.classList.add('active');
+            const targetContent = document.getElementById(targetTab);
+            if (targetContent) {
+                targetContent.classList.add('active');
+                currentTab = targetTab;
+                if (window.innerWidth <= 768) {
+                    setTimeout(() => {
+                        const contentArea = document.querySelector('.content-area');
+                        if (contentArea) contentArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 100);
+                }
             }
         });
     });
 }
 
-
-// ===== ページトップへ戻るボタン =====
-function initBackToTop() {
-    const backToTopButton = document.getElementById('backToTop');
-    
-    if (!backToTopButton) return;
-    
-    // スクロール時の表示/非表示
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            backToTopButton.classList.add('show');
-        } else {
-            backToTopButton.classList.remove('show');
+// ===== FAQ機能 =====
+function initFAQ() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        if (question) {
+            question.addEventListener('click', () => {
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                item.classList.toggle('active');
+            });
         }
-    });
-    
-    // クリック時の動作
-    backToTopButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
     });
 }
 
+// ===== 訪問者カウンター =====
+async function initVisitorCounter() {
+    const countElement = document.getElementById('visitorCount');
+    const textElement = document.getElementById('visitorText');
+    if (!countElement || !textElement) return;
+    try {
+        let visitorId = localStorage.getItem('visitorId');
+        if (!visitorId) {
+            visitorId = 'visitor_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+            localStorage.setItem('visitorId', visitorId);
+        }
+        let visitorList = [];
+        try {
+            const result = await window.storage.get('visitor-list', true);
+            if (result && result.value) visitorList = JSON.parse(result.value);
+        } catch (error) {
+            visitorList = [];
+        }
+        if (!visitorList.includes(visitorId)) {
+            visitorList.push(visitorId);
+            await window.storage.set('visitor-list', JSON.stringify(visitorList), true);
+        }
+        const count = visitorList.length;
+        countElement.textContent = count;
+        textElement.textContent = `あなたは${count}人目の訪問者です`;
+    } catch (error) {
+        console.error('訪問者カウンターエラー:', error);
+        countElement.textContent = '---';
+        textElement.textContent = 'カウント取得中...';
+    }
+}
 
-// ===== ローディング画面 =====
+function initBackToTop() {
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    if (!backToTopBtn) return;
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
 function initLoadingScreen() {
     const loadingScreen = document.getElementById('loading-screen');
-    
     if (!loadingScreen) return;
-    
     window.addEventListener('load', () => {
         setTimeout(() => {
-            loadingScreen.classList.add('fade-out');
-            setTimeout(() => {
-                loadingScreen.style.display = 'none';
-            }, 500);
+            loadingScreen.style.opacity = '0';
+            setTimeout(() => { loadingScreen.style.display = 'none'; }, 500);
         }, 500);
     });
 }
 
+function updateBreadcrumbEnhanced(tabId) {
+    const breadcrumb = document.querySelector(`#${tabId} .breadcrumb`);
+    if (!breadcrumb) return;
+    const tabNames = {
+        'top': 'TOP', 'news': '最新の活動報告', 'gallery': '活動ギャラリー',
+        'roadmap': '初めての方へ', 'profile': 'プロフィール', 'sns': 'SNS',
+        'activity': 'ブログアクセス', 'goods': 'グッズ', 'support': 'RC支援・サポート',
+        'testimonials': 'サポートを受けた方の声', 'faq': 'よくある質問', 'contact': 'お問い合わせ'
+    };
+    const tabIcons = {
+        'top': '🏠', 'news': '📰', 'gallery': '📸', 'roadmap': '🛤️',
+        'profile': '👤', 'sns': '📱', 'activity': '📰', 'goods': '🛍️',
+        'support': '🤝', 'testimonials': '🎉', 'faq': '❓', 'contact': '✉️'
+    };
+    if (tabId === 'top') {
+        breadcrumb.innerHTML = `<span class="breadcrumb-item">${tabIcons[tabId]} ${tabNames[tabId]}</span>`;
+    } else {
+        breadcrumb.innerHTML = `
+            <a href="#" class="breadcrumb-link" data-tab="top">${tabIcons['top']} ${tabNames['top']}</a>
+            <span class="breadcrumb-separator">›</span>
+            <span class="breadcrumb-item">${tabIcons[tabId]} ${tabNames[tabId]}</span>
+        `;
+    }
+}
 
-// ===== ダークモード切り替え =====
 function initDarkMode() {
     const darkModeToggle = document.getElementById('darkModeToggle');
-    
     if (!darkModeToggle) return;
-    
-    // ローカルストレージから設定を読み込み
     const savedMode = localStorage.getItem('darkMode');
-    if (savedMode === 'enabled') {
-        document.body.classList.add('dark-mode');
-    }
-    
-    // クリック時の動作
+    if (savedMode === 'enabled') document.body.classList.add('dark-mode');
     darkModeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
-        
-        // 設定を保存
         if (document.body.classList.contains('dark-mode')) {
             localStorage.setItem('darkMode', 'enabled');
         } else {
@@ -276,332 +144,235 @@ function initDarkMode() {
     });
 }
 
-
-// ===== スムーズスクロール効果の強化 =====
 function initScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
             }
         });
     }, observerOptions);
-    
-    // アニメーション対象の要素を監視
-    const animateElements = document.querySelectorAll('.content-section, .gallery-item, .roadmap-step, .testimonial-item, .faq-item');
-    animateElements.forEach(el => observer.observe(el));
+    const animatedElements = document.querySelectorAll('.greeting-card, .card, .faq-item, .testimonial-card');
+    animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
 }
 
-
-// ===== 訪問者統計の可視化 =====
 async function initVisitorStats() {
-    try {
-        // 訪問者リストを取得
-        const result = await window.storage.get('visitors_list', true);
-        if (result && result.value) {
-            const visitorsList = JSON.parse(result.value);
-            const totalVisitors = visitorsList.length;
-            
-            // 統計情報を保存
-            const stats = {
-                total: totalVisitors,
-                lastUpdated: new Date().toISOString()
-            };
-            
-            console.log('訪問者統計:', stats);
-        }
-    } catch (error) {
-        console.log('統計情報の取得エラー:', error);
-    }
+    console.log('訪問者統計機能：準備完了');
 }
 
-
-// ===== パンくずリスト更新 =====
-function updateBreadcrumb(sectionName) {
-    // 将来的にパンくずリストを実装する場合の準備
-    console.log('現在のセクション:', sectionName);
-}
-
-
-// ===== ページ読み込み時の初期化（更新版） =====
-document.addEventListener('DOMContentLoaded', () => {
-    // 既存の初期化
-    initTabs();
-    initFAQ();
-    initVisitorCounter();
-    
-    // 新機能の初期化
-    initBackToTop();
-    initLoadingScreen();
-    initDarkMode();
-    initScrollAnimations();
-    initVisitorStats();
-});
-
-
-// ===== サイト内検索機能 =====
 function initSiteSearch() {
-    const searchInput = document.getElementById('siteSearch');
-    const searchBtn = document.getElementById('searchBtn');
+    const searchInput = document.getElementById('siteSearchInput');
+    const searchBtn = document.getElementById('siteSearchBtn');
     const searchResults = document.getElementById('searchResults');
-    
     if (!searchInput || !searchBtn || !searchResults) return;
-    
-    // 検索対象のコンテンツを収集
-    function getSearchableContent() {
-        const content = [];
-        
-        // FAQを収集
-        document.querySelectorAll('.faq-item').forEach((item, index) => {
-            const question = item.querySelector('.faq-question h3')?.textContent || '';
-            const answer = item.querySelector('.faq-answer p')?.textContent || '';
-            content.push({
-                type: 'FAQ',
-                title: question,
-                content: answer,
-                section: 'faq',
-                id: index
-            });
-        });
-        
-        // 初心者向けロードマップを収集
-        document.querySelectorAll('.roadmap-step').forEach((item, index) => {
-            const title = item.querySelector('.step-title')?.textContent || '';
-            const contentText = item.querySelector('.step-content')?.textContent || '';
-            content.push({
-                type: 'ガイド',
-                title: title,
-                content: contentText,
-                section: 'roadmap',
-                id: index
-            });
-        });
-        
-        // お客様の声を収集
-        document.querySelectorAll('.testimonial-item').forEach((item, index) => {
-            const name = item.querySelector('.testimonial-name')?.textContent || '';
-            const contentText = item.querySelector('.testimonial-content')?.textContent || '';
-            content.push({
-                type: '体験談',
-                title: name,
-                content: contentText,
-                section: 'testimonials',
-                id: index
-            });
-        });
-        
-        return content;
+    const searchableContent = [
+        { tab: 'top', title: 'TOP', keywords: ['ぽすとそに', '工房'] },
+        { tab: 'faq', title: 'よくある質問', keywords: ['FAQ', '質問'] }
+    ];
+    function performSearch() {
+        const query = searchInput.value.trim().toLowerCase();
+        if (!query) { searchResults.style.display = 'none'; return; }
+        const results = searchableContent.filter(item =>
+            item.title.toLowerCase().includes(query) ||
+            item.keywords.some(keyword => keyword.toLowerCase().includes(query))
+        );
+        if (results.length > 0) {
+            searchResults.innerHTML = results.map(result =>
+                `<div class="search-result-item" data-tab="${result.tab}">📄 ${result.title}</div>`
+            ).join('');
+            searchResults.style.display = 'block';
+        } else {
+            searchResults.innerHTML = '<div class="search-no-results">検索結果が見つかりませんでした</div>';
+            searchResults.style.display = 'block';
+        }
     }
-    
-    // 検索実行
-    function performSearch(query) {
-        if (!query || query.trim().length < 2) {
-            searchResults.innerHTML = '<p class="search-no-results">2文字以上で検索してください</p>';
-            return;
-        }
-        
-        const searchableContent = getSearchableContent();
-        const results = searchableContent.filter(item => {
-            return item.title.toLowerCase().includes(query.toLowerCase()) ||
-                   item.content.toLowerCase().includes(query.toLowerCase());
-        });
-        
-        displaySearchResults(results, query);
-    }
-    
-    // 検索結果を表示
-    function displaySearchResults(results, query) {
-        if (results.length === 0) {
-            searchResults.innerHTML = '<p class="search-no-results">「' + query + '」に一致する結果が見つかりませんでした</p>';
-            return;
-        }
-        
-        let html = '';
-        results.slice(0, 5).forEach(result => {
-            const excerpt = result.content.substring(0, 80) + '...';
-            html += `
-                <div class="search-result-item" onclick="navigateToResult('${result.section}')">
-                    <div class="search-result-title">${result.type}: ${result.title}</div>
-                    <div class="search-result-excerpt">${excerpt}</div>
-                </div>
-            `;
-        });
-        
-        searchResults.innerHTML = html;
-    }
-    
-    // 検索結果をクリック
-    window.navigateToResult = function(sectionId) {
-        const navItem = document.querySelector(`[data-tab="${sectionId}"]`);
-        if (navItem) {
-            navItem.click();
-            searchResults.innerHTML = '';
-            searchInput.value = '';
-        }
-    };
-    
-    // 検索ボタンクリック
-    searchBtn.addEventListener('click', () => {
-        performSearch(searchInput.value);
-    });
-    
-    // Enterキーで検索
-    searchInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            performSearch(searchInput.value);
-        }
-    });
-    
-    // リアルタイム検索（入力中）
-    let searchTimeout;
-    searchInput.addEventListener('input', () => {
-        clearTimeout(searchTimeout);
-        searchTimeout = setTimeout(() => {
-            if (searchInput.value.trim().length >= 2) {
-                performSearch(searchInput.value);
-            } else {
-                searchResults.innerHTML = '';
-            }
-        }, 300);
-    });
+    searchBtn.addEventListener('click', performSearch);
 }
 
-
-// ===== パンくずリスト更新機能の改善 =====
-function updateBreadcrumbEnhanced(sectionId) {
-    const sectionNames = {
-        'top': 'TOP',
-        'gallery': '活動ギャラリー',
-        'roadmap': '初めての方へ',
-        'profile': 'プロフィール',
-        'sns': 'SNS',
-        'activity': '活動記録',
-        'goods': 'グッズ',
-        'support': 'RC支援・サポート',
-        'testimonials': 'サポートを受けた方の声',
-        'faq': 'よくある質問',
-        'contact': 'お問い合わせ'
-    };
-    
-    const sectionName = sectionNames[sectionId] || sectionId;
-    console.log('現在のページ:', sectionName);
-    
-    // ページタイトルも更新
-    document.title = sectionName + ' - ぽすとそに工房';
-}
-
-
-// ===== ページ読み込み時の初期化（最終版） =====
-document.addEventListener('DOMContentLoaded', () => {
-    // 既存の初期化
-    initTabs();
-    initFAQ();
-    initVisitorCounter();
-    
-    // 新機能の初期化
-    initBackToTop();
-    initLoadingScreen();
-    initDarkMode();
-    initScrollAnimations();
-    initVisitorStats();
-    
-    // 残り3つの機能初期化
-    initSiteSearch();
-    
-    // タブ切り替え時にパンくずリスト更新
-    const navItems = document.querySelectorAll('.nav-item');
-    navItems.forEach(item => {
-        item.addEventListener('click', function() {
-            const targetTab = this.getAttribute('data-tab');
-            updateBreadcrumbEnhanced(targetTab);
-        });
-    });
-});
-
-
-// ===== 多言語対応 =====
+// ===== 完全な翻訳データ =====
 const translations = {
     ja: {
         title: 'ぽすとそに工房',
         subtitle: 'RC技術と情熱の融合 - 次世代へ繋ぐラジコン文化',
         nav: {
-            top: 'TOP',
-            news: '最新の活動報告',
-            gallery: '活動ギャラリー',
-            roadmap: '初めての方へ',
-            profile: 'プロフィール',
-            sns: 'SNS',
-            activity: '活動記録',
-            goods: 'グッズ',
-            support: 'RC支援・サポート',
-            testimonials: 'サポートを受けた方の声',
-            faq: 'よくある質問',
-            contact: 'お問い合わせ'
+            top: 'TOP', news: '最新の活動報告', gallery: '活動ギャラリー',
+            roadmap: '初めての方へ', profile: 'プロフィール', sns: 'SNS',
+            activity: 'ブログアクセス', goods: 'グッズ', support: 'RC支援・サポート',
+            testimonials: 'サポートを受けた方の声', faq: 'よくある質問', contact: 'お問い合わせ'
+        },
+        sidebar: {
+            searchTitle: 'サイト内検索',
+            searchPlaceholder: 'FAQやブログ記事を検索',
+            searchButton: '検索',
+            tocTitle: '目次'
+        },
+        newsSection: {
+            title: '最新の活動報告',
+            comingSoon: 'Coming Soon...',
+            workInProgress: 'ホームページの翻訳作業をしております。少々お待ちください。'
+        },
+        topSection: {
+            title: 'ようこそ、ぽすとそに工房へ',
+            greetingTitle: 'ぽすとそに ご挨拶',
+            greeting: [
+                'はじめまして。「ぽすとそに」と申します。2025年現在、33歳の男性であり、まだ若輩者ではございますが、AI技術を積極的に取り入れながら、ラジコン(以下、RC)の魅力と技術を広めていきたいと考えております。',
+                '私は、心身ともにいくつかの制約を抱えながらも、それを理由に立ち止まるのではなく、AIという新たな可能性を通じて乗り越えようと日々取り組んでおります。',
+                'RCという世界は、単なる「趣味」にとどまらず、機械と人の感覚が交わるリアルの領域だと感じています。人によっては便利さが進むほどに寂しさを覚える現代社会において、RCは手に取れる技術と体験が共存する、温かみのある文化だと思うのです。',
+                '私は、このRCの魅力を次の世代へと繋ぐ一人の担い手でありたいと考えています。現代技術と人の情熱が交わる場所にこそ、次の時代に残す価値があると信じています。',
+                '「ぽすとそに工房」では、私自身のRC活動の記録や試行錯誤の軌跡を発信しております。もしご興味をお持ちいただけましたら、ぜひ一度ご覧ください。そこには、懐かしさと近未来が共存する不思議な世界が広がっています。',
+                'RCが持つ本来の楽しさと、その奥にある「人と技術の融合の美しさ」を、今後も発信し続けてまいります。'
+            ],
+            rcCollectionTitle: 'これは、ほすとそに自身が所有しているラジコンの一部です',
+            imageCaption1: 'JR PROPO E8 を修理したりメンテナンスしていく うちにMIXされた他機種からの流用パーツがでんこ盛りになったヘリと、EPPの入門用高翼機たちです。',
+            imageCaption2: 'INFERNO MP9 TKI3をベースにボディの塗装を変えて懐かしい色合いにした状態です。',
+            imageCaption3: 'RC-Factory Super Extra Lの組み立て前真で、組み立て動画はYouTubeにあがっています。',
+            galleryButtonText: '活動ギャラリーをもっとみる',
+            statsTitle: '数字で見る分かりやすい活動記録',
+            stat1Number: '18年', stat1Label: 'RC活動歴',
+            stat2Number: '100+', stat2Label: '修理依頼により<br>直ったラジコンの数',
+            stat3Number: '20社+', stat3Label: '対応メーカー',
+            stat4Number: '2年間', stat4Label: 'サポート活動',
+            monthlyTitle: '📅 今月の活動',
+            monthlyUpdated: '2025年10月29日更新',
+            monthlyRepairsTitle: '修理・改善されたラジコン',
+            monthlyRepairsCount: '3台',
+            monthlySupportedTitle: 'サポートした人数',
+            monthlySupportedCount: '3名',
+            monthlyNewModelTitle: '新作機体',
+            monthlyNewModelDetail: 'RC-Factory Super Extra Lの作成',
+            monthlyNewsTitle: '新着その他情報',
+            monthlyNewsDetail: 'Heli-Xのシミュレーター調整、RealFlight Evolutionの新機体導入とモデル設定',
+            ctaContact: 'ご相談はこちらから'
         }
     },
     en: {
         title: 'Postsoni Workshop',
-        subtitle: 'RC Technology & Passion - Connecting RC Culture to the Next Generation',
+        subtitle: 'RC Technology & Passion',
         nav: {
-            top: 'TOP',
-            news: 'Latest Updates',
-            gallery: 'Activity Gallery',
-            roadmap: 'For Beginners',
-            profile: 'Profile',
-            sns: 'SNS',
-            activity: 'Activity Log',
-            goods: 'Goods',
-            support: 'RC Support',
-            testimonials: 'Testimonials',
-            faq: 'FAQ',
-            contact: 'Contact'
+            top: 'TOP', news: 'Latest Updates', gallery: 'Gallery',
+            roadmap: 'For Beginners', profile: 'Profile', sns: 'SNS',
+            activity: 'Blog', goods: 'Goods', support: 'Support',
+            testimonials: 'Testimonials', faq: 'FAQ', contact: 'Contact'
+        },
+        sidebar: {
+            searchTitle: 'Site Search',
+            searchPlaceholder: 'Search FAQ or blog articles',
+            searchButton: 'Search',
+            tocTitle: 'Table of Contents'
+        },
+        newsSection: {
+            title: 'Latest Updates',
+            comingSoon: 'Coming Soon...',
+            workInProgress: 'We are working on translating the website. Please wait a moment.'
+        },
+        topSection: {
+            title: 'Welcome to Postsoni Workshop',
+            greetingTitle: 'About Postsoni',
+            greeting: [
+                'Hello, I am Postsoni. As of 2025, I am a 33-year-old male, and although I am still young, I am actively incorporating AI technology to spread the appeal and techniques of Radio Control (RC).',
+                'Despite facing some physical and mental challenges, I do not let them stop me. Instead, I strive to overcome them through the new possibilities that AI offers.',
+                'The world of RC is not just a "hobby" but a realm where machines and human senses intersect in reality. In today\'s society, where convenience can sometimes lead to loneliness, RC represents a warm culture where tangible technology and experience coexist.',
+                'I want to be someone who passes on the charm of RC to the next generation. I believe that where modern technology and human passion meet, there is value worth preserving for future times.',
+                'At "Postsoni Workshop," I share records of my own RC activities and trials. If you are interested, please take a look. There, you will find a mysterious world where nostalgia and the near future coexist.',
+                'I will continue to communicate the original joy of RC and the "beauty of the fusion of people and technology" that lies within.'
+            ],
+            rcCollectionTitle: 'This is part of my RC collection',
+            imageCaption1: 'Helicopter with mixed parts from repairs of JR PROPO E8, and EPP entry-level high-wing aircraft.',
+            imageCaption2: 'INFERNO MP9 TKI3 base with nostalgic color paint.',
+            imageCaption3: 'RC-Factory Super Extra L pre-assembly, video on YouTube.',
+            galleryButtonText: 'View More Gallery',
+            statsTitle: 'Activity Record at a Glance',
+            stat1Number: '18 Years', stat1Label: 'RC Experience',
+            stat2Number: '100+', stat2Label: 'RCs Repaired',
+            stat3Number: '20+', stat3Label: 'Manufacturers',
+            stat4Number: '2 Years', stat4Label: 'Support Activity',
+            monthlyTitle: '📅 This Month',
+            monthlyUpdated: 'Updated Oct 29, 2025',
+            monthlyRepairsTitle: 'RCs Repaired',
+            monthlyRepairsCount: '3 units',
+            monthlySupportedTitle: 'People Supported',
+            monthlySupportedCount: '3 people',
+            monthlyNewModelTitle: 'New Model',
+            monthlyNewModelDetail: 'RC-Factory Super Extra L build',
+            monthlyNewsTitle: 'Latest Updates',
+            monthlyNewsDetail: 'Heli-X simulator adjustments, RealFlight Evolution new aircraft introduction and model settings',
+            ctaContact: 'Contact for Consultation'
         }
     },
     zh: {
         title: 'Postsoni工作室',
-        subtitle: 'RC技术与热情的融合 - 将RC文化传承给下一代',
+        subtitle: 'RC技术与热情的融合',
         nav: {
-            top: '首页',
-            news: '最新活动报告',
-            gallery: '活动画廊',
-            roadmap: '新手指南',
-            profile: '简介',
-            sns: '社交媒体',
-            activity: '活动记录',
-            goods: '商品',
-            support: 'RC支援',
-            testimonials: '用户评价',
-            faq: '常见问题',
-            contact: '联系我们'
+            top: '首页', news: '最新活动', gallery: '画廊',
+            roadmap: '新手指南', profile: '简介', sns: '社交媒体',
+            activity: '博客', goods: '商品', support: '支援',
+            testimonials: '评价', faq: '常见问题', contact: '联系我们'
+        },
+        sidebar: {
+            searchTitle: '站内搜索',
+            searchPlaceholder: '搜索FAQ或博客文章',
+            searchButton: '搜索',
+            tocTitle: '目录'
+        },
+        newsSection: {
+            title: '最新活动报告',
+            comingSoon: '即将推出...',
+            workInProgress: '我们正在翻译网站。请稍候。'
+        },
+        topSection: {
+            title: '欢迎来到Postsoni工作室',
+            greetingTitle: 'Postsoni 问候',
+            greeting: [
+                '初次见面。我叫"Postsoni"。截至2025年，我是一名33岁的男性，虽然还很年轻，但我正在积极采用AI技术，希望传播遥控（以下简称RC）的魅力和技术。',
+                '我虽然在身心上面临一些限制，但我不会因此停滞不前，而是通过AI这种新的可能性来克服它们。',
+                'RC的世界不仅仅是一种"爱好"，而是机械与人的感知交汇的真实领域。在现代社会中，便利性的提升有时会让人感到孤独，而RC则是一种可以触摸到技术与体验共存的温暖文化。',
+                '我希望成为将RC的魅力传递给下一代的人。我相信，在现代技术与人类热情交汇的地方，存在着值得留给未来时代的价值。',
+                '在"Postsoni工作室"中，我分享了自己的RC活动记录和尝试的轨迹。如果您感兴趣，请务必来看看。那里有一个怀旧与未来共存的奇妙世界。',
+                'RC所拥有的原始乐趣以及其中蕴含的"人与技术融合的美"，我将继续传播下去。'
+            ],
+            rcCollectionTitle: '这是我个人拥有的部分RC收藏',
+            imageCaption1: '在修理JR PROPO E8过程中混合使用其他型号零件的直升机，以及EPP入门级高翼机。',
+            imageCaption2: '以INFERNO MP9 TKI3为基础，改变车身涂装为怀旧色彩。',
+            imageCaption3: 'RC-Factory Super Extra L的组装前照片，视频可在YouTube观看。',
+            galleryButtonText: '查看更多画廊',
+            statsTitle: '一目了然的活动记录',
+            stat1Number: '18年', stat1Label: 'RC经验',
+            stat2Number: '100+', stat2Label: '修好的RC',
+            stat3Number: '20社+', stat3Label: '支持的制造商',
+            stat4Number: '2年', stat4Label: '支持活动',
+            monthlyTitle: '📅 本月活动',
+            monthlyUpdated: '2025年10月29日更新',
+            monthlyRepairsTitle: '维修的RC',
+            monthlyRepairsCount: '3台',
+            monthlySupportedTitle: '支持的人数',
+            monthlySupportedCount: '3名',
+            monthlyNewModelTitle: '新机型',
+            monthlyNewModelDetail: 'RC-Factory Super Extra L的制作',
+            monthlyNewsTitle: '最新更新',
+            monthlyNewsDetail: 'Heli-X模拟器调整、RealFlight Evolution新机体导入和模型设定',
+            ctaContact: '点击此处咨询'
         }
     }
 };
 
+// ===== 多言語切り替え機能 =====
 function initLanguageSwitcher() {
     const langButtons = document.querySelectorAll('.lang-btn');
     const currentLang = localStorage.getItem('language') || 'ja';
-    
-    // 初期言語を設定
     setLanguage(currentLang);
-    
     langButtons.forEach(btn => {
-        if (btn.getAttribute('data-lang') === currentLang) {
-            btn.classList.add('active');
-        }
-        
+        if (btn.getAttribute('data-lang') === currentLang) btn.classList.add('active');
         btn.addEventListener('click', function() {
             const lang = this.getAttribute('data-lang');
-            
-            // ボタンのアクティブ状態を更新
             langButtons.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
-            
-            // 言語を変更
             setLanguage(lang);
             localStorage.setItem('language', lang);
         });
@@ -622,85 +393,119 @@ function setLanguage(lang) {
     Object.keys(trans.nav).forEach(key => {
         const navItem = document.querySelector(`[data-tab="${key}"]`);
         if (navItem) {
-            const icon = navItem.textContent.split(' ')[0]; // アイコンを保持
+            const icon = navItem.textContent.split(' ')[0];
             navItem.textContent = icon + ' ' + trans.nav[key];
         }
     });
     
-    // ページタイトル
-    document.title = trans.title + ' | RC Support & Repair';
+    // サイドバー - サイト内検索
+    const searchTitle = document.querySelector('.search-title');
+    const searchInput = document.getElementById('siteSearchInput');
+    const searchBtn = document.getElementById('siteSearchBtn');
+    if (searchTitle) searchTitle.textContent = '🔍 ' + trans.sidebar.searchTitle;
+    if (searchInput) searchInput.placeholder = trans.sidebar.searchPlaceholder;
+    if (searchBtn) searchBtn.textContent = trans.sidebar.searchButton;
+    
+    // サイドバー - 目次タイトル
+    const tocTitle = document.querySelector('.nav-title');
+    if (tocTitle) tocTitle.textContent = '📌 ' + trans.sidebar.tocTitle;
+    
+    // 最新の活動報告セクション
+    const newsTitle = document.querySelector('#news .section-title');
+    const newsComingSoon = document.querySelector('#news .coming-soon-title');
+    const newsText = document.querySelector('#news .coming-soon-text');
+    if (newsTitle) newsTitle.textContent = '📰 ' + trans.newsSection.title;
+    if (newsComingSoon) newsComingSoon.textContent = trans.newsSection.comingSoon;
+    if (newsText) newsText.textContent = trans.newsSection.workInProgress;
+    
+    // TOPセクション - タイトル
+    const topTitle = document.querySelector('#top .section-title');
+    if (topTitle) topTitle.textContent = '🏠 ' + trans.topSection.title;
+    
+    // TOPセクション - 挨拶タイトル
+    const greetingTitle = document.querySelector('.greeting-title');
+    if (greetingTitle) greetingTitle.textContent = trans.topSection.greetingTitle;
+    
+    // TOPセクション - 挨拶文（6段落）
+    const greetingPs = document.querySelectorAll('.greeting-content p');
+    if (trans.topSection.greeting && greetingPs.length >= 6) {
+        trans.topSection.greeting.forEach((text, index) => {
+            if (greetingPs[index]) greetingPs[index].textContent = text;
+        });
+    }
+    
+    // 最終段落（closing）
+    const greetingClosing = document.querySelector('.greeting-closing');
+    if (greetingClosing && trans.topSection.greeting[5]) {
+        greetingClosing.textContent = trans.topSection.greeting[5];
+    }
+    
+    // TOPセクション - RCコレクションタイトル
+    const visualIntro = document.querySelector('.visual-intro');
+    if (visualIntro) visualIntro.textContent = trans.topSection.rcCollectionTitle;
+    
+    // TOPセクション - 画像キャプション
+    const visualCaptions = document.querySelectorAll('.visual-caption');
+    if (visualCaptions[0]) visualCaptions[0].textContent = trans.topSection.imageCaption1;
+    if (visualCaptions[1]) visualCaptions[1].textContent = trans.topSection.imageCaption2;
+    if (visualCaptions[2]) visualCaptions[2].textContent = trans.topSection.imageCaption3;
+    
+    // TOPセクション - ギャラリーボタン
+    const galleryBtn = document.querySelector('.gallery-link-button');
+    if (galleryBtn) galleryBtn.textContent = trans.topSection.galleryButtonText + ' →';
+    
+    // TOPセクション - 統計タイトル
+    const statsTitle = document.querySelector('.stats-title');
+    if (statsTitle) statsTitle.textContent = trans.topSection.statsTitle;
+    
+    // TOPセクション - 統計数値とラベル
+    const statNumbers = document.querySelectorAll('.stat-number');
+    const statLabels = document.querySelectorAll('.stat-label');
+    if (statNumbers[0]) statNumbers[0].textContent = trans.topSection.stat1Number;
+    if (statLabels[0]) statLabels[0].innerHTML = trans.topSection.stat1Label;
+    if (statNumbers[1]) statNumbers[1].textContent = trans.topSection.stat2Number;
+    if (statLabels[1]) statLabels[1].innerHTML = trans.topSection.stat2Label;
+    if (statNumbers[2]) statNumbers[2].textContent = trans.topSection.stat3Number;
+    if (statLabels[2]) statLabels[2].innerHTML = trans.topSection.stat3Label;
+    if (statNumbers[3]) statNumbers[3].textContent = trans.topSection.stat4Number;
+    if (statLabels[3]) statLabels[3].innerHTML = trans.topSection.stat4Label;
+    
+    // TOPセクション - 今月の活動
+    const reportTitle = document.querySelector('.report-title');
+    const reportDate = document.querySelector('.report-date');
+    if (reportTitle) reportTitle.textContent = trans.topSection.monthlyTitle;
+    if (reportDate) reportDate.textContent = trans.topSection.monthlyUpdated;
+    
+    // TOPセクション - 今月の活動項目
+    const reportTitles = document.querySelectorAll('.report-content h4');
+    if (reportTitles[0]) reportTitles[0].textContent = trans.topSection.monthlyRepairsTitle;
+    if (reportTitles[1]) reportTitles[1].textContent = trans.topSection.monthlySupportedTitle;
+    if (reportTitles[2]) reportTitles[2].textContent = trans.topSection.monthlyNewModelTitle;
+    if (reportTitles[3]) reportTitles[3].textContent = trans.topSection.monthlyNewsTitle;
+    
+    // TOPセクション - 今月の活動数値と詳細
+    const reportNumbers = document.querySelectorAll('.report-number');
+    const reportDetails = document.querySelectorAll('.report-detail');
+    if (reportNumbers[0]) reportNumbers[0].textContent = trans.topSection.monthlyRepairsCount;
+    if (reportNumbers[1]) reportNumbers[1].textContent = trans.topSection.monthlySupportedCount;
+    if (reportDetails[0]) reportDetails[0].textContent = trans.topSection.monthlyNewModelDetail;
+    if (reportDetails[1]) reportDetails[1].textContent = trans.topSection.monthlyNewsDetail;
+    
+    // TOPセクション - CTAボタン
+    const ctaBtn = document.querySelector('.cta-primary');
+    if (ctaBtn) ctaBtn.textContent = '👉 ' + trans.topSection.ctaContact;
 }
 
-
-// ===== PWA対応 =====
 function initPWA() {
-    // Service Worker登録
     if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/postori-site/sw.js')
-                .then(registration => {
-                    console.log('Service Worker登録成功:', registration);
-                })
-                .catch(error => {
-                    console.log('Service Worker登録失敗:', error);
-                });
-        });
-    }
-    
-    // インストールプロンプト
-    let deferredPrompt;
-    
-    window.addEventListener('beforeinstallprompt', (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-        
-        // インストールバナーを表示（任意）
-        showInstallBanner();
-    });
-    
-    function showInstallBanner() {
-        // すでにインストール済みかチェック
-        if (window.matchMedia('(display-mode: standalone)').matches) {
-            return;
-        }
-        
-        // バナーを作成して表示
-        const banner = document.createElement('div');
-        banner.className = 'pwa-install-banner show';
-        banner.innerHTML = `
-            <div class="pwa-banner-content">
-                <div class="pwa-banner-title">📱 ホーム画面に追加</div>
-                <div class="pwa-banner-text">オフラインでも閲覧できます</div>
-            </div>
-            <div class="pwa-banner-buttons">
-                <button class="pwa-install-btn" id="pwaInstallBtn">インストール</button>
-                <button class="pwa-close-btn" id="pwaCloseBtn">閉じる</button>
-            </div>
-        `;
-        document.body.appendChild(banner);
-        
-        // インストールボタン
-        document.getElementById('pwaInstallBtn').addEventListener('click', async () => {
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                const { outcome } = await deferredPrompt.userChoice;
-                console.log('インストール:', outcome);
-                deferredPrompt = null;
-                banner.remove();
-            }
-        });
-        
-        // 閉じるボタン
-        document.getElementById('pwaCloseBtn').addEventListener('click', () => {
-            banner.remove();
-        });
+        navigator.serviceWorker.register('sw.js')
+            .then(() => console.log('Service Worker登録成功'))
+            .catch(err => console.log('Service Worker登録失敗:', err));
     }
 }
 
-
-// ===== ページ読み込み時の初期化（最終版） =====
+// ===== ページ読み込み時の初期化 =====
 document.addEventListener('DOMContentLoaded', () => {
-    // 既存の初期化
     initTabs();
     initFAQ();
     initVisitorCounter();
@@ -710,12 +515,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initVisitorStats();
     initSiteSearch();
-    
-    // 新機能の初期化
     initLanguageSwitcher();
     initPWA();
     
-    // タブ切り替え時にパンくずリスト更新
     const navItems = document.querySelectorAll('.nav-item');
     navItems.forEach(item => {
         item.addEventListener('click', function() {
