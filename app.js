@@ -6,17 +6,32 @@ function initTabs() {
     const navItems = document.querySelectorAll('.nav-item');
     const tabContents = document.querySelectorAll('.tab-content');
     
-    navItems.forEach(item => {
+    // すべてのdata-tab属性を持つ要素にイベントを追加
+    const allTabTriggers = document.querySelectorAll('[data-tab]');
+    
+    allTabTriggers.forEach(item => {
         item.addEventListener('click', function(e) {
             e.preventDefault();
-            navItems.forEach(nav => nav.classList.remove('active'));
-            tabContents.forEach(content => content.classList.remove('active'));
-            this.classList.add('active');
+            
             const targetTab = this.getAttribute('data-tab');
             const targetContent = document.getElementById(targetTab);
+            
             if (targetContent) {
+                // すべてのタブとコンテンツの active を削除
+                navItems.forEach(nav => nav.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // 対応するナビゲーションアイテムをアクティブに
+                const correspondingNavItem = document.querySelector(`.nav-item[data-tab="${targetTab}"]`);
+                if (correspondingNavItem) {
+                    correspondingNavItem.classList.add('active');
+                }
+                
+                // ターゲットのコンテンツをアクティブに
                 targetContent.classList.add('active');
                 currentTab = targetTab;
+                
+                // モバイルでスクロール
                 if (window.innerWidth <= 768) {
                     setTimeout(() => {
                         const contentArea = document.querySelector('.content-area');
