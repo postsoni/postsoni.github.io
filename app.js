@@ -499,42 +499,6 @@ function setLanguage(lang) {
         else if (text === '墜落直後' || text === 'Just Crashed' || text === '刚坠落') badge.textContent = trans.gallerySection.badgeCrashed;
     });
     
-    // 初めての方へセクション
-    const roadmapTitle = document.querySelector('#roadmap .section-title');
-    const roadmapIntro = document.querySelector('#roadmap .roadmap-intro');
-    if (roadmapTitle) roadmapTitle.textContent = '🛤️ ' + trans.roadmapSection.title;
-    if (roadmapIntro) roadmapIntro.textContent = trans.roadmapSection.intro;
-    
-    // 初めての方へ - ステップタイトル
-    const stepTitles = document.querySelectorAll('#roadmap .step-title');
-    if (trans.roadmapSection.steps) {
-        stepTitles.forEach((title, index) => {
-            if (trans.roadmapSection.steps[index]) {
-                const icon = title.textContent.split(' ')[0];
-                title.textContent = icon + ' ' + trans.roadmapSection.steps[index].title;
-            }
-        });
-        
-        // 初めての方へ - ステップ内容
-        const stepLists = document.querySelectorAll('#roadmap .step-list');
-        stepLists.forEach((list, index) => {
-            if (trans.roadmapSection.steps[index]) {
-                const items = list.querySelectorAll('li');
-                items.forEach((item, itemIndex) => {
-                    if (trans.roadmapSection.steps[index].items[itemIndex]) {
-                        item.textContent = trans.roadmapSection.steps[index].items[itemIndex];
-                    }
-                });
-            }
-        });
-    }
-    
-    // 初めての方へ - 注記
-    const roadmapNote = document.querySelector('#roadmap .roadmap-note');
-    if (roadmapNote && trans.roadmapSection.note) {
-        roadmapNote.textContent = trans.roadmapSection.note;
-    }
-    
     // TOPセクション - タイトル
     const topTitle = document.querySelector('#top .section-title');
     if (topTitle) topTitle.textContent = '🏠 ' + trans.topSection.title;
