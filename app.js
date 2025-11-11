@@ -283,8 +283,16 @@ const translations = {
         },
         newsSection: {
             title: '最新の活動報告',
-            comingSoon: 'Coming Soon...',
-            workInProgress: 'ホームページの翻訳作業をしております。少々お待ちください。'
+            date: '2025年11月11日',
+            newsTitle: 'ホームページ刷新 & 機材強化のお知らせ',
+            section1Title: '◆ホームページ改修完了',
+            section1Text: 'プロフィールページに新セクション「ラジコン文化への想い」を追加しました。日本からラジコン文化が消えないよう、技術と知識を次世代へ繋ぐという想いを綴っています。',
+            section2Title: '◆AI活用による情報発信の最適化',
+            section2Text: 'noteブログの執筆にAIを活用し、より分かりやすく、詳細な技術記事の作成を進めています。初心者の方にも理解しやすいコンテンツ作りを目指します。',
+            section3Title: '◆カルマートα40（飛行機） 組み上げ中',
+            section3Text: '全メカ類（サーボ、アンプ、モーター等）が揃い、現在組み上げと微調整を行っています。完成次第、飛行レポートをお届けする予定です。',
+            section4Title: '◆測定機器の導入',
+            section4Text: 'アンプの電流値を正確に測定できるアナライザーを導入しました。これにより、より精密なセッティングとトラブルシューティングが可能になります。'
         },
         gallerySection: {
             title: '今までの活動ギャラリー',
@@ -522,8 +530,16 @@ const translations = {
         },
         newsSection: {
             title: 'Latest Updates',
-            comingSoon: 'Coming Soon...',
-            workInProgress: 'We are working on translating the website. Please wait a moment.'
+            date: 'November 11, 2025',
+            newsTitle: 'Website Renewal & Equipment Enhancement Announcement',
+            section1Title: '◆Website Update Completed',
+            section1Text: 'Added a new section "Passion for RC Culture" to the profile page. It expresses my commitment to preserving RC culture in Japan and passing on technology and knowledge to the next generation.',
+            section2Title: '◆Optimization of Information Dissemination with AI',
+            section2Text: 'We are utilizing AI in writing note blog articles to create more comprehensible and detailed technical content. We aim to create content that is easy to understand even for beginners.',
+            section3Title: '◆Calmato α40 (Plane) Assembly in Progress',
+            section3Text: 'All mechanical parts (servos, ESC, motor, etc.) have arrived, and assembly and fine-tuning are currently underway. We will deliver a flight report once completed.',
+            section4Title: '◆Introduction of Measuring Equipment',
+            section4Text: 'We have introduced an analyzer that can accurately measure ESC current values. This enables more precise settings and troubleshooting.'
         },
         gallerySection: {
             title: 'Activity Gallery',
@@ -761,8 +777,16 @@ const translations = {
         },
         newsSection: {
             title: '最新活动报告',
-            comingSoon: '即将推出...',
-            workInProgress: '我们正在翻译网站。请稍候。'
+            date: '2025年11月11日',
+            newsTitle: '网站更新 & 设备强化公告',
+            section1Title: '◆网站改版完成',
+            section1Text: '在简介页面添加了新栏目"对RC文化的热爱"。表达了为了不让RC文化从日本消失，将技术和知识传承给下一代的决心。',
+            section2Title: '◆利用AI优化信息发布',
+            section2Text: '我们在note博客的撰写中利用AI，致力于创作更易理解、更详细的技术文章。目标是创作即使是初学者也能理解的内容。',
+            section3Title: '◆Calmato α40（飞机）组装中',
+            section3Text: '所有机械部件（舵机、电调、电机等）已到齐，目前正在进行组装和微调。完成后将提供飞行报告。',
+            section4Title: '◆测量设备的引进',
+            section4Text: '引进了可以准确测量电调电流值的分析仪。这使得更精确的设置和故障排除成为可能。'
         },
         gallerySection: {
             title: '活动画廊',
@@ -1036,11 +1060,24 @@ function setLanguage(lang) {
     
     // 最新の活動報告セクション
     const newsTitle = document.querySelector('#news .section-title');
-    const newsComingSoon = document.querySelector('#news .coming-soon-title');
-    const newsText = document.querySelector('#news .coming-soon-text');
+    const newsDate = document.querySelector('#news .news-date');
+    const newsArticleTitle = document.querySelector('#news .news-title');
+    const newsSubtitles = document.querySelectorAll('#news .news-subtitle');
+    const newsSectionTexts = document.querySelectorAll('#news .news-section p');
+    
     if (newsTitle) newsTitle.textContent = '📰 ' + trans.newsSection.title;
-    if (newsComingSoon) newsComingSoon.textContent = trans.newsSection.comingSoon;
-    if (newsText) newsText.textContent = trans.newsSection.workInProgress;
+    if (newsDate) newsDate.textContent = trans.newsSection.date;
+    if (newsArticleTitle) newsArticleTitle.textContent = trans.newsSection.newsTitle;
+    
+    if (newsSubtitles[0]) newsSubtitles[0].textContent = trans.newsSection.section1Title;
+    if (newsSubtitles[1]) newsSubtitles[1].textContent = trans.newsSection.section2Title;
+    if (newsSubtitles[2]) newsSubtitles[2].textContent = trans.newsSection.section3Title;
+    if (newsSubtitles[3]) newsSubtitles[3].textContent = trans.newsSection.section4Title;
+    
+    if (newsSectionTexts[0]) newsSectionTexts[0].textContent = trans.newsSection.section1Text;
+    if (newsSectionTexts[1]) newsSectionTexts[1].textContent = trans.newsSection.section2Text;
+    if (newsSectionTexts[2]) newsSectionTexts[2].textContent = trans.newsSection.section3Text;
+    if (newsSectionTexts[3]) newsSectionTexts[3].textContent = trans.newsSection.section4Text;
     
     // 活動ギャラリーセクション
     const galleryTitle = document.querySelector('#gallery .section-title');
