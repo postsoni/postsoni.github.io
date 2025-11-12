@@ -497,24 +497,34 @@ const translations = {
             intro: '皆様からよくいただく質問をまとめました。気になることがあれば、まずこちらをご覧ください。',
             q1: '完全初心者ですが大丈夫ですか？',
             a1: 'もちろんです。何もわからなくても問題ございません！',
-            q2: 'ラジコンを始めるには、どれくらいの費用がかかりますか？',
-            a2: 'お問い合わせいただいた内容をもとに、ラジコンを始める際に必要となる費用の目安を一緒に考えます。実際のお買い物はご自身でしていただく形になりますが、「だいたいこれくらいかな？」という基準を決めたり、それらを選ぶときは相談者のレベルに応じたものをベースに致します。「楽しさを広げる」ことをモットーに、無理のないスタートを応援しています！',
-            q3: 'どこで活動していますか？対応エリアは？',
-            a3: '札幌が基本となります。ネット対応も可能な限り致します。',
-            q4: 'どんなラジコンに対応していますか？',
-            a4: '車、飛行機、ヘリ、戦車、トラック、ボート、トイラジ（対象年齢が低いラジコンなどを指します。）です。ドローンは要相談です。',
-            q5: 'AIってどう使うんですか？',
-            a5: '最適な機体選びや練習プラン作成に活用します。',
-            q6: '修理にはどのくらい時間がかかりますか？',
-            a6: '物によりますが、即日出来上がることが多いです。大きいものかつパーツのお取り寄せまでになると、約1か月ぐらいの場合もあります。工程が多いほど要相談です。',
-            q7: 'オンラインでも相談できますか？',
-            a7: 'もちろんです。概要を詳しく知りたい、お試しでお問い合わせしてみた、なども是非お待ちしております。',
-            q8: '古い機体でも対応できますか？',
-            a8: '可能な限り対応します。（パーツがなくとも自作していく場合もございます。）一例としては、初代タミヤ発売のホーネットを修理し、Uコンの一部も修理しました。',
-            q9: '一緒に活動できますか？',
-            a9: '人はたくさんいたほうが活気づくので、あくまでも私と同じく理念を元に活動することも可能です！',
-            q10: 'クラブへの加入も検討しているのですが…',
-            a10: '自身に合わせたレベルの近場のクラブの紹介や、近場であれば私の所属しているクラブを紹介することも可能です。私のところのクラブでは、コースや飛行場を利用するにあたってビジター料金などもございますので、お気軽に質問お待ちしております。'
+            q2: 'ラジコン初心者は、車・飛行機・ヘリのどれから始めるのがおすすめですか？',
+            a2: 'ラジコンの車の電動から始めてみるのが良いと思います。まずはラジコンの費用を抑えて楽しさを感じることが一番の始まりだと思っております！',
+            q3: 'ラジコンを始めるために最低限必要なものは何ですか？',
+            a3: '最初は、日曜工具があるといいと思います。noteのブログ記事のほうにて初心者の解説である電動カーについてまとめてありますので、よければそちらも参照してもらえると大変うれしく思います。',
+            q4: 'ラジコンを始めるには、どれくらいの費用がかかりますか？',
+            a4: 'お問い合わせいただいた内容をもとに、ラジコンを始める際に必要となる費用の目安を一緒に考えます。実際のお買い物はご自身でしていただく形になりますが、「だいたいこれくらいかな？」という基準を決めたり、それらを選ぶときは相談者のレベルに応じたものをベースに致します。「楽しさを広げる」ことをモットーに、無理のないスタートを応援しています！',
+            q5: 'ラジコンはどこで買うのがおすすめですか？（店舗 vs ネット）',
+            a5: '最初だけは模型店で購入し、慣れたらネットでも問題ございません。すぐに修理などができるツテを作ることもまた重要なことです。ネットだと、最初の一台のみは後から高くつくことも珍しくありませんので、細心の注意を払いましょう。どうしても金額的にネットのみの購入になる場合は、説明書があると大変良いと思います。',
+            q6: '中古のラジコンを買う時の注意点はありますか？',
+            a6: 'できれば、最初は新古品のようなもの、または使用頻度が少ないもので異常に安く売られてないものをオススメします。ご自身のレベルに関係なく、お問い合わせから「この写真の物を買うのは問題なさそうでしょうか？以下URLです。」等とご連絡いただけましたら、レベルに合わせて問題ないかそのページを確認してからお答えします！',
+            q7: 'ラジコンが動かなくなりました。どこを確認すればいいですか？',
+            a7: 'まずは、マニュアルの不具合対策を読んでみましょう。仮にも中古で購入して分からないときは、最近の説明書はネットからダウンロードすることも可能です。やり方などいまいちよく分からないときは、お問い合わせフォームまでご連絡いただけるとスムーズにお伝えできると思います！',
+            q8: '修理にはどのくらい時間がかかりますか？',
+            a8: '物によりますが、即日出来上がることが多いです。大きいものかつパーツのお取り寄せまでになると、約1か月ぐらいの場合もあります。工程が多いほど要相談です。',
+            q9: '古い機体でも対応できますか？',
+            a9: '可能な限り対応します。（パーツがなくとも自作していく場合もございます。）一例としては、初代タミヤ発売のホーネットを修理し、Uコンの一部も修理しました。',
+            q10: 'どこで活動していますか？対応エリアは？',
+            a10: '札幌が基本となります。ネット対応も可能な限り致します。',
+            q11: 'どんなラジコンに対応していますか？',
+            a11: '車、飛行機、ヘリ、戦車、トラック、ボート、トイラジ（対象年齢が低いラジコンなどを指します。）です。ドローンは要相談です。',
+            q12: 'オンラインでも相談できますか？',
+            a12: 'もちろんです。概要を詳しく知りたい、お試しでお問い合わせしてみた、なども是非お待ちしております。',
+            q13: 'AIってどう使うんですか？',
+            a13: '最適な機体選びや練習プラン作成に活用します。',
+            q14: '一緒に活動できますか？',
+            a14: '人はたくさんいたほうが活気づくので、あくまでも私と同じく理念を元に活動することも可能です！',
+            q15: 'クラブへの加入も検討しているのですが…',
+            a15: '自身に合わせたレベルの近場のクラブの紹介や、近場であれば私の所属しているクラブを紹介することも可能です。私のところのクラブでは、コースや飛行場を利用するにあたってビジター料金などもございますので、お気軽に質問お待ちしております。'
         },
         contactSection: {
             title: 'お問い合わせ',
@@ -757,24 +767,34 @@ const translations = {
             intro: 'We\'ve compiled frequently asked questions. If you have concerns, please check here first.',
             q1: 'I\'m a complete beginner, is that okay?',
             a1: 'Of course! No problem even if you know nothing!',
-            q2: 'How much does it cost to start RC?',
-            a2: 'Based on your inquiry, we think together about estimated costs for starting RC. While you make purchases yourself, we help determine "about this much?" standards and select items appropriate for your level. With the motto of "expanding enjoyment," we support starting without strain!',
-            q3: 'Where do you operate? What areas do you cover?',
-            a3: 'Primarily Sapporo. Online support also available as much as possible.',
-            q4: 'What types of RC do you support?',
-            a4: 'Cars, planes, helicopters, tanks, trucks, boats, toy-grade RC (targeting lower ages). Drones require consultation.',
-            q5: 'How do you use AI?',
-            a5: 'We utilize it for optimal vehicle selection and practice plan creation.',
-            q6: 'How long do repairs take?',
-            a6: 'Depends on the item, but often completed same day. For large items requiring part orders, it may take about a month. More complex processes require consultation.',
-            q7: 'Can I consult online?',
-            a7: 'Of course! Whether wanting to know details or just trying inquiry, please feel free to contact us.',
-            q8: 'Can you handle old models?',
-            a8: 'We handle them as much as possible. (Sometimes crafting parts if unavailable.) For example, we\'ve repaired the original Tamiya Hornet and some U-control parts.',
-            q9: 'Can I work with you?',
-            a9: 'More people creates more energy, so activities based on the same philosophy are possible!',
-            q10: 'I\'m considering joining a club...',
-            a10: 'We can introduce nearby clubs matching your level, or if nearby, introduce my own club. Our club has visitor fees for using courses and flying fields, so please feel free to ask questions.'
+            q2: 'For RC beginners, which should I start with: cars, planes, or helicopters?',
+            a2: 'I think starting with electric RC cars is good. First, keeping costs down while experiencing the enjoyment is the best beginning!',
+            q3: 'What are the minimum necessities to start RC?',
+            a3: 'Initially, having basic tools would be good. We have summarized electric cars for beginners in our note blog articles, so we\'d be very happy if you could refer to them.',
+            q4: 'How much does it cost to start RC?',
+            a4: 'Based on your inquiry, we think together about estimated costs for starting RC. While you make purchases yourself, we help determine "about this much?" standards and select items appropriate for your level. With the motto of "expanding enjoyment," we support starting without strain!',
+            q5: 'Where do you recommend buying RC? (Store vs Online)',
+            a5: 'For your first purchase only, buy from a hobby shop, then online is fine once you\'re accustomed. Making connections for immediate repairs is also important. With online, your first unit only may cost more later, so exercise caution. If budget requires online-only purchase, having a manual is very good.',
+            q6: 'What should I watch for when buying used RC?',
+            a6: 'If possible, we recommend something like new-old-stock or items with low usage that aren\'t abnormally cheap. Regardless of your level, if you contact us via inquiry with "Is purchasing this item in the photo okay? Here\'s the URL," we\'ll check that page based on your level before answering!',
+            q7: 'My RC stopped working. What should I check?',
+            a7: 'First, try reading the troubleshooting section in the manual. If you bought it used and don\'t understand, recent manuals are often available for download online. If you don\'t quite understand the procedure, contacting us via the inquiry form will enable smooth communication!',
+            q8: 'How long do repairs take?',
+            a8: 'Depends on the item, but often completed same day. For large items requiring part orders, it may take about a month. More complex processes require consultation.',
+            q9: 'Can you handle old models?',
+            a9: 'We handle them as much as possible. (Sometimes crafting parts if unavailable.) For example, we\'ve repaired the original Tamiya Hornet and some U-control parts.',
+            q10: 'Where do you operate? What areas do you cover?',
+            a10: 'Primarily Sapporo. Online support also available as much as possible.',
+            q11: 'What types of RC do you support?',
+            a11: 'Cars, planes, helicopters, tanks, trucks, boats, toy-grade RC (targeting lower ages). Drones require consultation.',
+            q12: 'Can I consult online?',
+            a12: 'Of course! Whether wanting to know details or just trying inquiry, please feel free to contact us.',
+            q13: 'How do you use AI?',
+            a13: 'We utilize it for optimal vehicle selection and practice plan creation.',
+            q14: 'Can I work with you?',
+            a14: 'More people creates more energy, so activities based on the same philosophy are possible!',
+            q15: 'I\'m considering joining a club...',
+            a15: 'We can introduce nearby clubs matching your level, or if nearby, introduce my own club. Our club has visitor fees for using courses and flying fields, so please feel free to ask questions.'
         },
         contactSection: {
             title: 'Contact',
@@ -1017,24 +1037,34 @@ const translations = {
             intro: '我们整理了大家常问的问题。如有疑问，请先查看这里。',
             q1: '完全新手可以吗？',
             a1: '当然可以！什么都不懂也没问题！',
-            q2: '开始玩遥控需要多少费用？',
-            a2: '根据您的咨询内容，一起考虑开始遥控所需的费用预算。实际购物由您自己进行，但我们会帮助确定"大概这么多？"的标准，选择时会根据咨询者的水平为基础。以"扩展乐趣"为宗旨，支持无负担的开始！',
-            q3: '在哪里活动？对应区域是？',
-            a3: '基本是札幌。网络对应也尽可能进行。',
-            q4: '对应什么样的遥控？',
-            a4: '汽车、飞机、直升机、坦克、卡车、船、玩具遥控（指针对低年龄的遥控等）。无人机需要咨询。',
-            q5: 'AI怎么使用？',
-            a5: '用于最佳机体选择和练习计划制作。',
-            q6: '维修需要多长时间？',
-            a6: '因物品而异，但很多情况下当天完成。大型且需要订购零件的话，可能需要约1个月。工序越多越需要咨询。',
-            q7: '可以在线咨询吗？',
-            a7: '当然可以。想详细了解概要、试着咨询等，都欢迎。',
-            q8: '老旧机体也能对应吗？',
-            a8: '尽可能对应。（即使没有零件也可能自制。）例如，修理了田宫初代发售的Hornet，也修理了部分U-control。',
-            q9: '可以一起活动吗？',
-            a9: '人多了更有活力，所以也可以基于同样理念进行活动！',
-            q10: '我在考虑加入俱乐部...',
-            a10: '可以介绍符合自己水平的附近俱乐部，如果在附近也可以介绍我所属的俱乐部。我们俱乐部使用赛道和飞行场有访客费用，请随时提问。'
+            q2: '遥控初学者应该从汽车、飞机还是直升机开始？',
+            a2: '我认为从电动遥控汽车开始比较好。首先控制费用、感受乐趣是最好的开始！',
+            q3: '开始玩遥控最低限度需要什么？',
+            a3: '最初有基本工具比较好。我们在note博客文章中总结了针对初学者的电动车解说，如果可以的话请参考，我会很高兴。',
+            q4: '开始玩遥控需要多少费用？',
+            a4: '根据您的咨询内容，一起考虑开始遥控所需的费用预算。实际购物由您自己进行，但我们会帮助确定"大概这么多？"的标准，选择时会根据咨询者的水平为基础。以"扩展乐趣"为宗旨，支持无负担的开始！',
+            q5: '建议在哪里购买遥控？（实体店 vs 网络）',
+            a5: '最初只在模型店购买，习惯后网络也没问题。能马上维修的门路也很重要。网络的话，仅第一台可能后来会变贵，所以要非常注意。如果因金额只能网络购买，有说明书比较好。',
+            q6: '购买二手遥控时有什么注意点？',
+            a6: '如果可以的话，推荐准新品或使用频率少且没有异常便宜出售的东西。无论您的水平如何，如果通过咨询表单联系"这张照片的东西买了没问题吗？以下是URL。"等，我会根据水平确认那个页面后再回答！',
+            q7: '遥控不动了。应该确认哪里？',
+            a7: '首先请阅读说明书的故障对策。即使是二手购买不明白，最近的说明书也可以从网上下载。如果方法不太明白，通过联系表单联系的话可以顺利传达！',
+            q8: '维修需要多长时间？',
+            a8: '因物品而异，但很多情况下当天完成。大型且需要订购零件的话，可能需要约1个月。工序越多越需要咨询。',
+            q9: '老旧机体也能对应吗？',
+            a9: '尽可能对应。（即使没有零件也可能自制。）例如，修理了田宫初代发售的Hornet，也修理了部分U-control。',
+            q10: '在哪里活动？对应区域是？',
+            a10: '基本是札幌。网络对应也尽可能进行。',
+            q11: '对应什么样的遥控？',
+            a11: '汽车、飞机、直升机、坦克、卡车、船、玩具遥控（指针对低年龄的遥控等）。无人机需要咨询。',
+            q12: '可以在线咨询吗？',
+            a12: '当然可以。想详细了解概要、试着咨询等，都欢迎。',
+            q13: 'AI怎么使用？',
+            a13: '用于最佳机体选择和练习计划制作。',
+            q14: '可以一起活动吗？',
+            a14: '人多了更有活力，所以也可以基于同样理念进行活动！',
+            q15: '我在考虑加入俱乐部...',
+            a15: '可以介绍符合自己水平的附近俱乐部，如果在附近也可以介绍我所属的俱乐部。我们俱乐部使用赛道和飞行场有访客费用，请随时提问。'
         },
         contactSection: {
             title: '联系我们',
@@ -1672,6 +1702,46 @@ function setLanguage(lang) {
         const a10 = faqItems[9].querySelector('.faq-answer p');
         if (q10) q10.textContent = trans.faqSection.q10;
         if (a10) a10.textContent = trans.faqSection.a10;
+    }
+    
+    // Q11
+    if (faqItems[10]) {
+        const q11 = faqItems[10].querySelector('.faq-question h3');
+        const a11 = faqItems[10].querySelector('.faq-answer p');
+        if (q11) q11.textContent = trans.faqSection.q11;
+        if (a11) a11.textContent = trans.faqSection.a11;
+    }
+    
+    // Q12
+    if (faqItems[11]) {
+        const q12 = faqItems[11].querySelector('.faq-question h3');
+        const a12 = faqItems[11].querySelector('.faq-answer p');
+        if (q12) q12.textContent = trans.faqSection.q12;
+        if (a12) a12.textContent = trans.faqSection.a12;
+    }
+    
+    // Q13
+    if (faqItems[12]) {
+        const q13 = faqItems[12].querySelector('.faq-question h3');
+        const a13 = faqItems[12].querySelector('.faq-answer p');
+        if (q13) q13.textContent = trans.faqSection.q13;
+        if (a13) a13.textContent = trans.faqSection.a13;
+    }
+    
+    // Q14
+    if (faqItems[13]) {
+        const q14 = faqItems[13].querySelector('.faq-question h3');
+        const a14 = faqItems[13].querySelector('.faq-answer p');
+        if (q14) q14.textContent = trans.faqSection.q14;
+        if (a14) a14.textContent = trans.faqSection.a14;
+    }
+    
+    // Q15
+    if (faqItems[14]) {
+        const q15 = faqItems[14].querySelector('.faq-question h3');
+        const a15 = faqItems[14].querySelector('.faq-answer p');
+        if (q15) q15.textContent = trans.faqSection.q15;
+        if (a15) a15.textContent = trans.faqSection.a15;
     }
     
     // お問い合わせセクション - タイトル
