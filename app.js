@@ -520,6 +520,10 @@ const translations = {
             title: 'お問い合わせ',
             description1: 'お問い合わせは以下のフォームからお願いいたします。',
             description2: 'RC関連のご質問、修理のご依頼、サポートのご相談など、お気軽にお問い合わせください。',
+            responseNoticeTitle: 'ご返信について',
+            responseNoticeText: 'お返事はできる限り早急に対応させていただいておりますが、身体の都合によりご連絡が遅れる場合がございます。ご不便をおかけいたしますが、少々お時間をいただけますとありがたく存じます。',
+            emailNoticeTitle: 'メール受信設定のお願い',
+            emailNoticeText: 'お手数をおかけしますが、「@hotmail.co.jp」からのメールを受信できるよう、ドメインの許可設定をお願いいたします。また、迷惑メールフォルダに振り分けられている可能性もございますので、ご確認をお願いいたします。',
             notice: '※このフォームは商業目的ではなく、個人活動に関するお問い合わせ専用です。',
             buttonText: '📧 お問い合わせフォームを開く'
         },
@@ -554,7 +558,15 @@ const translations = {
             monthlyNewModelDetail: 'RC-Factory Super Extra Lの作成',
             monthlyNewsTitle: '新着その他情報',
             monthlyNewsDetail: 'Heli-Xのシミュレーター調整、RealFlight Evolutionの新機体導入とモデル設定',
-            ctaContact: 'ご相談はこちらから'
+            trustStatLabel1: '年の経験',
+            trustStatLabel2: '修理実績',
+            trustStatLabel3: '対応メーカー',
+            beginnerGuideTitle: 'ラジコンが初めての方へ',
+            beginnerGuideText: '「何から始めればいいの？」という疑問にお答えします。機体選びから基本操作まで、ステップバイステップでご案内します。',
+            beginnerGuideButton: '初心者ガイドを見る →',
+            ctaHighlightTitle: 'お気軽にご相談ください',
+            ctaHighlightText: '修理のご依頼、技術的なご質問、初心者の方へのサポートなど、どんなことでもお問い合わせください。',
+            ctaContact: '📧 お問い合わせフォームへ'
         }
     },
     en: {
@@ -768,6 +780,10 @@ const translations = {
             title: 'Contact',
             description1: 'Please contact us through the form below.',
             description2: 'Feel free to inquire about RC-related questions, repair requests, support consultations, etc.',
+            responseNoticeTitle: 'About Our Response',
+            responseNoticeText: 'We strive to respond as quickly as possible, but due to physical circumstances, our reply may be delayed. We apologize for any inconvenience and appreciate your patience.',
+            emailNoticeTitle: 'Email Reception Settings',
+            emailNoticeText: 'Please allow emails from "@hotmail.co.jp" in your domain settings. Also, please check your spam folder as our emails may be filtered there.',
             notice: '※This form is for personal activity inquiries, not commercial purposes.',
             buttonText: '📧 Open Contact Form'
         },
@@ -802,7 +818,15 @@ const translations = {
             monthlyNewModelDetail: 'RC-Factory Super Extra L build',
             monthlyNewsTitle: 'Latest Updates',
             monthlyNewsDetail: 'Heli-X simulator adjustments, RealFlight Evolution new aircraft introduction and model settings',
-            ctaContact: 'Contact for Consultation'
+            trustStatLabel1: 'Years of Experience',
+            trustStatLabel2: 'Repairs Completed',
+            trustStatLabel3: 'Manufacturers Supported',
+            beginnerGuideTitle: 'For First-Time RC Enthusiasts',
+            beginnerGuideText: 'We answer your questions like "Where do I start?" From choosing your vehicle to basic operations, we guide you step by step.',
+            beginnerGuideButton: 'View Beginner\'s Guide →',
+            ctaHighlightTitle: 'Feel Free to Contact Us',
+            ctaHighlightText: 'For repair requests, technical questions, beginner support, or any inquiries, please feel free to contact us.',
+            ctaContact: '📧 Contact for Consultation'
         }
     },
     zh: {
@@ -1016,6 +1040,10 @@ const translations = {
             title: '联系我们',
             description1: '请通过以下表单联系。',
             description2: 'RC相关问题、维修委托、支持咨询等，请随时联系。',
+            responseNoticeTitle: '关于回复',
+            responseNoticeText: '我们会尽快回复，但由于身体原因，回复可能会延迟。给您带来不便，敬请谅解。',
+            emailNoticeTitle: '邮件接收设置',
+            emailNoticeText: '请设置允许接收来自"@hotmail.co.jp"的邮件。另外，请检查垃圾邮件文件夹，因为可能被过滤到那里。',
             notice: '※本表单不用于商业目的，专用于个人活动咨询。',
             buttonText: '📧 打开联系表单'
         },
@@ -1050,7 +1078,15 @@ const translations = {
             monthlyNewModelDetail: 'RC-Factory Super Extra L的制作',
             monthlyNewsTitle: '最新更新',
             monthlyNewsDetail: 'Heli-X模拟器调整、RealFlight Evolution新机体导入和模型设定',
-            ctaContact: '点击此处咨询'
+            trustStatLabel1: '年经验',
+            trustStatLabel2: '维修实绩',
+            trustStatLabel3: '支持制造商',
+            beginnerGuideTitle: '首次接触RC的朋友',
+            beginnerGuideText: '解答"从哪里开始？"的疑问。从选择机体到基本操作，逐步指导。',
+            beginnerGuideButton: '查看新手指南 →',
+            ctaHighlightTitle: '欢迎随时咨询',
+            ctaHighlightText: '维修委托、技术问题、新手支持等，任何问题都欢迎咨询。',
+            ctaContact: '📧 咨询联系表单'
         }
     }
 };
@@ -1189,17 +1225,20 @@ function setLanguage(lang) {
     const statsTitle = document.querySelector('.stats-title');
     if (statsTitle) statsTitle.textContent = trans.topSection.statsTitle;
     
-    // TOPセクション - 統計数値とラベル
-    const statNumbers = document.querySelectorAll('.stat-number');
-    const statLabels = document.querySelectorAll('.stat-label');
-    if (statNumbers[0]) statNumbers[0].textContent = trans.topSection.stat1Number;
-    if (statLabels[0]) statLabels[0].innerHTML = trans.topSection.stat1Label;
-    if (statNumbers[1]) statNumbers[1].textContent = trans.topSection.stat2Number;
-    if (statLabels[1]) statLabels[1].innerHTML = trans.topSection.stat2Label;
-    if (statNumbers[2]) statNumbers[2].textContent = trans.topSection.stat3Number;
-    if (statLabels[2]) statLabels[2].innerHTML = trans.topSection.stat3Label;
-    if (statNumbers[3]) statNumbers[3].textContent = trans.topSection.stat4Number;
-    if (statLabels[3]) statLabels[3].innerHTML = trans.topSection.stat4Label;
+    // TOPセクション - 統計数値とラベル（.top-stats-section内のみ）
+    const topStatsSection = document.querySelector('.top-stats-section');
+    if (topStatsSection) {
+        const statNumbers = topStatsSection.querySelectorAll('.stat-number');
+        const statLabels = topStatsSection.querySelectorAll('.stat-label');
+        if (statNumbers[0]) statNumbers[0].textContent = trans.topSection.stat1Number;
+        if (statLabels[0]) statLabels[0].innerHTML = trans.topSection.stat1Label;
+        if (statNumbers[1]) statNumbers[1].textContent = trans.topSection.stat2Number;
+        if (statLabels[1]) statLabels[1].innerHTML = trans.topSection.stat2Label;
+        if (statNumbers[2]) statNumbers[2].textContent = trans.topSection.stat3Number;
+        if (statLabels[2]) statLabels[2].innerHTML = trans.topSection.stat3Label;
+        if (statNumbers[3]) statNumbers[3].textContent = trans.topSection.stat4Number;
+        if (statLabels[3]) statLabels[3].innerHTML = trans.topSection.stat4Label;
+    }
     
     // TOPセクション - 今月の活動
     const reportTitle = document.querySelector('.report-title');
@@ -1222,9 +1261,29 @@ function setLanguage(lang) {
     if (reportDetails[0]) reportDetails[0].textContent = trans.topSection.monthlyNewModelDetail;
     if (reportDetails[1]) reportDetails[1].textContent = trans.topSection.monthlyNewsDetail;
     
+    // TOPセクション - 信頼性の統計
+    const trustStatLabels = document.querySelectorAll('.trust-stats .stat-label');
+    if (trustStatLabels[0]) trustStatLabels[0].textContent = trans.topSection.trustStatLabel1;
+    if (trustStatLabels[1]) trustStatLabels[1].textContent = trans.topSection.trustStatLabel2;
+    if (trustStatLabels[2]) trustStatLabels[2].textContent = trans.topSection.trustStatLabel3;
+    
+    // TOPセクション - 初心者ガイドへの誘導
+    const beginnerGuideTitle = document.querySelector('.beginner-guide-cta .guide-cta-title');
+    const beginnerGuideText = document.querySelector('.beginner-guide-cta .guide-cta-description');
+    const beginnerGuideButton = document.querySelector('.beginner-guide-cta .guide-cta-button');
+    if (beginnerGuideTitle) beginnerGuideTitle.textContent = trans.topSection.beginnerGuideTitle;
+    if (beginnerGuideText) beginnerGuideText.textContent = trans.topSection.beginnerGuideText;
+    if (beginnerGuideButton) beginnerGuideButton.textContent = trans.topSection.beginnerGuideButton;
+    
+    // TOPセクション - CTA強化
+    const ctaHighlightTitle = document.querySelector('.cta-highlight-title');
+    const ctaHighlightText = document.querySelector('.cta-highlight-text');
+    if (ctaHighlightTitle) ctaHighlightTitle.textContent = trans.topSection.ctaHighlightTitle;
+    if (ctaHighlightText) ctaHighlightText.textContent = trans.topSection.ctaHighlightText;
+    
     // TOPセクション - CTAボタン
     const ctaBtn = document.querySelector('.cta-primary');
-    if (ctaBtn) ctaBtn.textContent = '👉 ' + trans.topSection.ctaContact;
+    if (ctaBtn) ctaBtn.textContent = trans.topSection.ctaContact;
     
     // 初めての方へセクション
     const roadmapTitle = document.querySelector('#roadmap .section-title');
@@ -1623,6 +1682,18 @@ function setLanguage(lang) {
     const contactDescriptions = document.querySelectorAll('#contact .contact-description');
     if (contactDescriptions[0]) contactDescriptions[0].textContent = trans.contactSection.description1;
     if (contactDescriptions[1]) contactDescriptions[1].textContent = trans.contactSection.description2;
+    
+    // お問い合わせセクション - 返信遅延の注意
+    const responseNoticeTitle = document.querySelector('#contact .contact-important-notice .notice-content h4');
+    const responseNoticeText = document.querySelector('#contact .contact-important-notice .notice-content p');
+    if (responseNoticeTitle) responseNoticeTitle.textContent = trans.contactSection.responseNoticeTitle;
+    if (responseNoticeText) responseNoticeText.innerHTML = trans.contactSection.responseNoticeText.replace(/身体の都合によりご連絡が遅れる場合がございます/g, '<strong>$&</strong>');
+    
+    // お問い合わせセクション - メール受信設定の注意
+    const emailNoticeTitle = document.querySelector('#contact .contact-technical-notice .notice-content h4');
+    const emailNoticeText = document.querySelector('#contact .contact-technical-notice .notice-content p');
+    if (emailNoticeTitle) emailNoticeTitle.textContent = trans.contactSection.emailNoticeTitle;
+    if (emailNoticeText) emailNoticeText.innerHTML = trans.contactSection.emailNoticeText.replace(/「@hotmail\.co\.jp」からのメールを受信できるよう、ドメインの許可設定をお願いいたします/g, '<strong>$&</strong>').replace(/迷惑メールフォルダ/g, '<strong>$&</strong>');
     
     // お問い合わせセクション - 注記とボタン
     const contactNotice = document.querySelector('#contact .contact-notice');
