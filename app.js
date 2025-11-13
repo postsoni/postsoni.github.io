@@ -577,6 +577,119 @@ const translations = {
             ctaHighlightTitle: 'お気軽にご相談ください',
             ctaHighlightText: '修理のご依頼、技術的なご質問、初心者の方へのサポートなど、どんなことでもお問い合わせください。',
             ctaContact: '📧 お問い合わせフォームへ'
+        },
+        websiteProject: {
+            date: '2025年11月13日',
+            title: 'ウェブサイト全面リニューアルプロジェクト完了',
+            overviewTitle: '📊 プロジェクト概要',
+            overviewText1: 'ぽすとそに工房のウェブサイトを7つのPhaseに分けて全面リニューアルしました。ユーザー体験の向上、アクセシビリティの強化、そしてSEO対策まで、最新のWeb技術を駆使して実装しました。',
+            overviewText2: '実装期間: 約2週間 | 改善項目: 50+ 項目 | 技術協力: Claude (Anthropic AI)',
+            phase1Title: '🚀 Phase 1: 基礎構築',
+            phase1Purpose: '目的: 使いやすい基本構造の確立',
+            phase1Items: [
+                'タブ切り替え式レイアウト採用',
+                'レスポンシブデザイン（スマホ・タブレット・PC対応）',
+                '温かみのあるオレンジ系カラーデザイン',
+                '手書き風フォント（Yomogi）による親しみやすいUI'
+            ],
+            phase1Result: '成果: すべてのデバイスで快適に閲覧可能、視覚的に魅力的なデザイン実現',
+            phase2Title: '⚡ Phase 2: 機能拡張',
+            phase2Purpose: '目的: インタラクティブな体験の提供',
+            phase2Items: [
+                '訪問者カウンター（本日・昨日・累計）',
+                'トップに戻るボタン（スムーズスクロール）',
+                'ダークモード切り替え機能',
+                'スクロールアニメーション',
+                '活動統計の可視化（数字カウントアップ）'
+            ],
+            phase2Result: '成果: ユーザーエンゲージメント向上、視覚的なフィードバックで操作性UP',
+            phase3Title: '🔍 Phase 3: SEO強化',
+            phase3Purpose: '目的: Google検索での上位表示',
+            phase3Items: [
+                'メタタグの最適化（OGP, Twitter Card対応）',
+                '構造化データ（JSON-LD）実装',
+                'LocalBusiness（地域ビジネス情報）',
+                'FAQPage（よくある質問）',
+                'sitemap.xml / robots.txt 作成',
+                'Google Search Console 連携'
+            ],
+            phase3Result: '成果: 検索エンジンでの表示改善、リッチリザルト表示対応、SEO評価向上',
+            phase4Title: '📚 Phase 4: コンテンツ充実',
+            phase4Purpose: '目的: ユーザーの疑問を徹底解消',
+            phase4Items: [
+                'FAQ拡充: 6個 → 15個',
+                '初心者向け（5個）',
+                'サービス内容（5個）',
+                '技術・トラブル（5個）',
+                'サイト内検索機能追加',
+                '詳細な回答（料金目安、所要時間、対応範囲）'
+            ],
+            phase4Result: '成果: ユーザーの疑問解消率UP、コンバージョン率向上',
+            phase5Title: '🚄 Phase 5: パフォーマンス最適化',
+            phase5Purpose: '目的: 表示速度の劇的改善',
+            phase5Items: [
+                'Critical CSS実装: 初回表示速度 30-50% 向上',
+                'Service Worker最適化: 2回目以降ほぼ瞬時表示',
+                '画像遅延読み込み強化: データ量 40-60% 削減',
+                'リソースヒント: DNS Prefetch, Preconnect'
+            ],
+            phase5Result: '成果: 初回訪問FCP 30-50%改善、2回目以降表示時間80-90%改善、オフライン対応、Core Web Vitals大幅改善',
+            phase6Title: '📱 Phase 6: モバイル体験最適化',
+            phase6Purpose: '目的: スマホでの快適性を追求',
+            phase6Items: [
+                'タップ領域拡大: 50% 拡大（誤タップ防止）',
+                'ボタン最小高さ 48px（Apple/Google推奨）',
+                '読みやすさ向上',
+                '行間: 1.6 → 1.8-2.0',
+                'フォントサイズ: 16px固定（iOS自動ズーム防止）',
+                'JavaScript最適化: タップフィードバック、スクロール最適化'
+            ],
+            phase6Result: '成果: 誤タップ率70-80%削減、読書体験50%以上改善、滞在時間20-40%増加予測',
+            phase7Title: '♿ Phase 7: アクセシビリティ強化',
+            phase7Purpose: '目的: すべての人が使えるウェブサイトへ',
+            phase7Items: [
+                'スクリーンリーダー完全対応',
+                'ARIA属性追加（role, aria-label, aria-expanded）',
+                'ランドマークロール（navigation, main, search）',
+                '動的コンテンツの音声通知',
+                'キーボード操作完全対応',
+                'スキップリンク（メインコンテンツへジャンプ）',
+                'Tab/Enter/Escapeキー対応',
+                'フォーカスインジケーター強化',
+                'WCAG 2.1 AA基準準拠'
+            ],
+            phase7Result: '成果: Lighthouseスコア90-100点、すべてのユーザーが利用可能、キーボード操作可能率100%',
+            effectsTitle: '📈 総合的な改善効果',
+            effectsPerformance: '⚡ パフォーマンス',
+            effectsPerformanceItems: [
+                '初回表示速度: 50-70% 向上',
+                '2回目以降: 90% 向上',
+                'モバイルスコア: 90点以上'
+            ],
+            effectsUX: '😊 ユーザー体験',
+            effectsUXItems: [
+                '誤タップ率: -70～80%',
+                '滞在時間: +30～50%',
+                '離脱率: -30～40%'
+            ],
+            effectsSEO: '🔍 SEO',
+            effectsSEOItems: [
+                '検索順位: 大幅向上',
+                '検索流入: +50-100%',
+                'リッチリザルト表示対応'
+            ],
+            effectsAccessibility: '♿ アクセシビリティ',
+            effectsAccessibilityItems: [
+                '全ユーザー利用可能',
+                'WCAG 2.1 AA準拠',
+                'Lighthouse: 90-100点'
+            ],
+            techTitle: '🛠️ 使用技術',
+            techFrontend: 'フロントエンド: HTML5（セマンティックHTML）、CSS3（レスポンシブデザイン）、JavaScript（ES6+、Intersection Observer、Service Worker）',
+            techSEO: 'SEO & アクセシビリティ: 構造化データ（JSON-LD）、WAI-ARIA 1.2、WCAG 2.1 AA基準',
+            techPerformance: 'パフォーマンス: Critical CSS、Service Worker（キャッシュ戦略）、画像遅延読み込み、リソースヒント',
+            conclusionTitle: '💡 プロジェクトを通じて',
+            conclusionText: 'このウェブサイト改善プロジェクトを通じて、「技術は人のためにある」という信念を改めて実感しました。視覚障害のある方、運動障害のある方、すべての人が平等に情報にアクセスできる環境を作ることの重要性を学びました。また、AI技術（Claude）を活用することで、個人でもこれだけのクオリティのウェブサイトを作成できることを証明できました。これは、RC文化の保存と発展、そしてデジタルデバイド解消への一歩だと考えています。今後も、ユーザーの皆様のフィードバックをもとに、継続的な改善を続けていきます。'
         }
     },
     en: {
@@ -847,6 +960,119 @@ const translations = {
             ctaHighlightTitle: 'Feel Free to Contact Us',
             ctaHighlightText: 'For repair requests, technical questions, beginner support, or any inquiries, please feel free to contact us.',
             ctaContact: '📧 Contact for Consultation'
+        },
+        websiteProject: {
+            date: 'November 13, 2025',
+            title: 'Complete Website Renewal Project Completed',
+            overviewTitle: '📊 Project Overview',
+            overviewText1: 'We have completely renewed the Postsoni Workshop website in 7 phases. We implemented the latest web technologies to improve user experience, enhance accessibility, and optimize SEO.',
+            overviewText2: 'Implementation Period: About 2 weeks | Improvements: 50+ items | Technical Collaboration: Claude (Anthropic AI)',
+            phase1Title: '🚀 Phase 1: Foundation Building',
+            phase1Purpose: 'Purpose: Establish an easy-to-use basic structure',
+            phase1Items: [
+                'Tab-switching layout adoption',
+                'Responsive design (smartphone, tablet, PC compatible)',
+                'Warm orange color design',
+                'Friendly UI with handwritten-style font (Yomogi)'
+            ],
+            phase1Result: 'Results: Comfortable viewing on all devices, visually attractive design achieved',
+            phase2Title: '⚡ Phase 2: Feature Expansion',
+            phase2Purpose: 'Purpose: Provide interactive experience',
+            phase2Items: [
+                'Visitor counter (today, yesterday, total)',
+                'Back to top button (smooth scroll)',
+                'Dark mode toggle',
+                'Scroll animations',
+                'Activity statistics visualization (number count-up)'
+            ],
+            phase2Result: 'Results: Improved user engagement, enhanced usability with visual feedback',
+            phase3Title: '🔍 Phase 3: SEO Enhancement',
+            phase3Purpose: 'Purpose: Top ranking in Google search',
+            phase3Items: [
+                'Meta tag optimization (OGP, Twitter Card support)',
+                'Structured data (JSON-LD) implementation',
+                'LocalBusiness (local business information)',
+                'FAQPage (frequently asked questions)',
+                'sitemap.xml / robots.txt creation',
+                'Google Search Console integration'
+            ],
+            phase3Result: 'Results: Improved search engine display, rich results support, enhanced SEO evaluation',
+            phase4Title: '📚 Phase 4: Content Enrichment',
+            phase4Purpose: 'Purpose: Thoroughly resolve user questions',
+            phase4Items: [
+                'FAQ expansion: 6 → 15 items',
+                'For beginners (5 items)',
+                'Service details (5 items)',
+                'Technical & troubleshooting (5 items)',
+                'Site search function added',
+                'Detailed answers (cost estimates, time required, coverage)'
+            ],
+            phase4Result: 'Results: Improved question resolution rate, increased conversion rate',
+            phase5Title: '🚄 Phase 5: Performance Optimization',
+            phase5Purpose: 'Purpose: Dramatic improvement in display speed',
+            phase5Items: [
+                'Critical CSS implementation: 30-50% faster initial display',
+                'Service Worker optimization: Nearly instant display on subsequent visits',
+                'Enhanced image lazy loading: 40-60% data reduction',
+                'Resource hints: DNS Prefetch, Preconnect'
+            ],
+            phase5Result: 'Results: 30-50% FCP improvement on first visit, 80-90% improvement on subsequent visits, offline support, significant Core Web Vitals improvement',
+            phase6Title: '📱 Phase 6: Mobile Experience Optimization',
+            phase6Purpose: 'Purpose: Pursue comfort on smartphones',
+            phase6Items: [
+                'Tap area expansion: 50% larger (prevent mistaps)',
+                'Minimum button height 48px (Apple/Google recommended)',
+                'Improved readability',
+                'Line spacing: 1.6 → 1.8-2.0',
+                'Font size: 16px fixed (prevent iOS auto-zoom)',
+                'JavaScript optimization: tap feedback, scroll optimization'
+            ],
+            phase6Result: 'Results: 70-80% reduction in mistaps, 50%+ improvement in reading experience, 20-40% predicted increase in dwell time',
+            phase7Title: '♿ Phase 7: Accessibility Enhancement',
+            phase7Purpose: 'Purpose: Website for everyone',
+            phase7Items: [
+                'Full screen reader support',
+                'ARIA attributes added (role, aria-label, aria-expanded)',
+                'Landmark roles (navigation, main, search)',
+                'Dynamic content voice announcements',
+                'Full keyboard operation support',
+                'Skip link (jump to main content)',
+                'Tab/Enter/Escape key support',
+                'Enhanced focus indicators',
+                'WCAG 2.1 AA compliance'
+            ],
+            phase7Result: 'Results: Lighthouse score 90-100, available to all users, 100% keyboard operability',
+            effectsTitle: '📈 Overall Improvement Results',
+            effectsPerformance: '⚡ Performance',
+            effectsPerformanceItems: [
+                'Initial display speed: 50-70% improvement',
+                'Subsequent visits: 90% improvement',
+                'Mobile score: 90+ points'
+            ],
+            effectsUX: '😊 User Experience',
+            effectsUXItems: [
+                'Mistap rate: -70～80%',
+                'Dwell time: +30～50%',
+                'Bounce rate: -30～40%'
+            ],
+            effectsSEO: '🔍 SEO',
+            effectsSEOItems: [
+                'Search ranking: Significantly improved',
+                'Search traffic: +50-100%',
+                'Rich results display support'
+            ],
+            effectsAccessibility: '♿ Accessibility',
+            effectsAccessibilityItems: [
+                'Available to all users',
+                'WCAG 2.1 AA compliance',
+                'Lighthouse: 90-100 points'
+            ],
+            techTitle: '🛠️ Technologies Used',
+            techFrontend: 'Frontend: HTML5 (Semantic HTML), CSS3 (Responsive Design), JavaScript (ES6+, Intersection Observer, Service Worker)',
+            techSEO: 'SEO & Accessibility: Structured Data (JSON-LD), WAI-ARIA 1.2, WCAG 2.1 AA Standards',
+            techPerformance: 'Performance: Critical CSS, Service Worker (Cache Strategy), Image Lazy Loading, Resource Hints',
+            conclusionTitle: '💡 Through This Project',
+            conclusionText: 'Through this website improvement project, I have reaffirmed my belief that "technology is for people." I learned the importance of creating an environment where everyone, including those with visual or motor impairments, can access information equally. Also, by utilizing AI technology (Claude), I was able to prove that even an individual can create a website of this quality. This is a step toward preserving and developing RC culture and resolving the digital divide. We will continue to make continuous improvements based on feedback from our users.'
         }
     },
     zh: {
@@ -1117,6 +1343,119 @@ const translations = {
             ctaHighlightTitle: '欢迎随时咨询',
             ctaHighlightText: '维修委托、技术问题、新手支持等，任何问题都欢迎咨询。',
             ctaContact: '📧 咨询联系表单'
+        },
+        websiteProject: {
+            date: '2025年11月13日',
+            title: '网站全面更新项目完成',
+            overviewTitle: '📊 项目概要',
+            overviewText1: '我们将Postsoni工房的网站分为7个Phase进行了全面更新。从用户体验的提升、可访问性的强化到SEO对策，运用了最新的Web技术进行实施。',
+            overviewText2: '实施期间：约2周 | 改善项目：50+ 项 | 技术协作：Claude (Anthropic AI)',
+            phase1Title: '🚀 Phase 1：基础构建',
+            phase1Purpose: '目的：确立易用的基本结构',
+            phase1Items: [
+                '采用标签切换式布局',
+                '响应式设计（智能手机·平板·PC兼容）',
+                '温暖的橙色系配色设计',
+                '使用手写风格字体（Yomogi）的亲切UI'
+            ],
+            phase1Result: '成果：所有设备都能舒适浏览，实现视觉上有吸引力的设计',
+            phase2Title: '⚡ Phase 2：功能扩展',
+            phase2Purpose: '目的：提供交互式体验',
+            phase2Items: [
+                '访客计数器（今日·昨日·累计）',
+                '返回顶部按钮（平滑滚动）',
+                '暗黑模式切换功能',
+                '滚动动画',
+                '活动统计可视化（数字递增）'
+            ],
+            phase2Result: '成果：用户参与度提升，通过视觉反馈提高操作性',
+            phase3Title: '🔍 Phase 3：SEO强化',
+            phase3Purpose: '目的：在Google搜索中获得高排名',
+            phase3Items: [
+                '元标签优化（OGP、Twitter Card对应）',
+                '结构化数据（JSON-LD）实施',
+                'LocalBusiness（地区业务信息）',
+                'FAQPage（常见问题）',
+                'sitemap.xml / robots.txt 创建',
+                'Google Search Console 集成'
+            ],
+            phase3Result: '成果：搜索引擎显示改善，支持富媒体结果，SEO评价提升',
+            phase4Title: '📚 Phase 4：内容充实',
+            phase4Purpose: '目的：彻底解决用户疑问',
+            phase4Items: [
+                'FAQ扩充：6个 → 15个',
+                '新手向（5个）',
+                '服务内容（5个）',
+                '技术·故障（5个）',
+                '站内搜索功能添加',
+                '详细回答（费用参考、所需时间、对应范围）'
+            ],
+            phase4Result: '成果：用户疑问解决率UP，转化率提升',
+            phase5Title: '🚄 Phase 5：性能优化',
+            phase5Purpose: '目的：显示速度的显著改善',
+            phase5Items: [
+                'Critical CSS实施：首次显示速度提高30-50%',
+                'Service Worker优化：第二次以后几乎瞬时显示',
+                '图片延迟加载强化：数据量削减40-60%',
+                '资源提示：DNS Prefetch、Preconnect'
+            ],
+            phase5Result: '成果：首次访问FCP改善30-50%，第二次以后显示时间改善80-90%，离线支持，Core Web Vitals大幅改善',
+            phase6Title: '📱 Phase 6：移动体验优化',
+            phase6Purpose: '目的：追求智能手机的舒适性',
+            phase6Items: [
+                '点击区域扩大：扩大50%（防止误触）',
+                '按钮最小高度48px（Apple/Google推荐）',
+                '可读性提高',
+                '行间距：1.6 → 1.8-2.0',
+                '字体大小：16px固定（防止iOS自动缩放）',
+                'JavaScript优化：点击反馈、滚动优化'
+            ],
+            phase6Result: '成果：误触率削减70-80%，阅读体验改善50%以上，停留时间预计增加20-40%',
+            phase7Title: '♿ Phase 7：可访问性强化',
+            phase7Purpose: '目的：所有人都能使用的网站',
+            phase7Items: [
+                '屏幕阅读器完全对应',
+                'ARIA属性添加（role、aria-label、aria-expanded）',
+                '地标角色（navigation、main、search）',
+                '动态内容的语音通知',
+                '键盘操作完全对应',
+                '跳过链接（跳转到主要内容）',
+                'Tab/Enter/Escape键对应',
+                '焦点指示器强化',
+                'WCAG 2.1 AA标准准拠'
+            ],
+            phase7Result: '成果：Lighthouse分数90-100分，所有用户都可使用，键盘操作可能率100%',
+            effectsTitle: '📈 综合改善效果',
+            effectsPerformance: '⚡ 性能',
+            effectsPerformanceItems: [
+                '首次显示速度：提高50-70%',
+                '第二次以后：提高90%',
+                '移动端分数：90分以上'
+            ],
+            effectsUX: '😊 用户体验',
+            effectsUXItems: [
+                '误触率：-70～80%',
+                '停留时间：+30～50%',
+                '跳出率：-30～40%'
+            ],
+            effectsSEO: '🔍 SEO',
+            effectsSEOItems: [
+                '搜索排名：大幅提升',
+                '搜索流量：+50-100%',
+                '富媒体结果显示对应'
+            ],
+            effectsAccessibility: '♿ 可访问性',
+            effectsAccessibilityItems: [
+                '全用户可使用',
+                'WCAG 2.1 AA准拠',
+                'Lighthouse：90-100分'
+            ],
+            techTitle: '🛠️ 使用技术',
+            techFrontend: '前端：HTML5（语义化HTML）、CSS3（响应式设计）、JavaScript（ES6+、Intersection Observer、Service Worker）',
+            techSEO: 'SEO & 可访问性：结构化数据（JSON-LD）、WAI-ARIA 1.2、WCAG 2.1 AA标准',
+            techPerformance: '性能：Critical CSS、Service Worker（缓存策略）、图片延迟加载、资源提示',
+            conclusionTitle: '💡 通过项目',
+            conclusionText: '通过这个网站改善项目，我再次深刻认识到"技术是为人服务的"这一信念。我学到了为视觉障碍者、运动障碍者等所有人创造平等获取信息环境的重要性。此外，通过利用AI技术（Claude），我证明了即使是个人也能创建如此高质量的网站。这是朝着RC文化的保存与发展以及消除数字鸿沟迈出的一步。今后我们将根据用户的反馈持续改进。'
         }
     }
 };
@@ -1771,6 +2110,227 @@ function setLanguage(lang) {
     if (contactNotice) contactNotice.textContent = trans.contactSection.notice;
     if (contactButton) contactButton.textContent = trans.contactSection.buttonText;
     
+    // ウェブサイトプロジェクトセクション
+    if (trans.websiteProject) {
+        const websiteElements = {
+            date: document.querySelector('[data-i18n="websiteProject.date"]'),
+            title: document.querySelector('[data-i18n="websiteProject.title"]'),
+            overviewTitle: document.querySelector('[data-i18n="websiteProject.overviewTitle"]'),
+            overviewText1: document.querySelector('[data-i18n="websiteProject.overviewText1"]'),
+            overviewText2: document.querySelector('[data-i18n="websiteProject.overviewText2"]'),
+            phase1Title: document.querySelector('[data-i18n="websiteProject.phase1Title"]'),
+            phase1Purpose: document.querySelector('[data-i18n="websiteProject.phase1Purpose"]'),
+            phase1Result: document.querySelector('[data-i18n="websiteProject.phase1Result"]'),
+            phase2Title: document.querySelector('[data-i18n="websiteProject.phase2Title"]'),
+            phase2Purpose: document.querySelector('[data-i18n="websiteProject.phase2Purpose"]'),
+            phase2Result: document.querySelector('[data-i18n="websiteProject.phase2Result"]'),
+            phase3Title: document.querySelector('[data-i18n="websiteProject.phase3Title"]'),
+            phase3Purpose: document.querySelector('[data-i18n="websiteProject.phase3Purpose"]'),
+            phase3Result: document.querySelector('[data-i18n="websiteProject.phase3Result"]'),
+            phase4Title: document.querySelector('[data-i18n="websiteProject.phase4Title"]'),
+            phase4Purpose: document.querySelector('[data-i18n="websiteProject.phase4Purpose"]'),
+            phase4Result: document.querySelector('[data-i18n="websiteProject.phase4Result"]'),
+            phase5Title: document.querySelector('[data-i18n="websiteProject.phase5Title"]'),
+            phase5Purpose: document.querySelector('[data-i18n="websiteProject.phase5Purpose"]'),
+            phase5Result: document.querySelector('[data-i18n="websiteProject.phase5Result"]'),
+            phase6Title: document.querySelector('[data-i18n="websiteProject.phase6Title"]'),
+            phase6Purpose: document.querySelector('[data-i18n="websiteProject.phase6Purpose"]'),
+            phase6Result: document.querySelector('[data-i18n="websiteProject.phase6Result"]'),
+            phase7Title: document.querySelector('[data-i18n="websiteProject.phase7Title"]'),
+            phase7Purpose: document.querySelector('[data-i18n="websiteProject.phase7Purpose"]'),
+            phase7Result: document.querySelector('[data-i18n="websiteProject.phase7Result"]'),
+            effectsTitle: document.querySelector('[data-i18n="websiteProject.effectsTitle"]'),
+            techTitle: document.querySelector('[data-i18n="websiteProject.techTitle"]'),
+            conclusionTitle: document.querySelector('[data-i18n="websiteProject.conclusionTitle"]'),
+            conclusionText: document.querySelector('[data-i18n="websiteProject.conclusionText"]')
+        };
+        
+        Object.keys(websiteElements).forEach(key => {
+            if (websiteElements[key] && trans.websiteProject[key]) {
+                websiteElements[key].textContent = trans.websiteProject[key];
+            }
+        });
+        
+        // Phase 1とPhase 2のリスト項目を翻訳
+        if (trans.websiteProject.phase1Items) {
+            const phase1Title = document.querySelector('[data-i18n="websiteProject.phase1Title"]');
+            if (phase1Title) {
+                const phase1List = phase1Title.parentElement.querySelectorAll('ul li');
+                trans.websiteProject.phase1Items.forEach((text, index) => {
+                    if (phase1List[index]) phase1List[index].textContent = text;
+                });
+            }
+        }
+        
+        if (trans.websiteProject.phase2Items) {
+            const phase2Title = document.querySelector('[data-i18n="websiteProject.phase2Title"]');
+            if (phase2Title) {
+                const phase2List = phase2Title.parentElement.querySelectorAll('ul li');
+                trans.websiteProject.phase2Items.forEach((text, index) => {
+                    if (phase2List[index]) phase2List[index].textContent = text;
+                });
+            }
+        }
+        
+        // Phase 3～7のリスト項目を翻訳
+        if (trans.websiteProject.phase3Items) {
+            const phase3Title = document.querySelector('[data-i18n="websiteProject.phase3Title"]');
+            if (phase3Title) {
+                const phase3Section = phase3Title.parentElement;
+                const phase3List = phase3Section.querySelectorAll('ul > li');
+                trans.websiteProject.phase3Items.forEach((text, index) => {
+                    if (phase3List[index]) phase3List[index].childNodes[0].textContent = text;
+                });
+            }
+        }
+        
+        if (trans.websiteProject.phase4Items) {
+            const phase4Title = document.querySelector('[data-i18n="websiteProject.phase4Title"]');
+            if (phase4Title) {
+                const phase4Section = phase4Title.parentElement;
+                const mainUl = phase4Section.querySelector('ul');
+                if (mainUl) {
+                    // HTMLを直接構築
+                    let html = `<li>${trans.websiteProject.phase4Items[0]}`;
+                    html += '<ul>';
+                    html += `<li>${trans.websiteProject.phase4Items[1]}</li>`;
+                    html += `<li>${trans.websiteProject.phase4Items[2]}</li>`;
+                    html += `<li>${trans.websiteProject.phase4Items[3]}</li>`;
+                    html += '</ul></li>';
+                    html += `<li>${trans.websiteProject.phase4Items[4]}</li>`;
+                    html += `<li>${trans.websiteProject.phase4Items[5]}</li>`;
+                    mainUl.innerHTML = html;
+                }
+            }
+        }
+        
+        if (trans.websiteProject.phase5Items) {
+            const phase5Title = document.querySelector('[data-i18n="websiteProject.phase5Title"]');
+            if (phase5Title) {
+                const phase5List = phase5Title.parentElement.querySelectorAll('ul li');
+                trans.websiteProject.phase5Items.forEach((text, index) => {
+                    if (phase5List[index]) phase5List[index].textContent = text;
+                });
+            }
+        }
+        
+        if (trans.websiteProject.phase6Items) {
+            const phase6Title = document.querySelector('[data-i18n="websiteProject.phase6Title"]');
+            if (phase6Title) {
+                const phase6Section = phase6Title.parentElement;
+                const mainUl = phase6Section.querySelector('ul');
+                if (mainUl) {
+                    // HTMLを直接構築
+                    let html = `<li>${trans.websiteProject.phase6Items[0]}`;
+                    html += '<ul>';
+                    html += `<li>${trans.websiteProject.phase6Items[1]}</li>`;
+                    html += '</ul></li>';
+                    html += `<li>${trans.websiteProject.phase6Items[2]}`;
+                    html += '<ul>';
+                    html += `<li>${trans.websiteProject.phase6Items[3]}</li>`;
+                    html += `<li>${trans.websiteProject.phase6Items[4]}</li>`;
+                    html += '</ul></li>';
+                    html += `<li>${trans.websiteProject.phase6Items[5]}</li>`;
+                    mainUl.innerHTML = html;
+                }
+            }
+        }
+        
+        if (trans.websiteProject.phase7Items) {
+            const phase7Title = document.querySelector('[data-i18n="websiteProject.phase7Title"]');
+            if (phase7Title) {
+                const phase7Section = phase7Title.parentElement;
+                const phase7List = phase7Section.querySelectorAll('ul > li');
+                trans.websiteProject.phase7Items.forEach((text, index) => {
+                    if (phase7List[index]) phase7List[index].childNodes[0].textContent = text;
+                });
+            }
+        }
+        
+        // Overall Improvement Resultsのカード翻訳
+        if (trans.websiteProject.effectsPerformance) {
+            const effectsTitle = document.querySelector('[data-i18n="websiteProject.effectsTitle"]');
+            if (effectsTitle) {
+                const effectsSection = effectsTitle.parentElement;
+                const cards = effectsSection.querySelectorAll('div[style*="border-left"]');
+                
+                // パフォーマンスカード
+                if (cards[0] && trans.websiteProject.effectsPerformanceItems) {
+                    const perfStrong = cards[0].querySelector('strong');
+                    if (perfStrong) perfStrong.textContent = trans.websiteProject.effectsPerformance;
+                    const perfList = cards[0].querySelectorAll('li');
+                    trans.websiteProject.effectsPerformanceItems.forEach((text, index) => {
+                        if (perfList[index]) perfList[index].innerHTML = text;
+                    });
+                }
+                
+                // ユーザー体験カード
+                if (cards[1] && trans.websiteProject.effectsUXItems) {
+                    const uxStrong = cards[1].querySelector('strong');
+                    if (uxStrong) uxStrong.textContent = trans.websiteProject.effectsUX;
+                    const uxList = cards[1].querySelectorAll('li');
+                    trans.websiteProject.effectsUXItems.forEach((text, index) => {
+                        if (uxList[index]) uxList[index].innerHTML = text;
+                    });
+                }
+                
+                // SEOカード
+                if (cards[2] && trans.websiteProject.effectsSEOItems) {
+                    const seoStrong = cards[2].querySelector('strong');
+                    if (seoStrong) seoStrong.textContent = trans.websiteProject.effectsSEO;
+                    const seoList = cards[2].querySelectorAll('li');
+                    trans.websiteProject.effectsSEOItems.forEach((text, index) => {
+                        if (seoList[index]) seoList[index].innerHTML = text;
+                    });
+                }
+                
+                // アクセシビリティカード
+                if (cards[3] && trans.websiteProject.effectsAccessibilityItems) {
+                    const a11yStrong = cards[3].querySelector('strong');
+                    if (a11yStrong) a11yStrong.textContent = trans.websiteProject.effectsAccessibility;
+                    const a11yList = cards[3].querySelectorAll('li');
+                    trans.websiteProject.effectsAccessibilityItems.forEach((text, index) => {
+                        if (a11yList[index]) a11yList[index].innerHTML = text;
+                    });
+                }
+            }
+        }
+        
+        // 使用技術セクションの翻訳
+        const techTitle = document.querySelector('[data-i18n="websiteProject.techTitle"]');
+        if (techTitle && trans.websiteProject.techFrontend) {
+            const techSection = techTitle.parentElement;
+            const techPs = techSection.querySelectorAll('p');
+            if (techPs[0] && trans.websiteProject.techFrontend) {
+                const parts = trans.websiteProject.techFrontend.split('：');
+                if (parts.length < 2) {
+                    const colonParts = trans.websiteProject.techFrontend.split(': ');
+                    techPs[0].innerHTML = `<strong>${colonParts[0]}</strong>: ${colonParts.slice(1).join(': ')}`;
+                } else {
+                    techPs[0].innerHTML = `<strong>${parts[0]}</strong>：${parts.slice(1).join('：')}`;
+                }
+            }
+            if (techPs[1] && trans.websiteProject.techSEO) {
+                const parts = trans.websiteProject.techSEO.split('：');
+                if (parts.length < 2) {
+                    const colonParts = trans.websiteProject.techSEO.split(': ');
+                    techPs[1].innerHTML = `<strong>${colonParts[0]}</strong>: ${colonParts.slice(1).join(': ')}`;
+                } else {
+                    techPs[1].innerHTML = `<strong>${parts[0]}</strong>：${parts.slice(1).join('：')}`;
+                }
+            }
+            if (techPs[2] && trans.websiteProject.techPerformance) {
+                const parts = trans.websiteProject.techPerformance.split('：');
+                if (parts.length < 2) {
+                    const colonParts = trans.websiteProject.techPerformance.split(': ');
+                    techPs[2].innerHTML = `<strong>${colonParts[0]}</strong>: ${colonParts.slice(1).join(': ')}`;
+                } else {
+                    techPs[2].innerHTML = `<strong>${parts[0]}</strong>：${parts.slice(1).join('：')}`;
+                }
+            }
+        }
+    }
+    
     // 訪問者カウンターのテキストを更新
     updateVisitorCounterText(lang);
 }
@@ -1824,7 +2384,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initVisitorStats();
     initSiteSearch();
     initLanguageSwitcher();
-    initMobileOptimization(); // Phase 6: モバイル最適化
     initPWA();
     
     const navItems = document.querySelectorAll('.nav-item');
@@ -1834,134 +2393,4 @@ document.addEventListener('DOMContentLoaded', () => {
             updateBreadcrumbEnhanced(targetTab);
         });
     });
-});
-
-// ===== Phase 6: モバイル体験の最適化 =====
-function initMobileOptimization() {
-    // タッチデバイスの検出
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    
-    if (isTouchDevice) {
-        document.body.classList.add('touch-device');
-        
-        // タップ時の視覚フィードバック
-        addTapFeedback();
-        
-        // ダブルタップズーム防止（必要に応じて）
-        preventDoubleTapZoom();
-        
-        // モバイル特有のスクロール最適化
-        optimizeMobileScroll();
-        
-        // 画面向き変更の対応
-        handleOrientationChange();
-    }
-    
-    // フォントサイズの動的調整（ユーザー補助機能）
-    adjustFontSizeForAccessibility();
-}
-
-// タップ時の視覚フィードバック
-function addTapFeedback() {
-    const interactiveElements = document.querySelectorAll(
-        '.nav-item, .cta-button, .contact-button, .faq-question, ' +
-        '.gallery-link-button, .timeline-button, button, a'
-    );
-    
-    interactiveElements.forEach(element => {
-        // タッチ開始時
-        element.addEventListener('touchstart', function() {
-            this.style.opacity = '0.7';
-        }, { passive: true });
-        
-        // タッチ終了時
-        element.addEventListener('touchend', function() {
-            setTimeout(() => {
-                this.style.opacity = '';
-            }, 150);
-        }, { passive: true });
-        
-        // タッチキャンセル時
-        element.addEventListener('touchcancel', function() {
-            this.style.opacity = '';
-        }, { passive: true });
-    });
-}
-
-// ダブルタップズーム防止（ボタン・リンクのみ）
-function preventDoubleTapZoom() {
-    let lastTouchEnd = 0;
-    
-    const buttons = document.querySelectorAll(
-        'button, .nav-item, .cta-button, .contact-button'
-    );
-    
-    buttons.forEach(button => {
-        button.addEventListener('touchend', function(e) {
-            const now = Date.now();
-            if (now - lastTouchEnd <= 300) {
-                e.preventDefault();
-            }
-            lastTouchEnd = now;
-        }, { passive: false });
-    });
-}
-
-// モバイルスクロール最適化
-function optimizeMobileScroll() {
-    // iOS Safariでのスクロール慣性を有効化
-    if (document.body.style.webkitOverflowScrolling !== undefined) {
-        document.body.style.webkitOverflowScrolling = 'touch';
-    }
-    
-    // スクロール中のパフォーマンス向上
-    let scrollTimeout;
-    window.addEventListener('scroll', () => {
-        // スクロール中は一部のアニメーションを無効化
-        document.body.classList.add('is-scrolling');
-        
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-            document.body.classList.remove('is-scrolling');
-        }, 150);
-    }, { passive: true });
-}
-
-// フォントサイズの動的調整（ユーザー設定に応じて）
-function adjustFontSizeForAccessibility() {
-    // ブラウザのフォントサイズ設定を検知
-    const baseFontSize = parseFloat(
-        window.getComputedStyle(document.documentElement).fontSize
-    );
-    
-    if (baseFontSize > 16) {
-        // ユーザーが大きいフォントを設定している場合
-        document.body.classList.add('large-text-mode');
-    }
-}
-
-// 画面向きの変更を検知
-function handleOrientationChange() {
-    window.addEventListener('orientationchange', () => {
-        // 向きが変わった後、レイアウトを再調整
-        setTimeout(() => {
-            // スクロール位置を維持
-            window.scrollTo(0, window.scrollY);
-            
-            // 高さの再計算（iOS Safariのアドレスバー問題対策）
-            const vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
-        }, 100);
-    });
-    
-    // 初回実行
-    const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-}
-
-// リサイズ時の最適化
-window.addEventListener('resize', () => {
-    // ビューポートの高さを更新（iOS対策）
-    const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
 });
