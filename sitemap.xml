@@ -2,88 +2,88 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- メインページ -->
   <url>
-    <loc>https://postsoni.github.io/postori-site/</loc>
-    <lastmod>2025-11-17</lastmod>
+    <loc>https://postsoni.github.io/</loc>
+    <lastmod>2025-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <!-- アーカイブトップ -->
   <url>
-    <loc>https://postsoni.github.io/postori-site/archive/</loc>
-    <lastmod>2025-11-17</lastmod>
+    <loc>https://postsoni.github.io/archive/</loc>
+    <lastmod>2025-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <!-- データベース一覧 -->
   <url>
-    <loc>https://postsoni.github.io/postori-site/archive/database.html</loc>
-    <lastmod>2025-11-17</lastmod>
+    <loc>https://postsoni.github.io/archive/database.html</loc>
+    <lastmod>2025-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <!-- 機種詳細ページ：タミヤ TT-02 -->
   <url>
-    <loc>https://postsoni.github.io/postori-site/archive/models/tamiya-tt02.html</loc>
-    <lastmod>2025-11-17</lastmod>
+    <loc>https://postsoni.github.io/archive/models/tamiya-tt02.html</loc>
+    <lastmod>2025-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- 機種詳細ページ：タミヤ TT-01（追加） -->
+  <!-- 機種詳細ページ：タミヤ TT-01 -->
   <url>
-    <loc>https://postsoni.github.io/postori-site/archive/models/tamiya-tt01.html</loc>
-    <lastmod>2025-11-17</lastmod>
+    <loc>https://postsoni.github.io/archive/models/tamiya-tt01.html</loc>
+    <lastmod>2025-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- 機種詳細ページ：タミヤ TT-02B（追加） -->
+  <!-- 機種詳細ページ：タミヤ TT-02B -->
   <url>
-    <loc>https://postsoni.github.io/postori-site/archive/models/tamiya-tt02b.html</loc>
-    <lastmod>2025-11-17</lastmod>
+    <loc>https://postsoni.github.io/archive/models/tamiya-tt02b.html</loc>
+    <lastmod>2025-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- 機種詳細ページ：タミヤ M-08 CONCEPT（追加） -->
+  <!-- 機種詳細ページ：タミヤ M-08 CONCEPT -->
   <url>
-    <loc>https://postsoni.github.io/postori-site/archive/models/tamiya-m08.html</loc>
-    <lastmod>2025-11-17</lastmod>
+    <loc>https://postsoni.github.io/archive/models/tamiya-m08.html</loc>
+    <lastmod>2025-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- 機種詳細ページ：タミヤ DF-03（追加） -->
+  <!-- 機種詳細ページ：タミヤ DF-03 -->
   <url>
-    <loc>https://postsoni.github.io/postori-site/archive/models/tamiya-df03.html</loc>
-    <lastmod>2025-11-17</lastmod>
+    <loc>https://postsoni.github.io/archive/models/tamiya-df03.html</loc>
+    <lastmod>2025-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- 機種詳細ページ：タミヤ DT-03（追加） -->
+  <!-- 機種詳細ページ：タミヤ DT-03 -->
   <url>
-    <loc>https://postsoni.github.io/postori-site/archive/models/tamiya-dt03.html</loc>
-    <lastmod>2025-11-17</lastmod>
+    <loc>https://postsoni.github.io/archive/models/tamiya-dt03.html</loc>
+    <lastmod>2025-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <!-- 機種詳細ページ：京商 カルマートアルファ40 -->
   <url>
-    <loc>https://postsoni.github.io/postori-site/archive/models/kyosho-calmato-alpha40.html</loc>
-    <lastmod>2025-11-17</lastmod>
+    <loc>https://postsoni.github.io/archive/models/kyosho-calmato-alpha40.html</loc>
+    <lastmod>2025-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <!-- 機種詳細ページ：JR PROPO Forza450 -->
   <url>
-    <loc>https://postsoni.github.io/postori-site/archive/models/jrpropo-forza450.html</loc>
-    <lastmod>2025-11-17</lastmod>
+    <loc>https://postsoni.github.io/archive/models/jrpropo-forza450.html</loc>
+    <lastmod>2025-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
