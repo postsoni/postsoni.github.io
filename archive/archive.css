@@ -344,6 +344,168 @@ body {
 }
 
 /* ========================================
+   データベース一覧ページ専用スタイル
+======================================== */
+
+/* 統計情報カード（database.html用） */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 40px 0;
+}
+
+/* 検索フィルターセクション */
+.search-filter {
+    background: var(--archive-card-bg);
+    border-radius: 10px;
+    padding: 30px;
+    margin: 40px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.search-filter h2 {
+    font-size: 1.8rem;
+    color: var(--archive-primary);
+    margin-bottom: 20px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filter-group label {
+    font-weight: 600;
+    color: var(--archive-primary);
+    font-size: 0.95rem;
+}
+
+.filter-group select,
+.filter-group input {
+    padding: 10px 15px;
+    border: 2px solid var(--archive-border);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.filter-group select:focus,
+.filter-group input:focus {
+    outline: none;
+    border-color: var(--archive-accent);
+}
+
+/* テーブルスタイル */
+.models-table {
+    margin: 40px 0;
+}
+
+.models-table h2 {
+    font-size: 1.8rem;
+    color: var(--archive-primary);
+    margin-bottom: 20px;
+}
+
+#modelsTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--archive-card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+#modelsTable thead {
+    background: linear-gradient(135deg, var(--archive-primary) 0%, var(--archive-secondary) 100%);
+    color: white;
+}
+
+#modelsTable th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+#modelsTable td {
+    padding: 15px;
+    border-bottom: 1px solid var(--archive-border);
+}
+
+#modelsTable tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+#modelsTable tbody tr:hover {
+    background-color: var(--archive-hover);
+}
+
+#modelsTable tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* カテゴリーバッジ */
+.category-badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: white;
+}
+
+.category-badge.car {
+    background: #3498db;
+}
+
+.category-badge.plane {
+    background: #e74c3c;
+}
+
+.category-badge.heli {
+    background: #9b59b6;
+}
+
+/* 生産状況バッジ */
+.status-badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.status-badge.active {
+    background: #27ae60;
+    color: white;
+}
+
+.status-badge.discontinued {
+    background: #95a5a6;
+    color: white;
+}
+
+/* 詳細リンク */
+.detail-link {
+    color: var(--archive-accent);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.detail-link:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* データベース説明セクション */
+.database-description {
+    margin: 30px 0;
+}
+
+/* ========================================
    レスポンシブデザイン
 ======================================== */
 @media (max-width: 768px) {
@@ -374,6 +536,19 @@ body {
     
     .about-content {
         padding: 25px;
+    }
+    
+    .stats {
+        grid-template-columns: 1fr;
+    }
+    
+    #modelsTable {
+        font-size: 0.9rem;
+    }
+    
+    #modelsTable th,
+    #modelsTable td {
+        padding: 10px 8px;
     }
 }
 
