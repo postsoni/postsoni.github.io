@@ -2561,6 +2561,38 @@ function setLanguage(lang) {
         if (reloadMac) reloadMac.textContent = trans.topSection.reloadMac;
         if (reloadMacKeys) reloadMacKeys.textContent = trans.topSection.reloadMacKeys;
     }
+    
+    // RCアーカイブセクションの翻訳
+    const archiveTitle = document.querySelector('[data-i18n="archive.main.title"]');
+    const archiveSubtitle = document.querySelector('[data-i18n="archive.main.subtitle"]');
+    const archivePurposeTitle = document.querySelector('[data-i18n="archive.main.purpose.title"]');
+    const archivePurposeItem1 = document.querySelector('[data-i18n="archive.main.purpose.item1"]');
+    const archivePurposeItem2 = document.querySelector('[data-i18n="archive.main.purpose.item2"]');
+    const archivePurposeItem3 = document.querySelector('[data-i18n="archive.main.purpose.item3"]');
+    const archivePurposeItem4 = document.querySelector('[data-i18n="archive.main.purpose.item4"]');
+    const archiveCurrent = document.querySelector('[data-i18n="archive.main.current"]');
+    const archiveButton = document.querySelector('[data-i18n="archive.main.button"]');
+    const archiveRequest = document.querySelector('[data-i18n="archive.main.request"]');
+    
+    if (trans.archive && trans.archive.main) {
+        if (archiveTitle) archiveTitle.textContent = trans.archive.main.title;
+        if (archiveSubtitle) {
+            // 改行を<br>タグに変換
+            archiveSubtitle.innerHTML = trans.archive.main.subtitle.replace(/\n/g, '<br>');
+        }
+        if (archivePurposeTitle) archivePurposeTitle.textContent = trans.archive.main.purpose.title;
+        if (archivePurposeItem1) archivePurposeItem1.innerHTML = trans.archive.main.purpose.item1;
+        if (archivePurposeItem2) archivePurposeItem2.innerHTML = trans.archive.main.purpose.item2;
+        if (archivePurposeItem3) archivePurposeItem3.innerHTML = trans.archive.main.purpose.item3;
+        if (archivePurposeItem4) archivePurposeItem4.innerHTML = trans.archive.main.purpose.item4;
+        if (archiveCurrent) {
+            archiveCurrent.innerHTML = trans.archive.main.current.replace(/\n/g, '<br>');
+        }
+        if (archiveButton) archiveButton.textContent = trans.archive.main.button;
+        if (archiveRequest) {
+            archiveRequest.innerHTML = trans.archive.main.request.replace(/\n/g, '<br>');
+        }
+    }
 }
 
 // 訪問者カウンターのテキストを言語に応じて更新
