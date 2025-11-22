@@ -277,18 +277,72 @@ body {
 /* パンくずナビ */
 .breadcrumb {
     margin-top: 20px;
+    padding: 10px 0;
 }
 
 .breadcrumb a {
     color: white;
     text-decoration: none;
-    opacity: 0.8;
+    opacity: 0.9;
     transition: opacity 0.3s ease;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 .breadcrumb a:hover {
     opacity: 1;
     text-decoration: underline;
+}
+
+/* ヘッダー内のメインサイトに戻るボタンを強調 */
+.archive-header .breadcrumb {
+    margin-top: 25px;
+}
+
+.archive-header .breadcrumb a {
+    display: inline-block;
+    padding: 12px 30px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    opacity: 1;
+}
+
+.archive-header .breadcrumb a:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+/* データベースページ用のパンくずナビ（ページ上部） */
+body > nav.breadcrumb {
+    background: var(--archive-primary);
+    color: white;
+    padding: 15px 20px;
+    margin: 0;
+}
+
+body > nav.breadcrumb a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+body > nav.breadcrumb a:hover {
+    text-decoration: underline;
+    opacity: 1;
+}
+
+body > nav.breadcrumb span {
+    color: rgba(255, 255, 255, 0.8);
 }
 
 /* ========================================
@@ -679,6 +733,20 @@ body {
 /* データベース説明セクション */
 .database-description {
     margin: 30px 0;
+}
+
+/* データベースメインコンテンツ */
+.database-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.database-main h1 {
+    font-size: 2.5rem;
+    color: var(--archive-primary);
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 /* ========================================
