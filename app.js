@@ -725,14 +725,14 @@ const translations = {
             conclusionText: 'このウェブサイト改善プロジェクトを通じて、「技術は人のためにある」という信念を改めて実感しました。視覚障害のある方、運動障害のある方、すべての人が平等に情報にアクセスできる環境を作ることの重要性を学びました。また、AI技術（Claude）を活用することで、個人でもこれだけのクオリティのウェブサイトを作成できることを証明できました。これは、RC文化の保存と発展、そしてデジタルデバイド解消への一歩だと考えています。今後も、ユーザーの皆様のフィードバックをもとに、継続的な改善を続けていきます。'
         },
         archiveProject: {
-            date: '2025年11月17日',
-            title: 'RCアーカイブプロジェクト始動 - 8機種のデータベース化完了',
+            date: '2025年11月22日',
+            title: 'RCアーカイブプロジェクト始動 - 15機種のデータベース化完了',
             overviewTitle: '📚 プロジェクト概要',
             overviewText: 'ラジコン文化の保存と継承を目的とした「RCアーカイブプロジェクト」を開始しました。絶版機種から現代の最新機種まで、詳細な技術情報と修理ガイドをデータベース化し、後世に残す取り組みです。',
             currentStatusTitle: '📊 現在の登録状況',
-            currentStatusItem1: '登録機種数: 8機種',
+            currentStatusItem1: '登録機種数: 15機種',
             currentStatusItem2: '対応メーカー: タミヤ、京商、JR PROPO',
-            currentStatusItem3: 'カテゴリー: ラジコンカー（6機種）、ラジコン飛行機（1機種）、ラジコンヘリ（1機種）',
+            currentStatusItem3: 'カテゴリー: ラジコンカー（13機種）、ラジコン飛行機（1機種）、ラジコンヘリ（1機種）',
             featuresTitle: '✨ 主な機能',
             featuresItem1: '詳細な機種情報: スペック、発売年、生産状況など',
             featuresItem2: '修理難易度表示: 初心者でも安心して選べる',
@@ -747,6 +747,13 @@ const translations = {
             rcCarItem4: 'タミヤ M-08 CONCEPT（Mシャーシ / リヤ駆動）',
             rcCarItem5: 'タミヤ DF-03（4WDバギー / 中級者向け）',
             rcCarItem6: 'タミヤ DT-03（2WDバギー / 初心者向け）',
+            rcCarItem7: 'タミヤ XV-02 PRO（ラリー・ツーリングカー / 中級者向け）',
+            rcCarItem8: 'タミヤ CC-02（クロスカントリー・クローラー / 初心者向け）',
+            rcCarItem9: 'タミヤ GF-02（オフロード・ビッグタイヤ / 初心者向け）',
+            rcCarItem10: 'タミヤ TRF421（2ベルトドライブ4WD ツーリングカー / 上級者向け）',
+            rcCarItem11: 'タミヤ DB01（等長2ベルト4WD バギー / 中級者向け）',
+            rcCarItem12: 'タミヤ TB-05 PRO（シャフトドライブ4WD ツーリングカー / 中級者～上級者向け）',
+            rcCarItem13: 'タミヤ TA08 PRO（2ベルトドライブ4WD ツーリングカー / 中級者～上級者向け）',
             rcPlaneCategory: '【ラジコン飛行機】',
             rcPlaneItem1: '京商 カルマートアルファ40トレーナー（高翼トレーナー機）',
             rcHeliCategory: '【ラジコンヘリ】',
@@ -1171,14 +1178,14 @@ const translations = {
             conclusionText: 'Through this website improvement project, I have reaffirmed my belief that "technology is for people." I learned the importance of creating an environment where everyone, including those with visual or motor impairments, can access information equally. Also, by utilizing AI technology (Claude), I was able to prove that even an individual can create a website of this quality. This is a step toward preserving and developing RC culture and resolving the digital divide. We will continue to make continuous improvements based on feedback from our users.'
         },
         archiveProject: {
-            date: 'November 17, 2025',
-            title: 'RC Archive Project Launch - Database of 8 Models Completed',
+            date: 'November 22, 2025',
+            title: 'RC Archive Project Launch - Database of 15 Models Completed',
             overviewTitle: '📚 Project Overview',
             overviewText: 'We have launched the "RC Archive Project" aimed at preserving and passing on RC culture. This initiative creates a database of detailed technical information and repair guides for models from discontinued classics to modern releases.',
             currentStatusTitle: '📊 Current Status',
-            currentStatusItem1: 'Registered Models: 8 models',
+            currentStatusItem1: 'Registered Models: 15 models',
             currentStatusItem2: 'Supported Manufacturers: Tamiya, Kyosho, JR PROPO',
-            currentStatusItem3: 'Categories: RC Cars (6 models), RC Airplanes (1 model), RC Helicopters (1 model)',
+            currentStatusItem3: 'Categories: RC Cars (13 models), RC Airplanes (1 model), RC Helicopters (1 model)',
             featuresTitle: '✨ Main Features',
             featuresItem1: 'Detailed Model Information: Specifications, release year, production status, etc.',
             featuresItem2: 'Repair Difficulty Display: Easy selection even for beginners',
@@ -1193,6 +1200,13 @@ const translations = {
             rcCarItem4: 'Tamiya M-08 CONCEPT (M-Chassis / Rear Wheel Drive)',
             rcCarItem5: 'Tamiya DF-03 (4WD Buggy / Intermediate)',
             rcCarItem6: 'Tamiya DT-03 (2WD Buggy / Beginner)',
+            rcCarItem7: 'Tamiya XV-02 PRO (Rally / Touring Car / Intermediate)',
+            rcCarItem8: 'Tamiya CC-02 (Cross Country Crawler / Beginner)',
+            rcCarItem9: 'Tamiya GF-02 (Off-road Big Tire / Beginner)',
+            rcCarItem10: 'Tamiya TRF421 (2-Belt Drive 4WD Touring Car / Advanced)',
+            rcCarItem11: 'Tamiya DB01 (Equal-Length 2-Belt 4WD Buggy / Intermediate)',
+            rcCarItem12: 'Tamiya TB-05 PRO (Shaft Drive 4WD Touring Car / Intermediate to Advanced)',
+            rcCarItem13: 'Tamiya TA08 PRO (2-Belt Drive 4WD Touring Car / Intermediate to Advanced)',
             rcPlaneCategory: '【RC Airplanes】',
             rcPlaneItem1: 'Kyosho Calmato Alpha 40 Trainer (High-wing Trainer)',
             rcHeliCategory: '【RC Helicopters】',
@@ -1617,14 +1631,14 @@ const translations = {
             conclusionText: '通过这个网站改善项目，我再次深刻认识到"技术是为人服务的"这一信念。我学到了为视觉障碍者、运动障碍者等所有人创造平等获取信息环境的重要性。此外，通过利用AI技术（Claude），我证明了即使是个人也能创建如此高质量的网站。这是朝着RC文化的保存与发展以及消除数字鸿沟迈出的一步。今后我们将根据用户的反馈持续改进。'
         },
         archiveProject: {
-            date: '2025年11月17日',
-            title: 'RC档案项目启动 - 完成8款机型数据库',
+            date: '2025年11月22日',
+            title: 'RC档案项目启动 - 完成15款机型数据库',
             overviewTitle: '📚 项目概述',
             overviewText: '我们启动了旨在保存和传承RC文化的"RC档案项目"。该项目将从绝版机型到现代最新机型的详细技术信息和维修指南数据库化，留给后代。',
             currentStatusTitle: '📊 当前登记状况',
-            currentStatusItem1: '登记机型数：8款',
+            currentStatusItem1: '登记机型数：15款',
             currentStatusItem2: '支持制造商：田宫、京商、JR PROPO',
-            currentStatusItem3: '类别：遥控车（6款）、遥控飞机（1款）、遥控直升机（1款）',
+            currentStatusItem3: '类别：遥控车（13款）、遥控飞机（1款）、遥控直升机（1款）',
             featuresTitle: '✨ 主要功能',
             featuresItem1: '详细机型信息：规格、发售年份、生产状况等',
             featuresItem2: '维修难度显示：初学者也能安心选择',
@@ -1639,6 +1653,13 @@ const translations = {
             rcCarItem4: '田宫 M-08 CONCEPT（M底盘 / 后驱）',
             rcCarItem5: '田宫 DF-03（4WD越野车 / 中级）',
             rcCarItem6: '田宫 DT-03（2WD越野车 / 初学者）',
+            rcCarItem7: '田宫 XV-02 PRO（拉力/房车 / 中级）',
+            rcCarItem8: '田宫 CC-02（越野爬行车 / 初学者）',
+            rcCarItem9: '田宫 GF-02（越野大轮胎 / 初学者）',
+            rcCarItem10: '田宫 TRF421（2皮带驱动4WD房车 / 高级）',
+            rcCarItem11: '田宫 DB01（等长2皮带4WD越野车 / 中级）',
+            rcCarItem12: '田宫 TB-05 PRO（轴驱动4WD房车 / 中级~高级）',
+            rcCarItem13: '田宫 TA08 PRO（2皮带驱动4WD房车 / 中级~高级）',
             rcPlaneCategory: '【遥控飞机】',
             rcPlaneItem1: '京商 Calmato Alpha 40教练机（高翼教练机）',
             rcHeliCategory: '【遥控直升机】',
@@ -2593,6 +2614,34 @@ function setLanguage(lang) {
             archiveRequest.innerHTML = trans.archive.main.request.replace(/\n/g, '<br>');
         }
     }
+    
+    // ===== data-i18n属性を使った汎用翻訳処理 =====
+    // すべてのdata-i18n属性を持つ要素を取得して翻訳
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        const keys = key.split('.');
+        let value = trans;
+        
+        // ネストされたキーを辿る（例: "archiveProject.date" → trans.archiveProject.date）
+        for (const k of keys) {
+            if (value && value[k] !== undefined) {
+                value = value[k];
+            } else {
+                value = null;
+                break;
+            }
+        }
+        
+        // 値が見つかった場合、要素のテキストを更新
+        if (value !== null && value !== undefined) {
+            // HTMLタグを含む場合はinnerHTMLを使用
+            if (typeof value === 'string' && value.includes('<')) {
+                element.innerHTML = value;
+            } else {
+                element.textContent = value;
+            }
+        }
+    });
 }
 
 // 訪問者カウンターのテキストを言語に応じて更新
