@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Last updated: 2025-11-22 -->
-  <!-- Version: 6.0 (15 models) -->
+  <!-- Version: 7.0 (17 models) -->
   
   <!-- メインページ -->
   <url>
@@ -110,6 +110,22 @@
   <!-- 機種詳細ページ：タミヤ DB01 -->
   <url>
     <loc>https://postsoni.github.io/archive/models/tamiya-db01.html</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- 機種詳細ページ：タミヤ TRF104 -->
+  <url>
+    <loc>https://postsoni.github.io/archive/models/tamiya-trf104.html</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- 機種詳細ページ：タミヤ CC-01 -->
+  <url>
+    <loc>https://postsoni.github.io/archive/models/tamiya-cc01.html</loc>
     <lastmod>2025-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
