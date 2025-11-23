@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Last updated: 2025-11-22 -->
-  <!-- Version: 8.0 (18 models) -->
+  <!-- Last updated: 2025-11-23 -->
+  <!-- Version: 9.0 (21 models) -->
   
   <!-- メインページ -->
   <url>
@@ -99,6 +99,14 @@
     <priority>0.8</priority>
   </url>
   
+  <!-- 機種詳細ページ：タミヤ DF-02 -->
+  <url>
+    <loc>https://postsoni.github.io/archive/models/tamiya-df02.html</loc>
+    <lastmod>2025-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
   <!-- 機種詳細ページ：タミヤ GF-01 -->
   <url>
     <loc>https://postsoni.github.io/archive/models/tamiya-gf01.html</loc>
@@ -123,6 +131,14 @@
     <priority>0.8</priority>
   </url>
   
+  <!-- 機種詳細ページ：タミヤ TB-04 -->
+  <url>
+    <loc>https://postsoni.github.io/archive/models/tamiya-tb04.html</loc>
+    <lastmod>2025-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
   <!-- 機種詳細ページ：タミヤ TRF104 -->
   <url>
     <loc>https://postsoni.github.io/archive/models/tamiya-trf104.html</loc>
@@ -143,6 +159,14 @@
   <url>
     <loc>https://postsoni.github.io/archive/models/tamiya-tb05pro.html</loc>
     <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- 機種詳細ページ：タミヤ TA-07 PRO -->
+  <url>
+    <loc>https://postsoni.github.io/archive/models/tamiya-ta07pro.html</loc>
+    <lastmod>2025-11-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
