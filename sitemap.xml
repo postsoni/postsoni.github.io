@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- RC Archive Project Sitemap Version 15.0 -->
+<!-- RC Archive Project Sitemap Version 17.0 -->
 <!-- Last Updated: 2025-11-27 -->
 <!-- Total Models: 41 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -108,6 +108,13 @@
         <priority>0.7</priority>
     </url>
     
+    <url>
+        <loc>https://postsoni.github.io/archive/models/tamiya-df02.html</loc>
+        <lastmod>2025-11-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
     <!-- 2005年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-ta05.html</loc>
@@ -130,6 +137,14 @@
         <priority>0.7</priority>
     </url>
     
+    <!-- 2006年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/tamiya-df03.html</loc>
+        <lastmod>2025-11-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
     <!-- 2007年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-tb03.html</loc>
@@ -140,6 +155,14 @@
     
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-trf416.html</loc>
+        <lastmod>2025-11-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2008年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/tamiya-db01.html</loc>
         <lastmod>2025-11-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -156,6 +179,13 @@
     <!-- 2010年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-trf417.html</loc>
+        <lastmod>2025-11-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://postsoni.github.io/archive/models/tamiya-cc01.html</loc>
         <lastmod>2025-11-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -198,6 +228,13 @@
         <priority>0.8</priority>
     </url>
     
+    <url>
+        <loc>https://postsoni.github.io/archive/models/jrpropo-forza450.html</loc>
+        <lastmod>2025-11-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
     <!-- 2014年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-m07-concept.html</loc>
@@ -213,6 +250,28 @@
         <priority>0.8</priority>
     </url>
     
+    <url>
+        <loc>https://postsoni.github.io/archive/models/tamiya-gf01.html</loc>
+        <lastmod>2025-11-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2015年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/tamiya-dt03.html</loc>
+        <lastmod>2025-11-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-calmato-alpha40.html</loc>
+        <lastmod>2025-11-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
     <!-- 2016年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-ta07pro.html</loc>
@@ -221,27 +280,16 @@
         <priority>0.8</priority>
     </url>
     
-    <url>
-        <loc>https://postsoni.github.io/archive/models/tamiya-ta07rr.html</loc>
-        <lastmod>2025-11-23</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
     
     <!-- 2017年発売 -->
-    <url>
-        <loc>https://postsoni.github.io/archive/models/tamiya-tt02d.html</loc>
-        <lastmod>2025-11-23</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
     
     <!-- 2018年発売 -->
+    
     <url>
-        <loc>https://postsoni.github.io/archive/models/tamiya-tt02r.html</loc>
-        <lastmod>2025-11-23</lastmod>
+        <loc>https://postsoni.github.io/archive/models/tamiya-tb05pro.html</loc>
+        <lastmod>2025-11-27</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.7</priority>
     </url>
     
     <!-- 2019年発売 -->
@@ -252,93 +300,63 @@
         <priority>0.8</priority>
     </url>
     
-    <!-- 2020年発売 -->
     <url>
-        <loc>https://postsoni.github.io/archive/models/tamiya-tt02-typess.html</loc>
-        <lastmod>2025-11-23</lastmod>
+        <loc>https://postsoni.github.io/archive/models/tamiya-m08.html</loc>
+        <lastmod>2025-11-27</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.7</priority>
     </url>
     
-    <url>
-        <loc>https://postsoni.github.io/archive/models/tamiya-tt02-typesrr.html</loc>
-        <lastmod>2025-11-23</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
+    <!-- 2020年発売 -->
+    
     
     <!-- 2022年発売 -->
+    
     <url>
-        <loc>https://postsoni.github.io/archive/models/tamiya-ta08pro2.html</loc>
-        <lastmod>2025-11-23</lastmod>
+        <loc>https://postsoni.github.io/archive/models/tamiya-xv02pro.html</loc>
+        <lastmod>2025-11-27</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.7</priority>
     </url>
     
     <!-- 2023年発売 -->
+    
+    
     <url>
-        <loc>https://postsoni.github.io/archive/models/tamiya-tt02s.html</loc>
-        <lastmod>2025-11-23</lastmod>
+        <loc>https://postsoni.github.io/archive/models/tamiya-cc02.html</loc>
+        <lastmod>2025-11-27</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://postsoni.github.io/archive/models/tamiya-tt02-frs.html</loc>
-        <lastmod>2025-11-23</lastmod>
+        <loc>https://postsoni.github.io/archive/models/tamiya-gf02.html</loc>
+        <lastmod>2025-11-27</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.7</priority>
     </url>
     
     <!-- 2024年発売 -->
-    <url>
-        <loc>https://postsoni.github.io/archive/models/tamiya-ta09.html</loc>
-        <lastmod>2025-11-23</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
+    
+    
     
     <url>
-        <loc>https://postsoni.github.io/archive/models/tamiya-ta09r.html</loc>
-        <lastmod>2025-11-23</lastmod>
+        <loc>https://postsoni.github.io/archive/models/tamiya-trf421.html</loc>
+        <lastmod>2025-11-27</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://postsoni.github.io/archive/models/tamiya-ta10r.html</loc>
-        <lastmod>2025-11-23</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.7</priority>
     </url>
     
     <!-- 2025年発売 -->
-    <url>
-        <loc>https://postsoni.github.io/archive/models/tamiya-ta10.html</loc>
-        <lastmod>2025-11-23</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
+    
+    
+    
     
     <url>
-        <loc>https://postsoni.github.io/archive/models/tamiya-ta10ms.html</loc>
-        <lastmod>2025-11-23</lastmod>
+        <loc>https://postsoni.github.io/archive/models/tamiya-trf104.html</loc>
+        <lastmod>2025-11-27</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://postsoni.github.io/archive/models/tamiya-tb05pro2.html</loc>
-        <lastmod>2025-11-23</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://postsoni.github.io/archive/models/tamiya-ta10x.html</loc>
-        <lastmod>2025-11-23</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.7</priority>
     </url>
     
 </urlset>
