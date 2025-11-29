@@ -857,19 +857,80 @@ body > nav.breadcrumb span {
     }
     
     #modelsTable {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
     
     #modelsTable th,
     #modelsTable td {
-        padding: 10px 8px;
+        padding: 6px 2px;
+    }
+    
+    /* スマホで各列の幅を最適化 */
+    #modelsTable th:nth-child(1),
+    #modelsTable td:nth-child(1) {
+        display: none; /* カテゴリー列を非表示 */
+    }
+    
+    #modelsTable th:nth-child(2),
+    #modelsTable td:nth-child(2) {
+        width: 38px;
+        font-size: 0.75rem;
+        padding: 8px 2px;
+    }
+    
+    #modelsTable th:nth-child(3),
+    #modelsTable td:nth-child(3) {
+        width: 50px;
+        font-size: 0.8rem;
+        padding: 8px 3px;
+    }
+    
+    #modelsTable th:nth-child(4),
+    #modelsTable td:nth-child(4) {
+        width: 38px;
+        font-size: 0.75rem;
+        padding: 8px 2px;
+    }
+    
+    #modelsTable th:nth-child(5),
+    #modelsTable td:nth-child(5) {
+        width: 42px;
+        font-size: 0.65rem;
+        padding: 8px 2px;
+    }
+    
+    #modelsTable th:nth-child(6),
+    #modelsTable td:nth-child(6) {
+        width: 48px;
+        font-size: 0.75rem;
+        padding: 8px 2px;
+    }
+    
+    #modelsTable th:nth-child(7),
+    #modelsTable td:nth-child(7) {
+        width: 58px;
+        padding: 8px 2px;
+    }
+    
+    /* バッジのサイズ調整 */
+    .status-badge {
+        padding: 2px 4px;
+        font-size: 0.6rem;
+        border-radius: 6px;
+        white-space: nowrap;
+    }
+    
+    .category-badge {
+        padding: 2px 4px;
+        font-size: 0.6rem;
+        border-radius: 6px;
     }
     
     /* スマホでの詳細リンク最適化 */
     .detail-link {
         display: inline-block;
         width: auto;
-        padding: 10px 12px;
+        padding: 6px 8px;
         min-width: auto;
         white-space: nowrap;
         font-size: 0;  /* 元のテキストを非表示 */
@@ -877,7 +938,7 @@ body > nav.breadcrumb span {
     
     .detail-link::before {
         content: "詳細";
-        font-size: 0.85rem;  /* 「詳細」のフォントサイズ */
+        font-size: 0.75rem;  /* 「詳細」のフォントサイズ */
     }
 }
 
@@ -944,24 +1005,77 @@ body > nav.breadcrumb span {
     
     /* 480px以下での詳細ボタン最適化 */
     .detail-link {
-        padding: 10px 14px;
+        padding: 6px 7px;
         font-weight: bold;
-        border-radius: 10px;
-        box-shadow: 0 3px 10px rgba(52, 152, 219, 0.4);
+        border-radius: 6px;
+        box-shadow: 0 2px 6px rgba(52, 152, 219, 0.3);
     }
     
     .detail-link::before {
-        font-size: 0.8rem;  /* 480px以下では少し小さく */
+        font-size: 0.7rem;  /* 480px以下では少し小さく */
     }
     
     /* テーブルのレイアウト調整 */
     #modelsTable {
-        font-size: 0.85rem;
+        font-size: 0.75rem;
     }
     
     #modelsTable th,
     #modelsTable td {
-        padding: 12px 6px;
+        padding: 6px 2px;
+    }
+    
+    /* さらに列幅を縮小 */
+    #modelsTable th:nth-child(2),
+    #modelsTable td:nth-child(2) {
+        width: 35px;
+        font-size: 0.7rem;
+        padding: 6px 1px;
+    }
+    
+    #modelsTable th:nth-child(3),
+    #modelsTable td:nth-child(3) {
+        width: 45px;
+        font-size: 0.75rem;
+        padding: 6px 2px;
+    }
+    
+    #modelsTable th:nth-child(4),
+    #modelsTable td:nth-child(4) {
+        width: 35px;
+        font-size: 0.7rem;
+        padding: 6px 1px;
+    }
+    
+    #modelsTable th:nth-child(5),
+    #modelsTable td:nth-child(5) {
+        width: 40px;
+        font-size: 0.6rem;
+        padding: 6px 1px;
+    }
+    
+    #modelsTable th:nth-child(6),
+    #modelsTable td:nth-child(6) {
+        width: 45px;
+        font-size: 0.7rem;
+        padding: 6px 1px;
+    }
+    
+    #modelsTable th:nth-child(7),
+    #modelsTable td:nth-child(7) {
+        width: 55px;
+        padding: 6px 1px;
+    }
+    
+    /* バッジをさらに縮小 */
+    .status-badge {
+        padding: 1px 3px;
+        font-size: 0.55rem;
+    }
+    
+    .category-badge {
+        padding: 1px 3px;
+        font-size: 0.55rem;
     }
 }
 
