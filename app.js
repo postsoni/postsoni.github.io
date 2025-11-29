@@ -68,43 +68,66 @@ function initVisitorCounter() {
     if (!countElement || !textElement) return;
     
     try {
-        // 訪問者の一意IDを取得または生成
-        let visitorId = localStorage.getItem('visitorId');
+        // ユニークな訪問者IDを取得または生成
+        let visitorId = localStorage.getItem('postsoni_visitor_id');
+        const hasVisited = localStorage.getItem('postsoni_has_visited');
+        
         if (!visitorId) {
             // 新規訪問者：一意のIDを生成
             visitorId = 'visitor_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-            localStorage.setItem('visitorId', visitorId);
+            localStorage.setItem('postsoni_visitor_id', visitorId);
         }
         
-        // 訪問者リストを取得（グローバルストレージとして使用）
-        let visitorList = [];
-        const storedList = localStorage.getItem('globalVisitorList');
-        if (storedList) {
-            try {
-                visitorList = JSON.parse(storedList);
-            } catch (e) {
-                visitorList = [];
+        // カウンターAPIを使用（グローバルカウンター）
+        const namespace = 'postsoni-workshop';
+        const key = 'total-visitors';
+        
+        if (!hasVisited) {
+            // 初回訪問の場合のみカウントアップ
+            fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
+                .then(res => res.json())
+                .then(data => {
+                    const count = data.value;
+                    countElement.textContent = count;
+                    updateVisitorText(count);
+                    
+                    // 訪問済みフラグを設定
+                    localStorage.setItem('postsoni_has_visited', 'true');
+                })
+                .catch(error => {
+                    console.error('カウンターエラー:', error);
+                    // エラー時は現在のカウントを取得
+                    fetchCurrentCount();
+                });
+        } else {
+            // 既に訪問済みの場合は現在のカウントを取得（カウントアップしない）
+            fetchCurrentCount();
+        }
+        
+        function fetchCurrentCount() {
+            fetch(`https://api.countapi.xyz/get/${namespace}/${key}`)
+                .then(res => res.json())
+                .then(data => {
+                    const count = data.value || 0;
+                    countElement.textContent = count;
+                    updateVisitorText(count);
+                })
+                .catch(error => {
+                    console.error('カウント取得エラー:', error);
+                    countElement.textContent = '---';
+                    textElement.textContent = 'カウント取得中...';
+                });
+        }
+        
+        function updateVisitorText(count) {
+            const currentLang = localStorage.getItem('language') || 'ja';
+            if (currentLang === 'ja') {
+                textElement.textContent = `総訪問者数: ${count}人`;
+            } else if (currentLang === 'en') {
+                textElement.textContent = `Total Visitors: ${count}`;
+            } else if (currentLang === 'zh') {
+                textElement.textContent = `总访客数: ${count}`;
             }
-        }
-        
-        // このvisitorIdがリストに存在しない場合のみ追加
-        if (!visitorList.includes(visitorId)) {
-            visitorList.push(visitorId);
-            localStorage.setItem('globalVisitorList', JSON.stringify(visitorList));
-        }
-        
-        // カウントを表示
-        const count = visitorList.length;
-        countElement.textContent = count;
-        
-        // 多言語対応のテキスト表示
-        const currentLang = localStorage.getItem('language') || 'ja';
-        if (currentLang === 'ja') {
-            textElement.textContent = `あなたは${count}人目の訪問者です`;
-        } else if (currentLang === 'en') {
-            textElement.textContent = `You are visitor #${count}`;
-        } else if (currentLang === 'zh') {
-            textElement.textContent = `您是第${count}位访客`;
         }
         
     } catch (error) {
@@ -2665,11 +2688,11 @@ function updateVisitorCounterText(lang) {
     if (count === '---' || count === '') return;
     
     if (lang === 'ja') {
-        textElement.textContent = `あなたは${count}人目の訪問者です`;
+        textElement.textContent = `総訪問者数: ${count}人`;
     } else if (lang === 'en') {
-        textElement.textContent = `You are visitor #${count}`;
+        textElement.textContent = `Total Visitors: ${count}`;
     } else if (lang === 'zh') {
-        textElement.textContent = `您是第${count}位访客`;
+        textElement.textContent = `总访客数: ${count}`;
     }
 }
 
