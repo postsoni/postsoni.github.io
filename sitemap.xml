@@ -543,4 +543,25 @@
         <priority>0.7</priority>
     </url>
     
+    <url>
+        <loc>https://postsoni.github.io/archive/models/tamiya-m04.html</loc>
+        <lastmod>2025-12-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://postsoni.github.io/archive/models/tamiya-m05.html</loc>
+        <lastmod>2025-12-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://postsoni.github.io/archive/models/tamiya-m06.html</loc>
+        <lastmod>2025-12-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
 </urlset>
