@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- RC Archive Project Sitemap Version 27.0 -->
-<!-- Last Updated: 2025-12-03 -->
-<!-- Total Models: 80 -->
+<!-- RC Archive Project Sitemap Version 30.0 -->
+<!-- Last Updated: 2025-12-04 -->
+<!-- Total Models: 88 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <!-- トップページ -->
@@ -58,6 +58,69 @@
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-tg10-mk2-fz-2022.html</loc>
         <lastmod>2025-12-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2007年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/tamiya-tnx-5.2r-champagne.html</loc>
+        <lastmod>2025-12-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2006年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/tamiya-ndf-01t.html</loc>
+        <lastmod>2025-12-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2023年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/tamiya-scania-770-s-6x4-silver.html</loc>
+        <lastmod>2025-12-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2025年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-turbo-scorpion.html</loc>
+        <lastmod>2025-12-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2024年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-blizzard-2.0.html</loc>
+        <lastmod>2025-12-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2022年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-fantom-ep-4wd-ext.html</loc>
+        <lastmod>2025-12-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2004年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/tamiya-tnx.html</loc>
+        <lastmod>2025-12-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://postsoni.github.io/archive/models/tamiya-ndf-01.html</loc>
+        <lastmod>2025-12-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
