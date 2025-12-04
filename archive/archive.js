@@ -18,7 +18,7 @@ const translations = {
             databaseLink: {
                 title: "📋 機種情報を検索",
                 button: "📋 機種データベース一覧を見る →",
-                desc: "67機種の詳細情報・修理ガイドを掲載中"
+                desc: "100機種の詳細情報・修理ガイドを掲載中"
             },
             search: {
                 title: "🔍 機種を検索",
@@ -80,7 +80,7 @@ const translations = {
             databaseLink: {
                 title: "📋 Search Model Information",
                 button: "📋 View Model Database →",
-                desc: "67 models with detailed information and repair guides"
+                desc: "100 models with detailed information and repair guides"
             },
             search: {
                 title: "🔍 Search Models",
@@ -142,7 +142,7 @@ const translations = {
             databaseLink: {
                 title: "📋 搜索机型信息",
                 button: "📋 查看机型数据库 →",
-                desc: "已收录67种机型的详细信息和维修指南"
+                desc: "已收录100种机型的详细信息和维修指南"
             },
             search: {
                 title: "🔍 搜索机型",

@@ -714,6 +714,11 @@ body > nav.breadcrumb span {
     font-weight: 600;
 }
 
+.status-badge.available {
+    background: #27ae60;
+    color: white;
+}
+
 .status-badge.active {
     background: #27ae60;
     color: white;
@@ -721,6 +726,11 @@ body > nav.breadcrumb span {
 
 .status-badge.discontinued {
     background: #95a5a6;
+    color: white;
+}
+
+.status-badge.prototype {
+    background: #e91e63;
     color: white;
 }
 
