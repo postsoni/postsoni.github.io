@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- RC Archive Project Sitemap Version 37.0 -->
-<!-- Last Updated: 2025-12-05 -->
-<!-- Total Models: 100 -->
+<!-- RC Archive Project Sitemap Version 39.0 -->
+<!-- Last Updated: 2025-12-06 -->
+<!-- Total Models: 109 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <!-- トップページ -->
@@ -199,6 +199,48 @@
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-lancia-delta-integrale-16v.html</loc>
         <lastmod>2025-12-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-spider-4wd.html</loc>
+        <lastmod>2025-12-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-hyper-fly.html</loc>
+        <lastmod>2025-12-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-piper-j3-cub-4c-50.html</loc>
+        <lastmod>2025-12-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-super-ten-gp-4wd.html</loc>
+        <lastmod>2025-12-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-pureten-gp.html</loc>
+        <lastmod>2025-12-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-field-baja-beetle-wild-dodge-ram.html</loc>
+        <lastmod>2025-12-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
