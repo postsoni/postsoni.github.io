@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- RC Archive Project Sitemap Version 39.0 -->
+<!-- RC Archive Project Sitemap Version 42.0 -->
 <!-- Last Updated: 2025-12-06 -->
-<!-- Total Models: 109 -->
+<!-- Total Models: 119 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <!-- トップページ -->
@@ -240,6 +240,86 @@
     
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-field-baja-beetle-wild-dodge-ram.html</loc>
+        <lastmod>2025-12-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2001年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-v-one-s.html</loc>
+        <lastmod>2025-12-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2003年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-v-one-sii.html</loc>
+        <lastmod>2025-12-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2007年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-v-one-siii.html</loc>
+        <lastmod>2025-12-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2009年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-v-one-sr.html</loc>
+        <lastmod>2025-12-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2000年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-v-one-r.html</loc>
+        <lastmod>2025-12-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2001年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-v-one-rr.html</loc>
+        <lastmod>2025-12-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2003年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-v-one-rr-evo.html</loc>
+        <lastmod>2025-12-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2004年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-v-one-rrr.html</loc>
+        <lastmod>2025-12-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2006年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-v-one-rrr-evo.html</loc>
+        <lastmod>2025-12-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2008年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-v-one-rrr-evo2.html</loc>
         <lastmod>2025-12-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
