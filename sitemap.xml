@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- RC Archive Project Sitemap Version 49.0 -->
-<!-- Last Updated: 2025-12-09 -->
-<!-- Total Models: 151 -->
+<!-- RC Archive Project Sitemap Version 56.0 -->
+<!-- Last Updated: 2025-12-10 -->
+<!-- Total Models: 158 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <!-- トップページ -->
@@ -1191,6 +1191,62 @@
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-drx.html</loc>
         <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- PureTen EPスパイダー 1995年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-pureten-ep-spider.html</loc>
+        <lastmod>2025-12-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- PureTen EPスパイダーTF-2 1996年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-pureten-ep-spider-tf2.html</loc>
+        <lastmod>2025-12-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- PureTen EPスパイダーTF-2 Type R 1996年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-pureten-ep-spider-tf2-type-r.html</loc>
+        <lastmod>2025-12-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- PureTen EPスパイダーTF-3 1997年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-pureten-ep-spider-tf3.html</loc>
+        <lastmod>2025-12-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- PureTen EPスパイダーTF-3 Type R 1998年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-pureten-ep-spider-tf3-type-r.html</loc>
+        <lastmod>2025-12-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- PureTen EPスパイダーMk.II 2000年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-pureten-ep-spider-mk2.html</loc>
+        <lastmod>2025-12-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- PureTen EPスパイダーTF-4 Type R 2000年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-pureten-ep-spider-tf4-type-r.html</loc>
+        <lastmod>2025-12-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
