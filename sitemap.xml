@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- RC Archive Project Sitemap Version 42.0 -->
-<!-- Last Updated: 2025-12-06 -->
-<!-- Total Models: 119 -->
+<!-- RC Archive Project Sitemap Version 43.0 -->
+<!-- Last Updated: 2025-12-09 -->
+<!-- Total Models: 124 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <!-- トップページ -->
@@ -321,6 +321,46 @@
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-v-one-rrr-evo2.html</loc>
         <lastmod>2025-12-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2011年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-v-one-r4.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2013年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-v-one-r4s.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2017年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-v-one-r4s-ii.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2018年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-v-one-r4-evo2.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2024年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-v-one-r4-evo3.html</loc>
+        <lastmod>2025-12-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
