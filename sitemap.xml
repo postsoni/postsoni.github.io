@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- RC Archive Project Sitemap Version 48.0 -->
+<!-- RC Archive Project Sitemap Version 49.0 -->
 <!-- Last Updated: 2025-12-09 -->
-<!-- Total Models: 146 -->
+<!-- Total Models: 151 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <!-- トップページ -->
@@ -1150,6 +1150,46 @@
     <!-- 2012年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-evolva-2012.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- インファーノGT 2005年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-inferno-gt.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- インファーノGT2 2008年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-inferno-gt2.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- インファーノGT2 VE 2012年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-inferno-gt2-ve.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- インファーノGT3 2017年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-inferno-gt3.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- DRX 2009年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-drx.html</loc>
         <lastmod>2025-12-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
