@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- RC Archive Project Sitemap Version 44.0 -->
+<!-- RC Archive Project Sitemap Version 48.0 -->
 <!-- Last Updated: 2025-12-09 -->
-<!-- Total Models: 129 -->
+<!-- Total Models: 146 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <!-- トップページ -->
@@ -400,6 +400,91 @@
     <!-- FW-05T（2004年発売） -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-fw-05t.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- FW-05S（2003年発売） -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-fw-05s.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- FW-05RR（2004年発売） -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-fw-05rr.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- FW-06（2007年発売、現行販売中） -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-fw-06.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- PureTen GP Fazer（2006年発売、生産終了） -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-pureten-gp-fazer.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- PureTen EP Fazer（2009年発売、生産終了） -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-pureten-ep-fazer.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- EP Fazer Kobra（2010年発売、生産終了） -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-ep-fazer-kobra.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- EP Fazer Rage VE（2013年発売、生産終了） -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-ep-fazer-rage-ve.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Fazer Mk2 Rage 2.0（2018年発売、現行販売中） -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-fazer-mk2-rage-2-0.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-pureten-ep-fazer-ve-x.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-pureten-ep-fazer-ve.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-ep-fazer-vei.html</loc>
         <lastmod>2025-12-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -1018,6 +1103,54 @@
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-m06.html</loc>
         <lastmod>2025-12-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2003年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-evolva-2003.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2004年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-evolva-2004.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2005年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-evolva-2005.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2006年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-evolva-2005-wc.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2007年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-evolva-m3.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 2012年発売 -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-evolva-2012.html</loc>
+        <lastmod>2025-12-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
