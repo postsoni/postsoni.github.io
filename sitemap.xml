@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- RC Archive Project Sitemap Version 43.0 -->
+<!-- RC Archive Project Sitemap Version 44.0 -->
 <!-- Last Updated: 2025-12-09 -->
-<!-- Total Models: 124 -->
+<!-- Total Models: 129 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <!-- トップページ -->
@@ -360,6 +360,46 @@
     <!-- 2024年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-v-one-r4-evo3.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- FW-01（1989年頃発売） -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-fw-01.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- FW-02（1993年頃発売） -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-fw-02.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- FW-03（1997年頃発売） -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-fw-03.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- FW-04（2000年頃発売） -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-fw-04.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- FW-05T（2004年発売） -->
+    <url>
+        <loc>https://postsoni.github.io/archive/models/kyosho-fw-05t.html</loc>
         <lastmod>2025-12-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
