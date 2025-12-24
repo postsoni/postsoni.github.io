@@ -60,7 +60,7 @@ const translations = {
                 title: "📖 アーカイブについて",
                 desc1: "このアーカイブは、絶版機種から現代の最新機種まで、ラジコンの歴史と技術を後世に残すためのデータベースです。",
                 desc2: "取扱説明書、修理ガイド、パーツ互換情報など、ラジコン文化の保存と継承を目的としています。",
-                desc3: "ぽすとそに工房の18年間の修理経験と、100件以上の修理実績をもとに構築されています。"
+                desc3: "ぽすとそに工房の19年間の修理経験と、100件以上の修理実績をもとに構築されています。"
             },
             footer: {
                 license: "このアーカイブは非営利・教育目的で運営されています。<br>著作権は各メーカーに帰属します。"
@@ -122,7 +122,7 @@ const translations = {
                 title: "📖 About This Archive",
                 desc1: "This archive is a database dedicated to preserving the history and technology of RC models, from vintage discontinued models to the latest modern releases.",
                 desc2: "The archive aims to preserve and pass on RC culture through instruction manuals, repair guides, and parts compatibility information.",
-                desc3: "Built upon 18 years of repair experience and over 100 repair cases by Postsoni Workshop."
+                desc3: "Built upon 19 years of repair experience and over 100 repair cases by Postsoni Workshop."
             },
             footer: {
                 license: "This archive is operated for non-profit and educational purposes.<br>All copyrights belong to respective manufacturers."
@@ -184,7 +184,7 @@ const translations = {
                 title: "📖 关于资料库",
                 desc1: "本资料库是一个旨在为后代保存遥控模型历史和技术的数据库，从绝版机型到现代最新机型。",
                 desc2: "通过说明书、维修指南、零件兼容性信息等，旨在保存和传承遥控模型文化。",
-                desc3: "基于Postsoni工房18年的维修经验和100多个维修案例构建。"
+                desc3: "基于Postsoni工房19年的维修经验和100多个维修案例构建。"
             },
             footer: {
                 license: "本资料库为非营利和教育目的运营。<br>版权归各制造商所有。"
