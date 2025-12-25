@@ -3844,11 +3844,6 @@ body.dark-mode .gallery-item {
     border-color: #3c4043 !important;
 }
 
-body.dark-mode .gallery-caption {
-    color: #e8eaed !important;
-    background: rgba(0, 0, 0, 0.8) !important;
-}
-
 body.dark-mode .gallery-item p,
 body.dark-mode .gallery-card p {
     color: #e8eaed !important;
@@ -3944,21 +3939,6 @@ body.dark-mode div[style*="background: linear-gradient(135deg, #ffeaea"] {
     background: #2d2d2d !important;
     border-color: #f28b82 !important;
     color: #e8eaed !important;
-}
-
-/* === note埋め込みセクション === */
-body.dark-mode .note-embed {
-    background: #2d2d2d !important;
-    border-radius: 12px;
-    padding: 20px;
-}
-
-body.dark-mode .note-embed-title {
-    color: #f28b82 !important;
-}
-
-body.dark-mode .note-more-link a {
-    color: #8ab4f8 !important;
 }
 
 /* === グッズセクション === */
@@ -4109,11 +4089,6 @@ body.dark-mode .contact-warning {
 
 body.dark-mode .contact-warning p {
     color: #e8eaed !important;
-}
-
-body.dark-mode .contact-button {
-    background: linear-gradient(135deg, #fdd663 0%, #f28b82 100%) !important;
-    color: #121212 !important;
 }
 
 /* お問い合わせ注意テキスト */
@@ -4582,14 +4557,6 @@ body.dark-mode .news-section div[style*="background: linear-gradient"] li strong
     color: #fdd663 !important;
 }
 
-/* noteウィジェット背景 */
-body.dark-mode .note-widget,
-body.dark-mode .note-embed,
-body.dark-mode iframe[src*="note.com"] {
-    background: #1e1e1e;
-    border-radius: 12px;
-}
-
 /* 体験談セクション */
 body.dark-mode .testimonials-intro {
     background: #2d2d2d !important;
@@ -4614,72 +4581,6 @@ body.dark-mode .faq-intro {
     background: #2d2d2d !important;
     color: #e8eaed !important;
     border-color: #f28b82 !important;
-}
-
-body.dark-mode .faq-card {
-    background: #1e1e1e !important;
-}
-
-body.dark-mode .faq-item {
-    background: #2d2d2d !important;
-    border-color: #3c4043 !important;
-}
-
-body.dark-mode .faq-item:hover {
-    border-color: #f28b82 !important;
-}
-
-body.dark-mode .faq-question {
-    background: #2d2d2d !important;
-    color: #e8eaed !important;
-}
-
-body.dark-mode .faq-question h3 {
-    color: #e8eaed !important;
-}
-
-body.dark-mode .faq-icon {
-    background: linear-gradient(135deg, #f28b82 0%, #fdd663 100%) !important;
-    color: #121212 !important;
-}
-
-body.dark-mode .faq-toggle {
-    color: #9aa0a6 !important;
-}
-
-body.dark-mode .faq-item.active .faq-question {
-    background: linear-gradient(135deg, #f28b82 0%, #fdd663 100%) !important;
-}
-
-body.dark-mode .faq-item.active .faq-question h3 {
-    color: #121212 !important;
-}
-
-body.dark-mode .faq-item.active .faq-icon {
-    background: #121212 !important;
-    color: #f28b82 !important;
-}
-
-body.dark-mode .faq-item.active .faq-toggle {
-    color: #121212 !important;
-}
-
-body.dark-mode .faq-answer {
-    background: #252525 !important;
-    color: #e8eaed !important;
-}
-
-body.dark-mode .faq-answer p {
-    color: #e8eaed !important;
-}
-
-body.dark-mode .faq-answer {
-    background: #252525 !important;
-    color: #e8eaed !important;
-}
-
-body.dark-mode .faq-answer p {
-    color: #e8eaed !important;
 }
 
 /* お問い合わせセクション */
@@ -4708,11 +4609,6 @@ body.dark-mode .contact-warning {
     background: rgba(253, 214, 99, 0.1) !important;
     border-color: #fdd663 !important;
     color: #e8eaed !important;
-}
-
-body.dark-mode .contact-button {
-    background: linear-gradient(135deg, #fdd663 0%, #f28b82 100%) !important;
-    color: #121212 !important;
 }
 
 /* サポートセクション */
@@ -4782,10 +4678,6 @@ body.dark-mode .step-list li {
 body.dark-mode .gallery-item {
     background: #2d2d2d !important;
     border-color: #3c4043 !important;
-}
-
-body.dark-mode .gallery-caption {
-    color: #e8eaed !important;
 }
 
 /* 全体的なテキスト色の強化 */
