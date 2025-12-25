@@ -149,7 +149,7 @@
     </script>
     
     <!-- バージョン管理：サイト更新時は v=1.1.1, v=1.1.2 と変更してください -->
-    <link rel="stylesheet" href="style.css?v=1.7.1">
+    <link rel="stylesheet" href="style.css?v=1.7.2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Yomogi&family=Zen+Kurenaido&family=Shippori+Antique&display=swap" rel="stylesheet">
@@ -271,21 +271,21 @@
                 </nav>
                 
                 <!-- 最新情報を見るための注意書き -->
-                <div style="background: linear-gradient(135deg, #fff9e6 0%, #fffbf0 100%); 
+                <div class="reload-notice" style="background: linear-gradient(135deg, #fff9e6 0%, #fffbf0 100%); 
                             border-left: 4px solid #ffc107; 
                             padding: 20px 25px; 
                             margin: 20px 0 30px 0; 
                             border-radius: 8px;
                             box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h3 style="color: #f57c00; font-size: 1.1em; margin: 0 0 15px 0; font-weight: bold;" data-translate="reloadNoticeTitle">
+                    <h3 class="reload-notice-title" style="color: #f57c00; font-size: 1.1em; margin: 0 0 15px 0; font-weight: bold;" data-translate="reloadNoticeTitle">
                         💡 最新情報をご覧いただくために
                     </h3>
-                    <p style="margin: 0 0 10px 0; line-height: 1.9; color: #333; font-size: 0.98em;">
+                    <p class="reload-notice-text" style="margin: 0 0 10px 0; line-height: 1.9; color: #333; font-size: 0.98em;">
                         <span data-translate="reloadNoticeText1">当サイトは頻繁に更新されています。</span><br>
                         <span data-translate="reloadNoticeText2">最新の情報が表示されない場合がございますので、お手数ですが</span><br>
                         <span data-translate="reloadNoticeText3">ブラウザのページ更新をお試しください。</span>
                     </p>
-                    <div style="background: rgba(255,255,255,0.6); 
+                    <div class="reload-notice-keys" style="background: rgba(255,255,255,0.6); 
                                 padding: 15px 18px; 
                                 border-radius: 5px;
                                 margin-top: 15px;
@@ -387,8 +387,8 @@
                             📚 RCアーカイブを見る →
                         </a>
                         
-                        <div style="margin-top: 30px; padding: 20px; background-color: rgba(255, 255, 255, 0.1); border-radius: 8px;">
-                            <p style="font-size: 1em; margin: 0;" data-i18n="archive.main.request">
+                        <div class="archive-request-box" style="margin-top: 30px; padding: 20px; background-color: rgba(255, 255, 255, 0.1); border-radius: 8px;">
+                            <p class="archive-request-text" style="font-size: 1em; margin: 0;" data-i18n="archive.main.request">
                                 💡 <strong>情報提供のお願い</strong><br>
                                 お持ちの機種情報や取扱説明書がございましたら、ぜひご協力ください！<br>
                                 一緒にRC文化を未来へ残しましょう。

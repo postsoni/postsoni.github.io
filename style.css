@@ -3119,64 +3119,125 @@ body.dark-mode .dark-mode-toggle .dark-icon {
 
 
 /* ============================================
-   ダークモード スタイル
+   ダークモード スタイル（Google Material Design準拠）
+   カラーパレット:
+   - 背景（最深）: #121212
+   - 背景（カード）: #1e1e1e
+   - 背景（浮上）: #2d2d2d
+   - 背景（ホバー）: #3c3c3c
+   - ボーダー: #3c4043
+   - テキスト（メイン）: #e8eaed
+   - テキスト（サブ）: #9aa0a6
+   - アクセント: #f28b82（コーラルピンク）
+   - アクセント（明）: #fdd663（イエロー）
 ============================================ */
 
 body.dark-mode {
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
-    color: #ecf0f1;
+    background: #121212;
+    color: #e8eaed;
 }
 
+/* ヘッダー */
 body.dark-mode .site-header {
-    background: #34495e;
-    border-bottom-color: #ff9a76;
+    background: #1e1e1e;
+    border-bottom: 2px solid #3c4043;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .header-image::after {
+    background: linear-gradient(to top, #1e1e1e, transparent);
 }
 
 body.dark-mode .header-content {
-    background: rgba(52, 73, 94, 0.95);
+    background: #1e1e1e;
 }
 
 body.dark-mode .main-title {
-    color: #ecf0f1;
+    background: linear-gradient(135deg, #f28b82 0%, #fdd663 50%, #81c995 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 body.dark-mode .subtitle {
-    color: #bdc3c7;
+    color: #9aa0a6;
 }
 
+body.dark-mode .logo-icon {
+    border-color: #f28b82;
+    box-shadow: 0 4px 15px rgba(242, 139, 130, 0.3);
+}
+
+/* サイドバー */
 body.dark-mode .sidebar {
-    background: #34495e;
+    background: transparent;
+}
+
+body.dark-mode .nav-card,
+body.dark-mode .counter-card {
+    background: #1e1e1e;
+    border: 1px solid #3c4043;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .nav-title,
+body.dark-mode .counter-title {
+    color: #f28b82;
+    border-bottom-color: #3c4043;
 }
 
 body.dark-mode .nav-item {
-    background: rgba(255, 154, 118, 0.1);
-    color: #ff9a76;
+    background: #2d2d2d;
+    color: #e8eaed;
+    border-left-color: #3c4043;
 }
 
 body.dark-mode .nav-item:hover {
-    background: #ff9a76;
-    color: white;
+    background: #3c3c3c;
+    color: #f28b82;
+    border-left-color: #f28b82;
+    box-shadow: 0 2px 8px rgba(242, 139, 130, 0.2);
 }
 
 body.dark-mode .nav-item.active {
-    background: #ff9a76;
-    color: white;
+    background: rgba(242, 139, 130, 0.15);
+    color: #f28b82;
+    border-left-color: #f28b82;
+    font-weight: 600;
 }
 
+/* カウンター */
 body.dark-mode .counter-display {
-    background: rgba(255, 154, 118, 0.1);
+    background: #2d2d2d;
+    border-radius: 12px;
 }
 
+body.dark-mode .counter-number {
+    color: #f28b82;
+}
+
+body.dark-mode .counter-label {
+    color: #9aa0a6;
+}
+
+/* コンテンツセクション */
 body.dark-mode .content-section {
-    background: #34495e;
-    color: #ecf0f1;
+    background: #1e1e1e;
+    border: 1px solid #3c4043;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #e8eaed;
+}
+
+body.dark-mode .section-header {
+    border-bottom-color: #3c4043;
 }
 
 body.dark-mode .section-title {
-    color: #ff9a76;
+    color: #f28b82;
 }
 
-body.dark-mode .greeting-content,
+/* カード類 */
+body.dark-mode .greeting-card,
 body.dark-mode .gallery-card,
 body.dark-mode .roadmap-card,
 body.dark-mode .profile-card,
@@ -3185,13 +3246,1582 @@ body.dark-mode .support-card,
 body.dark-mode .testimonials-card,
 body.dark-mode .faq-card,
 body.dark-mode .contact-card,
-body.dark-mode .goods-card {
-    background: rgba(44, 62, 80, 0.6);
+body.dark-mode .goods-card,
+body.dark-mode .news-card {
+    background: #2d2d2d;
+    border-color: #3c4043;
 }
 
+body.dark-mode .greeting-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    border-color: #f28b82;
+}
+
+body.dark-mode .greeting-content p {
+    color: #e8eaed;
+}
+
+body.dark-mode .greeting-title {
+    color: #f28b82;
+}
+
+/* プロフィール */
+body.dark-mode .profile-item {
+    background: #2d2d2d;
+    border-left-color: #f28b82;
+}
+
+body.dark-mode .profile-label {
+    color: #f28b82;
+}
+
+body.dark-mode .profile-value {
+    color: #e8eaed;
+}
+
+body.dark-mode .profile-list ul li {
+    color: #e8eaed;
+}
+
+/* SNS */
+body.dark-mode .sns-item {
+    background: #2d2d2d;
+    border-color: #3c4043;
+}
+
+body.dark-mode .sns-content h3 {
+    color: #f28b82;
+}
+
+body.dark-mode .sns-content p {
+    color: #9aa0a6;
+}
+
+body.dark-mode .sns-link {
+    color: #8ab4f8;
+}
+
+body.dark-mode .youtube-banner-link {
+    background: #2d2d2d;
+    border-color: #3c4043;
+}
+
+body.dark-mode .youtube-banner-link:hover {
+    border-color: #f28b82;
+    box-shadow: 0 8px 30px rgba(242, 139, 130, 0.2);
+}
+
+/* フッター */
 body.dark-mode .site-footer {
-    background: #2c3e50;
-    color: #bdc3c7;
+    background: #1e1e1e;
+    border-top: 1px solid #3c4043;
+    color: #9aa0a6;
+}
+
+body.dark-mode .footer-copyright {
+    color: #e8eaed;
+}
+
+/* FAQ - 強化版 */
+body.dark-mode .faq-card {
+    background: #1e1e1e !important;
+}
+
+body.dark-mode .faq-item {
+    background: #2d2d2d !important;
+    border-color: #3c4043 !important;
+}
+
+body.dark-mode .faq-item:hover {
+    border-color: #f28b82 !important;
+}
+
+body.dark-mode .faq-question {
+    background: transparent !important;
+}
+
+body.dark-mode .faq-question h3 {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .faq-icon {
+    background: linear-gradient(135deg, #f28b82 0%, #fdd663 100%) !important;
+    color: #121212 !important;
+}
+
+body.dark-mode .faq-toggle {
+    color: #9aa0a6 !important;
+}
+
+body.dark-mode .faq-item.active .faq-question {
+    background: linear-gradient(135deg, #f28b82 0%, #fdd663 100%) !important;
+}
+
+body.dark-mode .faq-item.active .faq-question h3 {
+    color: #121212 !important;
+}
+
+body.dark-mode .faq-item.active .faq-icon {
+    background: #121212 !important;
+    color: #f28b82 !important;
+}
+
+body.dark-mode .faq-item.active .faq-toggle {
+    color: #121212 !important;
+}
+
+body.dark-mode .faq-answer {
+    background: #252525 !important;
+    color: #e8eaed !important;
+}
+
+body.dark-mode .faq-answer p {
+    color: #e8eaed !important;
+}
+
+/* ボタン・CTA */
+body.dark-mode .cta-button,
+body.dark-mode .cta-primary {
+    background: linear-gradient(135deg, #f28b82 0%, #fdd663 100%);
+    color: #121212;
+    border: none;
+}
+
+body.dark-mode .cta-button:hover,
+body.dark-mode .cta-primary:hover {
+    box-shadow: 0 6px 20px rgba(242, 139, 130, 0.4);
+}
+
+/* 統計セクション */
+body.dark-mode .stat-item {
+    background: #2d2d2d;
+    border-color: #3c4043;
+}
+
+body.dark-mode .stat-number {
+    color: #f28b82;
+}
+
+body.dark-mode .stat-label {
+    color: #9aa0a6;
+}
+
+/* 月間レポート */
+body.dark-mode .monthly-report-section {
+    background: #2d2d2d;
+    border-color: #3c4043;
+}
+
+body.dark-mode .report-title {
+    color: #f28b82;
+}
+
+body.dark-mode .report-date {
+    color: #9aa0a6;
+}
+
+body.dark-mode .report-item {
+    background: #252525;
+    border-color: #3c4043;
+}
+
+body.dark-mode .report-item h4 {
+    color: #e8eaed;
+}
+
+body.dark-mode .report-number,
+body.dark-mode .report-detail {
+    color: #f28b82;
+}
+
+/* ロードマップ */
+body.dark-mode .roadmap-step {
+    background: #2d2d2d;
+    border-color: #3c4043;
+}
+
+body.dark-mode .step-number {
+    background: linear-gradient(135deg, #f28b82 0%, #fdd663 100%);
+    color: #121212;
+}
+
+body.dark-mode .step-title {
+    color: #f28b82;
+}
+
+body.dark-mode .step-content {
+    color: #e8eaed;
+}
+
+body.dark-mode .step-list li {
+    color: #e8eaed;
+}
+
+/* ギャラリー */
+body.dark-mode .gallery-item {
+    background: #2d2d2d;
+    border-color: #3c4043;
+}
+
+body.dark-mode .gallery-caption {
+    color: #e8eaed !important;
+    background: #2d2d2d !important;
+}
+
+body.dark-mode .related-badge {
+    background: #f28b82;
+    color: #121212;
+}
+
+/* テスティモニアル */
+body.dark-mode .testimonial-item {
+    background: #2d2d2d;
+    border-color: #3c4043;
+}
+
+body.dark-mode .testimonial-name {
+    color: #f28b82;
+}
+
+body.dark-mode .testimonial-tag {
+    background: rgba(242, 139, 130, 0.15);
+    color: #f28b82;
+}
+
+body.dark-mode .testimonial-text {
+    color: #e8eaed;
+}
+
+/* サポートセクション */
+body.dark-mode .support-item {
+    background: #2d2d2d;
+    border-color: #3c4043;
+}
+
+body.dark-mode .support-item:hover {
+    border-color: #f28b82;
+}
+
+body.dark-mode .support-icon {
+    background: rgba(242, 139, 130, 0.15);
+}
+
+body.dark-mode .support-title {
+    color: #f28b82;
+}
+
+body.dark-mode .support-description {
+    color: #e8eaed;
+}
+
+/* お問い合わせ */
+body.dark-mode .contact-card {
+    background: #2d2d2d;
+}
+
+body.dark-mode .contact-description {
+    color: #e8eaed;
+}
+
+body.dark-mode .contact-button {
+    background: linear-gradient(135deg, #f28b82 0%, #fdd663 100%);
+    color: #121212;
+}
+
+body.dark-mode .contact-button:hover {
+    box-shadow: 0 6px 20px rgba(242, 139, 130, 0.4);
+}
+
+body.dark-mode .contact-important-notice,
+body.dark-mode .contact-technical-notice {
+    background: #252525;
+    border-left-color: #fdd663;
+}
+
+body.dark-mode .contact-important-notice h4,
+body.dark-mode .contact-technical-notice h4 {
+    color: #fdd663;
+}
+
+body.dark-mode .contact-notice {
+    color: #9aa0a6;
+}
+
+/* グッズセクション */
+body.dark-mode .goods-card {
+    background: #2d2d2d;
+}
+
+body.dark-mode .goods-card-title {
+    color: #f28b82;
+}
+
+body.dark-mode .goods-card-description {
+    color: #e8eaed;
+}
+
+body.dark-mode .pdf-download-item {
+    background: #252525;
+    border-color: #3c4043;
+}
+
+body.dark-mode .pdf-download-item:hover {
+    border-color: #f28b82;
+}
+
+body.dark-mode .pdf-content h4 {
+    color: #e8eaed;
+}
+
+body.dark-mode .pdf-features li {
+    color: #9aa0a6;
+}
+
+body.dark-mode .download-button {
+    background: linear-gradient(135deg, #f28b82 0%, #fdd663 100%);
+    color: #121212;
+}
+
+body.dark-mode .goods-coming-soon {
+    background: #252525;
+    border-color: #3c4043;
+}
+
+body.dark-mode .coming-soon {
+    color: #9aa0a6;
+}
+
+/* トップビジュアル */
+body.dark-mode .top-visual-section {
+    background: #2d2d2d;
+    border-color: #3c4043;
+}
+
+body.dark-mode .visual-intro {
+    color: #f28b82;
+}
+
+body.dark-mode .visual-item {
+    background: #2d2d2d !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .visual-item:hover {
+    box-shadow: 0 15px 35px rgba(242, 139, 130, 0.2) !important;
+}
+
+body.dark-mode .visual-caption {
+    color: #e8eaed !important;
+    background: #2d2d2d !important;
+}
+
+body.dark-mode .gallery-link-button {
+    background: #2d2d2d;
+    color: #f28b82;
+    border-color: #f28b82;
+}
+
+body.dark-mode .gallery-link-button:hover {
+    background: #f28b82;
+    color: #121212;
+}
+
+/* 統計グリッド */
+body.dark-mode .top-stats-section {
+    background: #2d2d2d;
+    border-color: #3c4043;
+}
+
+body.dark-mode .stats-title {
+    color: #f28b82;
+}
+
+/* 初心者ガイドCTA - 修正版 */
+body.dark-mode .beginner-guide-cta {
+    background: transparent;
+}
+
+body.dark-mode .guide-cta-content {
+    background: #2d2d2d !important;
+    border-left-color: #8ab4f8 !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .guide-cta-title {
+    color: #8ab4f8 !important;
+}
+
+body.dark-mode .guide-cta-description {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .guide-cta-button {
+    background: #8ab4f8 !important;
+    color: #121212 !important;
+}
+
+body.dark-mode .guide-cta-button:hover {
+    background: #aecbfa !important;
+}
+
+/* 信頼性統計 */
+body.dark-mode .trust-stats {
+    background: rgba(45, 45, 45, 0.8);
+}
+
+body.dark-mode .trust-stats .stat-item {
+    background: #2d2d2d;
+}
+
+/* 実績セクション */
+body.dark-mode .achievements-section {
+    background: #2d2d2d;
+    border-color: #3c4043;
+}
+
+body.dark-mode .achievements-title {
+    color: #f28b82;
+}
+
+body.dark-mode .achievement-item {
+    background: #252525;
+    border-color: #3c4043;
+}
+
+body.dark-mode .achievement-number {
+    color: #f28b82;
+}
+
+body.dark-mode .achievement-label {
+    color: #e8eaed;
+}
+
+body.dark-mode .achievement-sublabel {
+    color: #9aa0a6;
+}
+
+/* メーカーセクション */
+body.dark-mode .makers-section {
+    background: #252525;
+    border-color: #3c4043;
+}
+
+body.dark-mode .makers-title {
+    color: #f28b82;
+}
+
+body.dark-mode .maker-tag {
+    background: #3c3c3c;
+    color: #e8eaed;
+    border-color: #3c4043;
+}
+
+body.dark-mode .maker-tag:hover {
+    background: rgba(242, 139, 130, 0.15);
+    border-color: #f28b82;
+    color: #f28b82;
+}
+
+/* パッションセクション */
+body.dark-mode .passion-section {
+    background: #252525;
+    border-color: #3c4043;
+}
+
+body.dark-mode .passion-title {
+    color: #f28b82;
+}
+
+body.dark-mode .passion-text {
+    color: #e8eaed;
+}
+
+body.dark-mode .passion-text strong {
+    color: #fdd663;
+}
+
+body.dark-mode .passion-closing {
+    color: #f28b82;
+}
+
+/* ダークモードトグルボタン */
+body.dark-mode .dark-mode-toggle {
+    background: #2d2d2d;
+    border-color: #f28b82;
+    color: #f28b82;
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+    background: #3c3c3c;
+    box-shadow: 0 4px 15px rgba(242, 139, 130, 0.3);
+}
+
+/* スクロールバー（Webkit系ブラウザ） */
+body.dark-mode::-webkit-scrollbar {
+    width: 12px;
+}
+
+body.dark-mode::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+body.dark-mode::-webkit-scrollbar-thumb {
+    background: #3c4043;
+    border-radius: 6px;
+}
+
+body.dark-mode::-webkit-scrollbar-thumb:hover {
+    background: #5f6368;
+}
+
+/* 選択テキスト */
+body.dark-mode ::selection {
+    background: rgba(242, 139, 130, 0.3);
+    color: #e8eaed;
+}
+
+/* リンク */
+body.dark-mode a {
+    color: #8ab4f8;
+}
+
+body.dark-mode a:hover {
+    color: #aecbfa;
+}
+
+/* 入力フォーム */
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+    background: #2d2d2d;
+    color: #e8eaed;
+    border-color: #3c4043;
+}
+
+body.dark-mode input:focus,
+body.dark-mode textarea:focus,
+body.dark-mode select:focus {
+    border-color: #f28b82;
+    box-shadow: 0 0 0 2px rgba(242, 139, 130, 0.2);
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+    color: #9aa0a6;
+}
+
+/* ============================================
+   ダークモード追加修正（コントラスト改善）
+   全セクション対応版
+============================================ */
+
+/* === 基本テキスト色の強制上書き === */
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode li,
+body.dark-mode div {
+    color: #e8eaed;
+}
+
+body.dark-mode strong,
+body.dark-mode b {
+    color: #fdd663;
+}
+
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, 
+body.dark-mode h4, body.dark-mode h5, body.dark-mode h6 {
+    color: #e8eaed;
+}
+
+/* === ギャラリーセクション === */
+body.dark-mode .gallery-intro {
+    background: #2d2d2d !important;
+    color: #e8eaed !important;
+}
+
+body.dark-mode .gallery-item {
+    background: #2d2d2d !important;
+    border-color: #3c4043 !important;
+}
+
+body.dark-mode .gallery-caption {
+    color: #e8eaed !important;
+    background: rgba(0, 0, 0, 0.8) !important;
+}
+
+body.dark-mode .gallery-item p,
+body.dark-mode .gallery-card p {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .gallery-link-button {
+    background: #2d2d2d !important;
+    color: #f28b82 !important;
+    border-color: #f28b82 !important;
+}
+
+/* === お気軽にご相談ください（CTA） === */
+body.dark-mode .consultation-cta,
+body.dark-mode .contact-cta,
+body.dark-mode div[style*="background: linear-gradient(135deg, #fff5f0"],
+body.dark-mode div[style*="background: linear-gradient(135deg, #ffe4d9"] {
+    background: #2d2d2d !important;
+    border-color: #f28b82 !important;
+}
+
+body.dark-mode .consultation-cta h3,
+body.dark-mode .contact-cta h3 {
+    color: #f28b82 !important;
+}
+
+body.dark-mode .consultation-cta p,
+body.dark-mode .contact-cta p {
+    color: #e8eaed !important;
+}
+
+/* === ロードマップセクション === */
+body.dark-mode .roadmap-intro {
+    background: #2d2d2d !important;
+    color: #e8eaed !important;
+}
+
+body.dark-mode .roadmap-step {
+    background: #2d2d2d !important;
+    border-color: #3c4043 !important;
+}
+
+body.dark-mode .roadmap-step:hover {
+    border-color: #f28b82 !important;
+}
+
+body.dark-mode .step-number {
+    background: linear-gradient(135deg, #f28b82 0%, #fdd663 100%) !important;
+    color: #121212 !important;
+}
+
+body.dark-mode .step-title {
+    color: #f28b82 !important;
+}
+
+body.dark-mode .step-content,
+body.dark-mode .step-content p {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .step-list li {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .roadmap-note,
+body.dark-mode .step-note {
+    background: #252525 !important;
+    border-color: #fdd663 !important;
+    color: #e8eaed !important;
+}
+
+/* === YouTube/SNSセクション === */
+body.dark-mode .sns-item {
+    background: #2d2d2d !important;
+    border-color: #3c4043 !important;
+}
+
+body.dark-mode .sns-item p,
+body.dark-mode .sns-content p {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .sns-content h3 {
+    color: #f28b82 !important;
+}
+
+body.dark-mode .youtube-banner-link {
+    background: #2d2d2d !important;
+    border-color: #3c4043 !important;
+}
+
+body.dark-mode .sns-notice,
+body.dark-mode div[style*="background: linear-gradient(135deg, #ffeaea"] {
+    background: #2d2d2d !important;
+    border-color: #f28b82 !important;
+    color: #e8eaed !important;
+}
+
+/* === note埋め込みセクション === */
+body.dark-mode .note-embed {
+    background: #2d2d2d !important;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+body.dark-mode .note-embed-title {
+    color: #f28b82 !important;
+}
+
+body.dark-mode .note-more-link a {
+    color: #8ab4f8 !important;
+}
+
+/* === グッズセクション === */
+body.dark-mode .goods-card {
+    background: #2d2d2d !important;
+    border-color: #3c4043 !important;
+}
+
+body.dark-mode .goods-card-title {
+    color: #f28b82 !important;
+}
+
+body.dark-mode .goods-card-description,
+body.dark-mode .goods-card p {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .goods-coming-soon {
+    background: #252525 !important;
+    border-color: #3c4043 !important;
+}
+
+body.dark-mode .coming-soon {
+    color: #fdd663 !important;
+}
+
+body.dark-mode .goods-notice {
+    background: #1e1e1e !important;
+    color: #9aa0a6 !important;
+    border-color: #3c4043 !important;
+}
+
+body.dark-mode .pdf-download-item {
+    background: #252525 !important;
+    border-color: #3c4043 !important;
+}
+
+body.dark-mode .pdf-content h4 {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .pdf-features li {
+    color: #e8eaed !important;
+}
+
+/* === サポートセクション === */
+body.dark-mode .support-card {
+    background: #2d2d2d !important;
+}
+
+body.dark-mode .support-card h3 {
+    color: #f28b82 !important;
+}
+
+body.dark-mode .support-item {
+    background: #252525 !important;
+    border-color: #3c4043 !important;
+}
+
+body.dark-mode .support-item:hover {
+    border-color: #f28b82 !important;
+}
+
+body.dark-mode .support-item h4 {
+    color: #f28b82 !important;
+}
+
+body.dark-mode .support-item p {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .support-note {
+    background: #252525 !important;
+    border-color: #fdd663 !important;
+    color: #e8eaed !important;
+}
+
+body.dark-mode .support-note p {
+    color: #e8eaed !important;
+}
+
+/* === RC工房セクション === */
+body.dark-mode .rc-shop-section,
+body.dark-mode .shop-card,
+body.dark-mode div[style*="background: linear-gradient(135deg, #e3f2fd"] {
+    background: #2d2d2d !important;
+    border-color: #3c4043 !important;
+}
+
+body.dark-mode .shop-card h3,
+body.dark-mode .rc-shop-section h3 {
+    color: #8ab4f8 !important;
+}
+
+body.dark-mode .shop-card p,
+body.dark-mode .rc-shop-section p {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .shop-info,
+body.dark-mode .shop-address {
+    background: #252525 !important;
+    border-color: #8ab4f8 !important;
+}
+
+body.dark-mode .shop-info strong,
+body.dark-mode .shop-address strong {
+    color: #8ab4f8 !important;
+}
+
+body.dark-mode .shop-info span,
+body.dark-mode .shop-address span {
+    color: #e8eaed !important;
+}
+
+/* === お問い合わせセクション === */
+body.dark-mode .contact-card {
+    background: #2d2d2d !important;
+}
+
+body.dark-mode .contact-card h3 {
+    color: #f28b82 !important;
+}
+
+body.dark-mode .contact-intro,
+body.dark-mode .contact-description {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .contact-notice-card {
+    background: #252525 !important;
+    border-color: #3c4043 !important;
+}
+
+body.dark-mode .contact-notice-card h4 {
+    color: #fdd663 !important;
+}
+
+body.dark-mode .contact-notice-card p {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .contact-warning {
+    background: #252525 !important;
+    border-color: #fdd663 !important;
+    color: #e8eaed !important;
+}
+
+body.dark-mode .contact-warning p {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .contact-button {
+    background: linear-gradient(135deg, #fdd663 0%, #f28b82 100%) !important;
+    color: #121212 !important;
+}
+
+/* お問い合わせ注意テキスト */
+body.dark-mode .contact-notice {
+    background: #252525 !important;
+    border-color: #fdd663 !important;
+    color: #e8eaed !important;
+}
+
+body.dark-mode .notice-content h4 {
+    color: #fdd663 !important;
+}
+
+body.dark-mode .notice-content p {
+    color: #e8eaed !important;
+}
+
+/* === インラインスタイル強制上書き === */
+
+/* ピンク/オレンジ系背景 */
+body.dark-mode div[style*="background: linear-gradient(135deg, #fff5f0"],
+body.dark-mode div[style*="background: linear-gradient(135deg, #ffe4d9"],
+body.dark-mode div[style*="background: linear-gradient(135deg, #ffeaea"],
+body.dark-mode div[style*="background: #fff5f0"],
+body.dark-mode div[style*="background: #ffe4d9"],
+body.dark-mode div[style*="background:#fff5f0"],
+body.dark-mode div[style*="background:#ffe4d9"] {
+    background: #2d2d2d !important;
+}
+
+/* 黄色系背景 */
+body.dark-mode div[style*="background: linear-gradient(135deg, #fff9e6"],
+body.dark-mode div[style*="background: linear-gradient(135deg, #fffbf0"],
+body.dark-mode div[style*="background: #fff9e6"],
+body.dark-mode div[style*="background: #fffbf0"],
+body.dark-mode div[style*="background: #fffde7"],
+body.dark-mode div[style*="background:#fffde7"] {
+    background: #2d2d2d !important;
+    border-color: #fdd663 !important;
+}
+
+/* 青系背景 */
+body.dark-mode div[style*="background: linear-gradient(135deg, #e3f2fd"],
+body.dark-mode div[style*="background: linear-gradient(135deg, #e1f5fe"],
+body.dark-mode div[style*="background: #e3f2fd"],
+body.dark-mode div[style*="background: #e1f5fe"],
+body.dark-mode div[style*="background:#e3f2fd"],
+body.dark-mode div[style*="background:#e1f5fe"] {
+    background: #2d2d2d !important;
+}
+
+/* 白系背景 */
+body.dark-mode div[style*="background: white"],
+body.dark-mode div[style*="background: #fff"],
+body.dark-mode div[style*="background: #ffffff"],
+body.dark-mode div[style*="background:white"],
+body.dark-mode div[style*="background:#fff"],
+body.dark-mode div[style*="background:#ffffff"],
+body.dark-mode div[style*="background: rgba(255, 255, 255"],
+body.dark-mode div[style*="background: rgba(255,255,255"],
+body.dark-mode div[style*="background-color: white"],
+body.dark-mode div[style*="background-color: #fff"],
+body.dark-mode div[style*="background-color:#fff"] {
+    background: #252525 !important;
+}
+
+/* テキスト色の強制上書き */
+body.dark-mode [style*="color: #333"],
+body.dark-mode [style*="color:#333"],
+body.dark-mode [style*="color: #444"],
+body.dark-mode [style*="color:#444"],
+body.dark-mode [style*="color: #555"],
+body.dark-mode [style*="color:#555"],
+body.dark-mode [style*="color: #666"],
+body.dark-mode [style*="color:#666"] {
+    color: #e8eaed !important;
+}
+
+/* strong内の色 */
+body.dark-mode div[style] strong {
+    color: #fdd663 !important;
+}
+
+body.dark-mode div[style] span {
+    color: #e8eaed !important;
+}
+
+body.dark-mode div[style] p {
+    color: #e8eaed !important;
+}
+
+body.dark-mode div[style] li {
+    color: #e8eaed !important;
+}
+
+body.dark-mode div[style] h3,
+body.dark-mode div[style] h4 {
+    color: #f28b82 !important;
+}
+
+/* === 最新情報注意書き === */
+body.dark-mode .reload-notice {
+    background: #2d2d2d !important;
+    border-left-color: #fdd663 !important;
+}
+
+body.dark-mode .reload-notice-title {
+    color: #fdd663 !important;
+}
+
+body.dark-mode .reload-notice-text {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .reload-notice-text span {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .reload-notice-keys {
+    background: #252525 !important;
+}
+
+body.dark-mode .reload-notice-keys strong {
+    color: #8ab4f8 !important;
+}
+
+body.dark-mode .reload-notice-keys span {
+    color: #e8eaed !important;
+}
+
+/* === CTAハイライト（お気軽にご相談ください） === */
+body.dark-mode .cta-highlight {
+    background: #2d2d2d !important;
+    border-color: #f28b82 !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .cta-highlight-title {
+    color: #f28b82 !important;
+}
+
+body.dark-mode .cta-highlight-text {
+    color: #e8eaed !important;
+}
+
+/* === SNSリンクカード（YouTube/note等） === */
+body.dark-mode .sns-link-card {
+    background: #2d2d2d !important;
+    border-color: #3c4043 !important;
+}
+
+body.dark-mode .sns-link-card h4 {
+    color: #8ab4f8 !important;
+}
+
+body.dark-mode .sns-link-card p {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .sns-notice {
+    background: #252525 !important;
+    border-color: #f28b82 !important;
+    color: #e8eaed !important;
+}
+
+body.dark-mode .sns-notice p {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .youtube-notice,
+body.dark-mode .channel-notice {
+    background: #252525 !important;
+    border-color: #f28b82 !important;
+    color: #e8eaed !important;
+}
+
+/* === noteリンクカード === */
+body.dark-mode .note-link-card {
+    background: #2d2d2d !important;
+    border-color: #41c9b4 !important;
+}
+
+body.dark-mode .note-link-card h4 {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .note-link-card p {
+    color: #9aa0a6 !important;
+}
+
+/* === RC工房セクション === */
+body.dark-mode .rc-shop-card,
+body.dark-mode .shop-info-card,
+body.dark-mode .partner-shop-card {
+    background: #2d2d2d !important;
+    border-color: #3c4043 !important;
+}
+
+body.dark-mode .rc-shop-card h3,
+body.dark-mode .shop-info-card h3 {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .rc-shop-card p,
+body.dark-mode .shop-info-card p {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .shop-address-card,
+body.dark-mode .shop-contact-info {
+    background: #252525 !important;
+    border-color: #8ab4f8 !important;
+}
+
+body.dark-mode .shop-address-card span,
+body.dark-mode .shop-contact-info span {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .shop-address-card strong,
+body.dark-mode .shop-contact-info strong {
+    color: #8ab4f8 !important;
+}
+
+body.dark-mode .partner-intro {
+    background: #252525 !important;
+    border-color: #fdd663 !important;
+    color: #e8eaed !important;
+}
+
+/* === お問い合わせ注意書き === */
+body.dark-mode .contact-important-notice,
+body.dark-mode .contact-technical-notice {
+    background: #2d2d2d !important;
+    border-color: #fdd663 !important;
+}
+
+body.dark-mode .contact-important-notice h4,
+body.dark-mode .contact-technical-notice h4 {
+    color: #fdd663 !important;
+}
+
+body.dark-mode .contact-important-notice p,
+body.dark-mode .contact-technical-notice p {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .contact-form-notice {
+    background: #252525 !important;
+    border-color: #fdd663 !important;
+    color: #e8eaed !important;
+}
+
+body.dark-mode .contact-form-notice p {
+    color: #e8eaed !important;
+}
+
+/* === サポートセクション注意書き === */
+body.dark-mode .support-highlight,
+body.dark-mode .support-example {
+    background: #252525 !important;
+    border-color: #f28b82 !important;
+    color: #e8eaed !important;
+}
+
+body.dark-mode .support-highlight p,
+body.dark-mode .support-example p {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .support-conversation {
+    background: #252525 !important;
+    border-color: #f28b82 !important;
+}
+
+body.dark-mode .conversation-example {
+    color: #f28b82 !important;
+}
+
+body.dark-mode .conversation-answer {
+    color: #e8eaed !important;
+    border-left-color: #f28b82 !important;
+}
+
+body.dark-mode .support-detail {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .support-detail-box {
+    background: #252525 !important;
+    border-color: #f28b82 !important;
+    color: #e8eaed !important;
+}
+
+body.dark-mode .detail-list li {
+    color: #e8eaed !important;
+}
+
+/* === ギャラリー説明文 === */
+body.dark-mode .gallery-item-caption,
+body.dark-mode .gallery-description {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .gallery-card {
+    background: #2d2d2d !important;
+    border-color: #3c4043 !important;
+}
+
+body.dark-mode .gallery-card p {
+    color: #e8eaed !important;
+}
+
+/* === 提携サイト（パートナー）セクション === */
+body.dark-mode .partners-card {
+    background: #2d2d2d !important;
+    border-color: #3c4043 !important;
+}
+
+body.dark-mode .partners-intro {
+    background: #252525 !important;
+    color: #e8eaed !important;
+    border-color: #fdd663 !important;
+}
+
+body.dark-mode .partner-item {
+    background: #252525 !important;
+    border-color: #3c4043 !important;
+}
+
+body.dark-mode .partner-item:hover {
+    border-color: #8ab4f8 !important;
+}
+
+body.dark-mode .partner-name {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .partner-text {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .partner-info {
+    background: #1e1e1e !important;
+    border-left-color: #8ab4f8 !important;
+}
+
+body.dark-mode .partner-address,
+body.dark-mode .partner-contact {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .partner-address strong,
+body.dark-mode .partner-contact strong {
+    color: #8ab4f8 !important;
+}
+
+body.dark-mode .partner-address span,
+body.dark-mode .partner-contact span {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .partner-visit-btn {
+    background: #8ab4f8 !important;
+    color: #121212 !important;
+}
+
+body.dark-mode .partner-visit-btn:hover {
+    background: #aecbfa !important;
+}
+
+/* === SNSカードセクション === */
+body.dark-mode .sns-card {
+    background: #2d2d2d !important;
+}
+
+body.dark-mode .sns-item {
+    background: #252525 !important;
+    border-color: #3c4043 !important;
+}
+
+body.dark-mode .sns-item h3 {
+    color: #8ab4f8 !important;
+}
+
+body.dark-mode .sns-item p,
+body.dark-mode .sns-content p {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .sns-note {
+    color: #9aa0a6 !important;
+}
+
+body.dark-mode .banner-guide,
+body.dark-mode .banner-guide-small {
+    background: #252525 !important;
+    border-color: #f28b82 !important;
+    color: #e8eaed !important;
+}
+
+body.dark-mode .youtube-banner-link {
+    background: transparent !important;
+}
+
+/* === 活動記録（noteブログ）セクション === */
+body.dark-mode .note-blog-main {
+    background: #2d2d2d !important;
+}
+
+body.dark-mode .blog-title {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .blog-description {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .note-link-box {
+    background: #252525 !important;
+    border-color: #41c9b4 !important;
+}
+
+body.dark-mode .note-link-box h4 {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .note-link-box p {
+    color: #9aa0a6 !important;
+}
+
+body.dark-mode .note-link {
+    color: #f28b82 !important;
+}
+
+body.dark-mode .note-embed {
+    background: #252525 !important;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+body.dark-mode .note-embed-title {
+    color: #f28b82 !important;
+}
+
+body.dark-mode .note-more-link a {
+    background: #41c9b4 !important;
+    color: #121212 !important;
+}
+
+/* 改善効果カード（インラインスタイル上書き） */
+body.dark-mode .news-section div[style*="background: linear-gradient"] {
+    background: #2d2d2d !important;
+    border-left-color: #f28b82 !important;
+}
+
+body.dark-mode .news-section div[style*="background: linear-gradient"] strong {
+    color: #f28b82 !important;
+}
+
+body.dark-mode .news-section div[style*="background: linear-gradient"] li {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .news-section div[style*="background: linear-gradient"] li strong {
+    color: #fdd663 !important;
+}
+
+/* noteウィジェット背景 */
+body.dark-mode .note-widget,
+body.dark-mode .note-embed,
+body.dark-mode iframe[src*="note.com"] {
+    background: #1e1e1e;
+    border-radius: 12px;
+}
+
+/* 体験談セクション */
+body.dark-mode .testimonials-intro {
+    background: #2d2d2d !important;
+    color: #e8eaed !important;
+    border-color: #f28b82 !important;
+}
+
+body.dark-mode .testimonial-content {
+    color: #e8eaed;
+}
+
+body.dark-mode .testimonial-content p {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .testimonial-header {
+    border-bottom-color: #3c4043;
+}
+
+/* FAQ セクション */
+body.dark-mode .faq-intro {
+    background: #2d2d2d !important;
+    color: #e8eaed !important;
+    border-color: #f28b82 !important;
+}
+
+body.dark-mode .faq-card {
+    background: #1e1e1e !important;
+}
+
+body.dark-mode .faq-item {
+    background: #2d2d2d !important;
+    border-color: #3c4043 !important;
+}
+
+body.dark-mode .faq-item:hover {
+    border-color: #f28b82 !important;
+}
+
+body.dark-mode .faq-question {
+    background: #2d2d2d !important;
+    color: #e8eaed !important;
+}
+
+body.dark-mode .faq-question h3 {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .faq-icon {
+    background: linear-gradient(135deg, #f28b82 0%, #fdd663 100%) !important;
+    color: #121212 !important;
+}
+
+body.dark-mode .faq-toggle {
+    color: #9aa0a6 !important;
+}
+
+body.dark-mode .faq-item.active .faq-question {
+    background: linear-gradient(135deg, #f28b82 0%, #fdd663 100%) !important;
+}
+
+body.dark-mode .faq-item.active .faq-question h3 {
+    color: #121212 !important;
+}
+
+body.dark-mode .faq-item.active .faq-icon {
+    background: #121212 !important;
+    color: #f28b82 !important;
+}
+
+body.dark-mode .faq-item.active .faq-toggle {
+    color: #121212 !important;
+}
+
+body.dark-mode .faq-answer {
+    background: #252525 !important;
+    color: #e8eaed !important;
+}
+
+body.dark-mode .faq-answer p {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .faq-answer {
+    background: #252525 !important;
+    color: #e8eaed !important;
+}
+
+body.dark-mode .faq-answer p {
+    color: #e8eaed !important;
+}
+
+/* お問い合わせセクション */
+body.dark-mode .contact-intro {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .contact-notice-card {
+    background: #2d2d2d !important;
+    border-color: #3c4043 !important;
+}
+
+body.dark-mode .contact-notice-card h4 {
+    color: #fdd663 !important;
+}
+
+body.dark-mode .contact-notice-card p {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .contact-notice-card strong {
+    color: #f28b82 !important;
+}
+
+body.dark-mode .contact-warning {
+    background: rgba(253, 214, 99, 0.1) !important;
+    border-color: #fdd663 !important;
+    color: #e8eaed !important;
+}
+
+body.dark-mode .contact-button {
+    background: linear-gradient(135deg, #fdd663 0%, #f28b82 100%) !important;
+    color: #121212 !important;
+}
+
+/* サポートセクション */
+body.dark-mode .support-intro {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .support-content p {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .support-note {
+    background: #252525 !important;
+    border-color: #fdd663 !important;
+    color: #e8eaed !important;
+}
+
+body.dark-mode .support-note p {
+    color: #e8eaed !important;
+}
+
+/* 詳細ボックス */
+body.dark-mode .detail-box,
+body.dark-mode .highlight-box,
+body.dark-mode .info-box {
+    background: #252525 !important;
+    border-color: #f28b82 !important;
+    color: #e8eaed !important;
+}
+
+body.dark-mode .detail-box p,
+body.dark-mode .highlight-box p,
+body.dark-mode .info-box p {
+    color: #e8eaed !important;
+}
+
+/* リスト項目 */
+body.dark-mode ul li,
+body.dark-mode ol li {
+    color: #e8eaed;
+}
+
+body.dark-mode .content-section ul li,
+body.dark-mode .content-section ol li {
+    color: #e8eaed !important;
+}
+
+/* ロードマップ */
+body.dark-mode .roadmap-step {
+    background: #2d2d2d !important;
+    border-color: #3c4043 !important;
+}
+
+body.dark-mode .roadmap-step:hover {
+    border-color: #f28b82 !important;
+}
+
+body.dark-mode .step-content p {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .step-list li {
+    color: #e8eaed !important;
+}
+
+/* ギャラリー */
+body.dark-mode .gallery-item {
+    background: #2d2d2d !important;
+    border-color: #3c4043 !important;
+}
+
+body.dark-mode .gallery-caption {
+    color: #e8eaed !important;
+}
+
+/* 全体的なテキスト色の強化 */
+body.dark-mode p {
+    color: #e8eaed;
+}
+
+body.dark-mode .content-section p {
+    color: #e8eaed !important;
+}
+
+body.dark-mode strong {
+    color: #fdd663;
+}
+
+body.dark-mode .content-section strong {
+    color: #fdd663 !important;
+}
+
+/* インラインスタイルの上書き */
+body.dark-mode [style*="color: #333"],
+body.dark-mode [style*="color:#333"],
+body.dark-mode [style*="color: #666"],
+body.dark-mode [style*="color:#666"] {
+    color: #e8eaed !important;
+}
+
+body.dark-mode [style*="background: #fff"],
+body.dark-mode [style*="background:#fff"],
+body.dark-mode [style*="background: white"],
+body.dark-mode [style*="background:white"],
+body.dark-mode [style*="background-color: #fff"],
+body.dark-mode [style*="background-color:#fff"],
+body.dark-mode [style*="background-color: white"],
+body.dark-mode [style*="background-color:white"] {
+    background: #2d2d2d !important;
 }
 
 
@@ -3280,15 +4910,24 @@ body.dark-mode .site-footer {
 }
 
 body.dark-mode .breadcrumb {
-    color: #bdc3c7;
+    color: #9aa0a6;
+    background: #2d2d2d;
 }
 
 body.dark-mode .breadcrumb-item {
-    color: #ecf0f1;
+    color: #e8eaed;
 }
 
 body.dark-mode .breadcrumb-separator {
-    color: #7f8c8d;
+    color: #9aa0a6;
+}
+
+body.dark-mode .breadcrumb-link {
+    color: #8ab4f8;
+}
+
+body.dark-mode .breadcrumb-link:hover {
+    color: #f28b82;
 }
 
 
@@ -3392,29 +5031,50 @@ body.dark-mode .breadcrumb-separator {
 }
 
 body.dark-mode .search-box {
-    background: rgba(52, 73, 94, 0.8);
+    background: #2d2d2d;
+    border: 1px solid #3c4043;
+}
+
+body.dark-mode .search-title {
+    color: #f28b82;
 }
 
 body.dark-mode .search-input {
-    background: rgba(44, 62, 80, 0.6);
-    color: #ecf0f1;
-    border-color: #ff9a76;
+    background: #1e1e1e;
+    color: #e8eaed;
+    border-color: #3c4043;
+}
+
+body.dark-mode .search-input:focus {
+    border-color: #f28b82;
+    box-shadow: 0 0 0 2px rgba(242, 139, 130, 0.2);
+}
+
+body.dark-mode .search-btn {
+    background: linear-gradient(135deg, #f28b82 0%, #fdd663 100%);
+    color: #121212;
 }
 
 body.dark-mode .search-result-item {
-    background: rgba(255, 154, 118, 0.1);
+    background: #252525;
+    border-color: #3c4043;
 }
 
 body.dark-mode .search-result-item:hover {
-    background: rgba(255, 154, 118, 0.2);
+    background: #3c3c3c;
+    border-color: #f28b82;
 }
 
 body.dark-mode .search-result-title {
-    color: #ff9a76;
+    color: #f28b82;
 }
 
 body.dark-mode .search-result-excerpt {
-    color: #bdc3c7;
+    color: #9aa0a6;
+}
+
+body.dark-mode .search-no-results {
+    color: #9aa0a6;
 }
 
 @media (max-width: 768px) {
@@ -3476,6 +5136,24 @@ body.dark-mode .search-result-excerpt {
         padding: 6px 10px;
         font-size: 12px;
     }
+}
+
+/* ダークモード対応 */
+body.dark-mode .lang-btn {
+    background: #2d2d2d;
+    border-color: #3c4043;
+    color: #e8eaed;
+}
+
+body.dark-mode .lang-btn:hover {
+    background: #3c3c3c;
+    border-color: #f28b82;
+}
+
+body.dark-mode .lang-btn.active {
+    background: linear-gradient(135deg, #f28b82 0%, #fdd663 100%);
+    color: #121212;
+    border-color: #f28b82;
 }
 
 
@@ -3561,12 +5239,8 @@ body.dark-mode .search-result-excerpt {
     }
 }
 
-body.dark-mode .news-card {
-    background: rgba(44, 62, 80, 0.6);
-}
-
 body.dark-mode .coming-soon-text {
-    color: #bdc3c7;
+    color: #9aa0a6;
 }
 
 
@@ -3756,25 +5430,6 @@ body.dark-mode .coming-soon-text {
     text-align: center;
 }
 
-/* ダークモード対応 */
-.dark-mode .passion-section {
-    background: linear-gradient(135deg, rgba(255, 154, 118, 0.15) 0%, rgba(255, 210, 200, 0.15) 100%);
-    border-left-color: #ff9a76;
-}
-
-.dark-mode .passion-text {
-    color: #e0e0e0;
-}
-
-.dark-mode .passion-text strong {
-    color: #ffa07a;
-}
-
-.dark-mode .passion-closing {
-    border-top-color: rgba(255, 154, 118, 0.4);
-    color: #ffa07a;
-}
-
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
     .passion-section {
@@ -3853,32 +5508,42 @@ body.dark-mode .coming-soon-text {
 
 /* ダークモード対応 */
 .dark-mode .news-header {
-    border-bottom-color: rgba(255, 154, 118, 0.3);
+    border-bottom-color: #3c4043;
 }
 
 .dark-mode .news-date {
-    color: #aaa;
+    color: #9aa0a6;
 }
 
 .dark-mode .news-title {
-    color: #ffa07a;
+    color: #f28b82;
 }
 
 .dark-mode .news-section {
-    background: rgba(255, 154, 118, 0.1);
-    border-left-color: #ff9a76;
+    background: #252525;
+    border-left-color: #f28b82;
+    border-color: #3c4043;
 }
 
 .dark-mode .news-section:hover {
-    background: rgba(255, 154, 118, 0.15);
+    background: #3c3c3c;
+    border-left-color: #fdd663;
 }
 
 .dark-mode .news-subtitle {
-    color: #ffa07a;
+    color: #f28b82;
 }
 
 .dark-mode .news-section p {
-    color: #e0e0e0;
+    color: #e8eaed;
+}
+
+.dark-mode .news-section ul li {
+    color: #e8eaed;
+}
+
+.dark-mode .news-section strong {
+    color: #fdd663;
 }
 
 /* レスポンシブ対応 */
@@ -4570,7 +6235,53 @@ body.dark-mode .coming-soon-text {
 
 /* ダークモード対応 */
 body.dark-mode .archive-banner {
-    background: linear-gradient(135deg, #4a5fc1 0%, #5a3a7a 100%);
+    background: linear-gradient(135deg, #1a237e 0%, #4a148c 100%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .archive-banner-title {
+    color: #ffffff !important;
+}
+
+body.dark-mode .archive-banner-subtitle {
+    color: #e8eaed !important;
+}
+
+/* アーカイブ情報提供のお願いボックス */
+body.dark-mode .archive-request-box {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .archive-request-text {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .archive-request-text strong {
+    color: #fdd663 !important;
+}
+
+body.dark-mode .archive-banner-button {
+    background: #fdd663 !important;
+    color: #121212 !important;
+}
+
+body.dark-mode .archive-banner-button:hover {
+    background: #fff176 !important;
+    color: #121212 !important;
+    box-shadow: 0 8px 25px rgba(253, 214, 99, 0.4);
+}
+
+/* TOPページ内のアーカイブボタン */
+body.dark-mode .archive-button,
+body.dark-mode a.archive-button,
+body.dark-mode a[href*="archive"][style*="background-color: #ffd700"] {
+    color: #121212 !important;
+}
+
+body.dark-mode .archive-button:hover,
+body.dark-mode a.archive-button:hover,
+body.dark-mode a[href*="archive"][style*="background-color: #ffd700"]:hover {
+    color: #121212 !important;
 }
 
 
@@ -4681,5 +6392,21 @@ body.dark-mode .archive-banner {
 
 /* ダークモード対応 */
 body.dark-mode .ai-consultation-section {
-    background: linear-gradient(135deg, #006994 0%, #004d6b 100%);
+    background: linear-gradient(135deg, #004d40 0%, #00695c 100%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .ai-consultation-btn {
+    background: #fdd663;
+    color: #121212;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+body.dark-mode .ai-consultation-btn:hover {
+    background: #fff176;
+    box-shadow: 0 10px 30px rgba(253, 214, 99, 0.4);
+}
+
+body.dark-mode .ai-consultation-note {
+    background-color: rgba(0, 0, 0, 0.2);
 }
