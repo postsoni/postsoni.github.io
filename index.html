@@ -9,9 +9,28 @@
     <!-- SEO基本設定 -->
     <title>ぽすとそに工房 | ラジコンの始め方・修理・メンテナンス【全国どこでも】初心者大歓迎</title>
     <meta name="description" content="札幌でラジコン（RC）の修理・メンテナンス・サポートを行う「ぽすとそに工房」。カー・飛行機・ヘリ全般対応。初心者から復帰者まで一緒に成長します。AI活用で最適なプラン提案。19年の経験と100台以上の修理実績。オンライン相談可能。地域ボランティア精神に基づく活動。">
-    <meta name="keywords" content="ラジコン,RC,修理,サポート,支援,メンテナンス,札幌,初心者,ラジコンカー,ラジコン飛行機,ラジコンヘリ,AI,ボランティア,タミヤ,京商,ヨコモ,Futaba,JR,ぽすとそに">
+    <meta name="keywords" content="ラジコン,RC,修理,サポート,支援,メンテナンス,札幌,初心者,ラジコンカー,ラジコン飛行機,ラジコンヘリ,AI,ボランティア,タミヤ,京商,ヨコモ,Futaba,JR,ぽすとそに,トラクサス,Traxxas,HPI,ドリフト,オフロード,レストア,カスタム">
     <meta name="author" content="ぽすとそに">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    
+    <!-- 地域SEO -->
+    <meta name="geo.region" content="JP-01">
+    <meta name="geo.placename" content="Sapporo">
+    <meta name="geo.position" content="43.0642;141.3469">
+    <meta name="ICBM" content="43.0642, 141.3469">
+    
+    <!-- 多言語対応 -->
+    <link rel="alternate" hreflang="ja" href="https://postsoni.github.io/">
+    <link rel="alternate" hreflang="en" href="https://postsoni.github.io/?lang=en">
+    <link rel="alternate" hreflang="zh" href="https://postsoni.github.io/?lang=zh">
+    <link rel="alternate" hreflang="x-default" href="https://postsoni.github.io/">
+    
+    <!-- その他のメタタグ -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="rating" content="general">
+    <meta name="revisit-after" content="7 days">
     
     <!-- Favicon設定 -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -32,14 +51,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://postsoni.github.io/">
     <meta property="og:image" content="https://postsoni.github.io/rc-plane-header.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="ぽすとそに工房 - ラジコン修理・メンテナンス・サポート">
     <meta property="og:site_name" content="ぽすとそに工房">
     <meta property="og:locale" content="ja_JP">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="zh_CN">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@postsoni">
+    <meta name="twitter:creator" content="@postsoni">
     <meta name="twitter:title" content="ぽすとそに工房 | ラジコン修理・メンテナンス・AI活用サポート【札幌】">
     <meta name="twitter:description" content="札幌でラジコンの修理・メンテナンス・サポートを行う「ぽすとそに工房」。初心者から経験者まで一緒に成長します。">
     <meta name="twitter:image" content="https://postsoni.github.io/rc-plane-header.jpg">
+    <meta name="twitter:image:alt" content="ぽすとそに工房 - ラジコン修理・メンテナンス・サポート">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://postsoni.github.io/">
@@ -148,18 +175,171 @@
     }
     </script>
     
+    <!-- Phase 4: VideoObject構造化データ（YouTube連携） -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "ぽすとそに工房 - YouTubeチャンネル",
+      "description": "ラジコンの修理・メンテナンス・組み立て動画を配信。初心者から経験者まで楽しめるコンテンツ。",
+      "thumbnailUrl": "https://postsoni.github.io/rc-plane-header.jpg",
+      "uploadDate": "2024-01-01",
+      "contentUrl": "https://www.youtube.com/@postsoni",
+      "embedUrl": "https://www.youtube.com/@postsoni",
+      "publisher": {
+        "@type": "Organization",
+        "name": "ぽすとそに工房",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://postsoni.github.io/postsoni-icon.png"
+        }
+      }
+    }
+    </script>
+    
+    <!-- Phase 4: HowTo構造化データ（修理サポートの流れ） -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "ぽすとそに工房でのRC修理サポートの流れ",
+      "description": "ラジコンの修理・メンテナンスサポートを受ける手順をご紹介します。",
+      "totalTime": "P1D",
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "currency": "JPY",
+        "value": "0"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "お問い合わせ",
+          "text": "フォームからお気軽にご連絡ください。"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "ヒアリング",
+          "text": "状況を詳しくお聞きします（1〜3日）。"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "診断・見積り",
+          "text": "修理方法や必要なパーツをご案内します。"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "修理作業",
+          "text": "対面またはオンラインで一緒に修理・メンテナンスを行います。"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "完了・お渡し",
+          "text": "修理完了後、アフターフォローも対応します。"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Phase 4: BreadcrumbList構造化データ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ホーム",
+          "item": "https://postsoni.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "RCアーカイブ",
+          "item": "https://postsoni.github.io/rc-archive/"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Phase 4: Organization構造化データ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ぽすとそに工房",
+      "alternateName": "Postsoni Workshop",
+      "url": "https://postsoni.github.io/",
+      "logo": "https://postsoni.github.io/postsoni-icon.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "availableLanguage": ["Japanese", "English", "Chinese"]
+      },
+      "sameAs": [
+        "https://www.youtube.com/@postsoni",
+        "https://x.com/postsoni",
+        "https://note.com/postsoni"
+      ]
+    }
+    </script>
+    
+    <!-- Phase 4: WebSite構造化データ（サイト内検索対応） -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "ぽすとそに工房",
+      "url": "https://postsoni.github.io/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://postsoni.github.io/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <!-- Phase 4: パフォーマンス最適化 -->
+    <link rel="dns-prefetch" href="//youtube.com">
+    <link rel="dns-prefetch" href="//note.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="preconnect" href="https://youtube.com">
+    <link rel="preconnect" href="https://note.com">
+    
+    <!-- リソースのプリロード -->
+    <link rel="preload" href="style.css?v=1.7.5" as="style">
+    <link rel="preload" href="app.js?v=1.8.0" as="script">
+    <link rel="preload" href="postsoni-icon.png" as="image">
+    <link rel="preload" href="rc-plane-header.jpg" as="image">
+    
     <!-- バージョン管理：サイト更新時は v=1.1.1, v=1.1.2 と変更してください -->
-    <link rel="stylesheet" href="style.css?v=1.7.3">
+    <link rel="stylesheet" href="style.css?v=1.8.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Yomogi&family=Zen+Kurenaido&family=Shippori+Antique&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- スキップリンク（アクセシビリティ） -->
+    <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+    
+    <!-- 季節の挨拶バナー -->
+    <div id="seasonal-greeting" class="seasonal-greeting" role="banner" aria-label="季節のご挨拶">
+        <span class="greeting-icon"></span>
+        <span class="greeting-message"></span>
+        <button class="greeting-close" aria-label="閉じる">×</button>
+    </div>
+    
     <!-- ローディング画面（改良版） -->
     <div id="loading-screen" class="loading-screen">
         <div class="loading-content">
             <div class="loading-logo-wrapper">
-                <img src="postsoni-icon.png" alt="ぽすとそに工房のロゴマーク - ラジコン修理サポートのシンボル" class="loading-logo pulse">
+                <img src="postsoni-icon.png" alt="ぽすとそに工房のロゴマーク - ラジコン修理サポートのシンボル" loading="lazy" class="loading-logo pulse">
             </div>
             <div class="loading-spinner-wrapper">
                 <div class="spinner-track"></div>
@@ -175,11 +355,11 @@
     <!-- ヘッダー -->
     <header class="site-header">
         <div class="header-image">
-            <img src="rc-plane-header.jpg" alt="青空を飛ぶラジコン飛行機 - ぽすとそに工房のメインビジュアル">
+            <img src="rc-plane-header.jpg" alt="青空を飛ぶラジコン飛行機 - ぽすとそに工房のメインビジュアル" loading="lazy">
         </div>
         <div class="header-content">
             <div class="logo-title">
-                <img src="postsoni-icon.png" alt="ぽすとそに工房 - RC修理・メンテナンス・サポートのロゴ" class="logo-icon">
+                <img src="postsoni-icon.png" alt="ぽすとそに工房 - RC修理・メンテナンス・サポートのロゴ" loading="lazy" class="logo-icon">
                 <a href="#" class="main-title-link" data-tab="top">
                     <h1 class="main-title">ぽすとそに工房</h1>
                 </a>
@@ -215,7 +395,7 @@
     </section>
 
     <!-- メインコンテンツ -->
-    <div class="main-wrapper">
+    <div class="main-wrapper" id="main-content" role="main">
         <!-- 左サイドバー：ナビゲーション -->
         <aside class="sidebar">
             <!-- サイト内検索 -->
@@ -238,6 +418,7 @@
                     <a href="#" class="nav-item" data-tab="profile">👤 プロフィール</a>
                     <a href="#" class="nav-item" data-tab="sns">📱 SNS</a>
                     <a href="#" class="nav-item" data-tab="activity">📰 ブログアクセス</a>
+                    <a href="#" class="nav-item" data-tab="ai-games">🎮 AIラジコンゲーム</a>
                     <a href="#" class="nav-item" data-tab="goods">🛍️ グッズ</a>
                     <a href="#" class="nav-item" data-tab="support">🤝 RC支援・サポート</a>
                     <a href="#" class="nav-item" data-tab="testimonials">🎉 サポートを受けた方の声</a>
@@ -404,19 +585,19 @@
                     <div class="visual-grid">
                         <!-- 画像1 -->
                         <div class="visual-item scroll-animate-item" data-delay="0">
-                            <img src="top_homepage1.jpg" alt="JR PROPO E8 修理・カスタムヘリコプターと入門用EPP高翼機 - ぽすとそに所有機体" class="visual-image">
+                            <img src="top_homepage1.jpg" alt="JR PROPO E8 修理・カスタムヘリコプターと入門用EPP高翼機 - ぽすとそに所有機体" loading="lazy" class="visual-image">
                             <p class="visual-caption">JR PROPO E8 を修理したりメンテナンスしていくうちにMIXされた他機種からの流用パーツがてんこ盛りになったヘリと、EPPの入門用高翼機たちです。</p>
                         </div>
                         
                         <!-- 画像2 -->
                         <div class="visual-item scroll-animate-item" data-delay="1">
-                            <img src="top_homepage2.jpg" alt="INFERNO MP9 TKI3 懐かしいカラーリングにカスタム塗装したラジコンカー" class="visual-image">
+                            <img src="top_homepage2.jpg" alt="INFERNO MP9 TKI3 懐かしいカラーリングにカスタム塗装したラジコンカー" loading="lazy" class="visual-image">
                             <p class="visual-caption">INFERNO MP9 TKI3をベースにボディの塗装を変えて懐かしい色合いにした状態です。</p>
                         </div>
                         
                         <!-- 画像3 -->
                         <div class="visual-item scroll-animate-item" data-delay="2">
-                            <img src="top_homepage3.jpg" alt="RC-Factory Super Extra L 組み立て前の状態 - YouTube組み立て動画あり" class="visual-image">
+                            <img src="top_homepage3.jpg" alt="RC-Factory Super Extra L 組み立て前の状態 - YouTube組み立て動画あり" loading="lazy" class="visual-image">
                             <p class="visual-caption">RC-Factory Super Extra Lの組み立て前写真で、組み立て動画はYouTubeにあがっています。</p>
                         </div>
                     </div>
@@ -502,6 +683,66 @@
                                 初心者ガイドを見る →
                             </a>
                         </div>
+                    </div>
+                </div>
+                
+                <!-- 経験者向けセクション -->
+                <div class="expert-guide-cta scroll-animate fade-in">
+                    <div class="expert-cta-content">
+                        <div class="expert-cta-icon">🔧</div>
+                        <div class="expert-cta-text">
+                            <h3 class="expert-cta-title" data-i18n="expertSection.title">経験者の方へ</h3>
+                            <p class="expert-cta-description" data-i18n="expertSection.description">当工房では高度な修理・カスタムにも対応しております。発泡機の下地カラー、エポキシ+マイクロバルーン、マイクログラス、表面加工、カラーリングなど発泡面を消す技術や、電動・エンジン機のフルレストア（10機以上の実績）を行っています。</p>
+                            <p class="expert-cta-skills" data-i18n="expertSection.skills">最近ではトラクサスESCの不調原因究明、ヨコモドリフト系列やタミヤTT-02の舵角加工、エアレーションダンパーの最適セッティングなど、多岐にわたる技術サポートを提供しております。</p>
+                            <div class="expert-makers">
+                                <span class="expert-makers-label" data-i18n="expertSection.makersLabel">対応メーカー:</span>
+                                <div class="expert-makers-list">
+                                    <span class="expert-maker-tag">タミヤ</span>
+                                    <span class="expert-maker-tag">京商</span>
+                                    <span class="expert-maker-tag">ヨコモ</span>
+                                    <span class="expert-maker-tag">HPI</span>
+                                    <span class="expert-maker-tag">G-Force</span>
+                                    <span class="expert-maker-tag">KAWADA</span>
+                                    <span class="expert-maker-tag">Futaba</span>
+                                    <span class="expert-maker-tag">KO PROPO</span>
+                                    <span class="expert-maker-tag">Sanwa</span>
+                                    <span class="expert-maker-tag">Hitec</span>
+                                    <span class="expert-maker-tag">JR PROPO</span>
+                                    <span class="expert-maker-tag">Traxxas</span>
+                                    <span class="expert-maker-tag">Team Associated</span>
+                                    <span class="expert-maker-tag">Losi</span>
+                                    <span class="expert-maker-tag">E-flite</span>
+                                    <span class="expert-maker-tag">FMS</span>
+                                    <span class="expert-maker-tag">Dynam</span>
+                                    <span class="expert-maker-tag">SAB</span>
+                                    <span class="expert-maker-tag">Align</span>
+                                    <span class="expert-maker-tag">XLPower</span>
+                                </div>
+                            </div>
+                            <a href="#" class="expert-cta-button" data-tab="contact">
+                                <span data-i18n="expertSection.button">技術相談・お問い合わせ →</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SNSクイックリンク -->
+                <div class="sns-quick-links scroll-animate fade-in">
+                    <h3 class="sns-quick-title" data-i18n="snsQuick.title">📱 SNS・メディアをフォロー</h3>
+                    <p class="sns-quick-description" data-i18n="snsQuick.description">最新情報やRC活動の様子をチェック！</p>
+                    <div class="sns-quick-buttons">
+                        <a href="https://www.youtube.com/@postsoni" target="_blank" class="sns-quick-btn youtube-btn">
+                            <span class="sns-quick-icon">📺</span>
+                            <span class="sns-quick-label">YouTube</span>
+                        </a>
+                        <a href="https://note.com/postsoni" target="_blank" class="sns-quick-btn note-btn">
+                            <span class="sns-quick-icon">📝</span>
+                            <span class="sns-quick-label">note</span>
+                        </a>
+                        <a href="https://x.com/postsoni" target="_blank" class="sns-quick-btn x-btn">
+                            <span class="sns-quick-icon">𝕏</span>
+                            <span class="sns-quick-label">X (Twitter)</span>
+                        </a>
                     </div>
                 </div>
                 
@@ -801,47 +1042,47 @@
                     <div class="gallery-grid">
                         <!-- 画像1 -->
                         <div class="gallery-item scroll-animate-item" data-delay="0">
-                            <img src="work1.jpg" alt="平成初期の陸モノOSエンジン分解清掃メンテナンス完了 - 再始動確認済み" class="gallery-image" loading="lazy">
+                            <img src="work1.jpg" alt="平成初期の陸モノOSエンジン分解清掃メンテナンス完了 - 再始動確認済み" loading="lazy" class="gallery-image" loading="lazy">
                             <p class="gallery-caption">平成初期の陸モノOSエンジンを分解清掃メンテで再始動可能を確認しました。</p>
                         </div>
                         
                         <!-- 画像2（修理前） -->
                         <div class="gallery-item gallery-related scroll-animate-item" data-delay="1">
                             <div class="related-badge">修理前</div>
-                            <img src="work2.jpg" alt="修理前 - 変速ギアが摩耗して滑っている状態の診断画像" class="gallery-image" loading="lazy">
+                            <img src="work2.jpg" alt="修理前 - 変速ギアが摩耗して滑っている状態の診断画像" loading="lazy" class="gallery-image" loading="lazy">
                             <p class="gallery-caption">こちらは変速ギアがなめています</p>
                         </div>
                         
                         <!-- 画像3（修理後） -->
                         <div class="gallery-item gallery-related scroll-animate-item" data-delay="2">
                             <div class="related-badge related-after">修理後</div>
-                            <img src="work3.jpg" alt="修理後 - 変速ギア交換完了、走行チェックと変速タイミング調整済み" class="gallery-image" loading="lazy">
+                            <img src="work3.jpg" alt="修理後 - 変速ギア交換完了、走行チェックと変速タイミング調整済み" loading="lazy" class="gallery-image" loading="lazy">
                             <p class="gallery-caption">変速ギアを交換し、走行チェック後変速タイミングの設定完了</p>
                         </div>
                         
                         <!-- 画像4（墜落直後） -->
                         <div class="gallery-item gallery-related scroll-animate-item" data-delay="3">
                             <div class="related-badge">墜落直後</div>
-                            <img src="work4.jpg" alt="墜落直後 - JR PROPO E8ヘリコプター墜落の瞬間（動画からの切り抜き）" class="gallery-image" loading="lazy">
+                            <img src="work4.jpg" alt="墜落直後 - JR PROPO E8ヘリコプター墜落の瞬間（動画からの切り抜き）" loading="lazy" class="gallery-image" loading="lazy">
                             <p class="gallery-caption">過去の動画でヘリが墜落した瞬間の切り抜き（私の機体で墜落した機体名はJRのE8です。なかなか今から見ると古くなってきた機体でパーツも少ないです。）</p>
                         </div>
                         
                         <!-- 画像5（修理完了） -->
                         <div class="gallery-item gallery-related scroll-animate-item" data-delay="4">
                             <div class="related-badge related-after">修理完了</div>
-                            <img src="work5.jpg" alt="修理完了 - 現行機種パーツと組み合わせて飛行可能状態に復旧したE8ヘリ" class="gallery-image" loading="lazy">
+                            <img src="work5.jpg" alt="修理完了 - 現行機種パーツと組み合わせて飛行可能状態に復旧したE8ヘリ" loading="lazy" class="gallery-image" loading="lazy">
                             <p class="gallery-caption">現在発売されているヘリとMIXして、飛行可能状態にしております。詳しくはYouTubeの遊覧フライト動画にて閲覧可能です。</p>
                         </div>
                         
                         <!-- 画像6 -->
                         <div class="gallery-item scroll-animate-item" data-delay="5">
-                            <img src="work6.jpg" alt="K110S分解清掃メンテナンス中 - マストの軸ズレを発見し修正作業中" class="gallery-image" loading="lazy">
+                            <img src="work6.jpg" alt="K110S分解清掃メンテナンス中 - マストの軸ズレを発見し修正作業中" loading="lazy" class="gallery-image" loading="lazy">
                             <p class="gallery-caption">K110Sを分解清掃メンテを行い、マストの軸が見えないレベルでずれていることを確認。修理中の画像です。</p>
                         </div>
                         
                         <!-- 画像7 -->
                         <div class="gallery-item scroll-animate-item" data-delay="0">
-                            <img src="work7.jpg" alt="次世代ファンフライ機の制作 - 外国語説明書から組み立て中のバルサ機" class="gallery-image" loading="lazy">
+                            <img src="work7.jpg" alt="次世代ファンフライ機の制作 - 外国語説明書から組み立て中のバルサ機" loading="lazy" class="gallery-image" loading="lazy">
                             <p class="gallery-caption">次世代のファンフライ機の制作です。作成の説明書は日本語ではありません、少々難しい図面でも作成しております。（バルサ機も同じように行えます。）</p>
                         </div>
                     </div>
@@ -1063,46 +1304,64 @@
             <!-- SNSセクション -->
             <section id="sns" class="content-section tab-content">
                 <div class="section-header">
-                    <h2 class="section-title">📱 SNS・チャンネル</h2>
+                    <h2 class="section-title" data-i18n="snsSection.title">📱 SNS・チャンネル</h2>
                 </div>
-                <div class="sns-card">
-                    <!-- YouTubeバナー -->
-                    <a href="https://www.youtube.com/@postsoni" target="_blank" class="youtube-banner-link">
-                        <img src="youtube-banner.png" alt="ぽすとそに工房 YouTubeチャンネル - RC修理動画、組み立て動画、フライト動画配信中" class="youtube-banner">
-                    </a>
-                    
-                    <div class="sns-item youtube">
-                        <div class="sns-icon">📺</div>
-                        <div class="sns-content">
-                            <h3>YouTube チャンネル</h3>
-                            <p>RC製作・飛行動画を配信中</p>
-                            <p class="sns-note">（私が所有・運営しています）</p>
-                            <p class="banner-guide">↑↑上記バナーをクリックorタップでチャンネルに飛びます↑↑</p>
-                            <a href="https://www.youtube.com/@postsoni" target="_blank" class="sns-link">
-                                https://www.youtube.com/@postsoni
-                            </a>
+                
+                <!-- SNS統合カード -->
+                <div class="sns-integrated-card">
+                    <!-- YouTube セクション -->
+                    <div class="sns-platform-section youtube-section">
+                        <div class="platform-header">
+                            <span class="platform-icon">📺</span>
+                            <h3 class="platform-title" data-i18n="snsSection.youtubeTitle">YouTube チャンネル</h3>
                         </div>
-                    </div>
-                    
-                    <!-- X（旧Twitter）バナー -->
-                    <div class="x-banner-section">
-                        <a href="https://x.com/postsoni" target="_blank" class="x-banner-link">
-                            <img src="x-banner.png" alt="ぽすとそに X（旧Twitter）アカウント - RC活動の日常とお知らせを投稿" class="x-banner">
+                        <a href="https://www.youtube.com/@postsoni" target="_blank" class="youtube-banner-link">
+                            <img src="youtube-banner.png" alt="ぽすとそに工房 YouTubeチャンネル" loading="lazy" class="youtube-banner-img">
                         </a>
-                        <p class="banner-guide-small">↑↑上記バナーをクリックorタップでXに飛びます↑↑</p>
+                        <p class="platform-description" data-i18n="snsSection.youtubeDesc">RC製作・修理動画、フライト動画を配信中！組み立て解説や技術的なポイントも紹介しています。</p>
+                        <a href="https://www.youtube.com/@postsoni" target="_blank" class="platform-btn youtube-btn-large">
+                            <span data-i18n="snsSection.youtubeButton">チャンネルを見る →</span>
+                        </a>
                     </div>
                     
-                    <!-- Xリンク -->
-                    <div class="sns-item x-item">
-                        <div class="sns-icon" style="font-size: 48px;">𝕏</div>
-                        <div class="sns-content">
-                            <h3>X（旧Twitter）</h3>
-                            <p>RC活動の日々の記録や最新情報を発信中</p>
-                            <a href="https://x.com/postsoni" target="_blank" class="sns-link">
-                                https://x.com/postsoni
-                            </a>
+                    <!-- note セクション -->
+                    <div class="sns-platform-section note-section">
+                        <div class="platform-header">
+                            <span class="platform-icon">📝</span>
+                            <h3 class="platform-title" data-i18n="snsSection.noteTitle">note 技術ブログ</h3>
                         </div>
+                        <div class="note-preview-card">
+                            <p class="platform-description" data-i18n="snsSection.noteDesc">修理工程の詳細記録、パーツレビュー、技術的な備忘録など、動画では伝えきれない詳細な情報を発信しています。</p>
+                            <div class="note-features">
+                                <span class="note-feature-tag" data-i18n="snsSection.noteTag1">🔧 修理記録</span>
+                                <span class="note-feature-tag" data-i18n="snsSection.noteTag2">📊 パーツレビュー</span>
+                                <span class="note-feature-tag" data-i18n="snsSection.noteTag3">💡 技術解説</span>
+                            </div>
+                        </div>
+                        <a href="https://note.com/postsoni" target="_blank" class="platform-btn note-btn-large">
+                            <span data-i18n="snsSection.noteButton">ブログを読む →</span>
+                        </a>
                     </div>
+                    
+                    <!-- X（旧Twitter）セクション -->
+                    <div class="sns-platform-section x-section">
+                        <div class="platform-header">
+                            <span class="platform-icon">𝕏</span>
+                            <h3 class="platform-title" data-i18n="snsSection.xTitle">X（旧Twitter）</h3>
+                        </div>
+                        <a href="https://x.com/postsoni" target="_blank" class="x-banner-link">
+                            <img src="x-banner.png" alt="ぽすとそに X" loading="lazy" class="x-banner-img">
+                        </a>
+                        <p class="platform-description" data-i18n="snsSection.xDesc">RC活動の日常、作業の進捗、イベント情報などをリアルタイムで発信中！お気軽にフォローしてください。</p>
+                        <a href="https://x.com/postsoni" target="_blank" class="platform-btn x-btn-large">
+                            <span data-i18n="snsSection.xButton">フォローする →</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- フォローのお願い -->
+                <div class="sns-follow-cta">
+                    <p class="follow-message" data-i18n="snsSection.followMessage">各SNSでは異なる情報を発信しています。ぜひ全てをフォローして、ラジコンの世界を一緒に楽しみましょう！</p>
                 </div>
             </section>
 
@@ -1131,19 +1390,124 @@
                     
                     <!-- note最新記事埋め込み -->
                     <div class="note-embed">
-                        <h4 class="note-embed-title">📌 最新のブログ記事</h4>
-                        <iframe 
-                            class="note-embed-iframe"
-                            src="https://note.com/embed/notes/needace09bdbd" 
-                            style="border: 0; display: block; max-width: 99%; width: 494px; padding: 0px; margin: 10px 0px; position: static; visibility: visible;" 
-                            height="400">
-                        </iframe>
+                        <!-- ピン留め記事（ロストテクノロジー） -->
+                        <div class="note-pinned-article">
+                            <h4 class="note-embed-title" data-i18n="activitySection.notePinnedTitle">📌 おすすめ記事（ピン留め）</h4>
+                            <p class="note-pinned-description" data-i18n="activitySection.notePinnedDesc">ラジコン文化の継承について、19年の経験から語る重要な記事です。</p>
+                            <iframe 
+                                class="note-embed-iframe"
+                                src="https://note.com/embed/notes/needace09bdbd" 
+                                style="border: 0; display: block; max-width: 99%; width: 494px; padding: 0px; margin: 10px 0px; position: static; visibility: visible;" 
+                                height="400"
+                                loading="lazy"
+                                title="ロストテクノロジーの重要性 - note記事">
+                            </iframe>
+                        </div>
+                        
+                        <!-- 最新記事（自動取得） -->
+                        <div class="note-latest-articles">
+                            <h4 class="note-latest-title" data-i18n="activitySection.noteLatestTitle">📰 最新記事（自動取得）</h4>
+                            <div id="note-articles-container" class="note-articles-grid">
+                                <!-- スケルトンローダー -->
+                                <div class="note-article-skeleton">
+                                    <div class="skeleton-image"></div>
+                                    <div class="skeleton-text"></div>
+                                    <div class="skeleton-text short"></div>
+                                </div>
+                                <div class="note-article-skeleton">
+                                    <div class="skeleton-image"></div>
+                                    <div class="skeleton-text"></div>
+                                    <div class="skeleton-text short"></div>
+                                </div>
+                                <div class="note-article-skeleton">
+                                    <div class="skeleton-image"></div>
+                                    <div class="skeleton-text"></div>
+                                    <div class="skeleton-text short"></div>
+                                </div>
+                            </div>
+                            <p class="note-auto-update-info" data-i18n="activitySection.noteAutoUpdateInfo">🔄 ページ読み込み時に自動で最新記事を取得します</p>
+                        </div>
+                        
                         <p class="note-more-link">
                             <a href="https://note.com/postsoni" target="_blank">
                                 もっと記事を見る →
                             </a>
                         </p>
                     </div>
+                </div>
+            </section>
+
+            <!-- AIラジコンゲームセクション -->
+            <section id="ai-games" class="content-section tab-content">
+                <div class="section-header">
+                    <h2 class="section-title">🎮 AIラジコンゲーム開発</h2>
+                </div>
+                
+                <div class="ai-games-intro scroll-animate fade-in">
+                    <div class="ai-games-intro-icon">🤖</div>
+                    <div class="ai-games-intro-content">
+                        <h3 data-i18n="aiGames.introTitle">Claude AI とともに作ったラジコン普及ゲーム</h3>
+                        <p data-i18n="aiGames.introDesc">Claude AI とともに作って勉強してきたラジコン普及を目指したゲームです！ラジコンを知らない人でも楽しめるように設計していたり、ラジコンの知識がある人も唸るようなものまで用意させていただきました！是非プレイ感想などもお待ちしておりますし、Xなどで結果をシェアしていただけるとリプライしにいくこともあります！</p>
+                    </div>
+                </div>
+                
+                <div class="ai-games-grid">
+                    <!-- RCシャーシ性格診断 -->
+                    <a href="https://postsoni.github.io/rc-chassis-personality-quiz/" target="_blank" class="ai-game-card scroll-animate fade-in">
+                        <div class="game-icon">🚗</div>
+                        <div class="game-content">
+                            <h4 data-i18n="aiGames.game1Title">RCシャーシ性格診断</h4>
+                            <p data-i18n="aiGames.game1Desc">あなたにぴったりのRCシャーシタイプを診断！</p>
+                        </div>
+                        <div class="game-play-btn">PLAY →</div>
+                    </a>
+                    
+                    <!-- RCパーツガチャ -->
+                    <a href="https://postsoni.github.io/rc-gacha/" target="_blank" class="ai-game-card scroll-animate fade-in">
+                        <div class="game-icon">🎰</div>
+                        <div class="game-content">
+                            <h4 data-i18n="aiGames.game2Title">RCパーツガチャ</h4>
+                            <p data-i18n="aiGames.game2Desc">運試し！レアパーツをゲットできるか!?</p>
+                        </div>
+                        <div class="game-play-btn">PLAY →</div>
+                    </a>
+                    
+                    <!-- RCクイズ -->
+                    <a href="https://postsoni.github.io/rc-quiz/" target="_blank" class="ai-game-card scroll-animate fade-in">
+                        <div class="game-icon">❓</div>
+                        <div class="game-content">
+                            <h4 data-i18n="aiGames.game3Title">RCクイズ</h4>
+                            <p data-i18n="aiGames.game3Desc">RCの知識をテスト！何問正解できる？</p>
+                        </div>
+                        <div class="game-play-btn">PLAY →</div>
+                    </a>
+                    
+                    <!-- RCあるある共感チェック -->
+                    <a href="https://postsoni.github.io/rc-aruaru-check/" target="_blank" class="ai-game-card scroll-animate fade-in">
+                        <div class="game-icon">😂</div>
+                        <div class="game-content">
+                            <h4 data-i18n="aiGames.game4Title">RCあるある共感チェック</h4>
+                            <p data-i18n="aiGames.game4Desc">RCファンなら共感必至のあるあるネタ！</p>
+                        </div>
+                        <div class="game-play-btn">PLAY →</div>
+                    </a>
+                    
+                    <!-- RC人生シミュレーター -->
+                    <a href="https://postsoni.github.io/rc-life-simulator/" target="_blank" class="ai-game-card scroll-animate fade-in">
+                        <div class="game-icon">🎯</div>
+                        <div class="game-content">
+                            <h4 data-i18n="aiGames.game5Title">RC人生シミュレーター</h4>
+                            <p data-i18n="aiGames.game5Desc">RCライフを疑似体験！どんな人生になる？</p>
+                        </div>
+                        <div class="game-play-btn">PLAY →</div>
+                    </a>
+                </div>
+                
+                <div class="ai-games-share-cta scroll-animate fade-in">
+                    <p data-i18n="aiGames.shareCta">🐦 結果はぜひXでシェアしてください！リプライしにいくかも！？</p>
+                    <a href="https://x.com/postsoni" target="_blank" class="share-x-btn">
+                        <span>𝕏</span> @postsoni をフォロー
+                    </a>
                 </div>
             </section>
 
@@ -1506,7 +1870,7 @@
                     <div class="partner-item">
                         <div class="partner-banner">
                             <a href="https://www.rc-k.jp/" target="_blank" rel="noopener noreferrer">
-                                <img src="rc-kobo-banner.png" alt="RC工房 - RC模型専門ショップ" class="partner-banner-img">
+                                <img src="rc-kobo-banner.png" alt="RC工房 - RC模型専門ショップ" loading="lazy" class="partner-banner-img">
                             </a>
                         </div>
                         <div class="partner-description">
@@ -1539,16 +1903,110 @@
                 <div class="section-header">
                     <h2 class="section-title">✉️ お問い合わせ</h2>
                 </div>
+                
+                <!-- お問い合わせの流れ（ステップ表示） -->
+                <div class="contact-flow-card">
+                    <h3 class="contact-flow-title" data-i18n="contact.flowTitle">📋 お問い合わせからの流れ</h3>
+                    <div class="contact-steps">
+                        <div class="contact-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4 data-i18n="contact.step1Title">フォーム送信</h4>
+                                <p data-i18n="contact.step1Desc">お気軽にご連絡ください</p>
+                            </div>
+                        </div>
+                        <div class="step-arrow">↓</div>
+                        <div class="contact-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4 data-i18n="contact.step2Title">内容確認・ヒアリング</h4>
+                                <p data-i18n="contact.step2Desc">状況を詳しくお聞きします（1〜3日）</p>
+                            </div>
+                        </div>
+                        <div class="step-arrow">↓</div>
+                        <div class="contact-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4 data-i18n="contact.step3Title">アドバイス・ご提案</h4>
+                                <p data-i18n="contact.step3Desc">修理方法や必要なパーツをご案内</p>
+                            </div>
+                        </div>
+                        <div class="step-arrow">↓</div>
+                        <div class="contact-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4 data-i18n="contact.step4Title">作業（対面 or オンライン）</h4>
+                                <p data-i18n="contact.step4Desc">一緒に修理・メンテナンスを行います</p>
+                            </div>
+                        </div>
+                        <div class="step-arrow">↓</div>
+                        <div class="contact-step">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <h4 data-i18n="contact.step5Title">完了・アフターフォロー</h4>
+                                <p data-i18n="contact.step5Desc">その後の疑問もお気軽にご質問いただけると幸いです</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 期待値の明示 -->
+                <div class="contact-expectations-card">
+                    <h3 class="expectations-title" data-i18n="contact.expectationsTitle">💡 お問い合わせ前に知っておいてほしいこと</h3>
+                    <div class="expectations-grid">
+                        <div class="expectation-item">
+                            <div class="expectation-icon">⏰</div>
+                            <div class="expectation-content">
+                                <h4 data-i18n="contact.responseTimeTitle">返信時間</h4>
+                                <p data-i18n="contact.responseTimeDesc">通常1〜3日以内（体調により遅れる場合があります）</p>
+                            </div>
+                        </div>
+                        <div class="expectation-item">
+                            <div class="expectation-icon">🔧</div>
+                            <div class="expectation-content">
+                                <h4 data-i18n="contact.supportTypeTitle">対応可能なこと</h4>
+                                <p data-i18n="contact.supportTypeDesc">RC修理相談、初心者サポート、機種選びの相談、技術的な質問</p>
+                            </div>
+                        </div>
+                        <div class="expectation-item highlight-free">
+                            <div class="expectation-icon">💰</div>
+                            <div class="expectation-content">
+                                <h4 data-i18n="contact.costTitle">費用について</h4>
+                                <p data-i18n="contact.costDesc">完全無料のボランティア活動です。修理費・相談料等は一切いただきません。</p>
+                            </div>
+                        </div>
+                        <div class="expectation-item">
+                            <div class="expectation-icon">🛒</div>
+                            <div class="expectation-content">
+                                <h4 data-i18n="contact.partsTitle">パーツ代について</h4>
+                                <p data-i18n="contact.partsDesc">必要なパーツはご自身でご購入いただきます（購入先のアドバイスは可能）</p>
+                            </div>
+                        </div>
+                        <div class="expectation-item">
+                            <div class="expectation-icon">📍</div>
+                            <div class="expectation-content">
+                                <h4 data-i18n="contact.areaTitle">対応エリア</h4>
+                                <p data-i18n="contact.areaDesc">札幌中心、オンライン相談は全国対応</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 重要なお知らせ -->
+                <div class="contact-important-banner">
+                    <p data-i18n="contact.noMoneyNotice">⚠️ このサイトを通じた金銭のやり取りは一切行っておりません。パーツや機体のご購入は、ショップ等でご自身でお願いいたします。</p>
+                </div>
+                
                 <div class="contact-card">
-                    <p class="contact-description">お問い合わせは以下のフォームからお願いいたします。</p>
-                    <p class="contact-description">RC関連のご質問、修理のご依頼、サポートのご相談など、お気軽にお問い合わせください。</p>
+                    <p class="contact-description" data-i18n="contact.description1">お問い合わせは以下のフォームからお願いいたします。</p>
+                    <p class="contact-description" data-i18n="contact.description2">RC関連のご質問、修理のご依頼、サポートのご相談など、お気軽にお問い合わせください。</p>
                     
                     <!-- 返信遅延の注意 -->
                     <div class="contact-important-notice">
                         <div class="notice-icon">⏰</div>
                         <div class="notice-content">
-                            <h4>ご返信について</h4>
-                            <p>お返事はできる限り早急に対応させていただいておりますが、<strong>身体の都合によりご連絡が遅れる場合がございます</strong>。ご不便をおかけいたしますが、少々お時間をいただけますとありがたく存じます。</p>
+                            <h4 data-i18n="contact.replyNoticeTitle">ご返信について</h4>
+                            <p data-i18n="contact.replyNoticeDesc">お返事はできる限り早急に対応させていただいておりますが、<strong>身体の都合によりご連絡が遅れる場合がございます</strong>。ご不便をおかけいたしますが、少々お時間をいただけますとありがたく存じます。</p>
                         </div>
                     </div>
                     
@@ -1556,14 +2014,14 @@
                     <div class="contact-technical-notice">
                         <div class="notice-icon">📮</div>
                         <div class="notice-content">
-                            <h4>メール受信設定のお願い</h4>
-                            <p>お手数をおかけしますが、<strong>「@hotmail.co.jp」からのメールを受信できるよう、ドメインの許可設定をお願いいたします</strong>。また、<strong>迷惑メールフォルダ</strong>に振り分けられている可能性もございますので、ご確認をお願いいたします。</p>
+                            <h4 data-i18n="contact.emailNoticeTitle">メール受信設定のお願い</h4>
+                            <p data-i18n="contact.emailNoticeDesc">お手数をおかけしますが、<strong>「@hotmail.co.jp」からのメールを受信できるよう、ドメインの許可設定をお願いいたします</strong>。また、<strong>迷惑メールフォルダ</strong>に振り分けられている可能性もございますので、ご確認をお願いいたします。</p>
                         </div>
                     </div>
                     
-                    <p class="contact-notice">※このフォームは商業目的ではなく、個人活動に関するお問い合わせ専用です。</p>
+                    <p class="contact-notice" data-i18n="contact.volunteerNotice">※このフォームは商業目的ではなく、ボランティア活動に関するお問い合わせ専用です。</p>
                     <button onclick="openContactForm()" class="contact-button">
-                        📧 お問い合わせフォームを開く
+                        <span data-i18n="contact.openFormButton">📧 お問い合わせフォームを開く</span>
                     </button>
                 </div>
             </section>
@@ -1585,6 +2043,6 @@
     </footer>
 
     <!-- バージョン管理：サイト更新時は v=1.1.1, v=1.1.2 と変更してください -->
-    <script src="app.js?v=1.3.0"></script>
+    <script src="app.js?v=1.8.0"></script>
 </body>
 </html>

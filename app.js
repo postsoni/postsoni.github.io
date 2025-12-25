@@ -337,7 +337,7 @@ const translations = {
         nav: {
             top: 'TOP', news: '最新の活動報告', gallery: '活動ギャラリー',
             roadmap: '初めての方へ', profile: 'プロフィール', sns: 'SNS',
-            activity: 'ブログアクセス', goods: 'グッズ', support: 'RC支援・サポート',
+            activity: 'ブログアクセス', 'ai-games': 'AIラジコンゲーム', goods: 'グッズ', support: 'RC支援・サポート',
             testimonials: 'サポートを受けた方の声', faq: 'よくある質問', partners: '提携サイト', contact: 'お問い合わせ'
         },
         sidebar: {
@@ -478,12 +478,18 @@ const translations = {
         snsSection: {
             title: 'SNS・チャンネル',
             youtubeTitle: 'YouTube チャンネル',
-            youtubeDescription: 'RC製作・飛行動画を配信中',
-            youtubeNote: '（私が所有・運営しています）',
-            youtubeBannerGuide: '↑↑上記バナーをクリックorタップでチャンネルに飛びます↑↑',
+            youtubeDesc: 'RC製作・修理動画、フライト動画を配信中！組み立て解説や技術的なポイントも紹介しています。',
+            youtubeButton: 'チャンネルを見る →',
+            noteTitle: 'note 技術ブログ',
+            noteDesc: '修理工程の詳細記録、パーツレビュー、技術的な備忘録など、動画では伝えきれない詳細な情報を発信しています。',
+            noteButton: 'ブログを読む →',
+            noteTag1: '🔧 修理記録',
+            noteTag2: '📊 パーツレビュー',
+            noteTag3: '💡 技術解説',
             xTitle: 'X（旧Twitter）',
-            xDescription: 'RC活動の日々の記録や最新情報を発信中',
-            xBannerGuide: '↑↑上記バナーをクリックorタップでXに飛びます↑↑'
+            xDesc: 'RC活動の日常、作業の進捗、イベント情報などをリアルタイムで発信中！お気軽にフォローしてください。',
+            xButton: 'フォローする →',
+            followMessage: '各SNSでは異なる情報を発信しています。ぜひ全てをフォローして、ラジコンの世界を一緒に楽しみましょう！'
         },
         activitySection: {
             title: '活動記録',
@@ -492,7 +498,28 @@ const translations = {
             noteTitle: 'note',
             noteDescription: '修理工程や技術解説を詳しく記録中',
             latestArticlesTitle: '📌 最新のブログ記事',
-            moreArticles: 'もっと記事を見る →'
+            moreArticles: 'もっと記事を見る →',
+            notePinnedTitle: '📌 おすすめ記事（ピン留め）',
+            notePinnedDesc: 'ラジコン文化の継承について、19年の経験から語る重要な記事です。',
+            noteLatestTitle: '📰 最新記事（自動取得）',
+            noteAutoUpdateInfo: '🔄 ページ読み込み時に自動で最新記事を取得します'
+        },
+        aiGamesSection: {
+            title: 'AIラジコンゲーム開発',
+            introTitle: 'Claude AI とともに作ったラジコン普及ゲーム',
+            introDesc: 'Claude AI とともに作って勉強してきたラジコン普及を目指したゲームです！ラジコンを知らない人でも楽しめるように設計していたり、ラジコンの知識がある人も唸るようなものまで用意させていただきました！是非プレイ感想などもお待ちしておりますし、Xなどで結果をシェアしていただけるとリプライしにいくこともあります！',
+            game1Title: 'RCシャーシ性格診断',
+            game1Desc: 'あなたにぴったりのRCシャーシタイプを診断！',
+            game2Title: 'RCパーツガチャ',
+            game2Desc: '運試し！レアパーツをゲットできるか!?',
+            game3Title: 'RCクイズ',
+            game3Desc: 'RCの知識をテスト！何問正解できる？',
+            game4Title: 'RCあるある共感チェック',
+            game4Desc: 'RCファンなら共感必至のあるあるネタ！',
+            game5Title: 'RC人生シミュレーター',
+            game5Desc: 'RCライフを疑似体験！どんな人生になる？',
+            shareCta: '🐦 結果はぜひXでシェアしてください！リプライしにいくかも！？',
+            followBtn: '@postsoni をフォロー'
         },
         goodsSection: {
             title: 'グッズ',
@@ -603,8 +630,33 @@ const translations = {
             responseNoticeText: 'お返事はできる限り早急に対応させていただいておりますが、身体の都合によりご連絡が遅れる場合がございます。ご不便をおかけいたしますが、少々お時間をいただけますとありがたく存じます。',
             emailNoticeTitle: 'メール受信設定のお願い',
             emailNoticeText: 'お手数をおかけしますが、「@hotmail.co.jp」からのメールを受信できるよう、ドメインの許可設定をお願いいたします。また、迷惑メールフォルダに振り分けられている可能性もございますので、ご確認をお願いいたします。',
-            notice: '※このフォームは商業目的ではなく、個人活動に関するお問い合わせ専用です。',
-            buttonText: '📧 お問い合わせフォームを開く'
+            notice: '※このフォームは商業目的ではなく、ボランティア活動に関するお問い合わせ専用です。',
+            buttonText: '📧 お問い合わせフォームを開く',
+            // Phase 5: ステップ表示
+            flowTitle: '📋 お問い合わせからの流れ',
+            step1Title: 'フォーム送信',
+            step1Desc: 'お気軽にご連絡ください',
+            step2Title: '内容確認・ヒアリング',
+            step2Desc: '状況を詳しくお聞きします（1〜3日）',
+            step3Title: 'アドバイス・ご提案',
+            step3Desc: '修理方法や必要なパーツをご案内',
+            step4Title: '作業（対面 or オンライン）',
+            step4Desc: '一緒に修理・メンテナンスを行います',
+            step5Title: '完了・アフターフォロー',
+            step5Desc: 'その後の疑問もお気軽にご質問いただけると幸いです',
+            // Phase 5: 期待値の明示
+            expectationsTitle: '💡 お問い合わせ前に知っておいてほしいこと',
+            responseTimeTitle: '返信時間',
+            responseTimeDesc: '通常1〜3日以内（体調により遅れる場合があります）',
+            supportTypeTitle: '対応可能なこと',
+            supportTypeDesc: 'RC修理相談、初心者サポート、機種選びの相談、技術的な質問',
+            costTitle: '費用について',
+            costDesc: '完全無料のボランティア活動です。修理費・相談料等は一切いただきません。',
+            partsTitle: 'パーツ代について',
+            partsDesc: '必要なパーツはご自身でご購入いただきます（購入先のアドバイスは可能）',
+            areaTitle: '対応エリア',
+            areaDesc: '札幌中心、オンライン相談は全国対応',
+            noMoneyNotice: '⚠️ このサイトを通じた金銭のやり取りは一切行っておりません。パーツや機体のご購入は、ショップ等でご自身でお願いいたします。'
         },
         topSection: {
             title: 'ようこそ、ぽすとそに工房へ',
@@ -643,6 +695,15 @@ const translations = {
             beginnerGuideTitle: 'ラジコンが初めての方へ',
             beginnerGuideText: '「何から始めればいいの？」という疑問にお答えします。機体選びから基本操作まで、ステップバイステップでご案内します。',
             beginnerGuideButton: '初心者ガイドを見る →',
+            // 経験者向けセクション
+            expertSectionTitle: '経験者の方へ',
+            expertSectionDescription: '当工房では高度な修理・カスタムにも対応しております。発泡機の下地カラー、エポキシ+マイクロバルーン、マイクログラス、表面加工、カラーリングなど発泡面を消す技術や、電動・エンジン機のフルレストア（10機以上の実績）を行っています。',
+            expertSectionSkills: '最近ではトラクサスESCの不調原因究明、ヨコモドリフト系列やタミヤTT-02の舵角加工、エアレーションダンパーの最適セッティングなど、多岐にわたる技術サポートを提供しております。',
+            expertSectionMakersLabel: '対応メーカー:',
+            expertSectionButton: '技術相談・お問い合わせ →',
+            // SNSクイックリンク
+            snsQuickTitle: '📱 SNS・メディアをフォロー',
+            snsQuickDescription: '最新情報やRC活動の様子をチェック！',
             ctaHighlightTitle: 'お気軽にご相談ください',
             ctaHighlightText: '修理のご依頼、技術的なご質問、初心者の方へのサポートなど、どんなことでもお問い合わせください。',
             ctaContact: '📧 お問い合わせフォームへ',
@@ -796,7 +857,7 @@ const translations = {
         nav: {
             top: 'TOP', news: 'Latest Updates', gallery: 'Gallery',
             roadmap: 'For Beginners', profile: 'Profile', sns: 'SNS',
-            activity: 'Blog', goods: 'Goods', support: 'Support',
+            activity: 'Blog', 'ai-games': 'AI RC Games', goods: 'Goods', support: 'Support',
             testimonials: 'Testimonials', faq: 'FAQ', partners: 'Partners', contact: 'Contact'
         },
         sidebar: {
@@ -937,12 +998,18 @@ const translations = {
         snsSection: {
             title: 'SNS & Channels',
             youtubeTitle: 'YouTube Channel',
-            youtubeDescription: 'RC building and flight videos',
-            youtubeNote: '(Owned and operated by me)',
-            youtubeBannerGuide: '↑↑Click or tap the banner above to visit the channel↑↑',
+            youtubeDesc: 'Uploading RC building, repair, and flight videos! Also featuring assembly guides and technical tips.',
+            youtubeButton: 'Visit Channel →',
+            noteTitle: 'note Technical Blog',
+            noteDesc: 'Detailed repair process records, parts reviews, and technical notes that cannot be fully conveyed through videos.',
+            noteButton: 'Read Blog →',
+            noteTag1: '🔧 Repair Log',
+            noteTag2: '📊 Parts Review',
+            noteTag3: '💡 Tech Guide',
             xTitle: 'X (formerly Twitter)',
-            xDescription: 'Daily RC activity records and latest updates',
-            xBannerGuide: '↑↑Click or tap the banner above to visit X↑↑'
+            xDesc: 'Real-time updates on daily RC activities, work progress, and event information. Feel free to follow!',
+            xButton: 'Follow →',
+            followMessage: 'We share different content on each SNS platform. Follow all of them and enjoy the world of RC together!'
         },
         activitySection: {
             title: 'Activity Log',
@@ -951,7 +1018,28 @@ const translations = {
             noteTitle: 'note',
             noteDescription: 'Detailed records of repair processes and technical explanations',
             latestArticlesTitle: '📌 Latest Blog Articles',
-            moreArticles: 'View More Articles →'
+            moreArticles: 'View More Articles →',
+            notePinnedTitle: '📌 Featured Article (Pinned)',
+            notePinnedDesc: 'An important article about preserving RC culture, based on 19 years of experience.',
+            noteLatestTitle: '📰 Latest Articles (Auto-fetch)',
+            noteAutoUpdateInfo: '🔄 Latest articles are automatically fetched when page loads'
+        },
+        aiGamesSection: {
+            title: 'AI RC Game Development',
+            introTitle: 'RC Promotion Games Created with Claude AI',
+            introDesc: 'These are games created with Claude AI to promote RC hobby! Designed to be enjoyable even for those who don\'t know about RC, while also featuring content that will impress RC enthusiasts! We welcome your gameplay feedback, and if you share your results on X, we might reply!',
+            game1Title: 'RC Chassis Personality Quiz',
+            game1Desc: 'Find out which RC chassis type suits you!',
+            game2Title: 'RC Parts Gacha',
+            game2Desc: 'Test your luck! Can you get rare parts!?',
+            game3Title: 'RC Quiz',
+            game3Desc: 'Test your RC knowledge! How many can you answer?',
+            game4Title: 'RC Relatable Moments Check',
+            game4Desc: 'Relatable moments every RC fan knows!',
+            game5Title: 'RC Life Simulator',
+            game5Desc: 'Experience RC life! What kind of journey awaits?',
+            shareCta: '🐦 Please share your results on X! We might reply!',
+            followBtn: 'Follow @postsoni'
         },
         goodsSection: {
             title: 'Goods',
@@ -1062,8 +1150,33 @@ const translations = {
             responseNoticeText: 'We strive to respond as quickly as possible, but due to physical circumstances, our reply may be delayed. We apologize for any inconvenience and appreciate your patience.',
             emailNoticeTitle: 'Email Reception Settings',
             emailNoticeText: 'Please allow emails from "@hotmail.co.jp" in your domain settings. Also, please check your spam folder as our emails may be filtered there.',
-            notice: '※This form is for personal activity inquiries, not commercial purposes.',
-            buttonText: '📧 Open Contact Form'
+            notice: '※This form is for volunteer activity inquiries, not commercial purposes.',
+            buttonText: '📧 Open Contact Form',
+            // Phase 5: Steps
+            flowTitle: '📋 Contact Process Flow',
+            step1Title: 'Submit Form',
+            step1Desc: 'Feel free to contact us',
+            step2Title: 'Review & Consultation',
+            step2Desc: 'We will ask about your situation in detail (1-3 days)',
+            step3Title: 'Advice & Suggestions',
+            step3Desc: 'We will guide you on repair methods and required parts',
+            step4Title: 'Work (In-person or Online)',
+            step4Desc: 'We will repair and maintain together',
+            step5Title: 'Completion & Follow-up',
+            step5Desc: 'Feel free to ask any questions afterwards',
+            // Phase 5: Expectations
+            expectationsTitle: '💡 What to Know Before Contacting Us',
+            responseTimeTitle: 'Response Time',
+            responseTimeDesc: 'Usually within 1-3 days (may be delayed due to health conditions)',
+            supportTypeTitle: 'What We Can Help With',
+            supportTypeDesc: 'RC repair consultation, beginner support, model selection advice, technical questions',
+            costTitle: 'About Costs',
+            costDesc: 'This is a completely free volunteer activity. We do not charge any repair or consultation fees.',
+            partsTitle: 'About Parts',
+            partsDesc: 'Please purchase necessary parts yourself (we can advise on where to buy)',
+            areaTitle: 'Service Area',
+            areaDesc: 'Mainly Sapporo, online consultations available nationwide',
+            noMoneyNotice: '⚠️ No monetary transactions are conducted through this site. Please purchase parts and vehicles at shops yourself.'
         },
         topSection: {
             title: 'Welcome to Postsoni Workshop',
@@ -1102,6 +1215,15 @@ const translations = {
             beginnerGuideTitle: 'For First-Time RC Enthusiasts',
             beginnerGuideText: 'We answer your questions like "Where do I start?" From choosing your vehicle to basic operations, we guide you step by step.',
             beginnerGuideButton: 'View Beginner\'s Guide →',
+            // Expert Section
+            expertSectionTitle: 'For Experienced RC Enthusiasts',
+            expertSectionDescription: 'Our workshop handles advanced repairs and customizations. We specialize in foam aircraft techniques including base coating, epoxy + microballoon, micro glass, surface finishing, and coloring to eliminate foam texture. We also perform full restorations of electric and engine-powered aircraft (10+ completed).',
+            expertSectionSkills: 'Recent projects include Traxxas ESC troubleshooting, steering angle modifications for Yokomo drift series and Tamiya TT-02, and optimal aeration damper settings. We provide technical support across a wide range of specialties.',
+            expertSectionMakersLabel: 'Supported Manufacturers:',
+            expertSectionButton: 'Technical Consultation →',
+            // SNS Quick Links
+            snsQuickTitle: '📱 Follow Our SNS & Media',
+            snsQuickDescription: 'Check out the latest updates and RC activities!',
             ctaHighlightTitle: 'Feel Free to Contact Us',
             ctaHighlightText: 'For repair requests, technical questions, beginner support, or any inquiries, please feel free to contact us.',
             ctaContact: '📧 Contact for Consultation',
@@ -1255,7 +1377,7 @@ const translations = {
         nav: {
             top: '首页', news: '最新活动', gallery: '画廊',
             roadmap: '新手指南', profile: '简介', sns: '社交媒体',
-            activity: '博客', goods: '商品', support: '支援',
+            activity: '博客', 'ai-games': 'AI遥控游戏', goods: '商品', support: '支援',
             testimonials: '评价', faq: '常见问题', partners: '合作网站', contact: '联系我们'
         },
         sidebar: {
@@ -1396,12 +1518,18 @@ const translations = {
         snsSection: {
             title: '社交媒体和频道',
             youtubeTitle: 'YouTube 频道',
-            youtubeDescription: '发布RC制作和飞行视频',
-            youtubeNote: '（由我拥有和运营）',
-            youtubeBannerGuide: '↑↑点击或点按上方横幅访问频道↑↑',
+            youtubeDesc: '上传RC制作、维修和飞行视频！还提供组装指南和技术要点。',
+            youtubeButton: '访问频道 →',
+            noteTitle: 'note 技术博客',
+            noteDesc: '详细的维修过程记录、零件评测和技术备忘录，视频无法完全传达的信息。',
+            noteButton: '阅读博客 →',
+            noteTag1: '🔧 维修记录',
+            noteTag2: '📊 零件评测',
+            noteTag3: '💡 技术指南',
             xTitle: 'X（原Twitter）',
-            xDescription: '发布RC活动的日常记录和最新信息',
-            xBannerGuide: '↑↑点击或点按上方横幅访问X↑↑'
+            xDesc: '实时更新日常RC活动、工作进度和活动信息。欢迎关注！',
+            xButton: '关注 →',
+            followMessage: '我们在各个社交媒体平台上分享不同的内容。关注所有平台，一起享受RC的世界吧！'
         },
         activitySection: {
             title: '活动记录',
@@ -1410,7 +1538,28 @@ const translations = {
             noteTitle: 'note',
             noteDescription: '详细记录维修过程和技术解说',
             latestArticlesTitle: '📌 最新博客文章',
-            moreArticles: '查看更多文章 →'
+            moreArticles: '查看更多文章 →',
+            notePinnedTitle: '📌 推荐文章（置顶）',
+            notePinnedDesc: '基于19年经验，关于传承RC文化的重要文章。',
+            noteLatestTitle: '📰 最新文章（自动获取）',
+            noteAutoUpdateInfo: '🔄 页面加载时自动获取最新文章'
+        },
+        aiGamesSection: {
+            title: 'AI遥控游戏开发',
+            introTitle: '与Claude AI共同制作的遥控推广游戏',
+            introDesc: '这些是与Claude AI一起学习制作的旨在推广遥控的游戏！设计成即使不了解遥控的人也能享受，同时也准备了让遥控知识丰富的人也会惊叹的内容！欢迎您的游戏感想，如果在X上分享结果，我们可能会回复！',
+            game1Title: 'RC底盘性格诊断',
+            game1Desc: '找出最适合你的RC底盘类型！',
+            game2Title: 'RC零件扭蛋',
+            game2Desc: '试试运气！能获得稀有零件吗!?',
+            game3Title: 'RC知识问答',
+            game3Desc: '测试你的RC知识！能答对多少？',
+            game4Title: 'RC共鸣体验检查',
+            game4Desc: 'RC粉丝必定共鸣的日常！',
+            game5Title: 'RC人生模拟器',
+            game5Desc: '体验RC生活！会是怎样的人生？',
+            shareCta: '🐦 请在X上分享您的结果！我们可能会回复！',
+            followBtn: '关注 @postsoni'
         },
         goodsSection: {
             title: '商品',
@@ -1521,8 +1670,33 @@ const translations = {
             responseNoticeText: '我们会尽快回复，但由于身体原因，回复可能会延迟。给您带来不便，敬请谅解。',
             emailNoticeTitle: '邮件接收设置',
             emailNoticeText: '请设置允许接收来自"@hotmail.co.jp"的邮件。另外，请检查垃圾邮件文件夹，因为可能被过滤到那里。',
-            notice: '※本表单不用于商业目的，专用于个人活动咨询。',
-            buttonText: '📧 打开联系表单'
+            notice: '※本表单不用于商业目的，专用于志愿者活动咨询。',
+            buttonText: '📧 打开联系表单',
+            // Phase 5: 步骤展示
+            flowTitle: '📋 联系流程',
+            step1Title: '提交表单',
+            step1Desc: '请随时联系我们',
+            step2Title: '内容确认・沟通',
+            step2Desc: '详细了解您的情况（1-3天）',
+            step3Title: '建议・提案',
+            step3Desc: '提供维修方法和所需零件指导',
+            step4Title: '作业（面对面或在线）',
+            step4Desc: '一起进行维修和保养',
+            step5Title: '完成・后续支持',
+            step5Desc: '如有后续问题，欢迎随时咨询',
+            // Phase 5: 期望说明
+            expectationsTitle: '💡 联系前请了解',
+            responseTimeTitle: '回复时间',
+            responseTimeDesc: '通常1-3天内（可能因健康状况延迟）',
+            supportTypeTitle: '可提供的帮助',
+            supportTypeDesc: 'RC维修咨询、新手支持、型号选择建议、技术问题',
+            costTitle: '关于费用',
+            costDesc: '这是完全免费的志愿者活动。不收取任何维修费或咨询费。',
+            partsTitle: '关于零件',
+            partsDesc: '请自行购买所需零件（我们可以建议购买地点）',
+            areaTitle: '服务区域',
+            areaDesc: '以札幌为中心，在线咨询全国可用',
+            noMoneyNotice: '⚠️ 本网站不进行任何金钱交易。请自行在商店购买零件和车辆。'
         },
         topSection: {
             title: '欢迎来到Postsoni工作室',
@@ -1561,6 +1735,15 @@ const translations = {
             beginnerGuideTitle: '首次接触RC的朋友',
             beginnerGuideText: '解答"从哪里开始？"的疑问。从选择机体到基本操作，逐步指导。',
             beginnerGuideButton: '查看新手指南 →',
+            // 经验者专区
+            expertSectionTitle: '致经验丰富的RC爱好者',
+            expertSectionDescription: '本工作室提供高级维修和定制服务。我们专注于泡沫飞机技术，包括底漆涂装、环氧树脂+微气球、微玻纤、表面处理和上色等消除泡沫纹理的技术，以及电动和发动机飞机的全面修复（已完成10架以上）。',
+            expertSectionSkills: '近期项目包括Traxxas电调故障排查、Yokomo漂移系列和Tamiya TT-02的转向角度改装、气压避震器最佳设定等。我们提供多领域的技术支持。',
+            expertSectionMakersLabel: '支持的制造商:',
+            expertSectionButton: '技术咨询 →',
+            // SNS快捷链接
+            snsQuickTitle: '📱 关注我们的社交媒体',
+            snsQuickDescription: '查看最新动态和RC活动！',
             ctaHighlightTitle: '欢迎随时咨询',
             ctaHighlightText: '维修委托、技术问题、新手支持等，任何问题都欢迎咨询。',
             ctaContact: '📧 咨询联系表单',
@@ -1893,6 +2076,24 @@ function setLanguage(lang) {
     if (beginnerGuideText) beginnerGuideText.textContent = trans.topSection.beginnerGuideText;
     if (beginnerGuideButton) beginnerGuideButton.textContent = trans.topSection.beginnerGuideButton;
     
+    // TOPセクション - 経験者向けセクション
+    const expertTitle = document.querySelector('.expert-guide-cta .expert-cta-title');
+    const expertDesc = document.querySelector('.expert-guide-cta .expert-cta-description');
+    const expertSkills = document.querySelector('.expert-guide-cta .expert-cta-skills');
+    const expertMakersLabel = document.querySelector('.expert-guide-cta .expert-makers-label');
+    const expertButton = document.querySelector('.expert-guide-cta .expert-cta-button span');
+    if (expertTitle) expertTitle.textContent = trans.topSection.expertSectionTitle;
+    if (expertDesc) expertDesc.textContent = trans.topSection.expertSectionDescription;
+    if (expertSkills) expertSkills.textContent = trans.topSection.expertSectionSkills;
+    if (expertMakersLabel) expertMakersLabel.textContent = trans.topSection.expertSectionMakersLabel;
+    if (expertButton) expertButton.textContent = trans.topSection.expertSectionButton;
+    
+    // TOPセクション - SNSクイックリンク
+    const snsQuickTitle = document.querySelector('.sns-quick-title');
+    const snsQuickDesc = document.querySelector('.sns-quick-description');
+    if (snsQuickTitle) snsQuickTitle.textContent = trans.topSection.snsQuickTitle;
+    if (snsQuickDesc) snsQuickDesc.textContent = trans.topSection.snsQuickDescription;
+    
     // TOPセクション - CTA強化
     const ctaHighlightTitle = document.querySelector('.cta-highlight-title');
     const ctaHighlightText = document.querySelector('.cta-highlight-text');
@@ -2039,25 +2240,37 @@ function setLanguage(lang) {
     const snsTitle = document.querySelector('#sns .section-title');
     if (snsTitle) snsTitle.textContent = '📱 ' + trans.snsSection.title;
     
-    // SNSセクション - YouTube
-    const youtubeTitle = document.querySelector('#sns .sns-item.youtube h3');
-    const youtubeDescription = document.querySelector('#sns .sns-item.youtube p:first-of-type');
-    const youtubeNote = document.querySelector('#sns .sns-item.youtube .sns-note');
-    const youtubeBannerGuide = document.querySelector('#sns .sns-item.youtube .banner-guide');
-    
+    // SNSセクション - YouTube（新レイアウト）
+    const youtubeTitle = document.querySelector('#sns .youtube-section .platform-title');
+    const youtubeDesc = document.querySelector('#sns .youtube-section .platform-description');
+    const youtubeBtn = document.querySelector('#sns .youtube-section .platform-btn span');
     if (youtubeTitle) youtubeTitle.textContent = trans.snsSection.youtubeTitle;
-    if (youtubeDescription) youtubeDescription.textContent = trans.snsSection.youtubeDescription;
-    if (youtubeNote) youtubeNote.textContent = trans.snsSection.youtubeNote;
-    if (youtubeBannerGuide) youtubeBannerGuide.textContent = trans.snsSection.youtubeBannerGuide;
+    if (youtubeDesc) youtubeDesc.textContent = trans.snsSection.youtubeDesc;
+    if (youtubeBtn) youtubeBtn.textContent = trans.snsSection.youtubeButton;
     
-    // SNSセクション - X（旧Twitter）
-    const xTitle = document.querySelector('#sns .sns-item.x-item h3');
-    const xDescription = document.querySelector('#sns .sns-item.x-item p');
-    const xBannerGuide = document.querySelector('#sns .banner-guide-small');
+    // SNSセクション - note（新レイアウト）
+    const noteSnsTitle = document.querySelector('#sns .note-section .platform-title');
+    const noteDesc = document.querySelector('#sns .note-section .platform-description');
+    const noteBtn = document.querySelector('#sns .note-section .platform-btn span');
+    const noteTags = document.querySelectorAll('#sns .note-section .note-feature-tag');
+    if (noteSnsTitle) noteSnsTitle.textContent = trans.snsSection.noteTitle;
+    if (noteDesc) noteDesc.textContent = trans.snsSection.noteDesc;
+    if (noteBtn) noteBtn.textContent = trans.snsSection.noteButton;
+    if (noteTags[0]) noteTags[0].textContent = trans.snsSection.noteTag1;
+    if (noteTags[1]) noteTags[1].textContent = trans.snsSection.noteTag2;
+    if (noteTags[2]) noteTags[2].textContent = trans.snsSection.noteTag3;
     
+    // SNSセクション - X（新レイアウト）
+    const xTitle = document.querySelector('#sns .x-section .platform-title');
+    const xDesc = document.querySelector('#sns .x-section .platform-description');
+    const xBtn = document.querySelector('#sns .x-section .platform-btn span');
     if (xTitle) xTitle.textContent = trans.snsSection.xTitle;
-    if (xDescription) xDescription.textContent = trans.snsSection.xDescription;
-    if (xBannerGuide) xBannerGuide.textContent = trans.snsSection.xBannerGuide;
+    if (xDesc) xDesc.textContent = trans.snsSection.xDesc;
+    if (xBtn) xBtn.textContent = trans.snsSection.xButton;
+    
+    // SNSセクション - フォローメッセージ
+    const followMessage = document.querySelector('#sns .follow-message');
+    if (followMessage) followMessage.textContent = trans.snsSection.followMessage;
     
     // 活動記録セクション - タイトル
     const activityTitle = document.querySelector('#activity .section-title');
@@ -2081,6 +2294,33 @@ function setLanguage(lang) {
     // グッズセクション - タイトル
     const goodsTitle = document.querySelector('#goods .section-title');
     if (goodsTitle) goodsTitle.textContent = '🛍️ ' + trans.goodsSection.title;
+    
+    // AIラジコンゲームセクション
+    const aiGamesTitle = document.querySelector('#ai-games .section-title');
+    if (aiGamesTitle) aiGamesTitle.textContent = '🎮 ' + (trans.aiGamesSection ? trans.aiGamesSection.title : 'AIラジコンゲーム開発');
+    
+    if (trans.aiGamesSection) {
+        const aiGamesIntroTitle = document.querySelector('#ai-games .ai-games-intro-content h3');
+        const aiGamesIntroDesc = document.querySelector('#ai-games .ai-games-intro-content p');
+        if (aiGamesIntroTitle) aiGamesIntroTitle.textContent = trans.aiGamesSection.introTitle;
+        if (aiGamesIntroDesc) aiGamesIntroDesc.textContent = trans.aiGamesSection.introDesc;
+        
+        const gameTitles = document.querySelectorAll('#ai-games .game-content h4');
+        const gameDescs = document.querySelectorAll('#ai-games .game-content p');
+        if (gameTitles[0]) gameTitles[0].textContent = trans.aiGamesSection.game1Title;
+        if (gameDescs[0]) gameDescs[0].textContent = trans.aiGamesSection.game1Desc;
+        if (gameTitles[1]) gameTitles[1].textContent = trans.aiGamesSection.game2Title;
+        if (gameDescs[1]) gameDescs[1].textContent = trans.aiGamesSection.game2Desc;
+        if (gameTitles[2]) gameTitles[2].textContent = trans.aiGamesSection.game3Title;
+        if (gameDescs[2]) gameDescs[2].textContent = trans.aiGamesSection.game3Desc;
+        if (gameTitles[3]) gameTitles[3].textContent = trans.aiGamesSection.game4Title;
+        if (gameDescs[3]) gameDescs[3].textContent = trans.aiGamesSection.game4Desc;
+        if (gameTitles[4]) gameTitles[4].textContent = trans.aiGamesSection.game5Title;
+        if (gameDescs[4]) gameDescs[4].textContent = trans.aiGamesSection.game5Desc;
+        
+        const shareCta = document.querySelector('#ai-games .ai-games-share-cta p');
+        if (shareCta) shareCta.textContent = trans.aiGamesSection.shareCta;
+    }
     
     // グッズセクション - PDFダウンロード
     const pdfDownloadTitle = document.querySelector('[data-translate="pdfDownloadTitle"]');
@@ -2354,6 +2594,44 @@ function setLanguage(lang) {
     const contactTitle = document.querySelector('#contact .section-title');
     if (contactTitle) contactTitle.textContent = '✉️ ' + trans.contactSection.title;
     
+    // お問い合わせセクション - Phase 5: ステップ表示
+    const contactFlowTitle = document.querySelector('#contact .contact-flow-title');
+    if (contactFlowTitle) contactFlowTitle.textContent = trans.contactSection.flowTitle;
+    
+    const stepTitlesContact = document.querySelectorAll('#contact .step-content h4');
+    const stepDescsContact = document.querySelectorAll('#contact .step-content p');
+    if (stepTitlesContact[0]) stepTitlesContact[0].textContent = trans.contactSection.step1Title;
+    if (stepDescsContact[0]) stepDescsContact[0].textContent = trans.contactSection.step1Desc;
+    if (stepTitlesContact[1]) stepTitlesContact[1].textContent = trans.contactSection.step2Title;
+    if (stepDescsContact[1]) stepDescsContact[1].textContent = trans.contactSection.step2Desc;
+    if (stepTitlesContact[2]) stepTitlesContact[2].textContent = trans.contactSection.step3Title;
+    if (stepDescsContact[2]) stepDescsContact[2].textContent = trans.contactSection.step3Desc;
+    if (stepTitlesContact[3]) stepTitlesContact[3].textContent = trans.contactSection.step4Title;
+    if (stepDescsContact[3]) stepDescsContact[3].textContent = trans.contactSection.step4Desc;
+    if (stepTitlesContact[4]) stepTitlesContact[4].textContent = trans.contactSection.step5Title;
+    if (stepDescsContact[4]) stepDescsContact[4].textContent = trans.contactSection.step5Desc;
+    
+    // お問い合わせセクション - Phase 5: 期待値の明示
+    const expectationsTitle = document.querySelector('#contact .expectations-title');
+    if (expectationsTitle) expectationsTitle.textContent = trans.contactSection.expectationsTitle;
+    
+    const expectationTitles = document.querySelectorAll('#contact .expectation-content h4');
+    const expectationDescs = document.querySelectorAll('#contact .expectation-content p');
+    if (expectationTitles[0]) expectationTitles[0].textContent = trans.contactSection.responseTimeTitle;
+    if (expectationDescs[0]) expectationDescs[0].textContent = trans.contactSection.responseTimeDesc;
+    if (expectationTitles[1]) expectationTitles[1].textContent = trans.contactSection.supportTypeTitle;
+    if (expectationDescs[1]) expectationDescs[1].textContent = trans.contactSection.supportTypeDesc;
+    if (expectationTitles[2]) expectationTitles[2].textContent = trans.contactSection.costTitle;
+    if (expectationDescs[2]) expectationDescs[2].textContent = trans.contactSection.costDesc;
+    if (expectationTitles[3]) expectationTitles[3].textContent = trans.contactSection.partsTitle;
+    if (expectationDescs[3]) expectationDescs[3].textContent = trans.contactSection.partsDesc;
+    if (expectationTitles[4]) expectationTitles[4].textContent = trans.contactSection.areaTitle;
+    if (expectationDescs[4]) expectationDescs[4].textContent = trans.contactSection.areaDesc;
+    
+    // お問い合わせセクション - Phase 5: 重要なお知らせバナー
+    const noMoneyNotice = document.querySelector('#contact .contact-important-banner p');
+    if (noMoneyNotice) noMoneyNotice.textContent = trans.contactSection.noMoneyNotice;
+    
     // お問い合わせセクション - 説明文
     const contactDescriptions = document.querySelectorAll('#contact .contact-description');
     if (contactDescriptions[0]) contactDescriptions[0].textContent = trans.contactSection.description1;
@@ -2373,7 +2651,7 @@ function setLanguage(lang) {
     
     // お問い合わせセクション - 注記とボタン
     const contactNotice = document.querySelector('#contact .contact-notice');
-    const contactButton = document.querySelector('#contact .contact-button');
+    const contactButton = document.querySelector('#contact .contact-button span');
     if (contactNotice) contactNotice.textContent = trans.contactSection.notice;
     if (contactButton) contactButton.textContent = trans.contactSection.buttonText;
     
@@ -2752,4 +3030,338 @@ document.addEventListener('DOMContentLoaded', () => {
             updateBreadcrumbEnhanced(targetTab);
         });
     });
+});
+// ========================================
+// 季節の挨拶機能
+// ========================================
+function initSeasonalGreeting() {
+    const greetingEl = document.getElementById('seasonal-greeting');
+    if (!greetingEl) return;
+    
+    // 挨拶を非表示にした場合、1日間は表示しない
+    const dismissedDate = localStorage.getItem('greetingDismissed');
+    if (dismissedDate) {
+        const dismissed = new Date(dismissedDate);
+        const now = new Date();
+        const daysDiff = (now - dismissed) / (1000 * 60 * 60 * 24);
+        if (daysDiff < 1) return;
+    }
+    
+    const now = new Date();
+    const month = now.getMonth() + 1; // 1-12
+    const day = now.getDate();
+    
+    let greeting = {};
+    let seasonClass = '';
+    
+    // 1月（正月期間は1日〜7日）
+    if (month === 1 && day <= 7) {
+        greeting = {
+            icon: '🎍',
+            message: 'あけましておめでとうございます！今年もラジコンを楽しみましょう！'
+        };
+        seasonClass = 'newyear';
+    }
+    // 1月8日〜2月（冬）
+    else if (month === 1 || month === 2) {
+        greeting = {
+            icon: '❄️',
+            message: '寒い日は室内ラジコンやメンテナンスの季節ですね！'
+        };
+        seasonClass = 'winter';
+    }
+    // 3月〜5月（春）
+    else if (month >= 3 && month <= 5) {
+        greeting = {
+            icon: '🌸',
+            message: '春の陽気でラジコンにも元気が宿る季節ですね！'
+        };
+        seasonClass = 'spring';
+    }
+    // 6月〜8月（夏）
+    else if (month >= 6 && month <= 8) {
+        greeting = {
+            icon: '☀️',
+            message: '暑い日が続きますが、ラジコン楽しんでいますでしょうか？(●´ω｀●)'
+        };
+        seasonClass = 'summer';
+    }
+    // 9月〜11月（秋）
+    else if (month >= 9 && month <= 11) {
+        greeting = {
+            icon: '🍂',
+            message: '秋晴れはラジコンに最高の季節です！風邪には気をつけましょう！'
+        };
+        seasonClass = 'autumn';
+    }
+    // 12月
+    else if (month === 12) {
+        greeting = {
+            icon: '🎄',
+            message: '今年も一年間誠にありがとうございました！来年もよろしくお願いいたしますm(_ _)m'
+        };
+        seasonClass = 'december';
+    }
+    
+    // 挨拶を表示
+    const iconEl = greetingEl.querySelector('.greeting-icon');
+    const messageEl = greetingEl.querySelector('.greeting-message');
+    const closeBtn = greetingEl.querySelector('.greeting-close');
+    
+    if (iconEl) iconEl.textContent = greeting.icon;
+    if (messageEl) messageEl.textContent = greeting.message;
+    
+    greetingEl.classList.add(seasonClass);
+    greetingEl.classList.add('show');
+    
+    // 閉じるボタン
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            greetingEl.classList.remove('show');
+            localStorage.setItem('greetingDismissed', new Date().toISOString());
+        });
+    }
+}
+
+// ========================================
+// note最新記事 自動取得機能
+// ========================================
+async function fetchNoteArticles() {
+    const container = document.getElementById('note-articles-container');
+    if (!container) return;
+    
+    const RSS_URL = 'https://note.com/postsoni/rss';
+    const API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}`;
+    
+    // ピン留め記事のURL（除外用）
+    const PINNED_URL = 'https://note.com/postsoni/n/needace09bdbd';
+    
+    try {
+        const response = await fetch(API_URL);
+        
+        if (!response.ok) {
+            throw new Error('RSS取得に失敗しました');
+        }
+        
+        const data = await response.json();
+        
+        if (data.status !== 'ok' || !data.items || data.items.length === 0) {
+            throw new Error('記事が見つかりません');
+        }
+        
+        // ピン留め記事を除外して最新3件を取得
+        const articles = data.items
+            .filter(item => !item.link.includes('needace09bdbd'))
+            .slice(0, 3);
+        
+        if (articles.length === 0) {
+            throw new Error('新しい記事がありません');
+        }
+        
+        // 記事カードを生成
+        let html = '';
+        articles.forEach(article => {
+            const pubDate = new Date(article.pubDate);
+            const dateStr = pubDate.toLocaleDateString('ja-JP', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            
+            // サムネイル画像（なければデフォルト）
+            const thumbnail = article.thumbnail || article.enclosure?.link || 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150"><rect fill="%2341c9b4" width="200" height="150"/><text x="100" y="75" text-anchor="middle" fill="white" font-size="40">📝</text></svg>';
+            
+            html += `
+                <a href="${article.link}" target="_blank" class="note-article-card" rel="noopener noreferrer">
+                    <img src="${thumbnail}" alt="${article.title}" class="note-article-image" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 150%22><rect fill=%22%2341c9b4%22 width=%22200%22 height=%22150%22/><text x=%22100%22 y=%2275%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2240%22>📝</text></svg>'">
+                    <div class="note-article-content">
+                        <h5 class="note-article-title">${escapeHTML(article.title)}</h5>
+                        <span class="note-article-date">📅 ${dateStr}</span>
+                    </div>
+                </a>
+            `;
+        });
+        
+        container.innerHTML = html;
+        
+    } catch (error) {
+        console.error('note記事取得エラー:', error);
+        
+        // エラー時の表示
+        container.innerHTML = `
+            <div class="note-error">
+                <div class="note-error-icon">📝</div>
+                <p class="note-error-message">最新記事の取得に失敗しました。<br>直接noteでご覧ください。</p>
+                <a href="https://note.com/postsoni" target="_blank" class="note-error-link">
+                    noteで記事を見る →
+                </a>
+            </div>
+        `;
+    }
+}
+
+// HTMLエスケープ関数
+function escapeHTML(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+}
+
+// ========================================
+// セクション記憶機能
+// ========================================
+function initSectionMemory() {
+    // 最後に訪問したセクションを保存
+    const saveLastSection = () => {
+        if (currentTab) {
+            localStorage.setItem('lastVisitedSection', currentTab);
+            localStorage.setItem('lastVisitedTime', new Date().toISOString());
+        }
+    };
+    
+    // タブ切り替え時に保存
+    const navItems = document.querySelectorAll('.nav-item');
+    navItems.forEach(item => {
+        item.addEventListener('click', saveLastSection);
+    });
+    
+    // ページを離れる時に保存
+    window.addEventListener('beforeunload', saveLastSection);
+    
+    // 前回のセクションを復元（オプション）
+    const lastSection = localStorage.getItem('lastVisitedSection');
+    const lastTime = localStorage.getItem('lastVisitedTime');
+    
+    if (lastSection && lastTime) {
+        const timeDiff = (new Date() - new Date(lastTime)) / (1000 * 60 * 60); // 時間差（時間）
+        
+        // 24時間以内の訪問で、topページ以外に訪問していた場合
+        if (timeDiff < 24 && lastSection !== 'top') {
+            // インジケーターを表示（自動復元はしない）
+            showLastVisitedIndicator(lastSection);
+        }
+    }
+}
+
+function showLastVisitedIndicator(sectionId) {
+    const sectionNames = {
+        'profile': 'プロフィール',
+        'support': 'サポート情報',
+        'faq': 'よくある質問',
+        'roadmap': 'ロードマップ',
+        'archive-project': 'アーカイブ',
+        'sns': 'SNS',
+        'blog-access': 'ブログ',
+        'ai-games': 'AIゲーム',
+        'goods': 'グッズ',
+        'contact': 'お問い合わせ'
+    };
+    
+    const sectionName = sectionNames[sectionId] || sectionId;
+    
+    // インジケーターを作成
+    const indicator = document.createElement('div');
+    indicator.className = 'last-visited-indicator show';
+    indicator.innerHTML = `
+        <span class="indicator-icon">📍</span>
+        <span>前回は「${sectionName}」を見ていました</span>
+        <button class="indicator-go" onclick="goToSection('${sectionId}')">続きを見る</button>
+        <button class="indicator-dismiss" onclick="dismissIndicator(this)">×</button>
+    `;
+    
+    // メインコンテンツの先頭に追加
+    const mainContent = document.querySelector('.main-content');
+    if (mainContent) {
+        mainContent.insertBefore(indicator, mainContent.firstChild);
+    }
+}
+
+function goToSection(sectionId) {
+    const navItem = document.querySelector(`.nav-item[data-tab="${sectionId}"]`);
+    if (navItem) {
+        navItem.click();
+    }
+    dismissIndicator(document.querySelector('.last-visited-indicator'));
+}
+
+function dismissIndicator(element) {
+    const indicator = element.closest ? element.closest('.last-visited-indicator') : element;
+    if (indicator) {
+        indicator.remove();
+    }
+}
+
+// グローバルに公開
+window.goToSection = goToSection;
+window.dismissIndicator = dismissIndicator;
+
+// ========================================
+// Service Worker登録（強化版）
+// ========================================
+function initServiceWorker() {
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js')
+            .then(registration => {
+                console.log('Service Worker登録成功:', registration.scope);
+                
+                // 更新があった場合
+                registration.addEventListener('updatefound', () => {
+                    const newWorker = registration.installing;
+                    newWorker.addEventListener('statechange', () => {
+                        if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                            // 新しいバージョンが利用可能
+                            console.log('新しいバージョンが利用可能です');
+                        }
+                    });
+                });
+            })
+            .catch(err => console.log('Service Worker登録失敗:', err));
+    }
+}
+
+// ========================================
+// 画像の遅延読み込み強化
+// ========================================
+function initLazyLoading() {
+    // Intersection Observer対応確認
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    
+                    // data-srcがあれば読み込み
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                    }
+                    
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
+                }
+            });
+        }, {
+            rootMargin: '50px 0px',
+            threshold: 0.01
+        });
+        
+        // loading="lazy"属性を持つ画像を監視
+        document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+}
+
+// ========================================
+// 初期化に追加
+// ========================================
+document.addEventListener('DOMContentLoaded', () => {
+    // 既存の初期化は維持
+    
+    // 新機能の初期化
+    initSeasonalGreeting();
+    fetchNoteArticles();
+    initSectionMemory();
+    initServiceWorker();
+    initLazyLoading();
 });
