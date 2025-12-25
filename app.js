@@ -3136,6 +3136,9 @@ async function fetchNoteArticles() {
     // ピン留め記事のURL（除外用）
     const PINNED_URL = 'https://note.com/postsoni/n/needace09bdbd';
     
+    // デフォルト画像（Base64エンコード済み）
+    const DEFAULT_IMAGE = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMTUwIj48cmVjdCBmaWxsPSIjNDFjOWI0IiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIvPjx0ZXh0IHg9IjEwMCIgeT0iODAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjI0IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+bm90ZTwvdGV4dD48L3N2Zz4=';
+    
     try {
         const response = await fetch(API_URL);
         
@@ -3159,7 +3162,8 @@ async function fetchNoteArticles() {
         }
         
         // 記事カードを生成
-        let html = '';
+        container.innerHTML = '';
+        
         articles.forEach(article => {
             const pubDate = new Date(article.pubDate);
             const dateStr = pubDate.toLocaleDateString('ja-JP', {
@@ -3169,20 +3173,46 @@ async function fetchNoteArticles() {
             });
             
             // サムネイル画像（なければデフォルト）
-            const thumbnail = article.thumbnail || article.enclosure?.link || 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150"><rect fill="%2341c9b4" width="200" height="150"/><text x="100" y="75" text-anchor="middle" fill="white" font-size="40">📝</text></svg>';
+            const thumbnail = article.thumbnail || article.enclosure?.link || DEFAULT_IMAGE;
             
-            html += `
-                <a href="${article.link}" target="_blank" class="note-article-card" rel="noopener noreferrer">
-                    <img src="${thumbnail}" alt="${article.title}" class="note-article-image" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 150%22><rect fill=%22%2341c9b4%22 width=%22200%22 height=%22150%22/><text x=%22100%22 y=%2275%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2240%22>📝</text></svg>'">
-                    <div class="note-article-content">
-                        <h5 class="note-article-title">${escapeHTML(article.title)}</h5>
-                        <span class="note-article-date">📅 ${dateStr}</span>
-                    </div>
-                </a>
-            `;
+            // カード要素を作成
+            const card = document.createElement('a');
+            card.href = article.link;
+            card.target = '_blank';
+            card.className = 'note-article-card';
+            card.rel = 'noopener noreferrer';
+            
+            // 画像要素
+            const img = document.createElement('img');
+            img.src = thumbnail;
+            img.alt = article.title;
+            img.className = 'note-article-image';
+            img.loading = 'lazy';
+            img.onerror = function() {
+                this.src = DEFAULT_IMAGE;
+                this.onerror = null;
+            };
+            
+            // コンテンツ要素
+            const content = document.createElement('div');
+            content.className = 'note-article-content';
+            
+            const title = document.createElement('h5');
+            title.className = 'note-article-title';
+            title.textContent = article.title;
+            
+            const date = document.createElement('span');
+            date.className = 'note-article-date';
+            date.textContent = '📅 ' + dateStr;
+            
+            content.appendChild(title);
+            content.appendChild(date);
+            
+            card.appendChild(img);
+            card.appendChild(content);
+            
+            container.appendChild(card);
         });
-        
-        container.innerHTML = html;
         
     } catch (error) {
         console.error('note記事取得エラー:', error);
