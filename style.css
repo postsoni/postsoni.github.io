@@ -7726,11 +7726,60 @@ textarea:focus-visible {
 /* ダークモード対応 */
 body.dark-mode .seasonal-greeting {
     background: linear-gradient(135deg, #2d2d2d 0%, #3d3d3d 100%);
-    border-color: #ff9a76;
+    border-color: #ffb7c5;
 }
 
 body.dark-mode .greeting-message {
+    color: #ffb7c5;
+}
+
+/* ダークモード - 季節別カラー（すべて桜色系統で統一） */
+body.dark-mode .seasonal-greeting.newyear {
+    border-color: #ffd700;
+}
+
+body.dark-mode .seasonal-greeting.newyear .greeting-message {
+    color: #ffd700;
+}
+
+body.dark-mode .seasonal-greeting.december {
+    border-color: #ffb7c5;
+}
+
+body.dark-mode .seasonal-greeting.december .greeting-message {
+    color: #ffb7c5;
+}
+
+body.dark-mode .seasonal-greeting.spring {
+    border-color: #ffb7c5;
+}
+
+body.dark-mode .seasonal-greeting.spring .greeting-message {
+    color: #ffb7c5;
+}
+
+body.dark-mode .seasonal-greeting.summer {
+    border-color: #87ceeb;
+}
+
+body.dark-mode .seasonal-greeting.summer .greeting-message {
+    color: #87ceeb;
+}
+
+body.dark-mode .seasonal-greeting.autumn {
+    border-color: #ffcc80;
+}
+
+body.dark-mode .seasonal-greeting.autumn .greeting-message {
     color: #ffcc80;
+}
+
+body.dark-mode .seasonal-greeting.winter {
+    border-color: #add8e6;
+}
+
+body.dark-mode .seasonal-greeting.winter .greeting-message {
+    color: #add8e6;
 }
 
 body.dark-mode .greeting-close {
