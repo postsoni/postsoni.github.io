@@ -8215,3 +8215,392 @@ body.dark-mode .last-visited-indicator .indicator-dismiss {
         height: 140px;
     }
 }
+/* ===== EdgeTXマニュアルセクション ===== */
+
+/* イントロカード */
+.edgetx-intro {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 25px;
+    border: 2px solid #81c784;
+    box-shadow: 0 4px 15px rgba(129, 199, 132, 0.2);
+}
+
+.edgetx-intro-icon {
+    font-size: 4em;
+    flex-shrink: 0;
+}
+
+.edgetx-intro-content h3 {
+    font-size: 1.5em;
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+.edgetx-intro-content p {
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.edgetx-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.edgetx-feature {
+    background: #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    color: #2e7d32;
+    border: 1px solid #81c784;
+}
+
+/* 利用規約 */
+.edgetx-terms {
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-left: 5px solid #ff9800;
+}
+
+.edgetx-terms-title {
+    font-size: 1.2em;
+    color: #e65100;
+    margin-bottom: 15px;
+}
+
+.edgetx-terms-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+.edgetx-terms-content li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #ffcc80;
+    color: #333;
+    line-height: 1.6;
+}
+
+.edgetx-terms-content li:last-child {
+    border-bottom: none;
+}
+
+.edgetx-terms-note {
+    font-size: 0.9em;
+    color: #666;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* ダウンロードセクション */
+.edgetx-download {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 2px solid #64b5f6;
+}
+
+.edgetx-download-title {
+    font-size: 1.3em;
+    color: #1565c0;
+    margin-bottom: 20px;
+}
+
+.edgetx-download-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.edgetx-download-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.edgetx-download-icon {
+    font-size: 2.5em;
+}
+
+.edgetx-download-details h5 {
+    font-size: 1.1em;
+    color: #1565c0;
+    margin-bottom: 5px;
+}
+
+.edgetx-download-details p {
+    font-size: 0.9em;
+    color: #666;
+    margin: 0;
+}
+
+.edgetx-download-date {
+    font-size: 0.85em;
+    color: #888;
+}
+
+.edgetx-download-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.edgetx-download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(25, 118, 210, 0.4);
+}
+
+.edgetx-download-btn.secondary {
+    background: linear-gradient(135deg, #7b1fa2 0%, #6a1b9a 100%);
+}
+
+.edgetx-download-btn.secondary:hover {
+    box-shadow: 0 5px 15px rgba(123, 31, 162, 0.4);
+}
+
+/* オンラインマニュアル目次 */
+.edgetx-toc {
+    background: #fff;
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 2px dashed #ff9a76;
+}
+
+.edgetx-toc-title {
+    font-size: 1.3em;
+    color: #ff6b6b;
+    margin-bottom: 10px;
+}
+
+.edgetx-toc-description {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 0.95em;
+}
+
+/* 章のアコーディオン */
+.edgetx-chapter {
+    margin-bottom: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+}
+
+.edgetx-chapter-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #fff5f0 0%, #ffe4d9 100%);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.edgetx-chapter-header:hover {
+    background: linear-gradient(135deg, #ffe4d9 0%, #ffd4c4 100%);
+}
+
+.edgetx-chapter-number {
+    background: #ff9a76;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.85em;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.edgetx-chapter-title {
+    font-weight: bold;
+    color: #333;
+    flex-shrink: 0;
+}
+
+.edgetx-chapter-subtitle {
+    color: #888;
+    font-size: 0.9em;
+    flex-grow: 1;
+}
+
+.edgetx-chapter-pages {
+    color: #666;
+    font-size: 0.85em;
+    white-space: nowrap;
+}
+
+.edgetx-chapter-toggle {
+    color: #ff9a76;
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
+}
+
+.edgetx-chapter.open .edgetx-chapter-toggle {
+    transform: rotate(180deg);
+}
+
+.edgetx-chapter-content {
+    display: none;
+    padding: 20px;
+    background: #fafafa;
+    border-top: 1px solid #e0e0e0;
+}
+
+.edgetx-chapter.open .edgetx-chapter-content {
+    display: block;
+}
+
+.edgetx-chapter-sections h5 {
+    font-size: 1.05em;
+    color: #ff6b6b;
+    margin: 15px 0 8px 0;
+    padding-left: 10px;
+    border-left: 3px solid #ff9a76;
+}
+
+.edgetx-chapter-sections h5:first-child {
+    margin-top: 0;
+}
+
+.edgetx-chapter-sections p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 10px;
+    padding-left: 13px;
+}
+
+/* 更新履歴 */
+.edgetx-changelog {
+    background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 2px solid #ba68c8;
+}
+
+.edgetx-changelog-title {
+    font-size: 1.2em;
+    color: #7b1fa2;
+    margin-bottom: 15px;
+}
+
+.edgetx-changelog-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.edgetx-changelog-list li {
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/* フィードバック */
+.edgetx-feedback {
+    background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 2px solid #7986cb;
+    text-align: center;
+}
+
+.edgetx-feedback-title {
+    font-size: 1.2em;
+    color: #303f9f;
+    margin-bottom: 15px;
+}
+
+.edgetx-feedback p {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.edgetx-feedback-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.edgetx-feedback-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #5c6bc0 0%, #3f51b5 100%);
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.edgetx-feedback-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(63, 81, 181, 0.4);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .edgetx-intro {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .edgetx-features {
+        justify-content: center;
+    }
+    
+    .edgetx-download-card {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .edgetx-download-info {
+        flex-direction: column;
+    }
+    
+    .edgetx-chapter-header {
+        flex-wrap: wrap;
+    }
+    
+    .edgetx-chapter-subtitle {
+        width: 100%;
+        order: 10;
+        margin-top: 5px;
+    }
+    
+    .edgetx-feedback-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}

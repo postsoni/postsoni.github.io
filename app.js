@@ -3394,4 +3394,53 @@ document.addEventListener('DOMContentLoaded', () => {
     initSectionMemory();
     initServiceWorker();
     initLazyLoading();
+    
+    // EdgeTXマニュアル フィードバックボタンのイベント
+    const feedbackContactBtn = document.querySelector('.edgetx-feedback-btn[data-tab="contact"]');
+    if (feedbackContactBtn) {
+        feedbackContactBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const contactTab = document.querySelector('.nav-item[data-tab="contact"]');
+            if (contactTab) {
+                contactTab.click();
+            }
+        });
+    }
 });
+
+// ========================================
+// EdgeTXマニュアル - 章のアコーディオン
+// ========================================
+function toggleChapter(chapterId) {
+    const chapter = document.getElementById(chapterId);
+    if (chapter) {
+        const chapterContainer = chapter.parentElement;
+        chapterContainer.classList.toggle('open');
+    }
+}
+
+// ========================================
+// ファイルダウンロード関数
+// ========================================
+function downloadFile(event, url, filename) {
+    event.preventDefault();
+    
+    // fetchでファイルを取得してBlobとしてダウンロード
+    fetch(url)
+        .then(response => response.blob())
+        .then(blob => {
+            const blobUrl = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = blobUrl;
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(blobUrl);
+        })
+        .catch(error => {
+            console.error('ダウンロードエラー:', error);
+            // フォールバック：通常のリンクとして開く
+            window.open(url, '_blank');
+        });
+}

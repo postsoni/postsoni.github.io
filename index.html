@@ -418,6 +418,7 @@
                     <a href="#" class="nav-item" data-tab="profile">👤 プロフィール</a>
                     <a href="#" class="nav-item" data-tab="sns">📱 SNS</a>
                     <a href="#" class="nav-item" data-tab="activity">📰 ブログアクセス</a>
+                    <a href="#" class="nav-item" data-tab="edgetx-manual">📖 EdgeTXマニュアル</a>
                     <a href="#" class="nav-item" data-tab="ai-games">🎮 AIラジコンゲーム</a>
                     <a href="#" class="nav-item" data-tab="goods">🛍️ グッズ</a>
                     <a href="#" class="nav-item" data-tab="support">🤝 RC支援・サポート</a>
@@ -1437,6 +1438,324 @@
                 </div>
             </section>
 
+            <!-- EdgeTXマニュアルセクション -->
+            <section id="edgetx-manual" class="content-section tab-content">
+                <div class="section-header">
+                    <h2 class="section-title">📖 EdgeTX日本語マニュアル</h2>
+                </div>
+                
+                <!-- マニュアル紹介 -->
+                <div class="edgetx-intro scroll-animate fade-in">
+                    <div class="edgetx-intro-icon">📚</div>
+                    <div class="edgetx-intro-content">
+                        <h3>EdgeTX & TX16S 完全日本語マニュアル</h3>
+                        <p>RadioMaster TX16S向けのEdgeTX日本語マニュアルです。<br>
+                        これから初めて操作する初心者様組や、フタバ・JR PROPOからの乗り換え組にもわかりやすく丁寧な解説を心がけました。</p>
+                        <div class="edgetx-features">
+                            <span class="edgetx-feature">✓ 全144ページ</span>
+                            <span class="edgetx-feature">✓ 7章構成</span>
+                            <span class="edgetx-feature">✓ ヘリコプター設定対応</span>
+                            <span class="edgetx-feature">✓ シミュレーター設定解説</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 利用規約 -->
+                <div class="edgetx-terms scroll-animate fade-in">
+                    <h4 class="edgetx-terms-title">📋 利用規約・著作権について</h4>
+                    <div class="edgetx-terms-content">
+                        <ul>
+                            <li><strong>著作権：</strong>© 2026 ぽすとそに工房 All Rights Reserved.</li>
+                            <li><strong>個人利用：</strong>個人での学習・RC活動での利用は自由です。</li>
+                            <li><strong>再配布：</strong>本マニュアルの無断複製・転載・再配布を禁じます。</li>
+                            <li><strong>商用利用：</strong>商用利用はご遠慮ください。ただし、YouTubeなどでご紹介いただく際の広告収入は問題ありません（出典元として「ぽすとそに工房」を明記してください）。</li>
+                            <li><strong>引用：</strong>引用する場合は出典（ぽすとそに工房）を明記してください。</li>
+                            <li><strong>免責事項：</strong>本マニュアルの内容による損害について、作者は責任を負いません。</li>
+                        </ul>
+                        <p class="edgetx-terms-note">
+                            ※ EdgeTXはオープンソースプロジェクトです。<br>
+                            ※ TX16SはRadioMasterの製品です。<br>
+                            ※ 各社の商標は各社に帰属します。
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- PDFダウンロード -->
+                <div class="edgetx-download scroll-animate fade-in">
+                    <h4 class="edgetx-download-title">📥 PDFダウンロード</h4>
+                    <div class="edgetx-download-card">
+                        <div class="edgetx-download-info">
+                            <div class="edgetx-download-icon">📄</div>
+                            <div class="edgetx-download-details">
+                                <h5>EdgeTX日本語マニュアル 完全版</h5>
+                                <p>Version 1.0.1 | 全144ページ | 約1.2MB</p>
+                                <p class="edgetx-download-date">発行日：2026年1月</p>
+                            </div>
+                        </div>
+                        <a href="downloads/EdgeTX_Manual_Complete_v1.0.1_JP.pdf" onclick="downloadFile(event, 'downloads/EdgeTX_Manual_Complete_v1.0.1_JP.pdf', 'EdgeTX_Manual_Complete_v1.0.1_JP.pdf')" class="edgetx-download-btn">
+                            📥 PDFをダウンロード
+                        </a>
+                    </div>
+                    
+                    <!-- 音声ファイル一覧表 -->
+                    <div class="edgetx-download-card" style="margin-top: 15px;">
+                        <div class="edgetx-download-info">
+                            <div class="edgetx-download-icon">🔊</div>
+                            <div class="edgetx-download-details">
+                                <h5>EdgeTX 音声ファイル一覧表</h5>
+                                <p>カスタム音声パック自作用リファレンス | 全743ファイル対応</p>
+                                <p class="edgetx-download-date">作成日：2025年12月</p>
+                            </div>
+                        </div>
+                        <a href="downloads/EdgeTX_Sound_List_Public.pdf" onclick="downloadFile(event, 'downloads/EdgeTX_Sound_List_Public.pdf', 'EdgeTX_Sound_List_Public.pdf')" class="edgetx-download-btn secondary">
+                            📥 一覧表をダウンロード
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- オンラインマニュアル目次 -->
+                <div class="edgetx-toc scroll-animate fade-in">
+                    <h4 class="edgetx-toc-title">📖 オンラインマニュアル（目次）</h4>
+                    <p class="edgetx-toc-description">クリックすると各章の内容を展開できます。</p>
+                    
+                    <!-- 第1章 -->
+                    <div class="edgetx-chapter">
+                        <button class="edgetx-chapter-header" onclick="toggleChapter('chapter1')">
+                            <span class="edgetx-chapter-number">第1章</span>
+                            <span class="edgetx-chapter-title">EdgeTXとは何か</span>
+                            <span class="edgetx-chapter-subtitle">〜 OpenTXからの歴史と設計思想 〜</span>
+                            <span class="edgetx-chapter-pages">12ページ</span>
+                            <span class="edgetx-chapter-toggle">▼</span>
+                        </button>
+                        <div id="chapter1" class="edgetx-chapter-content">
+                            <div class="edgetx-chapter-sections">
+                                <h5>1-1. EdgeTXとは何か</h5>
+                                <p>EdgeTXは、オープンソースのRC送信機用ファームウェアです。OpenTXから派生し、より活発な開発とユーザーフレンドリーな機能を提供しています。</p>
+                                
+                                <h5>1-2. OpenTXとの違い</h5>
+                                <p>EdgeTXはOpenTXをベースに、タッチスクリーン対応の強化、カラー画面の最適化、新機能の積極的な追加などが行われています。</p>
+                                
+                                <h5>1-3. フタバ・JR PROPOとの違い</h5>
+                                <p>フタバやJR PROPOは「専用システム」として、機種ごとに専用の機能が用意されています。一方EdgeTXは「汎用システム」として、白紙から自分で設定を構築します。</p>
+                                
+                                <h5>1-4. EdgeTXの設計思想</h5>
+                                <p>「何も決まっていない」からこそ、どんな機体にも対応できる柔軟性があります。フライトモード、ミキサー、カーブなど、すべてを自分で組み立てます。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 第2章 -->
+                    <div class="edgetx-chapter">
+                        <button class="edgetx-chapter-header" onclick="toggleChapter('chapter2')">
+                            <span class="edgetx-chapter-number">第2章</span>
+                            <span class="edgetx-chapter-title">TX16S初期設定</span>
+                            <span class="edgetx-chapter-subtitle">〜 電源・言語・音声・画面の基本設定 〜</span>
+                            <span class="edgetx-chapter-pages">26ページ</span>
+                            <span class="edgetx-chapter-toggle">▼</span>
+                        </button>
+                        <div id="chapter2" class="edgetx-chapter-content">
+                            <div class="edgetx-chapter-sections">
+                                <h5>2-1. TX16Sの概要</h5>
+                                <p>RadioMaster TX16Sは、EdgeTXを搭載したコストパフォーマンスの高いプロポです。タッチスクリーン、マルチプロトコル対応など、高機能な仕様を備えています。</p>
+                                
+                                <h5>2-2. 電源を入れる</h5>
+                                <p>電源ボタンの長押しで起動します。初回起動時には各種警告が表示されることがあります。</p>
+                                
+                                <h5>2-3. 言語設定</h5>
+                                <p>SYSキー → 歯車マーク → 言語設定で日本語を選択できます。</p>
+                                
+                                <h5>2-4. 音声設定と日本語音声の導入</h5>
+                                <p>日本語音声パックの導入方法、音量調整、音声ファイルの差し替え方法を解説します。</p>
+                                
+                                <h5>2-5. 画面設定</h5>
+                                <p>バックライト、輝度、テーマの設定方法を説明します。</p>
+                                
+                                <h5>2-6. スティックキャリブレーション</h5>
+                                <p>正確な操作のために、スティックのキャリブレーションを行います。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 第3章 -->
+                    <div class="edgetx-chapter">
+                        <button class="edgetx-chapter-header" onclick="toggleChapter('chapter3')">
+                            <span class="edgetx-chapter-number">第3章</span>
+                            <span class="edgetx-chapter-title">モデル作成の基本</span>
+                            <span class="edgetx-chapter-subtitle">〜 モデルの概念と設定画面の理解 〜</span>
+                            <span class="edgetx-chapter-pages">15ページ</span>
+                            <span class="edgetx-chapter-toggle">▼</span>
+                        </button>
+                        <div id="chapter3" class="edgetx-chapter-content">
+                            <div class="edgetx-chapter-sections">
+                                <h5>3-1. モデルとは何か</h5>
+                                <p>EdgeTXにおける「モデル」とは、1つの機体に対する設定の集まりです。複数のモデルを保存して切り替えられます。</p>
+                                
+                                <h5>3-2. モデルの新規作成</h5>
+                                <p>MDLキーからモデル一覧を開き、新しいモデルを作成する手順を解説します。</p>
+                                
+                                <h5>3-3. SETUP画面の説明</h5>
+                                <p>モデル名、画像、タイマー、RFモジュール設定など、SETUP画面の各項目を説明します。</p>
+                                
+                                <h5>3-4. INPUTS（入力）の基本</h5>
+                                <p>スティックやスイッチの入力を設定するINPUTSページについて解説します。</p>
+                                
+                                <h5>3-5. OUTPUTS（出力）の基本</h5>
+                                <p>サーボへの出力を設定するOUTPUTSページについて解説します。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 第4章 -->
+                    <div class="edgetx-chapter">
+                        <button class="edgetx-chapter-header" onclick="toggleChapter('chapter4')">
+                            <span class="edgetx-chapter-number">第4章</span>
+                            <span class="edgetx-chapter-title">ミキサーの考え方</span>
+                            <span class="edgetx-chapter-subtitle">〜 EdgeTXの核心を理解する 〜</span>
+                            <span class="edgetx-chapter-pages">17ページ</span>
+                            <span class="edgetx-chapter-toggle">▼</span>
+                        </button>
+                        <div id="chapter4" class="edgetx-chapter-content">
+                            <div class="edgetx-chapter-sections">
+                                <h5>4-1. ミキサーとは何か</h5>
+                                <p>ミキサーは、入力（スティック・スイッチ）を出力（サーボ・ESC）に変換する中核機能です。</p>
+                                
+                                <h5>4-2. MIXESページの構造</h5>
+                                <p>チャンネルとミキサーラインの関係、各設定項目の意味を解説します。</p>
+                                
+                                <h5>4-3. ミキサーラインの作成</h5>
+                                <p>Source、Weight、Offset、Switch、Curveなどの設定方法を説明します。</p>
+                                
+                                <h5>4-4. Mltpx（ミキシングモード）</h5>
+                                <p>Add（加算）、Multiply（乗算）、Replace（置換）の使い分けを解説します。</p>
+                                
+                                <h5>4-5. ヘリコプター用ミキサー設定例</h5>
+                                <p>エルロン、エレベーター、スロットル、ラダー、ピッチの基本設定例を紹介します。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 第5章 -->
+                    <div class="edgetx-chapter">
+                        <button class="edgetx-chapter-header" onclick="toggleChapter('chapter5')">
+                            <span class="edgetx-chapter-number">第5章</span>
+                            <span class="edgetx-chapter-title">フライトモードとカーブ</span>
+                            <span class="edgetx-chapter-subtitle">〜 飛行状態に応じた設定の切り替え 〜</span>
+                            <span class="edgetx-chapter-pages">20ページ</span>
+                            <span class="edgetx-chapter-toggle">▼</span>
+                        </button>
+                        <div id="chapter5" class="edgetx-chapter-content">
+                            <div class="edgetx-chapter-sections">
+                                <h5>5-1. フライトモードとは何か</h5>
+                                <p>フタバ・JR PROPOの「コンディション」に相当する機能です。ノーマル、アイドルアップ1、アイドルアップ2などを切り替えます。</p>
+                                
+                                <h5>5-2. フライトモードの設定方法</h5>
+                                <p>FLIGHT MODESページでの設定手順、名前・スイッチ・トリムの設定を解説します。</p>
+                                
+                                <h5>5-3. フライトモードとスイッチの連動</h5>
+                                <p>SEスイッチやSAスイッチを使った3モード切り替えの設定例を紹介します。</p>
+                                
+                                <h5>5-4. カーブ（CURVES）とは何か</h5>
+                                <p>Expo、カスタムカーブの概念と使い方を説明します。</p>
+                                
+                                <h5>5-5. カーブの作成方法</h5>
+                                <p>ピッチカーブ、スロットルカーブの作成手順と設定例を紹介します。</p>
+                                
+                                <h5>5-6. フライトモードとカーブの連携</h5>
+                                <p>フライトモードごとに異なるカーブを適用する実践的な設定方法を解説します。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 第6章 -->
+                    <div class="edgetx-chapter">
+                        <button class="edgetx-chapter-header" onclick="toggleChapter('chapter6')">
+                            <span class="edgetx-chapter-number">第6章</span>
+                            <span class="edgetx-chapter-title">実践編（シミュレーター設定例）</span>
+                            <span class="edgetx-chapter-subtitle">〜 シミュレーターで安全に練習しよう 〜</span>
+                            <span class="edgetx-chapter-pages">20ページ</span>
+                            <span class="edgetx-chapter-toggle">▼</span>
+                        </button>
+                        <div id="chapter6" class="edgetx-chapter-content">
+                            <div class="edgetx-chapter-sections">
+                                <h5>6-1. シミュレーターとは</h5>
+                                <p>シミュレーター練習の重要性と、主なシミュレーターの紹介（HELI-X、RealFlight、VelociDrone、Liftoffなど）。</p>
+                                
+                                <h5>6-2. TX16SとPCの接続方法</h5>
+                                <p>USBケーブルでの接続、ジョイスティックモードの設定方法を解説します。</p>
+                                
+                                <h5>6-3. HELI-Xの設定例</h5>
+                                <p>ヘリコプター専用シミュレーターHELI-Xの設定手順を詳しく説明します。</p>
+                                
+                                <h5>6-4. その他シミュレーターの設定</h5>
+                                <p>RealFlight、VelociDrone、Liftoffなどの設定ポイントを紹介します。</p>
+                                
+                                <h5>6-5. シミュレーター練習のコツ</h5>
+                                <p>効果的な練習方法、段階的な上達のステップ、実機への移行について解説します。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 付録 -->
+                    <div class="edgetx-chapter">
+                        <button class="edgetx-chapter-header" onclick="toggleChapter('appendix')">
+                            <span class="edgetx-chapter-number">付録</span>
+                            <span class="edgetx-chapter-title">トラブルシューティング</span>
+                            <span class="edgetx-chapter-subtitle">〜 よくある問題と解決方法 〜</span>
+                            <span class="edgetx-chapter-pages">32ページ</span>
+                            <span class="edgetx-chapter-toggle">▼</span>
+                        </button>
+                        <div id="appendix" class="edgetx-chapter-content">
+                            <div class="edgetx-chapter-sections">
+                                <h5>A-1. 送信機が起動しない・フリーズする</h5>
+                                <p>電源が入らない、起動途中でフリーズする場合の原因と対策。</p>
+                                
+                                <h5>A-2. 送信機とPCが接続できない</h5>
+                                <p>USBケーブルの問題、USBモードの設定、ドライバーの問題など。</p>
+                                
+                                <h5>A-3. 受信機とバインドできない</h5>
+                                <p>バインドモード、プロトコル設定、レシーバー番号の問題と解決方法。</p>
+                                
+                                <h5>A-4. サーボ・モーターが動かない</h5>
+                                <p>MIXES設定の確認、チャンネルモニターでの診断方法。</p>
+                                
+                                <h5>A-5. 設定が保存されない・消えてしまう</h5>
+                                <p>SDカードの問題、バックアップの重要性、復旧方法。</p>
+                                
+                                <h5>A-6. 画面表示がおかしい</h5>
+                                <p>画面が映らない、タッチパネルの問題、文字化けの対処法。</p>
+                                
+                                <h5>A-7. 音声案内が出ない・おかしい</h5>
+                                <p>音声ファイルの確認、日本語音声の導入、音量設定。</p>
+                                
+                                <h5>A-8. ファームウェアアップデートの問題</h5>
+                                <p>アップデート前の準備、ブートローダーモード、復旧方法。</p>
+                                
+                                <h5>A-9. よくある設定ミスと解決方法</h5>
+                                <p>リバース設定、スイッチ条件、タイマーリセット（SPECIAL FUNCTIONS活用）など。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 更新履歴 -->
+                <div class="edgetx-changelog scroll-animate fade-in">
+                    <h4 class="edgetx-changelog-title">📝 更新履歴</h4>
+                    <ul class="edgetx-changelog-list">
+                        <li><strong>2026年1月1日</strong> - Version 1.0.1 公開（初版）</li>
+                    </ul>
+                </div>
+                
+                <!-- フィードバック -->
+                <div class="edgetx-feedback scroll-animate fade-in">
+                    <h4 class="edgetx-feedback-title">💬 フィードバック・誤字脱字報告</h4>
+                    <p>マニュアルの内容に関するご意見、誤字脱字のご報告は、お問い合わせフォームまたはX（Twitter）からお願いいたします。</p>
+                    <div class="edgetx-feedback-links">
+                        <a href="#" class="edgetx-feedback-btn" data-tab="contact">✉️ お問い合わせ</a>
+                        <a href="https://x.com/postsoni" target="_blank" rel="noopener noreferrer" class="edgetx-feedback-btn">🐦 X（Twitter）</a>
+                    </div>
+                </div>
+            </section>
+
             <!-- AIラジコンゲームセクション -->
             <section id="ai-games" class="content-section tab-content">
                 <div class="section-header">
@@ -2037,12 +2356,12 @@
     <!-- フッター -->
     <footer class="site-footer">
         <div class="footer-content">
-            <p class="footer-copyright">© 2025 Postsoni. 一部コンテンツはAI支援により生成されています. All Rights Reserved.</p>
+            <p class="footer-copyright">© 2026 Postsoni. 一部コンテンツはAI支援により生成されています. All Rights Reserved.</p>
             <p class="footer-note">出典: ぽすとそに工房 オリジナルコンテンツ</p>
         </div>
     </footer>
 
     <!-- バージョン管理：サイト更新時は v=1.1.1, v=1.1.2 と変更してください -->
-    <script src="app.js?v=1.8.1"></script>
+    <script src="app.js?v=1.9.0"></script>
 </body>
 </html>
