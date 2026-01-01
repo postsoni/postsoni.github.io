@@ -1,1254 +1,969 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- RC Archive Project Sitemap Version 56.0 -->
-<!-- Last Updated: 2025-12-10 -->
-<!-- Total Models: 158 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    
-    <!-- トップページ -->
     <url>
         <loc>https://postsoni.github.io/</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
-    
-    <!-- アーカイブトップ -->
     <url>
         <loc>https://postsoni.github.io/archive/</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
-    
-    <!-- データベースページ -->
     <url>
         <loc>https://postsoni.github.io/archive/database.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
-    
-    <!-- 個別機種ページ（発売年順） -->
-    
-    <!-- 1998年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-tg10-mk1.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2015年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-tg10-mk2-fz.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2016年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-tg10-mk2-fn.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2022年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-tg10-mk2-fz-2022.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2007年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-tnx-5.2r-champagne.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2006年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-ndf-01t.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2023年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-scania-770-s-6x4-silver.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2025年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-turbo-scorpion.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2024年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-blizzard-2.0.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-tomahawk.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2022年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-optima.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2019年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-ultima.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 1987年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-burns-4wd.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-grandprix-racer.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-demika-series.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-zr1-corvette.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-usa-1-nitro-crusher.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-concept-30-series.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-stratos-2000.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-inferno-series.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-hang-on-racer-series.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-racing-kart-10.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-lancia-delta-integrale-16v.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-spider-4wd.html</loc>
-        <lastmod>2025-12-06</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-hyper-fly.html</loc>
-        <lastmod>2025-12-06</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-piper-j3-cub-4c-50.html</loc>
-        <lastmod>2025-12-06</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-super-ten-gp-4wd.html</loc>
-        <lastmod>2025-12-06</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-pureten-gp.html</loc>
-        <lastmod>2025-12-06</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-field-baja-beetle-wild-dodge-ram.html</loc>
-        <lastmod>2025-12-06</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2001年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-v-one-s.html</loc>
-        <lastmod>2025-12-06</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2003年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-v-one-sii.html</loc>
-        <lastmod>2025-12-06</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2007年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-v-one-siii.html</loc>
-        <lastmod>2025-12-06</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2009年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-v-one-sr.html</loc>
-        <lastmod>2025-12-06</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2000年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-v-one-r.html</loc>
-        <lastmod>2025-12-06</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2001年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-v-one-rr.html</loc>
-        <lastmod>2025-12-06</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2003年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-v-one-rr-evo.html</loc>
-        <lastmod>2025-12-06</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2004年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-v-one-rrr.html</loc>
-        <lastmod>2025-12-06</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2006年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-v-one-rrr-evo.html</loc>
-        <lastmod>2025-12-06</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2008年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-v-one-rrr-evo2.html</loc>
-        <lastmod>2025-12-06</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2011年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-v-one-r4.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2013年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-v-one-r4s.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2017年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-v-one-r4s-ii.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2018年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-v-one-r4-evo2.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2024年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-v-one-r4-evo3.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- FW-01（1989年頃発売） -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-fw-01.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- FW-02（1993年頃発売） -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-fw-02.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- FW-03（1997年頃発売） -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-fw-03.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- FW-04（2000年頃発売） -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-fw-04.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- FW-05T（2004年発売） -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-fw-05t.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- FW-05S（2003年発売） -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-fw-05s.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- FW-05RR（2004年発売） -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-fw-05rr.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- FW-06（2007年発売、現行販売中） -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-fw-06.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- PureTen GP Fazer（2006年発売、生産終了） -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-pureten-gp-fazer.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- PureTen EP Fazer（2009年発売、生産終了） -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-pureten-ep-fazer.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- EP Fazer Kobra（2010年発売、生産終了） -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-ep-fazer-kobra.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- EP Fazer Rage VE（2013年発売、生産終了） -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-ep-fazer-rage-ve.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- Fazer Mk2 Rage 2.0（2018年発売、現行販売中） -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-fazer-mk2-rage-2-0.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-pureten-ep-fazer-ve-x.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-pureten-ep-fazer-ve.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-ep-fazer-vei.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-fantom-ep-4wd-ext.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 1984年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-progress-4wds.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2004年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-tnx.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-ndf-01.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 1991年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-tt01.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-ta01.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 1992年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-trf211x.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 1994年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-ta02.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 1997年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-ta03f.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-tl-01.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 1998年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-tb01.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-trf404x.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2002年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-f201.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 1999年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-ta04.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-wr-01.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-wr-02.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2000年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-trf414.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2001年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-dt01.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-df-01.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-txt-1.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2004年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-tb02.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-df02.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2005年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-ta05.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-dt02.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-cw-01.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-trf415msx.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2006年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-df03.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2007年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-tb03.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-trf416.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2008年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-db01.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-trf501x.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-cr-01.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2009年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-trf420.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-trf801x.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-trf511.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2010年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-trf201.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-trf417.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-trf502x.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-cc01.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2011年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-trf418.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-ta06pro.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-wt-01.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2012年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-db-02.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-xv-01.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2013年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-trf419.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-tt02.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-tt02b.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-txt-2.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-trf101.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/jrpropo-forza450.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2014年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-m07-concept.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-trf201xmw.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-trf503.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-tb04.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-gf01.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2015年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-dt03.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-calmato-alpha40.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-trf102.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-trf211xm.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2016年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-ta07pro.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-    
-    
-    <!-- 2017年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-g6-01.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2018年発売 -->
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-tb05pro.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-trf103.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2019年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-ta08pro.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-m01.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-m02.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-m03.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2012年発売 -->
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-rm01.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2015年発売 -->
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-mf01x.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2019年発売 -->
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-m08.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2020年発売 -->
-    
-    
-    <!-- 2022年発売 -->
-    
-    <!-- 2023年発売 -->
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-mb01.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    
-    <!-- 2024年発売 -->
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-xv02pro.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2023年発売 -->
-    
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-cc02.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-gf02.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2024年発売 -->
-    
-    
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-trf421.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2025年発売 -->
-    
-    
-    
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-trf104.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-dt-04.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-m04.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-m05.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
     <url>
         <loc>https://postsoni.github.io/archive/models/tamiya-m06.html</loc>
-        <lastmod>2025-12-05</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2003年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-evolva-2003.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2004年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-evolva-2004.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2005年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-evolva-2005.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2006年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-evolva-2005-wc.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2007年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-evolva-m3.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- 2012年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-evolva-2012.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- インファーノGT 2005年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-inferno-gt.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- インファーノGT2 2008年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-inferno-gt2.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- インファーノGT2 VE 2012年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-inferno-gt2-ve.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- インファーノGT3 2017年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-inferno-gt3.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- DRX 2009年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-drx.html</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- PureTen EPスパイダー 1995年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-pureten-ep-spider.html</loc>
-        <lastmod>2025-12-10</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- PureTen EPスパイダーTF-2 1996年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-pureten-ep-spider-tf2.html</loc>
-        <lastmod>2025-12-10</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- PureTen EPスパイダーTF-2 Type R 1996年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-pureten-ep-spider-tf2-type-r.html</loc>
-        <lastmod>2025-12-10</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- PureTen EPスパイダーTF-3 1997年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-pureten-ep-spider-tf3.html</loc>
-        <lastmod>2025-12-10</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- PureTen EPスパイダーTF-3 Type R 1998年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-pureten-ep-spider-tf3-type-r.html</loc>
-        <lastmod>2025-12-10</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- PureTen EPスパイダーMk.II 2000年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-pureten-ep-spider-mk2.html</loc>
-        <lastmod>2025-12-10</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
-    <!-- PureTen EPスパイダーTF-4 Type R 2000年発売 -->
     <url>
         <loc>https://postsoni.github.io/archive/models/kyosho-pureten-ep-spider-tf4-type-r.html</loc>
-        <lastmod>2025-12-10</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
 </urlset>
