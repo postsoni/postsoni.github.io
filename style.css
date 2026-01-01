@@ -8604,3 +8604,165 @@ body.dark-mode .last-visited-indicator .indicator-dismiss {
         align-items: center;
     }
 }
+
+/* ================================
+   EdgeTXマニュアル ダークモード対応
+   ================================ */
+
+/* イントロ部分 */
+.dark-mode .edgetx-intro {
+    background: linear-gradient(135deg, #1a3d1a 0%, #2d4a2d 100%);
+    border-color: #4caf50;
+}
+
+.dark-mode .edgetx-intro-content h3 {
+    color: #81c784;
+}
+
+.dark-mode .edgetx-intro-content p {
+    color: #e0e0e0;
+}
+
+.dark-mode .edgetx-feature {
+    background: rgba(76, 175, 80, 0.2);
+    color: #a5d6a7;
+    border-color: #4caf50;
+}
+
+/* 利用規約 */
+.dark-mode .edgetx-terms {
+    background: linear-gradient(135deg, #3d2d1a 0%, #4a3520 100%);
+    border-left-color: #ff9800;
+}
+
+.dark-mode .edgetx-terms-title {
+    color: #ffb74d;
+}
+
+.dark-mode .edgetx-terms-content li {
+    color: #e0e0e0;
+    border-bottom-color: rgba(255, 183, 77, 0.3);
+}
+
+.dark-mode .edgetx-terms-note {
+    color: #bdbdbd;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* ダウンロードセクション */
+.dark-mode .edgetx-download {
+    background: linear-gradient(135deg, #1a2d3d 0%, #1e3a4f 100%);
+    border-color: #42a5f5;
+}
+
+.dark-mode .edgetx-download-title {
+    color: #64b5f6;
+}
+
+.dark-mode .edgetx-download-card {
+    background: rgba(30, 58, 79, 0.8);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .edgetx-download-details h5 {
+    color: #90caf9;
+}
+
+.dark-mode .edgetx-download-details p {
+    color: #bdbdbd;
+}
+
+.dark-mode .edgetx-download-date {
+    color: #9e9e9e;
+}
+
+/* オンラインマニュアル目次 */
+.dark-mode .edgetx-toc {
+    background: #2d2d2d;
+    border-color: #ff9a76;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .edgetx-toc-title {
+    color: #ff8a80;
+}
+
+.dark-mode .edgetx-toc-description {
+    color: #bdbdbd;
+}
+
+/* 章のアコーディオン */
+.dark-mode .edgetx-chapter {
+    border-color: #555;
+}
+
+.dark-mode .edgetx-chapter-header {
+    background: linear-gradient(135deg, #3d2820 0%, #4a3028 100%);
+}
+
+.dark-mode .edgetx-chapter-header:hover {
+    background: linear-gradient(135deg, #4a3028 0%, #5a3830 100%);
+}
+
+.dark-mode .edgetx-chapter-number {
+    background: #ff7043;
+}
+
+.dark-mode .edgetx-chapter-title {
+    color: #ffffff;
+}
+
+.dark-mode .edgetx-chapter-subtitle {
+    color: #bdbdbd;
+}
+
+.dark-mode .edgetx-chapter-pages {
+    color: #9e9e9e;
+}
+
+.dark-mode .edgetx-chapter-toggle {
+    color: #ff8a65;
+}
+
+.dark-mode .edgetx-chapter-content {
+    background: #1e1e1e;
+    border-top-color: #444;
+}
+
+.dark-mode .edgetx-chapter-sections h5 {
+    color: #ff8a80;
+    border-left-color: #ff7043;
+}
+
+.dark-mode .edgetx-chapter-sections p {
+    color: #e0e0e0;
+}
+
+/* 更新履歴 */
+.dark-mode .edgetx-changelog {
+    background: linear-gradient(135deg, #2d1a3d 0%, #3a2050 100%);
+    border-color: #9c27b0;
+}
+
+.dark-mode .edgetx-changelog-title {
+    color: #ce93d8;
+}
+
+.dark-mode .edgetx-changelog-list li {
+    background: rgba(156, 39, 176, 0.2);
+    color: #e0e0e0;
+}
+
+/* フィードバック */
+.dark-mode .edgetx-feedback {
+    background: linear-gradient(135deg, #1a1a3d 0%, #252550 100%);
+    border-color: #5c6bc0;
+}
+
+.dark-mode .edgetx-feedback-title {
+    color: #9fa8da;
+}
+
+.dark-mode .edgetx-feedback p {
+    color: #e0e0e0;
+}
