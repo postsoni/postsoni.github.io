@@ -9052,6 +9052,311 @@ body.dark-mode .last-visited-indicator .indicator-dismiss {
     box-shadow: 0 4px 12px rgba(211, 47, 47, 0.4);
 }
 
+/* ===== RC機器マニュアルPDF集セクション ===== */
+.rclib-intro {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 2px solid #66bb6a;
+}
+
+.rclib-intro-icon {
+    font-size: 3em;
+    flex-shrink: 0;
+}
+
+.rclib-intro-content h3 {
+    font-size: 1.3em;
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+.rclib-intro-content p {
+    color: #555;
+    line-height: 1.7;
+}
+
+.rclib-terms {
+    background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 2px solid #ffa726;
+}
+
+.rclib-terms-title {
+    font-size: 1.2em;
+    color: #e65100;
+    margin-bottom: 15px;
+}
+
+.rclib-terms-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.rclib-terms-content li {
+    padding: 6px 0;
+    border-bottom: 1px dashed #ffe0b2;
+    color: #555;
+}
+
+.rclib-terms-content li:last-child {
+    border-bottom: none;
+}
+
+.rclib-terms-note {
+    font-size: 0.85em;
+    color: #888;
+    margin-top: 15px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 8px;
+}
+
+.rclib-category {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 2px solid #66bb6a;
+}
+
+.rclib-category-title {
+    font-size: 1.3em;
+    color: #2e7d32;
+    margin-bottom: 20px;
+}
+
+.rclib-pdf-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.rclib-pdf-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.rclib-pdf-item:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.rclib-pdf-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    flex: 1;
+    min-width: 0;
+}
+
+.rclib-pdf-icon {
+    font-size: 2em;
+    flex-shrink: 0;
+}
+
+.rclib-pdf-details h5 {
+    font-size: 1em;
+    color: #2e7d32;
+    margin: 0 0 4px 0;
+}
+
+.rclib-pdf-details p {
+    font-size: 0.85em;
+    color: #666;
+    margin: 0 0 4px 0;
+    line-height: 1.5;
+}
+
+.rclib-pdf-meta {
+    font-size: 0.8em;
+    color: #999;
+}
+
+.rclib-pdf-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #388e3c 0%, #2e7d32 100%);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 16px;
+}
+
+.rclib-pdf-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(56, 142, 60, 0.4);
+}
+
+.rclib-coming-soon {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+}
+
+.rclib-coming-soon p {
+    color: #888;
+    font-size: 0.95em;
+}
+
+.rclib-feedback {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    border-radius: 16px;
+    padding: 25px;
+    text-align: center;
+    border: 2px solid #64b5f6;
+}
+
+.rclib-feedback-title {
+    font-size: 1.2em;
+    color: #1565c0;
+    margin-bottom: 10px;
+}
+
+.rclib-feedback p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.rclib-feedback-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.rclib-feedback-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    background: #455a64;
+    color: #fff;
+}
+
+.rclib-feedback-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* RC機器マニュアルPDF集 モバイル対応 */
+@media (max-width: 768px) {
+    .rclib-intro {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .rclib-pdf-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .rclib-pdf-btn {
+        margin-left: 0;
+        align-self: flex-end;
+    }
+}
+
+/* RC機器マニュアルPDF集 ダークモード */
+.dark-mode .rclib-intro {
+    background: linear-gradient(135deg, #1b3a1b 0%, #2a4a2a 100%);
+    border-color: #66bb6a;
+}
+
+.dark-mode .rclib-intro-content h3 {
+    color: #81c784;
+}
+
+.dark-mode .rclib-intro-content p {
+    color: #bdbdbd;
+}
+
+.dark-mode .rclib-terms {
+    background: linear-gradient(135deg, #3a2e1a 0%, #4a3a20 100%);
+    border-color: #ffa726;
+}
+
+.dark-mode .rclib-terms-title {
+    color: #ffb74d;
+}
+
+.dark-mode .rclib-terms-content li {
+    color: #bdbdbd;
+    border-bottom-color: #555;
+}
+
+.dark-mode .rclib-terms-note {
+    color: #9e9e9e;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .rclib-category {
+    background: linear-gradient(135deg, #1b3a1b 0%, #2a4a2a 100%);
+    border-color: #66bb6a;
+}
+
+.dark-mode .rclib-category-title {
+    color: #81c784;
+}
+
+.dark-mode .rclib-pdf-item {
+    background: #2a2a2a;
+}
+
+.dark-mode .rclib-pdf-details h5 {
+    color: #81c784;
+}
+
+.dark-mode .rclib-pdf-details p {
+    color: #9e9e9e;
+}
+
+.dark-mode .rclib-pdf-meta {
+    color: #757575;
+}
+
+.dark-mode .rclib-coming-soon {
+    background: #2a2a2a;
+}
+
+.dark-mode .rclib-coming-soon p {
+    color: #9e9e9e;
+}
+
+.dark-mode .rclib-feedback {
+    background: linear-gradient(135deg, #1a2a3a 0%, #243a4a 100%);
+    border-color: #64b5f6;
+}
+
+.dark-mode .rclib-feedback-title {
+    color: #90caf9;
+}
+
+.dark-mode .rclib-feedback p {
+    color: #bdbdbd;
+}
+
 /* セクション別PDF モバイル対応 */
 @media (max-width: 768px) {
     .rotorflight-section-pdf-item {
