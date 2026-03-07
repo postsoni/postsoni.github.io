@@ -1,0 +1,46 @@
+# ぽすとそに工房 (Postsoni Workshop)
+
+> ぽすとそに工房は、北海道札幌市を拠点にラジコン（RC）の修理・メンテナンス・サポートを行うボランティア工房です。RCカー・飛行機・ヘリコプター全般に対応し、19年のRC経験、100台以上の修理実績、20社以上のメーカー対応実績があります。AI技術とRC文化の融合を目指しています。
+
+ぽすとそに工房は「ぽすとそに」が個人で運営する非営利のRCサポートサービスです。初心者から経験者まで、ラジコンを楽しむすべての人をサポートします。日本語・英語・中国語の3言語でサービスを提供しています。
+
+主な専門分野：
+- RCヘリコプター（特に詳しい）：GOOSKY RS7 Ultra、Rotorflight対応機、Forza450など
+- RCカー：タミヤ、京商、ヨコモ、HPI、Traxxasなど幅広いメーカーに対応
+- RC飛行機：カルマート、各種電動・エンジン機
+- 送信機・受信機：RadioMaster TX16S、EdgeTX、ExpressLRS（ELRS 4.0.0対応）
+- AI活用：RC修理・サポートにおけるAI技術の活用と研究
+
+所在地：北海道札幌市
+運営者：ぽすとそに（Postsoni）
+設立：2023年
+活動年数：3年間
+
+## Main Pages
+
+- [ホームページ / Homepage](https://postsoni.github.io/): ぽすとそに工房のメインページ。サービス概要、活動実績、お問い合わせ情報。
+- [RCアーカイブ / RC Archive](https://postsoni.github.io/archive/index.html): 158機種以上のRCモデルデータベース。スペック、修理ガイド、よくある故障情報。
+- [機種データベース / Model Database](https://postsoni.github.io/archive/database.html): RC機種の一覧と検索。タミヤ、京商など主要メーカーを網羅。
+
+## Technical Documentation
+
+- [EdgeTX日本語マニュアル](https://postsoni.github.io/): TX16S送信機のEdgeTXファームウェア完全日本語マニュアル（7章構成PDF）
+- [Rotorflight 2.2.1 日本語マニュアル](https://postsoni.github.io/): Rotorflight Configurator完全日本語マニュアル（63ページ、27章）
+- [ELRS 4.0.0 更新マニュアル](https://postsoni.github.io/): ExpressLRS 4.0.0ファームウェアアップデート手順書
+
+## Social Media & Content
+
+- [YouTube](https://www.youtube.com/@postsoni): RC修理・メンテナンス動画
+- [X (Twitter)](https://x.com/postsoni): RC活動の日常発信と交流
+- [note](https://note.com/postsoni): 100以上のRC技術記事、AI考察
+- [GitHub](https://github.com/postsoni): ウェブサイトソースコード、RCアーカイブプロジェクト
+
+## Key Facts
+
+- 19年のRC経験（2026年現在、33歳）
+- 100台以上の修理実績
+- 20社以上のメーカー対応（タミヤ、京商、ヨコモ、Futaba、JR、HPI、Traxxas、GOOSKYなど）
+- 3年間のサポート活動継続中
+- 158機種以上のRCアーカイブデータベース運営
+- 日本語・英語・中国語の3言語対応
+- ボランティア精神に基づく非営利活動
