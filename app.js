@@ -359,9 +359,21 @@ const translations = {
             section4Title: '◆測定機器の導入',
             section4Text: 'アンプの電流値を正確に測定できるアナライザーを導入しました。これにより、より精密なセッティングとトラブルシューティングが可能になります。'
         },
+        newsSection2026Mar: {
+            date: '2026年3月30日',
+            newsTitle: 'フライト調整・ファームウェア統一 & 活動報告',
+            section1Title: '◆GOOSKY RS7 Ultra PID調整完了',
+            section1Text: 'GOOSKY RS7 UltraのフライトPID調整が完了しました。Rotorflightによる各軸のチューニングを行い、安定したフライト特性を確認しています。',
+            section2Title: '◆E8にて右回転ピルエットフリップ達成',
+            section2Text: '練習の中で、動画外ではありますがE8にてようやく右回転ピルエットフリップが実戦でできるようになりました。まだまだ練習は続けます。他の機体でも調整を行っていきます。',
+            section3Title: '◆EdgeTX・ELRSファームウェアを最新版で統一',
+            section3Text: 'EdgeTXおよびELRSのファームウェアを最新の安定版で統一しました。テスト版ではなく、正式リリース版での運用です。',
+            section4Title: '◆お問い合わせ件数30件突破',
+            section4Text: 'お問い合わせ件数が累計30件を突破しました。そのうち解決件数は29件、現在1件を調査中です。調査中の1件は「.bin」ファイルの不具合で、私も初めて見るケースのため、AIアシスタントのClaudeとともに念入りに調べています。',
+            section5Title: '◆春の大気密度変化によるデータ収集開始',
+            section5Text: '春になり大気密度が変わりました。-10℃付近の環境と+気温の時ではフライト特性に大きな違いを感じています。来期でブラックボックスなどのデータを比較し差異を判明させるため、春のデータ収集を開始しております。'
+        },
         newsSection2026Jan: {
-            date: '2026年1月28日',
-            newsTitle: '機体製作・修繕完了 & マニュアル公開のお知らせ',
             section1Title: '◆カルマートα40 修繕完了',
             section1Text: '以前組み立てたカルマートα40が墜落しましたが、修繕が完了しました。メカ類の再調整と機体の点検を経て、フライトチェックまでもう少しです。',
             section2Title: '◆GOOSKY RS7 Ultra 組み上げ完了',
@@ -1250,6 +1262,20 @@ const translations = {
             section3Text: 'All mechanical parts (servos, ESC, motor, etc.) have arrived, and assembly and fine-tuning are currently underway. We will deliver a flight report once completed.',
             section4Title: '◆Introduction of Measuring Equipment',
             section4Text: 'We have introduced an analyzer that can accurately measure ESC current values. This enables more precise settings and troubleshooting.'
+        },
+        newsSection2026Mar: {
+            date: 'March 30, 2026',
+            newsTitle: 'Flight Tuning, Firmware Unification & Activity Report',
+            section1Title: '◆GOOSKY RS7 Ultra PID Tuning Complete',
+            section1Text: 'PID tuning for the GOOSKY RS7 Ultra flight has been completed. Each axis has been tuned via Rotorflight, and stable flight characteristics have been confirmed.',
+            section2Title: '◆Right Pirouette Flip Achieved on E8',
+            section2Text: 'During practice, I was finally able to perform a right pirouette flip on the E8 in actual flight (though not on video). I will continue practicing and will also be tuning other aircraft.',
+            section3Title: '◆EdgeTX & ELRS Firmware Unified to Latest Stable Versions',
+            section3Text: 'EdgeTX and ELRS firmware have been unified to the latest stable releases. These are official release versions, not test builds.',
+            section4Title: '◆Inquiries Exceed 30 Cases',
+            section4Text: 'Total inquiries have exceeded 30 cases. Of these, 29 have been resolved, with 1 currently under investigation. The ongoing case involves a ".bin" file issue that I have not encountered before, so I am thoroughly investigating it together with the AI assistant Claude.',
+            section5Title: '◆Spring Air Density Data Collection Started',
+            section5Text: 'With spring arriving, air density has changed. There is a significant difference in flight characteristics between environments around -10°C and positive temperatures. We have begun collecting spring data to compare with blackbox data next season to identify the differences.'
         },
         newsSection2026Jan: {
             date: 'January 28, 2026',
@@ -2142,6 +2168,20 @@ const translations = {
             section3Text: '所有机械部件（舵机、电调、电机等）已到齐，目前正在进行组装和微调。完成后将提供飞行报告。',
             section4Title: '◆测量设备的引进',
             section4Text: '引进了可以准确测量电调电流值的分析仪。这使得更精确的设置和故障排除成为可能。'
+        },
+        newsSection2026Mar: {
+            date: '2026年3月30日',
+            newsTitle: '飞行调整・固件统一 & 活动报告',
+            section1Title: '◆GOOSKY RS7 Ultra PID调整完成',
+            section1Text: 'GOOSKY RS7 Ultra的飞行PID调整已完成。通过Rotorflight对各轴进行了调谐，确认了稳定的飞行特性。',
+            section2Title: '◆E8实现右旋翻转',
+            section2Text: '在练习中，虽然没有录像，但终于在E8上实现了右旋翻转的实战操作。我会继续练习，也会对其他机体进行调整。',
+            section3Title: '◆EdgeTX和ELRS固件统一为最新稳定版',
+            section3Text: 'EdgeTX和ELRS的固件已统一为最新的稳定版本。使用的是正式发布版，而非测试版。',
+            section4Title: '◆咨询件数突破30件',
+            section4Text: '咨询件数累计突破30件。其中29件已解决，目前有1件正在调查中。调查中的1件是".bin"文件的故障，由于我也是第一次遇到这种情况，正在与AI助手Claude一起仔细调查。',
+            section5Title: '◆春季大气密度变化数据收集开始',
+            section5Text: '随着春天的到来，大气密度发生了变化。在-10℃左右的环境和正温度时，飞行特性有很大的差异。为了在下一季通过黑匣子等数据进行比较以明确差异，已开始收集春季数据。'
         },
         newsSection2026Jan: {
             date: '2026年1月28日',
