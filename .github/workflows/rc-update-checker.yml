@@ -1,0 +1,40 @@
+name: RC Update Checker
+
+on:
+  schedule:
+    # 毎日 UTC 22:00 = 日本時間 朝7:00 に実行
+    - cron: '0 22 * * *'
+  workflow_dispatch:
+    # 手動実行も可能（テスト用）
+
+jobs:
+  check-updates:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install feedparser requests
+
+      - name: Run update checker
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python scripts/check_rc_updates.py
+
+      - name: Commit updated state
+        run: |
+          git config user.name "RC Update Bot"
+          git config user.email "bot@postsoni.github.io"
+          git add data/last_checked.json
+          git diff --staged --quiet || git commit -m "chore: update last_checked.json [skip ci]"
+          git push
