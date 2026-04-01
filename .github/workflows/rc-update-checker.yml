@@ -2,7 +2,7 @@ name: RC Update Checker
 
 on:
   schedule:
-    # 毎日 UTC 22:00 = 日本時間 朝7:00 に実行
+    # 毎日 UTC 4:00 = 日本時間 13:00 に実行
     - cron: '0 4 * * *'
   workflow_dispatch:
     # 手動実行も可能（テスト用）
