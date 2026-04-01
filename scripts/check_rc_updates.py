@@ -2,7 +2,8 @@
 """
 RC Update Checker
 =================
-GitHub Atom フィードを監視して、新しいリリースがあればメールで通知するスクリプト。
+GitHub Atom フィードを監視して、新しいリリースがあればメールとDiscordで通知するスクリプト。
+更新がない場合も「更新なし」として通知する。
 postsoni.github.io の GitHub Actions で毎日自動実行される。
 
 監視対象:
@@ -22,6 +23,7 @@ from email.mime.text import MIMEText
 from pathlib import Path
 
 import feedparser
+import requests
 
 # ============================================================
 # 監視対象リポジトリ一覧
@@ -131,8 +133,8 @@ def check_feeds(state: dict) -> tuple[dict, list[dict]]:
 # メール通知
 # ============================================================
 
-def send_email(new_releases: list[dict]) -> None:
-    """新しいリリース情報をメールで通知する"""
+def send_email(new_releases: list[dict], has_updates: bool) -> None:
+    """リリース情報をメールで通知する（更新あり・なし両方）"""
     gmail_address = os.environ.get("GMAIL_ADDRESS")
     gmail_password = os.environ.get("GMAIL_APP_PASSWORD")
 
@@ -140,52 +142,69 @@ def send_email(new_releases: list[dict]) -> None:
         print("警告: Gmail の環境変数が設定されていません。メール送信をスキップします。")
         return
 
-    # 件名
-    count = len(new_releases)
-    subject = f"🚀 RC アップデート通知: {count}件の新リリース ({datetime.now(timezone.utc).strftime('%Y-%m-%d')})"
+    today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+
+    if has_updates:
+        count = len(new_releases)
+        subject = f"🚀 RC アップデート通知: {count}件の新リリース ({today})"
+    else:
+        subject = f"✅ RC アップデート通知: 更新なし ({today})"
 
     # 本文（テキスト版）
-    text_body = "RC関連ソフトウェアの新しいリリースが検出されました。\n"
-    text_body += "=" * 60 + "\n\n"
-
-    for r in new_releases:
-        text_body += f"【{r['name']}】\n"
-        text_body += f"  バージョン: {r['title']}\n"
-        text_body += f"  種別: {r['type']}\n"
-        text_body += f"  リンク: {r['link']}\n"
-        text_body += f"  更新日時: {r['updated']}\n"
-        text_body += "-" * 40 + "\n\n"
+    if has_updates:
+        text_body = "RC関連ソフトウェアの新しいリリースが検出されました。\n"
+        text_body += "=" * 60 + "\n\n"
+        for r in new_releases:
+            text_body += f"【{r['name']}】\n"
+            text_body += f"  バージョン: {r['title']}\n"
+            text_body += f"  種別: {r['type']}\n"
+            text_body += f"  リンク: {r['link']}\n"
+            text_body += f"  更新日時: {r['updated']}\n"
+            text_body += "-" * 40 + "\n\n"
+    else:
+        text_body = f"本日 ({today}) のチェックでは、新しいリリースはありませんでした。\n"
+        text_body += "全ての監視対象リポジトリは前回チェック時と同じ状態です。\n\n"
 
     text_body += "このメールは postsoni.github.io の RC Update Checker により自動送信されました。\n"
 
     # 本文（HTML版）
-    html_body = """
-    <html>
-    <body style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-    <h2 style="color: #2d3748; border-bottom: 2px solid #4299e1; padding-bottom: 8px;">
-        🚀 RC アップデート通知
-    </h2>
-    <p style="color: #4a5568;">RC関連ソフトウェアの新しいリリースが検出されました。</p>
-    """
-
-    for r in new_releases:
-        badge_color = "#e53e3e" if r["type"] == "正式リリース" else "#ed8936"
-        html_body += f"""
-        <div style="background: #f7fafc; border-left: 4px solid #4299e1; padding: 12px 16px; margin: 12px 0; border-radius: 0 4px 4px 0;">
-            <h3 style="margin: 0 0 8px 0; color: #2d3748;">{r['name']}</h3>
-            <p style="margin: 4px 0;">
-                <span style="background: {badge_color}; color: white; padding: 2px 8px; border-radius: 4px; font-size: 12px;">
-                    {r['type']}
-                </span>
-            </p>
-            <p style="margin: 4px 0; color: #4a5568;"><strong>バージョン:</strong> {r['title']}</p>
-            <p style="margin: 4px 0; color: #4a5568;"><strong>更新日時:</strong> {r['updated']}</p>
-            <p style="margin: 4px 0;">
-                <a href="{r['link']}" style="color: #4299e1; text-decoration: none;">
-                    📎 リリースページを開く →
-                </a>
-            </p>
-        </div>
+    if has_updates:
+        html_body = """
+        <html>
+        <body style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+        <h2 style="color: #2d3748; border-bottom: 2px solid #4299e1; padding-bottom: 8px;">
+            🚀 RC アップデート通知
+        </h2>
+        <p style="color: #4a5568;">RC関連ソフトウェアの新しいリリースが検出されました。</p>
+        """
+        for r in new_releases:
+            badge_color = "#e53e3e" if r["type"] == "正式リリース" else "#ed8936"
+            html_body += f"""
+            <div style="background: #f7fafc; border-left: 4px solid #4299e1; padding: 12px 16px; margin: 12px 0; border-radius: 0 4px 4px 0;">
+                <h3 style="margin: 0 0 8px 0; color: #2d3748;">{r['name']}</h3>
+                <p style="margin: 4px 0;">
+                    <span style="background: {badge_color}; color: white; padding: 2px 8px; border-radius: 4px; font-size: 12px;">
+                        {r['type']}
+                    </span>
+                </p>
+                <p style="margin: 4px 0; color: #4a5568;"><strong>バージョン:</strong> {r['title']}</p>
+                <p style="margin: 4px 0; color: #4a5568;"><strong>更新日時:</strong> {r['updated']}</p>
+                <p style="margin: 4px 0;">
+                    <a href="{r['link']}" style="color: #4299e1; text-decoration: none;">
+                        📎 リリースページを開く →
+                    </a>
+                </p>
+            </div>
+            """
+    else:
+        html_body = f"""
+        <html>
+        <body style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+        <h2 style="color: #2d3748; border-bottom: 2px solid #48bb78; padding-bottom: 8px;">
+            ✅ RC アップデート通知 — 更新なし
+        </h2>
+        <p style="color: #4a5568;">本日 ({today}) のチェックでは、新しいリリースはありませんでした。</p>
+        <p style="color: #718096;">全ての監視対象リポジトリは前回チェック時と同じ状態です。</p>
         """
 
     html_body += """
@@ -217,6 +236,70 @@ def send_email(new_releases: list[dict]) -> None:
 
 
 # ============================================================
+# Discord 通知
+# ============================================================
+
+def send_discord(new_releases: list[dict], has_updates: bool) -> None:
+    """リリース情報をDiscordに通知する（更新あり・なし両方）"""
+    webhook_url = os.environ.get("DISCORD_WEBHOOK_URL")
+
+    if not webhook_url:
+        print("警告: Discord Webhook URL が設定されていません。Discord送信をスキップします。")
+        return
+
+    today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+
+    if has_updates:
+        # 更新ありの場合：Embedsで各リリースを表示
+        embeds = []
+        for r in new_releases:
+            color = 0xE53E3E if r["type"] == "正式リリース" else 0xED8936
+            embeds.append({
+                "title": f"{r['name']}",
+                "description": (
+                    f"**バージョン:** {r['title']}\n"
+                    f"**種別:** {r['type']}\n"
+                    f"**更新日時:** {r['updated']}\n"
+                    f"[📎 リリースページを開く →]({r['link']})"
+                ),
+                "color": color,
+            })
+
+        # Discordは1メッセージにつきEmbed最大10個
+        content = f"🚀 **RC アップデート通知** — {len(new_releases)}件の新リリース ({today})"
+
+        for i in range(0, len(embeds), 10):
+            chunk = embeds[i:i + 10]
+            payload = {"embeds": chunk}
+            if i == 0:
+                payload["content"] = content
+            try:
+                resp = requests.post(webhook_url, json=payload, timeout=10)
+                resp.raise_for_status()
+            except Exception as e:
+                print(f"❌ Discord送信失敗: {e}")
+                return
+
+    else:
+        # 更新なしの場合
+        payload = {
+            "content": f"✅ **RC アップデート通知** — 更新なし ({today})",
+            "embeds": [{
+                "description": "本日のチェックでは、新しいリリースはありませんでした。\n全ての監視対象リポジトリは前回チェック時と同じ状態です。",
+                "color": 0x48BB78,
+            }]
+        }
+        try:
+            resp = requests.post(webhook_url, json=payload, timeout=10)
+            resp.raise_for_status()
+        except Exception as e:
+            print(f"❌ Discord送信失敗: {e}")
+            return
+
+    print("✅ Discord送信成功")
+
+
+# ============================================================
 # メイン
 # ============================================================
 
@@ -237,23 +320,31 @@ def main():
     updated_state, new_releases = check_feeds(state)
     print()
 
+    has_updates = len(new_releases) > 0
+
     # 結果表示
-    if new_releases:
+    if has_updates:
         print(f"🎉 {len(new_releases)} 件の新しいリリースを検出!")
         print()
         for r in new_releases:
             print(f"  ★ {r['name']}: {r['title']} ({r['type']})")
         print()
-
-        # メール送信
-        print("--- メール送信 ---")
-        send_email(new_releases)
     else:
         print("✅ 新しいリリースはありません。")
+        print()
+
+    # メール送信（更新あり・なし両方）
+    print("--- メール送信 ---")
+    send_email(new_releases, has_updates)
+    print()
+
+    # Discord送信（更新あり・なし両方）
+    print("--- Discord送信 ---")
+    send_discord(new_releases, has_updates)
+    print()
 
     # 状態保存
     save_state(updated_state)
-    print()
     print(f"状態を保存しました: {DATA_FILE}")
     print("完了!")
 
