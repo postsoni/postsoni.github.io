@@ -9773,3 +9773,671 @@ body.dark-mode .last-visited-indicator .indicator-dismiss {
 .dark-mode .rotorflight-feedback p {
     color: #e0e0e0;
 }
+
+/* ===== ブラックボックス解析ログ ===== */
+
+/* イントロ */
+.bb-intro {
+    background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%);
+    border-radius: 12px;
+    padding: 30px;
+    border: 2px solid #c4d4ff;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.bb-intro-icon {
+    font-size: 48px;
+    flex-shrink: 0;
+}
+
+.bb-intro-content h3 {
+    font-family: 'Zen Kurenaido', cursive;
+    font-size: 22px;
+    color: #3366cc;
+    margin-bottom: 10px;
+}
+
+.bb-intro-content p {
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.bb-env-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0;
+}
+
+.bb-env-tag {
+    background: #3366cc;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.bb-tools-note {
+    font-size: 13px;
+    color: #888;
+}
+
+/* 機体紹介 */
+.bb-aircraft-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.bb-aircraft-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    border: 2px solid #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.bb-aircraft-card h4 {
+    font-family: 'Zen Kurenaido', cursive;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 14px;
+}
+
+.bb-spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.bb-spec-table th {
+    text-align: left;
+    padding: 6px 10px;
+    color: #666;
+    font-weight: 600;
+    width: 30%;
+    background: #f8f8f8;
+    border-bottom: 1px solid #eee;
+}
+
+.bb-spec-table td {
+    padding: 6px 10px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+/* 解析ログエントリ */
+.bb-log-entry {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    border: 2px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+}
+
+.bb-log-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 3px solid #3366cc;
+}
+
+.bb-log-number {
+    font-size: 28px;
+    font-weight: 800;
+    color: #3366cc;
+}
+
+.bb-log-header h3 {
+    font-family: 'Zen Kurenaido', cursive;
+    font-size: 22px;
+    color: #333;
+}
+
+/* 飛行条件 */
+.bb-log-conditions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 24px;
+    background: #f8f9fc;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.bb-condition-item {
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.bb-condition-label {
+    font-weight: 700;
+    color: #3366cc;
+    white-space: nowrap;
+}
+
+/* 機体セクション */
+.bb-machine-section {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 2px dashed #e0e0e0;
+}
+
+.bb-machine-title {
+    font-family: 'Zen Kurenaido', cursive;
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.bb-flight-summary {
+    background: #f8f9fc;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* サブセクションタイトル */
+.bb-subsection-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    margin: 22px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+/* テーブル */
+.bb-table-wrapper {
+    overflow-x: auto;
+    margin-bottom: 16px;
+}
+
+.bb-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.bb-data-table thead th {
+    background: #3366cc;
+    color: white;
+    padding: 10px 14px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.bb-data-table thead th:first-child {
+    text-align: left;
+}
+
+.bb-data-table tbody td {
+    padding: 8px 14px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+.bb-data-table tbody td:first-child {
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+}
+
+.bb-data-table tbody tr:nth-child(even) {
+    background: #f8f9fc;
+}
+
+.bb-data-table tbody tr:hover {
+    background: #eef2ff;
+}
+
+.bb-table-separator td {
+    border-top: 2px solid #ccc;
+}
+
+.bb-highlight-bad {
+    color: #cc3333;
+    font-weight: 700;
+    background: #fff0f0;
+}
+
+.bb-analysis-label {
+    font-weight: 700;
+    font-size: 15px;
+    color: #444;
+    margin: 14px 0 8px;
+}
+
+.bb-analysis-note {
+    font-size: 13px;
+    color: #cc6600;
+    background: #fff8f0;
+    border-left: 4px solid #ff9933;
+    padding: 10px 14px;
+    border-radius: 0 6px 6px 0;
+    margin: 10px 0 16px;
+}
+
+/* 診断グリッド */
+.bb-diagnosis-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.bb-diagnosis-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.bb-diag-icon {
+    flex-shrink: 0;
+    font-size: 16px;
+}
+
+.bb-diag-ok { background: #f0faf0; }
+.bb-diag-warn { background: #fff8f0; }
+.bb-diag-info { background: #f0f4ff; }
+
+/* グラフグリッド */
+.bb-graph-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.bb-graph-item {
+    background: #f8f8f8;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #e0e0e0;
+}
+
+.bb-graph-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.bb-graph-item img {
+    width: 100%;
+    border-radius: 6px;
+    display: block;
+}
+
+.bb-graph-caption {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    margin-top: 8px;
+}
+
+/* 結論 */
+.bb-conclusion {
+    background: #f8f9fc;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin-top: 20px;
+    border-left: 4px solid #3366cc;
+}
+
+.bb-conclusion h5 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.bb-verdict-bad {
+    color: #cc3333;
+    font-weight: 600;
+}
+
+.bb-verdict-good {
+    color: #22883a;
+    font-weight: 600;
+}
+
+/* PID変更セクション */
+.bb-action-section {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 2px dashed #e0e0e0;
+}
+
+.bb-action-title {
+    font-family: 'Zen Kurenaido', cursive;
+    font-size: 20px;
+    color: #cc6600;
+    margin-bottom: 16px;
+}
+
+.bb-change-table tbody td {
+    font-size: 14px;
+}
+
+.bb-change-table strong {
+    color: #cc3333;
+    font-size: 16px;
+}
+
+.bb-change-reasons {
+    background: #f8f9fc;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin-top: 16px;
+}
+
+.bb-change-reasons h5 {
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.bb-change-reasons ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.bb-change-reasons li {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* 次回やること */
+.bb-next-section {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 2px dashed #e0e0e0;
+}
+
+.bb-next-title {
+    font-family: 'Zen Kurenaido', cursive;
+    font-size: 20px;
+    color: #3366cc;
+    margin-bottom: 14px;
+}
+
+.bb-next-list {
+    padding-left: 20px;
+}
+
+.bb-next-list li {
+    font-size: 14px;
+    line-height: 2;
+    color: #444;
+}
+
+/* 画像モーダル */
+.bb-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bb-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    z-index: 10001;
+    line-height: 1;
+}
+
+.bb-modal-img {
+    max-width: 92%;
+    max-height: 85vh;
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+}
+
+.bb-modal-caption {
+    color: white;
+    font-size: 14px;
+    margin-top: 12px;
+    text-align: center;
+}
+
+/* ===== ブラックボックス ダークモード ===== */
+
+body.dark-mode .bb-intro {
+    background: linear-gradient(135deg, #1a2040 0%, #2d2d2d 100%);
+    border-color: #3c5090;
+}
+
+body.dark-mode .bb-intro-content h3 {
+    color: #7ba3ff;
+}
+
+body.dark-mode .bb-intro-content p {
+    color: #ccc;
+}
+
+body.dark-mode .bb-aircraft-card {
+    background: #2d2d2d;
+    border-color: #3c4043;
+}
+
+body.dark-mode .bb-aircraft-card h4 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .bb-spec-table th {
+    background: #383838;
+    color: #aaa;
+}
+
+body.dark-mode .bb-spec-table td {
+    color: #ccc;
+    border-color: #3c4043;
+}
+
+body.dark-mode .bb-log-entry {
+    background: #2d2d2d;
+    border-color: #3c4043;
+}
+
+body.dark-mode .bb-log-header {
+    border-color: #5588ee;
+}
+
+body.dark-mode .bb-log-header h3 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .bb-log-conditions {
+    background: #353535;
+}
+
+body.dark-mode .bb-condition-label {
+    color: #7ba3ff;
+}
+
+body.dark-mode .bb-machine-section {
+    border-color: #444;
+}
+
+body.dark-mode .bb-machine-title {
+    color: #e0e0e0;
+}
+
+body.dark-mode .bb-flight-summary {
+    background: #353535;
+    color: #ccc;
+}
+
+body.dark-mode .bb-subsection-title {
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+body.dark-mode .bb-data-table thead th {
+    background: #2a4488;
+}
+
+body.dark-mode .bb-data-table tbody td {
+    border-color: #3c4043;
+    color: #ccc;
+}
+
+body.dark-mode .bb-data-table tbody td:first-child {
+    color: #e0e0e0;
+}
+
+body.dark-mode .bb-data-table tbody tr:nth-child(even) {
+    background: #353535;
+}
+
+body.dark-mode .bb-data-table tbody tr:hover {
+    background: #3a3a4a;
+}
+
+body.dark-mode .bb-highlight-bad {
+    color: #ff7777;
+    background: #3d2020;
+}
+
+body.dark-mode .bb-analysis-label {
+    color: #ccc;
+}
+
+body.dark-mode .bb-analysis-note {
+    background: #3d3020;
+    color: #ffcc66;
+    border-color: #cc8800;
+}
+
+body.dark-mode .bb-diag-ok { background: #203020; }
+body.dark-mode .bb-diag-warn { background: #3d3020; }
+body.dark-mode .bb-diag-info { background: #202040; }
+
+body.dark-mode .bb-diagnosis-item {
+    color: #ccc;
+}
+
+body.dark-mode .bb-graph-item {
+    background: #353535;
+    border-color: #444;
+}
+
+body.dark-mode .bb-graph-caption {
+    color: #aaa;
+}
+
+body.dark-mode .bb-conclusion {
+    background: #353535;
+    border-color: #5588ee;
+}
+
+body.dark-mode .bb-conclusion h5 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .bb-verdict-bad {
+    color: #ff7777;
+}
+
+body.dark-mode .bb-verdict-good {
+    color: #66cc77;
+}
+
+body.dark-mode .bb-action-section {
+    border-color: #444;
+}
+
+body.dark-mode .bb-action-title {
+    color: #ffaa44;
+}
+
+body.dark-mode .bb-change-table strong {
+    color: #ff7777;
+}
+
+body.dark-mode .bb-change-reasons {
+    background: #353535;
+}
+
+body.dark-mode .bb-change-reasons h5 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .bb-change-reasons li {
+    color: #ccc;
+}
+
+body.dark-mode .bb-next-section {
+    border-color: #444;
+}
+
+body.dark-mode .bb-next-title {
+    color: #7ba3ff;
+}
+
+body.dark-mode .bb-next-list li {
+    color: #ccc;
+}
+
+/* ===== ブラックボックス レスポンシブ ===== */
+
+@media (max-width: 768px) {
+    .bb-intro {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .bb-aircraft-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bb-log-conditions {
+        grid-template-columns: 1fr;
+    }
+
+    .bb-graph-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bb-log-entry {
+        padding: 18px;
+    }
+
+    .bb-log-header h3 {
+        font-size: 18px;
+    }
+
+    .bb-modal-img {
+        max-width: 98%;
+    }
+}

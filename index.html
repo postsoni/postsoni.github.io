@@ -509,6 +509,7 @@
                     <a href="#" class="nav-item" data-tab="profile">👤 プロフィール</a>
                     <a href="#" class="nav-item" data-tab="sns">📱 SNS</a>
                     <a href="#" class="nav-item" data-tab="activity">📰 ブログアクセス</a>
+                    <a href="#" class="nav-item" data-tab="blackbox-log">📊 ブラックボックス解析ログ</a>
                     <a href="#" class="nav-item" data-tab="edgetx-manual">📖 EdgeTXマニュアル</a>
                     <a href="#" class="nav-item" data-tab="rotorflight-manual">📖 Rotorflightマニュアル</a>
                     <a href="#" class="nav-item" data-tab="rc-library">📚 RC機器マニュアルPDF集</a>
@@ -1595,6 +1596,370 @@
                         </p>
                     </div>
                 </div>
+            </section>
+
+            <!-- ブラックボックス解析ログセクション -->
+            <section id="blackbox-log" class="content-section tab-content">
+                <div class="section-header">
+                    <h2 class="section-title">📊 ブラックボックス解析ログ</h2>
+                </div>
+
+                <!-- プロジェクト概要 -->
+                <div class="bb-intro scroll-animate fade-in">
+                    <div class="bb-intro-icon">📡</div>
+                    <div class="bb-intro-content">
+                        <h3>Rotorflight Blackbox 解析プロジェクト</h3>
+                        <p>このページでは、ぽすとそに工房で運用しているRCヘリコプターのRotorflight Blackboxデータを解析し、PIDチューニングの過程を公開しています。実機データに基づいた調整を記録として残し、同じRotorflightユーザーの参考になることを目指しています。</p>
+                        <div class="bb-env-info">
+                            <span class="bb-env-tag">Rotorflight 4.5.0</span>
+                            <span class="bb-env-tag">NEXUS-XR FC</span>
+                            <span class="bb-env-tag">EdgeTX v2.12.0</span>
+                            <span class="bb-env-tag">TX16S</span>
+                            <span class="bb-env-tag">ELRS 4.0.0</span>
+                        </div>
+                        <p class="bb-tools-note">解析ツール：Rotorflight Blackbox Explorer v2.2.0 / Python（blackbox_decode + matplotlib）</p>
+                    </div>
+                </div>
+
+                <!-- 機体紹介 -->
+                <div class="bb-aircraft-grid scroll-animate fade-in">
+                    <div class="bb-aircraft-card">
+                        <h4>🚁 GOOSKY RS7 Ultra</h4>
+                        <table class="bb-spec-table">
+                            <tr><th>クラス</th><td>700</td></tr>
+                            <tr><th>FC</th><td>RadioMaster NEXUS-XR</td></tr>
+                            <tr><th>ESC</th><td>Hobbywing Platinum 260A-HV V5</td></tr>
+                            <tr><th>バッテリー</th><td>12S（6S×2 直列）5200mAh×2</td></tr>
+                            <tr><th>ガバナー</th><td>ESC側ガバナー（Rotorflight Governor OFF）</td></tr>
+                            <tr><th>ヘッドスピード</th><td>Normal ~1600rpm / IU1 ~2000rpm / IU2 ~2240rpm</td></tr>
+                        </table>
+                    </div>
+                    <div class="bb-aircraft-card">
+                        <h4>🚁 JR E8</h4>
+                        <table class="bb-spec-table">
+                            <tr><th>クラス</th><td>600</td></tr>
+                            <tr><th>FC</th><td>RadioMaster NEXUS-XR</td></tr>
+                            <tr><th>ESC</th><td>Hobbywing Platinum 130A-HV V4</td></tr>
+                            <tr><th>バッテリー</th><td>8S（4S×2 直列）4200mAh×2</td></tr>
+                            <tr><th>ガバナー</th><td>ESC側ガバナー（Rotorflight Governor OFF）</td></tr>
+                            <tr><th>ヘッドスピード</th><td>Normal ~1800rpm / IU1 ~2120rpm / IU2 ~2420rpm</td></tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- ===== 解析①：2026年4月12日 ===== -->
+                <div class="bb-log-entry scroll-animate fade-in">
+                    <div class="bb-log-header">
+                        <span class="bb-log-number">① </span>
+                        <h3>2026年4月9日フライト / 4月12日解析 — 強風ホバリングテスト</h3>
+                    </div>
+
+                    <div class="bb-log-conditions">
+                        <div class="bb-condition-item"><span class="bb-condition-label">天候</span><span>強風（右斜め前からの風）</span></div>
+                        <div class="bb-condition-item"><span class="bb-condition-label">飛行内容</span><span>ホバリングのみ（低空）</span></div>
+                        <div class="bb-condition-item"><span class="bb-condition-label">備考</span><span>両機とも地面接触あり</span></div>
+                        <div class="bb-condition-item"><span class="bb-condition-label">Blackbox設定</span><span>1000Hz / Armed / GYRO_SCALED</span></div>
+                    </div>
+
+                    <!-- RS7 Ultra 解析 -->
+                    <div class="bb-machine-section">
+                        <h4 class="bb-machine-title">🔵 GOOSKY RS7 Ultra — 解析結果</h4>
+
+                        <div class="bb-flight-summary">
+                            <p><strong>フライト内容：</strong>Log 001（5分20秒）— ノーマルで離陸 → IU1 → IU2 → IU1で長時間ホバリング → ノーマルに戻して着陸 → 再度ノーマルのみで離陸・ホバリング・着陸</p>
+                        </div>
+
+                        <h5 class="bb-subsection-title">📋 PID設定（変更前）</h5>
+                        <div class="bb-table-wrapper">
+                            <table class="bb-data-table">
+                                <thead>
+                                    <tr><th></th><th>Profile #1<br>(Normal)</th><th>Profile #2<br>(IU1)</th><th>Profile #3<br>(IU2)</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Roll P</td><td>55</td><td>55</td><td>50</td></tr>
+                                    <tr><td>Roll I</td><td>88</td><td>88</td><td>88</td></tr>
+                                    <tr><td>Roll D</td><td>15</td><td>15</td><td>15</td></tr>
+                                    <tr><td>Roll FF</td><td>80</td><td>80</td><td>80</td></tr>
+                                    <tr class="bb-table-separator"><td>Pitch P</td><td>100</td><td>105</td><td>100</td></tr>
+                                    <tr><td>Pitch I</td><td>88</td><td>88</td><td>88</td></tr>
+                                    <tr><td>Pitch D</td><td>45</td><td>45</td><td>45</td></tr>
+                                    <tr><td>Pitch FF</td><td>80</td><td>80</td><td>80</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h5 class="bb-subsection-title">📊 フェーズ別ジャイロ安定性</h5>
+                        <div class="bb-table-wrapper">
+                            <table class="bb-data-table">
+                                <thead>
+                                    <tr><th>モード</th><th>Roll std (deg/s)</th><th>Pitch std (deg/s)</th><th>Yaw std (deg/s)</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Normal (~1600rpm)</td><td>10.3</td><td>5.6</td><td>3.9</td></tr>
+                                    <tr><td>IU1 (~2000rpm)</td><td>7.9</td><td>9.2</td><td>4.4</td></tr>
+                                    <tr><td>IU2 (~2240rpm)</td><td>11.3</td><td>16.6</td><td>4.6</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔍 PID貢献度分析</h5>
+                        <p class="bb-analysis-label">Roll（全フライトモード共通の問題）</p>
+                        <div class="bb-table-wrapper">
+                            <table class="bb-data-table">
+                                <thead>
+                                    <tr><th>モード</th><th>P項</th><th>I項</th><th>D項</th><th>FF項</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Normal</td><td>3%</td><td class="bb-highlight-bad">91%</td><td>1%</td><td>5%</td></tr>
+                                    <tr><td>IU1</td><td>2%</td><td class="bb-highlight-bad">92%</td><td>1%</td><td>5%</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="bb-analysis-note">⚠️ I項がほぼ単独でロール制御を行っている。P項とD項が極端に低い。</p>
+
+                        <p class="bb-analysis-label">Pitch（バランス良好 ✅）</p>
+                        <div class="bb-table-wrapper">
+                            <table class="bb-data-table">
+                                <thead>
+                                    <tr><th>モード</th><th>P項</th><th>I項</th><th>D項</th><th>FF項</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Normal</td><td>4%</td><td>65%</td><td>18%</td><td>13%</td></tr>
+                                    <tr><td>IU1</td><td>6%</td><td>45%</td><td>34%</td><td>16%</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h5 class="bb-subsection-title">📈 その他の診断結果</h5>
+                        <div class="bb-diagnosis-grid">
+                            <div class="bb-diagnosis-item bb-diag-ok"><span class="bb-diag-icon">✅</span><span><strong>ガバナー安定性：</strong>非常に優秀（Normal std=1.7rpm、IU1 std=2.1rpm）</span></div>
+                            <div class="bb-diagnosis-item bb-diag-ok"><span class="bb-diag-icon">✅</span><span><strong>サーボ：</strong>全て余裕あり、飽和なし</span></div>
+                            <div class="bb-diagnosis-item bb-diag-ok"><span class="bb-diag-icon">✅</span><span><strong>ESC温度：</strong>最大24°C（閾値85°C）</span></div>
+                            <div class="bb-diagnosis-item bb-diag-ok"><span class="bb-diag-icon">✅</span><span><strong>RSSI：</strong>安定（最低525）</span></div>
+                            <div class="bb-diagnosis-item bb-diag-ok"><span class="bb-diag-icon">✅</span><span><strong>フィルター：</strong>LPF1=100Hz / LPF2=OFF → そのままでOK</span></div>
+                            <div class="bb-diagnosis-item bb-diag-ok"><span class="bb-diag-icon">✅</span><span><strong>Yaw：</strong>全フェーズで安定（std 3.9〜4.6）</span></div>
+                            <div class="bb-diagnosis-item bb-diag-info"><span class="bb-diag-icon">ℹ️</span><span><strong>Roll I項オフセット（平均90）：</strong>強風（右斜め前）に対抗するための正常な挙動。風が原因。</span></div>
+                            <div class="bb-diagnosis-item bb-diag-warn"><span class="bb-diag-icon">⚠️</span><span><strong>周波数：</strong>IU1・IU2のRoll軸で5次ハーモニクスがわずかに検出 → トラッキング1〜2mmずれが原因の可能性</span></div>
+                        </div>
+
+                        <h5 class="bb-subsection-title">📸 グラフデータ（RS7 Ultra）</h5>
+                        <div class="bb-graph-grid">
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/RS7_Ultra_001_overview.png" alt="RS7 Ultra 全体概要" loading="lazy">
+                                <p class="bb-graph-caption">全体概要（ヘッドスピード・ジャイロ・電圧）</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/RS7_Ultra_001_phase_analysis.png" alt="RS7 Ultra フェーズ別分析" loading="lazy">
+                                <p class="bb-graph-caption">フェーズ別分析</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/RS7_Ultra_001_IU1_detail.png" alt="RS7 Ultra IU1ホバリング詳細" loading="lazy">
+                                <p class="bb-graph-caption">IU1ホバリング詳細（Setpoint vs Gyro / PID各項）</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/RS7_Ultra_001_Normal_detail.png" alt="RS7 Ultra Normalホバリング詳細" loading="lazy">
+                                <p class="bb-graph-caption">Normalホバリング詳細</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/RS7_Ultra_001_fft_analysis.png" alt="RS7 Ultra 周波数解析" loading="lazy">
+                                <p class="bb-graph-caption">全体周波数解析（FFT）</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/RS7_Ultra_001_fft_per_phase.png" alt="RS7 Ultra フェーズ別FFT" loading="lazy">
+                                <p class="bb-graph-caption">フェーズ別周波数解析</p>
+                            </div>
+                        </div>
+
+                        <div class="bb-conclusion">
+                            <h5>🏁 RS7 Ultra 診断結論</h5>
+                            <p><span class="bb-verdict-bad">Roll PとDが低すぎる → 上げる必要あり</span></p>
+                            <p><span class="bb-verdict-good">Pitchは合っている → 変更不要</span></p>
+                            <p><span class="bb-verdict-good">Yawは安定 → 変更不要</span></p>
+                        </div>
+                    </div>
+
+                    <!-- E8 解析 -->
+                    <div class="bb-machine-section">
+                        <h4 class="bb-machine-title">🟠 JR E8 — 解析結果</h4>
+
+                        <div class="bb-flight-summary">
+                            <p><strong>フライト内容：</strong>Log 001（7秒、誤操作） Log 002（5分14秒）— ノーマルで離陸 → IU1 → IU2 → IU1 → ノーマルに戻して長時間ホバリング・着陸 — 地面接触5〜6回</p>
+                        </div>
+
+                        <h5 class="bb-subsection-title">📋 PID設定（変更前）</h5>
+                        <div class="bb-table-wrapper">
+                            <table class="bb-data-table">
+                                <thead>
+                                    <tr><th></th><th>Profile #1<br>(Normal)</th><th>Profile #2<br>(IU1)</th><th>Profile #3<br>(IU2)</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Roll P</td><td>55</td><td>55</td><td>55</td></tr>
+                                    <tr><td>Roll I</td><td>100</td><td>88</td><td>88</td></tr>
+                                    <tr><td>Roll D</td><td>18</td><td>18</td><td>18</td></tr>
+                                    <tr><td>Roll FF</td><td>100</td><td>100</td><td>100</td></tr>
+                                    <tr class="bb-table-separator"><td>Pitch P</td><td>145</td><td>140</td><td>140</td></tr>
+                                    <tr><td>Pitch I</td><td>100</td><td>88</td><td>88</td></tr>
+                                    <tr><td>Pitch D</td><td>43</td><td>43</td><td>43</td></tr>
+                                    <tr><td>Pitch FF</td><td>100</td><td>100</td><td>100</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔍 PID貢献度分析</h5>
+                        <p class="bb-analysis-label">Roll（RS7 Ultraと同じ問題）</p>
+                        <div class="bb-table-wrapper">
+                            <table class="bb-data-table">
+                                <thead>
+                                    <tr><th>ログ</th><th>P項</th><th>I項</th><th>D項</th><th>FF項</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Log 002</td><td>3%</td><td class="bb-highlight-bad">88%</td><td>1%</td><td>9%</td></tr>
+                                    <tr><td>Log 003</td><td>2%</td><td class="bb-highlight-bad">87%</td><td>1%</td><td>10%</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p class="bb-analysis-label">Pitch（バランス良好 ✅）</p>
+                        <div class="bb-table-wrapper">
+                            <table class="bb-data-table">
+                                <thead>
+                                    <tr><th>ログ</th><th>P項</th><th>I項</th><th>D項</th><th>FF項</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Log 002</td><td>8%</td><td>59%</td><td>11%</td><td>21%</td></tr>
+                                    <tr><td>Log 003</td><td>7%</td><td>63%</td><td>9%</td><td>21%</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h5 class="bb-subsection-title">📊 ジャイロRAWノイズ比較（RS7 Ultra vs E8）</h5>
+                        <div class="bb-table-wrapper">
+                            <table class="bb-data-table">
+                                <thead>
+                                    <tr><th>軸</th><th>RS7 Ultra RAW std</th><th>E8 RAW std</th><th>E8/RS7比</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Roll</td><td>11.2</td><td>48.6</td><td>4.3倍</td></tr>
+                                    <tr><td>Pitch</td><td>8.1</td><td>17.5</td><td>2.2倍</td></tr>
+                                    <tr><td>Yaw</td><td>4.6</td><td>16.3</td><td>3.5倍</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="bb-analysis-note">E8は全体的にRAW振動が大きいが、フィルター（LPF1=100Hz + LPF2=50Hz）で適切にカバーされている。フレーム特性の差であり、メカの問題ではない。</p>
+
+                        <h5 class="bb-subsection-title">📈 その他の診断結果</h5>
+                        <div class="bb-diagnosis-grid">
+                            <div class="bb-diagnosis-item bb-diag-ok"><span class="bb-diag-icon">✅</span><span><strong>ESC温度：</strong>最大25°C（閾値90°C）</span></div>
+                            <div class="bb-diagnosis-item bb-diag-ok"><span class="bb-diag-icon">✅</span><span><strong>RSSI：</strong>安定（最低536）</span></div>
+                            <div class="bb-diagnosis-item bb-diag-ok"><span class="bb-diag-icon">✅</span><span><strong>フィルター：</strong>LPF1=100Hz / LPF2=50Hz → そのままでOK</span></div>
+                            <div class="bb-diagnosis-item bb-diag-ok"><span class="bb-diag-icon">✅</span><span><strong>ヘッドスピード計算式：</strong>正しい（ギア比10:90、ポール数8）</span></div>
+                            <div class="bb-diagnosis-item bb-diag-info"><span class="bb-diag-icon">ℹ️</span><span><strong>ノーマルモードRPMスパイク：</strong>ESCテレメトリーの低回転時ノイズ。IU1・IU2では正常。ガバナーOFFのため飛行への影響なし。</span></div>
+                        </div>
+
+                        <h5 class="bb-subsection-title">📸 グラフデータ（E8）</h5>
+                        <div class="bb-graph-grid">
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/E8_002_overview.png" alt="E8 Log 002 全体概要" loading="lazy">
+                                <p class="bb-graph-caption">Log 002 全体概要</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/E8_003_overview.png" alt="E8 Log 003 全体概要" loading="lazy">
+                                <p class="bb-graph-caption">Log 003 全体概要</p>
+                            </div>
+                        </div>
+
+                        <div class="bb-conclusion">
+                            <h5>🏁 E8 診断結論</h5>
+                            <p><span class="bb-verdict-bad">Roll PとDが低すぎる（RS7 Ultraと同じ傾向）</span></p>
+                            <p><span class="bb-verdict-good">Pitchは合っている → 変更不要</span></p>
+                            <p><span class="bb-verdict-good">Yawは安定 → 変更不要</span></p>
+                        </div>
+                    </div>
+
+                    <!-- 第1段階PID変更 -->
+                    <div class="bb-action-section">
+                        <h4 class="bb-action-title">🔧 第1段階のPID変更（実施済み）</h4>
+
+                        <p class="bb-analysis-label">RS7 Ultra</p>
+                        <div class="bb-table-wrapper">
+                            <table class="bb-data-table bb-change-table">
+                                <thead>
+                                    <tr><th></th><th>Profile #1 (Normal)</th><th>Profile #2 (IU1)</th><th>Profile #3 (IU2)</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Roll P</td><td>55 → <strong>70</strong></td><td>55 → <strong>65</strong></td><td>50 → <strong>65</strong></td></tr>
+                                    <tr><td>Roll D</td><td>15 → <strong>20</strong></td><td>15 → <strong>20</strong></td><td>15 → <strong>20</strong></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p class="bb-analysis-label">E8</p>
+                        <div class="bb-table-wrapper">
+                            <table class="bb-data-table bb-change-table">
+                                <thead>
+                                    <tr><th></th><th>Profile #1 (Normal)</th><th>Profile #2 (IU1)</th><th>Profile #3 (IU2)</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Roll P</td><td>55 → <strong>70</strong></td><td>55 → <strong>65</strong></td><td>55 → <strong>65</strong></td></tr>
+                                    <tr><td>Roll D</td><td>18 → <strong>23</strong></td><td>18 → <strong>23</strong></td><td>18 → <strong>23</strong></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="bb-change-reasons">
+                            <h5>変更理由</h5>
+                            <ul>
+                                <li>Roll軸のP項とD項が極端に低く、I項（88〜92%）がほぼ単独で制御していた</li>
+                                <li>P項を上げることで外乱（風など）に対する即座の応答を改善</li>
+                                <li>D項を上げることでダンピング（振動抑制）を改善</li>
+                                <li>IU1・IU2はヘッドスピードが高く応答性が上がるため、Pを少し抑えた</li>
+                                <li>D項は5ずつの段階的変更が安全の鉄則</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 次回やること -->
+                    <div class="bb-next-section">
+                        <h4 class="bb-next-title">📝 次回やること</h4>
+                        <ol class="bb-next-list">
+                            <li>PID変更後のBlackboxデータを取得（RS7 Ultra・E8両方）</li>
+                            <li>変更前と変更後のデータを比較し、Roll I項依存度の改善を確認</li>
+                            <li>RS7 Ultraのトラッキング修正（1〜2mmのずれ）</li>
+                            <li>改善が見られればさらにP/Dを上げるか判断</li>
+                            <li>無風or微風の日のデータも取得し、風の影響を限りなく分離</li>
+                            <li>Forza450のデータもできれば取りに行く（最初の第一データがまだとれていない）</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- 画像拡大モーダル -->
+                <div id="bb-image-modal" class="bb-modal" onclick="closeBBImage()">
+                    <span class="bb-modal-close" onclick="closeBBImage()">&times;</span>
+                    <img id="bb-modal-img" class="bb-modal-img" src="" alt="">
+                    <p id="bb-modal-caption" class="bb-modal-caption"></p>
+                </div>
+
+                <script>
+                function openBBImage(el) {
+                    var img = el.querySelector('img');
+                    var caption = el.querySelector('.bb-graph-caption');
+                    var modal = document.getElementById('bb-image-modal');
+                    var modalImg = document.getElementById('bb-modal-img');
+                    var modalCaption = document.getElementById('bb-modal-caption');
+                    modalImg.src = img.src;
+                    modalCaption.textContent = caption ? caption.textContent : '';
+                    modal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                }
+                function closeBBImage() {
+                    var modal = document.getElementById('bb-image-modal');
+                    modal.style.display = 'none';
+                    document.body.style.overflow = '';
+                }
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape') closeBBImage();
+                });
+                </script>
             </section>
 
             <!-- EdgeTXマニュアルセクション -->
