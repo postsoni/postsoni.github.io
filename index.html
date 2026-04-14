@@ -1645,6 +1645,17 @@
                             <tr><th>ヘッドスピード</th><td>Normal ~1800rpm / IU1 ~2120rpm / IU2 ~2420rpm</td></tr>
                         </table>
                     </div>
+                    <div class="bb-aircraft-card">
+                        <h4>🚁 JR Forza450</h4>
+                        <table class="bb-spec-table">
+                            <tr><th>クラス</th><td>450</td></tr>
+                            <tr><th>FC</th><td>RadioMaster NEXUS-XR</td></tr>
+                            <tr><th>ESC</th><td>Hobbywing Platinum Pro 60A ESC V4</td></tr>
+                            <tr><th>バッテリー</th><td>3S LiPo</td></tr>
+                            <tr><th>ガバナー</th><td>ESC側ガバナー（Rotorflight Governor OFF）</td></tr>
+                            <tr><th>ヘッドスピード</th><td>Normal ~2600rpm / IU1 ~3050rpm / IU2 ~3600rpm</td></tr>
+                        </table>
+                    </div>
                 </div>
 
                 <!-- ===== 解析①：2026年4月12日 ===== -->
@@ -1920,14 +1931,370 @@
 
                     <!-- 次回やること -->
                     <div class="bb-next-section">
+                        <h4 class="bb-next-title">📝 次回やること → ②で実施済み</h4>
+                        <ol class="bb-next-list">
+                            <li style="text-decoration: line-through; opacity: 0.6;">PID変更後のBlackboxデータを取得（RS7 Ultra・E8両方）→ ✅ 完了</li>
+                            <li style="text-decoration: line-through; opacity: 0.6;">変更前と変更後のデータを比較し、Roll I項依存度の改善を確認 → ✅ 完了</li>
+                            <li style="text-decoration: line-through; opacity: 0.6;">RS7 Ultraのトラッキング修正（1〜2mmのずれ）→ ✅ 修正済み、周波数ピーク大幅改善</li>
+                            <li style="text-decoration: line-through; opacity: 0.6;">改善が見られればさらにP/Dを上げるか判断 → ✅ 完了</li>
+                            <li style="text-decoration: line-through; opacity: 0.6;">無風or微風の日のデータも取得し、風の影響を限りなく分離 → ✅ RS7 Ultraで実施</li>
+                            <li style="text-decoration: line-through; opacity: 0.6;">Forza450のデータもできれば取りに行く → ✅ 3フライト＋変更後2フライト取得</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- ===== 解析②：2026年4月14日 ===== -->
+                <div class="bb-log-entry scroll-animate fade-in">
+                    <div class="bb-log-header">
+                        <span class="bb-log-number">② </span>
+                        <h3>2026年4月14日フライト / 解析 — 3機種多機動テスト＋Forza450 PID変更前後比較</h3>
+                    </div>
+
+                    <div class="bb-log-conditions">
+                        <div class="bb-condition-item"><span class="bb-condition-label">天候</span><span>風速1〜3m/s、時折3〜4m/s（微風〜弱風）</span></div>
+                        <div class="bb-condition-item"><span class="bb-condition-label">飛行内容</span><span>ホバリング・旋回・フリップ・ストールターン・ピルエットフリップ・メトロノーム</span></div>
+                        <div class="bb-condition-item"><span class="bb-condition-label">備考</span><span>3機とも地面接触なし</span></div>
+                        <div class="bb-condition-item"><span class="bb-condition-label">Blackbox設定</span><span>1000Hz / Armed / GYRO_SCALED</span></div>
+                    </div>
+
+                    <!-- ==================== FORZA450 ==================== -->
+                    <div class="bb-machine-section">
+                        <h4 class="bb-machine-title">🟠 JR Forza450 — 解析結果</h4>
+
+                        <div class="bb-flight-summary">
+                            <p><strong>フライト内容：</strong>Flight 1〜3（変更前、各約3.3分）— ノーマル/IU1/IU2全モード使用。前側フリップ、旋回、PID検出用の前後左右振り。Flight 4〜5（変更後）— P+5/FF-5適用後のテスト。</p>
+                        </div>
+
+                        <!-- 変更前 PID設定 -->
+                        <h5 class="bb-subsection-title">📋 PID設定（変更前：Flight 1〜3）</h5>
+                        <div class="bb-table-wrapper">
+                            <table class="bb-data-table">
+                                <thead>
+                                    <tr><th></th><th>Profile #1<br>(Normal)</th><th>Profile #2<br>(IU1)</th><th>Profile #3<br>(IU2)</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Roll P</td><td>37</td><td>35</td><td>28</td></tr>
+                                    <tr><td>Roll I</td><td>60</td><td>60</td><td>60</td></tr>
+                                    <tr><td>Roll D</td><td>20</td><td>20</td><td>20</td></tr>
+                                    <tr><td>Roll FF</td><td>60</td><td>55</td><td>42</td></tr>
+                                    <tr class="bb-table-separator"><td>Pitch P</td><td>37</td><td>35</td><td>30</td></tr>
+                                    <tr><td>Pitch I</td><td>60</td><td>60</td><td>60</td></tr>
+                                    <tr><td>Pitch D</td><td>20</td><td>20</td><td>20</td></tr>
+                                    <tr><td>Pitch FF</td><td>60</td><td>55</td><td>42</td></tr>
+                                    <tr class="bb-table-separator"><td>Yaw P</td><td>100</td><td>80</td><td>70</td></tr>
+                                    <tr><td>Yaw I</td><td>110</td><td>100</td><td>90</td></tr>
+                                    <tr><td>Yaw D</td><td>5</td><td>5</td><td>5</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- フライトサマリー -->
+                        <h5 class="bb-subsection-title">📊 フライトサマリー（変更前）</h5>
+                        <div class="bb-table-wrapper">
+                            <table class="bb-data-table">
+                                <thead>
+                                    <tr><th>項目</th><th>Flight 1</th><th>Flight 2</th><th>Flight 3</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>飛行時間</td><td>200.6s</td><td>205.8s</td><td>201.2s</td></tr>
+                                    <tr><td>ヘッドスピード平均</td><td>2549 RPM</td><td>2553 RPM</td><td>2757 RPM</td></tr>
+                                    <tr><td>バッテリー</td><td>12.6V → 11.4V</td><td>12.6V → 11.3V</td><td>12.5V → 11.2V</td></tr>
+                                    <tr><td>ESC温度 最高</td><td>38°C</td><td>36°C</td><td>35°C</td></tr>
+                                    <tr><td>Normal時間</td><td>68.0s (33.9%)</td><td>45.5s (22.1%)</td><td>26.5s (13.1%)</td></tr>
+                                    <tr><td>IU1時間</td><td>46.6s (23.2%)</td><td>55.3s (26.9%)</td><td>88.1s (43.8%)</td></tr>
+                                    <tr><td>IU2時間</td><td>50.5s (25.2%)</td><td>63.0s (30.6%)</td><td>57.0s (28.3%)</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- モード別追従性 -->
+                        <h5 class="bb-subsection-title">📊 モード別トラッキングエラー（RMS）— 変更前 Flight 2基準</h5>
+                        <div class="bb-table-wrapper">
+                            <table class="bb-data-table">
+                                <thead>
+                                    <tr><th>モード</th><th>Roll</th><th>Pitch</th><th>Yaw</th><th>判定</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Normal</td><td>6.3</td><td>6.5</td><td>4.7</td><td style="color: green;">○ 良好</td></tr>
+                                    <tr><td>IU1</td><td>10.5</td><td>9.4</td><td>14.2</td><td style="color: orange;">△ やや大</td></tr>
+                                    <tr><td>IU2</td><td>14.1</td><td>11.9</td><td>11.2</td><td style="color: red;">× 要改善</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- PID出力分析 -->
+                        <h5 class="bb-subsection-title">🔍 PID出力バランス分析</h5>
+                        <div class="bb-analysis-box bb-analysis-warning">
+                            <p><strong>Roll軸：P項の出力が極端に小さい（RMS=1.5〜2.4）。</strong>I項がRMS=22〜25で支配的。FFがスティック入力時のみ動作し、それ以外はI項だけが外乱を処理している状態。</p>
+                        </div>
+                        <div class="bb-analysis-box bb-analysis-warning">
+                            <p><strong>Pitch軸：IU2でFF出力がRMS=60〜67と突出。</strong>FF=55がIU2の高回転域で過補償気味。I項もRMS=45〜57と大きく、FF+Iの過剰な出力がハンチングの予兆。</p>
+                        </div>
+                        <div class="bb-analysis-box bb-analysis-warning">
+                            <p><strong>Yaw軸：I項RMS=208〜310と極めて大きい。</strong>ただしこれは反トルク補正のオフセット成分を含む。動的な応答自体は安定。</p>
+                        </div>
+                        <div class="bb-analysis-box bb-analysis-info">
+                            <p><strong>FFの上限問題：</strong>FF=55が現状のハンチングなしの上限。これ以上FFを上げると全方向のダンピング的ハンチングが発生する。そのため、FFを下げてPに出力を移す「P+5/FF-5トレード」を実施。</p>
+                        </div>
+
+                        <!-- 変更内容 -->
+                        <h5 class="bb-subsection-title">🔧 PID変更内容（Flight 4〜5）</h5>
+                        <div class="bb-table-wrapper">
+                            <table class="bb-data-table">
+                                <thead>
+                                    <tr><th></th><th>Profile #1 (Normal)</th><th>Profile #2 (IU1)</th><th>Profile #3 (IU2)</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Roll P</td><td>37 → <strong>42</strong></td><td>35 → <strong>40</strong></td><td>28 → <strong>33→30</strong></td></tr>
+                                    <tr><td>Roll FF</td><td>60 → <strong>55</strong></td><td>55 → <strong>50</strong></td><td>42 → <strong>37</strong></td></tr>
+                                    <tr><td>Pitch P</td><td>37 → <strong>42</strong></td><td>35 → <strong>40</strong></td><td>30 → <strong>35→32</strong></td></tr>
+                                    <tr><td>Pitch FF</td><td>60 → <strong>55</strong></td><td>55 → <strong>50</strong></td><td>42 → <strong>37</strong></td></tr>
+                                    <tr><td>Roll/Pitch I</td><td>60（維持）</td><td>60（維持）</td><td>60 → <strong>57</strong></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="bb-change-reasons">
+                            <h5>変更理由</h5>
+                            <ul>
+                                <li>FFを下げた分の出力をP項に移す「トレード方式」で、合計出力を維持しつつハンチングリスクを回避</li>
+                                <li>IU2（Profile #3）ではP=33がヘッドスピード3600RPMで過敏 → Flight 4で「ものすごいブレ」が発生 → 現場でP=30/32に調整</li>
+                                <li>IU2のI項も57に微調整（蓄積過多の軽減）</li>
+                                <li>Error Limit・HSI Gain・HSI Limitのプロファイル間不整合も統一修正</li>
+                            </ul>
+                        </div>
+
+                        <!-- 変更前後の比較 -->
+                        <h5 class="bb-subsection-title">📊 変更前後の比較（Flight 2 vs Flight 5）</h5>
+                        <div class="bb-table-wrapper">
+                            <table class="bb-data-table">
+                                <thead>
+                                    <tr><th>モード</th><th>軸</th><th>Before (F2)</th><th>After (F5)</th><th>変化</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Normal</td><td>Roll</td><td>6.3</td><td>4.5</td><td style="color: green;"><strong>↓ 改善</strong></td></tr>
+                                    <tr><td>Normal</td><td>Pitch</td><td>6.5</td><td>4.6</td><td style="color: green;"><strong>↓ 改善</strong></td></tr>
+                                    <tr><td>Normal</td><td>Yaw</td><td>4.7</td><td>3.1</td><td style="color: green;"><strong>↓ 改善</strong></td></tr>
+                                    <tr><td>IU1</td><td>Roll</td><td>10.5</td><td>7.8</td><td style="color: green;"><strong>↓ 改善</strong></td></tr>
+                                    <tr><td>IU1</td><td>Pitch</td><td>9.4</td><td>8.3</td><td style="color: green;">↓ やや改善</td></tr>
+                                    <tr><td>IU1</td><td>Yaw</td><td>14.2</td><td>8.1</td><td style="color: green;"><strong>↓ 大幅改善</strong></td></tr>
+                                    <tr><td>IU2</td><td>Roll</td><td>14.1</td><td>16.3</td><td style="color: red;">↑ やや悪化</td></tr>
+                                    <tr><td>IU2</td><td>Pitch</td><td>11.9</td><td>11.4</td><td>→ ほぼ同じ</td></tr>
+                                    <tr><td>IU2</td><td>Yaw</td><td>11.2</td><td>13.8</td><td style="color: red;">↑ やや悪化</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="bb-analysis-box bb-analysis-ok">
+                            <p><strong>Normal・IU1は明確に改善。</strong>P+5/FF-5のトレードが効果を発揮。特にNormalは全軸でRMSが下がり、Roll I項のRMSも22.3→13.3に低下（I項依存度の改善）。</p>
+                        </div>
+                        <div class="bb-analysis-box bb-analysis-warning">
+                            <p><strong>IU2はまだ課題あり。</strong>P=33→30に現場調整した後もRMS=16.3とやや悪化。IU2のProfile #3はI=52への追加調整とD=23への段階的変更を予定。</p>
+                        </div>
+                        <div class="bb-analysis-box bb-analysis-warning">
+                            <p><strong>Flight 4の教訓：</strong>IU2でP=33は過敏すぎた。ヘッドスピード3600RPMではPの感度が高く、Roll RMS=56.6と大暴れ。「やりすぎるとこうなる」という貴重なデータ。</p>
+                        </div>
+
+                        <!-- グラフ：Forza450 変更前 -->
+                        <h5 class="bb-subsection-title">📈 グラフデータ（変更前 Flight 2）</h5>
+                        <div class="bb-graph-grid">
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/01_FORZA450_Flight2_Tracking.png" alt="Forza450 Flight 2 Tracking" loading="lazy">
+                                <p class="bb-graph-caption">PID Tracking — Setpoint vs Gyro 全体俯瞰</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/02_FORZA450_Flight2_PID_Components.png" alt="Forza450 Flight 2 PID Components" loading="lazy">
+                                <p class="bb-graph-caption">PID Component Breakdown — I項依存が顕著</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/03_FORZA450_Frequency_Analysis.png" alt="Forza450 Frequency Analysis" loading="lazy">
+                                <p class="bb-graph-caption">周波数解析 — 全3フライト×3軸</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/04_FORZA450_Battery_Temp.png" alt="Forza450 Battery Temp" loading="lazy">
+                                <p class="bb-graph-caption">バッテリー・ESC温度・ヘッドスピード推移</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/05_FORZA450_Error_Histogram.png" alt="Forza450 Error Histogram" loading="lazy">
+                                <p class="bb-graph-caption">トラッキングエラー分布（3フライト×3軸）</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/06_FORZA450_Flight1_Flip_Detail.png" alt="Forza450 Flip Detail" loading="lazy">
+                                <p class="bb-graph-caption">フリップ時のPID詳細（FF=55の応答）</p>
+                            </div>
+                        </div>
+
+                        <!-- グラフ：変更前後比較 -->
+                        <h5 class="bb-subsection-title">📈 変更前後の比較グラフ</h5>
+                        <div class="bb-graph-grid">
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/COMPARE_compare_tracking.png" alt="Before vs After Tracking" loading="lazy">
+                                <p class="bb-graph-caption">Before vs After — Setpoint vs Gyro 比較</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/COMPARE_compare_pid_components.png" alt="Before vs After PID" loading="lazy">
+                                <p class="bb-graph-caption">Before vs After — PID出力バランス比較</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/COMPARE_compare_mode_bars.png" alt="Mode Comparison Bars" loading="lazy">
+                                <p class="bb-graph-caption">モード別RMSエラー比較（棒グラフ）</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/COMPARE_flight4_tracking.png" alt="Flight 4 Issues" loading="lazy">
+                                <p class="bb-graph-caption">Flight 4 — IU2でP=33が過敏（大暴れ）</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/COMPARE_flight5_tracking.png" alt="Flight 5 Adjusted" loading="lazy">
+                                <p class="bb-graph-caption">Flight 5 — P=30/32に調整後（安定化）</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/COMPARE_compare_error_histogram.png" alt="Error Histogram Comparison" loading="lazy">
+                                <p class="bb-graph-caption">エラー分布比較（Before vs After）</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ==================== RS7 Ultra ==================== -->
+                    <div class="bb-machine-section">
+                        <h4 class="bb-machine-title">🔵 GOOSKY RS7 Ultra — 解析結果（Flight 003）</h4>
+
+                        <div class="bb-flight-summary">
+                            <p><strong>フライト内容：</strong>Log 003（5分20秒）— ノーマル/IU1/IU2全モード使用。ホバリング、旋回、ストールターン、ピルエットフリップ、フリップなど多彩な機動。地面接触なし。</p>
+                        </div>
+
+                        <h5 class="bb-subsection-title">📋 PID設定（①で変更後の値）</h5>
+                        <div class="bb-table-wrapper">
+                            <table class="bb-data-table">
+                                <thead>
+                                    <tr><th></th><th>Profile #1<br>(Normal)</th><th>Profile #2<br>(IU1)</th><th>Profile #3<br>(IU2)</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Roll P</td><td>70</td><td>65</td><td>65</td></tr>
+                                    <tr><td>Roll I</td><td>100</td><td>88</td><td>88</td></tr>
+                                    <tr><td>Roll D</td><td>23</td><td>20</td><td>20</td></tr>
+                                    <tr><td>Roll FF</td><td>100</td><td>80</td><td>80</td></tr>
+                                    <tr class="bb-table-separator"><td>Pitch P</td><td>145</td><td>105</td><td>100</td></tr>
+                                    <tr><td>Pitch I</td><td>100</td><td>88</td><td>88</td></tr>
+                                    <tr><td>Pitch D</td><td>43</td><td>45</td><td>45</td></tr>
+                                    <tr><td>Pitch FF</td><td>100</td><td>80</td><td>80</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h5 class="bb-subsection-title">📊 モード別トラッキングエラー（RMS）</h5>
+                        <div class="bb-table-wrapper">
+                            <table class="bb-data-table">
+                                <thead>
+                                    <tr><th>モード</th><th>Roll</th><th>Pitch</th><th>Yaw</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Normal (~1637rpm)</td><td>9.4</td><td>4.0</td><td>5.1</td></tr>
+                                    <tr><td>IU1 (~2025rpm)</td><td>14.5</td><td>13.0</td><td>15.6</td></tr>
+                                    <tr><td>IU2 (~2237rpm)</td><td>16.2</td><td>12.8</td><td>16.8</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔍 I項オフセット分析</h5>
+                        <div class="bb-analysis-box bb-analysis-ok">
+                            <p><strong>Yaw I項のオフセット（平均-550、RMSの98%）：</strong>メインローター反トルクを打ち消すための定常補正。シングルローターヘリの物理特性であり正常。</p>
+                        </div>
+                        <div class="bb-analysis-box bb-analysis-ok">
+                            <p><strong>Roll I項のオフセット（平均+40〜50、RMSの63〜77%）：</strong>テールローターの横推力による機体の傾きを補正。これもシングルローターの物理特性であり正常。</p>
+                        </div>
+                        <div class="bb-analysis-box bb-analysis-ok">
+                            <p><strong>体感「バシッと止まる」：</strong>Roll P/D変更の効果が出ている。PIDバランスが改善し、全体の動的応答が向上。現状で変更不要。</p>
+                        </div>
+                        <div class="bb-analysis-box bb-analysis-info">
+                            <p><strong>バッテリー：</strong>12S 50.10V → 45.20V。瞬間的な電圧降下あり（最低39.54V＝3.30V/cell、3D（アクロバット）時の大電流ドロップ、飛行に影響なし）。</p>
+                        </div>
+
+                        <h5 class="bb-subsection-title">📈 グラフデータ（RS7 Ultra）</h5>
+                        <div class="bb-graph-grid">
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/rs7_003_tracking.png" alt="RS7 Ultra Flight 003 Tracking" loading="lazy">
+                                <p class="bb-graph-caption">PID Tracking — Setpoint vs Gyro</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/rs7_003_pid_components.png" alt="RS7 Ultra Flight 003 PID Components" loading="lazy">
+                                <p class="bb-graph-caption">PID Component Breakdown</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ==================== E8 ==================== -->
+                    <div class="bb-machine-section">
+                        <h4 class="bb-machine-title">🟢 JR E8 — 解析結果（Flight 004）</h4>
+
+                        <div class="bb-flight-summary">
+                            <p><strong>フライト内容：</strong>Log 004（5分20秒）— IU1/IU2中心。ホバリング、旋回、ストールターン、ピルエットフリップ、フリップ、軽いメトロノーム。地面接触なし。</p>
+                        </div>
+
+                        <h5 class="bb-subsection-title">📋 PID設定（①で変更後の値）</h5>
+                        <div class="bb-table-wrapper">
+                            <table class="bb-data-table">
+                                <thead>
+                                    <tr><th></th><th>Profile #1<br>(Normal)</th><th>Profile #2<br>(IU1)</th><th>Profile #3<br>(IU2)</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Roll P</td><td>70</td><td>65</td><td>65</td></tr>
+                                    <tr><td>Roll I</td><td>100</td><td>88</td><td>88</td></tr>
+                                    <tr><td>Roll D</td><td>23</td><td>23</td><td>23</td></tr>
+                                    <tr><td>Roll FF</td><td>100</td><td>100</td><td>100</td></tr>
+                                    <tr class="bb-table-separator"><td>Pitch P</td><td>145</td><td>140</td><td>140</td></tr>
+                                    <tr><td>Pitch I</td><td>100</td><td>88</td><td>88</td></tr>
+                                    <tr><td>Pitch D</td><td>43</td><td>43</td><td>43</td></tr>
+                                    <tr><td>Pitch FF</td><td>100</td><td>100</td><td>100</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h5 class="bb-subsection-title">📊 モード別トラッキングエラー（RMS）</h5>
+                        <div class="bb-table-wrapper">
+                            <table class="bb-data-table">
+                                <thead>
+                                    <tr><th>モード</th><th>Roll</th><th>Pitch</th><th>Yaw</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>IU1</td><td>13.1</td><td>13.3</td><td>26.8</td></tr>
+                                    <tr><td>IU2</td><td>10.0</td><td>9.5</td><td>25.2</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔍 分析結果</h5>
+                        <div class="bb-analysis-box bb-analysis-ok">
+                            <p><strong>Roll P改善の効果あり：</strong>P項のRMSが前回の2〜3から4.3〜5.6に増加。P項の仕事量が約2倍に。ただしI項（RMS=46〜47）がまだ支配的。</p>
+                        </div>
+                        <div class="bb-analysis-box bb-analysis-warning">
+                            <p><strong>Yaw RMS=25〜27が大きい：</strong>E8のYaw I項はオフセットではなく動的変動（std=149）が主因。I=140→120に下げることで動的なオーバーシュート改善が見込める。</p>
+                        </div>
+                        <div class="bb-analysis-box bb-analysis-info">
+                            <p><strong>FF=100でハンチングなし：</strong>600クラスのローター慣性が大きいため、FF=100でも過補償にならない。Forza450（450クラス）ではFF=55が上限だったのと対照的。</p>
+                        </div>
+                        <div class="bb-analysis-box bb-analysis-info">
+                            <p><strong>バッテリー：</strong>8S 33.57V → 29.81V。瞬間的な電圧降下あり（最低25.84V＝3.23V/cell、3D（アクロバット）時の大電流ドロップ、飛行に影響なし）。</p>
+                        </div>
+
+                        <h5 class="bb-subsection-title">📈 グラフデータ（E8）</h5>
+                        <div class="bb-graph-grid">
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/e8_004_tracking.png" alt="E8 Flight 004 Tracking" loading="lazy">
+                                <p class="bb-graph-caption">PID Tracking — Setpoint vs Gyro</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/e8_004_pid_components.png" alt="E8 Flight 004 PID Components" loading="lazy">
+                                <p class="bb-graph-caption">PID Component Breakdown</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 次回やること -->
+                    <div class="bb-next-section">
                         <h4 class="bb-next-title">📝 次回やること</h4>
                         <ol class="bb-next-list">
-                            <li>PID変更後のBlackboxデータを取得（RS7 Ultra・E8両方）</li>
-                            <li>変更前と変更後のデータを比較し、Roll I項依存度の改善を確認</li>
-                            <li>RS7 Ultraのトラッキング修正（1〜2mmのずれ）</li>
-                            <li>改善が見られればさらにP/Dを上げるか判断</li>
-                            <li>無風or微風の日のデータも取得し、風の影響を限りなく分離</li>
-                            <li>Forza450のデータもできれば取りに行く（最初の第一データがまだとれていない）</li>
+                            <li><strong>Forza450：</strong>IU2 Profile #3のI=52でフライト＆Blackbox取得 → 安定したらD=23に変更</li>
+                            <li><strong>E8：</strong>Yaw I=120でフライト＆Blackbox取得 → 安定したらRoll I=80に変更</li>
+                            <li><strong>RS7 Ultra：</strong>現状維持でデータ取得（比較用ベースライン）</li>
+                            <li>3機種の変更前後データを比較し、最終的なPID値を確定</li>
                         </ol>
                     </div>
                 </div>

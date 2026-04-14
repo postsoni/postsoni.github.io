@@ -10441,3 +10441,51 @@ body.dark-mode .bb-next-list li {
         max-width: 98%;
     }
 }
+
+/* Analysis boxes for blackbox section */
+.bb-analysis-box {
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border-left: 4px solid;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.bb-analysis-ok {
+    background: #f0fdf4;
+    border-color: #22c55e;
+    color: #15803d;
+}
+
+.bb-analysis-warning {
+    background: #fff7ed;
+    border-color: #f97316;
+    color: #9a3412;
+}
+
+.bb-analysis-info {
+    background: #eff6ff;
+    border-color: #3b82f6;
+    color: #1e40af;
+}
+
+.bb-analysis-box p {
+    margin: 0;
+}
+
+/* Dark mode for analysis boxes */
+body.dark-mode .bb-analysis-ok {
+    background: rgba(34, 197, 94, 0.1);
+    color: #86efac;
+}
+
+body.dark-mode .bb-analysis-warning {
+    background: rgba(249, 115, 22, 0.1);
+    color: #fdba74;
+}
+
+body.dark-mode .bb-analysis-info {
+    background: rgba(59, 130, 246, 0.1);
+    color: #93c5fd;
+}
