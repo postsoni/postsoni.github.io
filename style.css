@@ -10192,36 +10192,38 @@ body.dark-mode .last-visited-indicator .indicator-dismiss {
 /* 画像モーダル */
 .bb-modal {
     display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.95);
-    z-index: 10000;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0,0,0,0.92) !important;
+    z-index: 999999 !important;
     cursor: pointer;
-    overflow: hidden;
+    overflow: auto;
+}
+
+.bb-modal.bb-modal-open {
+    display: block !important;
 }
 
 .bb-modal-close {
-    position: absolute;
+    position: fixed;
     top: 15px;
     right: 25px;
-    font-size: 40px;
-    color: white;
+    font-size: 36px;
+    color: white !important;
     cursor: pointer;
-    z-index: 10002;
+    z-index: 1000002;
     line-height: 1;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.6);
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
+    user-select: none;
 }
 
 .bb-modal-close:hover {
@@ -10229,52 +10231,51 @@ body.dark-mode .last-visited-indicator .indicator-dismiss {
 }
 
 .bb-modal-img-container {
-    width: 100%;
-    height: calc(100vh - 60px);
+    width: 100vw;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: auto;
-    cursor: grab;
-}
-
-.bb-modal-img-container:active {
-    cursor: grabbing;
+    padding: 60px 20px;
+    box-sizing: border-box;
 }
 
 .bb-modal-img {
-    max-width: none;
-    max-height: none;
-    width: 98vw;
-    height: auto;
+    display: block !important;
+    max-width: 95vw !important;
+    max-height: 88vh !important;
+    width: auto !important;
+    height: auto !important;
     border-radius: 4px;
-    transition: transform 0.2s ease;
-    transform-origin: center center;
-    background: white;
-    padding: 8px;
-    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    background: white !important;
+    padding: 10px !important;
+    box-shadow: 0 0 40px rgba(0,0,0,0.6);
+    box-sizing: border-box;
 }
 
 .bb-modal-img.zoomed {
-    width: auto;
-    max-width: none;
+    max-width: none !important;
+    max-height: none !important;
     cursor: grab;
 }
 
 .bb-modal-controls {
-    position: absolute;
+    position: fixed;
     bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     gap: 10px;
     align-items: center;
-    z-index: 10002;
+    z-index: 1000002;
+    background: rgba(0,0,0,0.7);
+    padding: 8px 16px;
+    border-radius: 8px;
 }
 
 .bb-modal-btn {
     background: rgba(255,255,255,0.15);
-    color: white;
+    color: white !important;
     border: 1px solid rgba(255,255,255,0.3);
     border-radius: 6px;
     padding: 8px 16px;
@@ -10288,9 +10289,10 @@ body.dark-mode .last-visited-indicator .indicator-dismiss {
 }
 
 .bb-modal-caption {
-    color: rgba(255,255,255,0.85);
+    color: rgba(255,255,255,0.85) !important;
     font-size: 13px;
-    padding: 0 20px;
+    padding: 0 12px;
+    margin: 0;
 }
 
 /* ===== ブラックボックス ダークモード ===== */

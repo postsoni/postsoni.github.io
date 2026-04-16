@@ -2591,6 +2591,14 @@
                 <script>
                 var bbZoomed = false;
 
+                // モーダルをbody直下に移動してタブ切り替えの影響を受けないようにする
+                (function() {
+                    var modal = document.getElementById('bb-image-modal');
+                    if (modal && modal.parentNode !== document.body) {
+                        document.body.appendChild(modal);
+                    }
+                })();
+
                 function openBBImage(el) {
                     var img = el.querySelector('img');
                     var caption = el.querySelector('.bb-graph-caption');
@@ -2599,7 +2607,7 @@
                     var modalCaption = document.getElementById('bb-modal-caption');
                     modalImg.src = img.src;
                     modalCaption.textContent = caption ? caption.textContent : '';
-                    modal.style.display = 'flex';
+                    modal.classList.add('bb-modal-open');
                     document.body.style.overflow = 'hidden';
                     bbZoomed = false;
                     modalImg.classList.remove('zoomed');
@@ -2607,15 +2615,16 @@
 
                 function closeBBImage() {
                     var modal = document.getElementById('bb-image-modal');
-                    modal.style.display = 'none';
+                    modal.classList.remove('bb-modal-open');
                     document.body.style.overflow = '';
                     bbZoomed = false;
                     document.getElementById('bb-modal-img').classList.remove('zoomed');
                 }
 
                 function handleModalClick(event) {
-                    if (event.target === document.getElementById('bb-image-modal') ||
-                        event.target === document.getElementById('bb-modal-container')) {
+                    // 画像以外のエリアをクリックしたら閉じる
+                    if (event.target.classList.contains('bb-modal') ||
+                        event.target.classList.contains('bb-modal-img-container')) {
                         if (!bbZoomed) {
                             closeBBImage();
                         }
@@ -2630,8 +2639,6 @@
                         modalImg.classList.add('zoomed');
                     } else {
                         modalImg.classList.remove('zoomed');
-                        document.getElementById('bb-modal-container').scrollTop = 0;
-                        document.getElementById('bb-modal-container').scrollLeft = 0;
                     }
                 }
 
