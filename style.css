@@ -10250,6 +10250,9 @@ body.dark-mode .last-visited-indicator .indicator-dismiss {
     border-radius: 4px;
     transition: transform 0.2s ease;
     transform-origin: center center;
+    background: white;
+    padding: 8px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
 }
 
 .bb-modal-img.zoomed {
