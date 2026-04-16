@@ -10197,37 +10197,97 @@ body.dark-mode .last-visited-indicator .indicator-dismiss {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.9);
+    background: rgba(0,0,0,0.95);
     z-index: 10000;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     cursor: pointer;
+    overflow: hidden;
 }
 
 .bb-modal-close {
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 15px;
+    right: 25px;
     font-size: 40px;
     color: white;
     cursor: pointer;
-    z-index: 10001;
+    z-index: 10002;
     line-height: 1;
+    background: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bb-modal-close:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.bb-modal-img-container {
+    width: 100%;
+    height: calc(100vh - 60px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    cursor: grab;
+}
+
+.bb-modal-img-container:active {
+    cursor: grabbing;
 }
 
 .bb-modal-img {
-    max-width: 92%;
-    max-height: 85vh;
-    border-radius: 8px;
-    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+    max-width: none;
+    max-height: none;
+    width: 98vw;
+    height: auto;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+    transform-origin: center center;
+}
+
+.bb-modal-img.zoomed {
+    width: auto;
+    max-width: none;
+    cursor: grab;
+}
+
+.bb-modal-controls {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    z-index: 10002;
+}
+
+.bb-modal-btn {
+    background: rgba(255,255,255,0.15);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 6px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.bb-modal-btn:hover {
+    background: rgba(255,255,255,0.3);
 }
 
 .bb-modal-caption {
-    color: white;
-    font-size: 14px;
-    margin-top: 12px;
-    text-align: center;
+    color: rgba(255,255,255,0.85);
+    font-size: 13px;
+    padding: 0 20px;
 }
 
 /* ===== ブラックボックス ダークモード ===== */
@@ -10438,7 +10498,7 @@ body.dark-mode .bb-next-list li {
     }
 
     .bb-modal-img {
-        max-width: 98%;
+        width: 100vw;
     }
 }
 

@@ -2576,13 +2576,21 @@
                 </div>
 
                 <!-- 画像拡大モーダル -->
-                <div id="bb-image-modal" class="bb-modal" onclick="closeBBImage()">
+                <div id="bb-image-modal" class="bb-modal" onclick="handleModalClick(event)">
                     <span class="bb-modal-close" onclick="closeBBImage()">&times;</span>
-                    <img id="bb-modal-img" class="bb-modal-img" src="" alt="">
-                    <p id="bb-modal-caption" class="bb-modal-caption"></p>
+                    <div class="bb-modal-img-container" id="bb-modal-container">
+                        <img id="bb-modal-img" class="bb-modal-img" src="" alt="">
+                    </div>
+                    <div class="bb-modal-controls">
+                        <button class="bb-modal-btn" onclick="toggleZoom(event)">🔍 Zoom</button>
+                        <button class="bb-modal-btn" onclick="openInNewTab(event)">↗ Open</button>
+                        <p id="bb-modal-caption" class="bb-modal-caption"></p>
+                    </div>
                 </div>
 
                 <script>
+                var bbZoomed = false;
+
                 function openBBImage(el) {
                     var img = el.querySelector('img');
                     var caption = el.querySelector('.bb-graph-caption');
@@ -2593,12 +2601,46 @@
                     modalCaption.textContent = caption ? caption.textContent : '';
                     modal.style.display = 'flex';
                     document.body.style.overflow = 'hidden';
+                    bbZoomed = false;
+                    modalImg.classList.remove('zoomed');
                 }
+
                 function closeBBImage() {
                     var modal = document.getElementById('bb-image-modal');
                     modal.style.display = 'none';
                     document.body.style.overflow = '';
+                    bbZoomed = false;
+                    document.getElementById('bb-modal-img').classList.remove('zoomed');
                 }
+
+                function handleModalClick(event) {
+                    if (event.target === document.getElementById('bb-image-modal') ||
+                        event.target === document.getElementById('bb-modal-container')) {
+                        if (!bbZoomed) {
+                            closeBBImage();
+                        }
+                    }
+                }
+
+                function toggleZoom(event) {
+                    event.stopPropagation();
+                    var modalImg = document.getElementById('bb-modal-img');
+                    bbZoomed = !bbZoomed;
+                    if (bbZoomed) {
+                        modalImg.classList.add('zoomed');
+                    } else {
+                        modalImg.classList.remove('zoomed');
+                        document.getElementById('bb-modal-container').scrollTop = 0;
+                        document.getElementById('bb-modal-container').scrollLeft = 0;
+                    }
+                }
+
+                function openInNewTab(event) {
+                    event.stopPropagation();
+                    var src = document.getElementById('bb-modal-img').src;
+                    window.open(src, '_blank');
+                }
+
                 document.addEventListener('keydown', function(e) {
                     if (e.key === 'Escape') closeBBImage();
                 });
