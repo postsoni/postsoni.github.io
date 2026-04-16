@@ -2289,12 +2289,288 @@
 
                     <!-- 次回やること -->
                     <div class="bb-next-section">
+                        <h4 class="bb-next-title">📝 次回やること → ③④で実施済み</h4>
+                        <ol class="bb-next-list">
+                            <li><s>Forza450：IU2 Profile #3のI=52でフライト＆Blackbox取得 → 安定したらD=23に変更</s> → ✅ ③で実施（D=23はノイズ増幅のため却下）</li>
+                            <li><s>E8：Yaw I=120でフライト＆Blackbox取得 → 安定したらRoll I=80に変更</s> → ✅ ③④で実施</li>
+                            <li><s>RS7 Ultra：現状維持でデータ取得（比較用ベースライン）</s> → ✅ 継続中（5フライト分蓄積予定）</li>
+                            <li><s>3機種の変更前後データを比較し、最終的なPID値を確定</s> → 🔄 進行中</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- ================================================================ -->
+                <!-- ③ 2026年4月15日フライト / 解析 — I項・D項の限界探索 -->
+                <!-- ================================================================ -->
+                <div class="bb-session-card scroll-animate fade-in">
+                    <div class="bb-session-header">
+                        <h3 class="bb-session-title">③ 2026年4月15日フライト / 解析 — I項・D項の限界探索</h3>
+                        <div class="bb-session-line"></div>
+                    </div>
+
+                    <div class="bb-conditions">
+                        <div class="bb-condition-item"><span class="bb-condition-label">天候</span> 風速1〜3m/s（微風〜弱風）</div>
+                        <div class="bb-condition-item"><span class="bb-condition-label">飛行内容</span> Forza450: I=52確認 → D=23試行。E8: Yaw I=120確認</div>
+                        <div class="bb-condition-item"><span class="bb-condition-label">備考</span> Forza450 2フライト、E8 1フライト</div>
+                        <div class="bb-condition-item"><span class="bb-condition-label">Blackbox設定</span> 1000Hz / Armed / GYRO_SCALED</div>
+                    </div>
+
+                    <!-- ==================== Forza450 ==================== -->
+                    <div class="bb-machine-section">
+                        <h4 class="bb-machine-title">🟠 JR Forza450 — 解析結果（③ D項の限界発見）</h4>
+
+                        <div class="bb-info-box">
+                            <p><strong>フライト内容：</strong>Flight 1（I=52, D=20）とFlight 2（I=52, D=23）の比較テスト。D=23でのノイズ増幅を検証。</p>
+                        </div>
+
+                        <h5 class="bb-subsection-title">📋 PID設定（③テスト）</h5>
+                        <table class="bb-table">
+                            <thead><tr><th></th><th>Flight 1 (I=52, D=20)</th><th>Flight 2 (I=52, D=23)</th></tr></thead>
+                            <tbody>
+                                <tr><td>Roll P/I/D/FF</td><td>30 / 52 / 20 / 37</td><td>30 / 52 / 23 / 37</td></tr>
+                                <tr><td>Pitch P/I/D/FF</td><td>32 / 52 / 20 / 37</td><td>32 / 52 / 23 / 37</td></tr>
+                                <tr><td>Yaw P/I/D</td><td>70 / 90 / 5</td><td>70 / 90 / 5</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h5 class="bb-subsection-title">🔍 分析結果</h5>
+
+                        <div class="bb-analysis-box bb-ok">
+                            <strong>I=52の効果確認：</strong>IU2 Roll Error RMS 16.3→12.5に改善。I項の蓄積過多が軽減され、前回②からの改善が明確。I=52は正解。
+                        </div>
+
+                        <div class="bb-analysis-box bb-warning">
+                            <strong>D=23はノイズ増幅：</strong>ホバリング区間のPitch D-term RMSが1.7→5.8（×3.5）に増大。D項がジャイロノイズを増幅して逆に振動を作り出している。450クラスのD項上限はD=20〜21付近。D=20に戻した。
+                        </div>
+
+                        <div class="bb-analysis-box bb-info">
+                            <strong>IU1だけD=23の悪影響なし：</strong>IU1（~3050rpm）ではGyro RMSの変化が小さい。RPMが中程度だとノイズ周波数とD-term Cutoffの関係がちょうど良い位置にある可能性。ただし全体として利益が小さいため、D=20統一が安全。
+                        </div>
+
+                        <h5 class="bb-subsection-title">📊 ホバリング D-term RMS比較（D=20 vs D=23）</h5>
+                        <table class="bb-table">
+                            <thead><tr><th></th><th>D=20 (F1)</th><th>D=23 (F2)</th><th>倍率</th></tr></thead>
+                            <tbody>
+                                <tr><td>Normal Pitch</td><td>1.7</td><td>5.8</td><td style="color:red">×3.5</td></tr>
+                                <tr><td>Normal Yaw</td><td>0.7</td><td>1.7</td><td style="color:red">×2.4</td></tr>
+                                <tr><td>IU2 Pitch</td><td>3.8</td><td>8.6</td><td style="color:red">×2.3</td></tr>
+                                <tr><td>IU2 Roll</td><td>0.4</td><td>1.0</td><td style="color:red">×2.2</td></tr>
+                                <tr><td>IU1 Roll</td><td>0.6</td><td>0.7</td><td>×1.1</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h5 class="bb-subsection-title">📈 グラフデータ（③ Forza450）</h5>
+                        <div class="bb-graph-grid">
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/01_FORZA450_tracking_comparison.png" alt="Forza450 Tracking D=20 vs D=23" loading="lazy">
+                                <p class="bb-graph-caption">Tracking比較 — D=20 vs D=23</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/02_FORZA450_pid_components_comparison.png" alt="Forza450 PID Components" loading="lazy">
+                                <p class="bb-graph-caption">PID Components — D-term増大が明確</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/07_FORZA450_dterm_rms_bars.png" alt="D-term RMS Bars" loading="lazy">
+                                <p class="bb-graph-caption">D-term RMS棒グラフ — ×3.5のノイズ増幅の証拠</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/06_FORZA450_profile_error_bars.png" alt="Profile Error Bars" loading="lazy">
+                                <p class="bb-graph-caption">プロファイル別Error RMS — D=20が全面的に優位</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/03_FORZA450_error_histogram.png" alt="Error Histogram" loading="lazy">
+                                <p class="bb-graph-caption">エラー分布 — D=20 vs D=23</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/05_FORZA450_dterm_hover_comparison.png" alt="D-term Hover Detail" loading="lazy">
+                                <p class="bb-graph-caption">D-term ホバリング時系列 — ノイズ増幅の可視化</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/04_FORZA450_frequency_analysis.png" alt="Frequency Analysis" loading="lazy">
+                                <p class="bb-graph-caption">周波数分析 — D=20 vs D=23</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ==================== E8 ==================== -->
+                    <div class="bb-machine-section">
+                        <h4 class="bb-machine-title">🟢 JR E8 — 解析結果（③ Yaw I=120確認）</h4>
+
+                        <div class="bb-info-box">
+                            <p><strong>フライト内容：</strong>Yaw I=140→120への変更効果確認。IU1/IU2中心のホバリング・旋回・ピルエット。</p>
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔍 分析結果</h5>
+
+                        <div class="bb-analysis-box bb-ok">
+                            <strong>Yaw I=120の効果：</strong>IU2のYaw動的変動 std 149→81.5（45%改善）。Yaw Error RMS 25.2→18.1に改善。
+                        </div>
+
+                        <div class="bb-analysis-box bb-info">
+                            <strong>Roll I項のオフセット分析：</strong>IU1 offset=4%、IU2 offset=0%で動的変動が主因。Roll I=88→80に下げる余地あり。ただしNormal offset=21%のためProfile#1は据え置き。→ ④で実施。
+                        </div>
+                    </div>
+
+                    <!-- 次回やること -->
+                    <div class="bb-next-section">
+                        <h4 class="bb-next-title">📝 次回やること → ④で実施済み</h4>
+                        <ol class="bb-next-list">
+                            <li><s>Forza450：I=52, D=20で据え置き。IU2のRoll Iだけ48に下げて確認</s> → ✅ ④で実施（I=48は風で不安定、P/FFも調整）</li>
+                            <li><s>E8：Profile#2/#3のRoll I=88→80に変更</s> → ✅ ④で実施</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- ================================================================ -->
+                <!-- ④ 2026年4月16日フライト / 解析 — 風耐性テスト＋Roll I最適化 -->
+                <!-- ================================================================ -->
+                <div class="bb-session-card scroll-animate fade-in">
+                    <div class="bb-session-header">
+                        <h3 class="bb-session-title">④ 2026年4月16日フライト / 解析 — 風耐性テスト＋Roll I最適化</h3>
+                        <div class="bb-session-line"></div>
+                    </div>
+
+                    <div class="bb-conditions">
+                        <div class="bb-condition-item"><span class="bb-condition-label">天候</span> 風速3〜5m/s（やや強風）</div>
+                        <div class="bb-condition-item"><span class="bb-condition-label">飛行内容</span> Forza450: I項限界テスト3フライト。E8: Roll I=80確認＋ピルエットテスト</div>
+                        <div class="bb-condition-item"><span class="bb-condition-label">備考</span> 風の影響が顕著な条件でのテスト</div>
+                        <div class="bb-condition-item"><span class="bb-condition-label">Blackbox設定</span> 1000Hz / Armed / GYRO_SCALED</div>
+                    </div>
+
+                    <!-- ==================== Forza450 ==================== -->
+                    <div class="bb-machine-section">
+                        <h4 class="bb-machine-title">🟠 JR Forza450 — 解析結果（④ 風耐性とI項限界）</h4>
+
+                        <div class="bb-info-box">
+                            <p><strong>フライト内容：</strong>Flight 1（Roll I=48）→ブルブル発生。Flight 2（P=30,I=52,FF=37に戻す）→風で震え持続。Flight 3（P=28,I=50,FF=34に調整）→安定。Tail Gain変更も実施。</p>
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔍 分析結果</h5>
+
+                        <div class="bb-analysis-box bb-warning">
+                            <strong>I=48はブルブル：</strong>Roll Error RMS: Normal=31.1, IU1=104.1, IU2=59.1。I項不足で姿勢保持できず → P項が過剰反応 → 振動ループに突入。風速3-5m/sでは補正力不足。
+                        </div>
+
+                        <div class="bb-analysis-box bb-warning">
+                            <strong>③のベスト設定（P=30,I=52,FF=37）も風3-5m/sでは震え：</strong>微風時のベスト設定が風耐性の限界を超えていた。P+5/FF-5トレードの上限が風条件で露呈。
+                        </div>
+
+                        <div class="bb-analysis-box bb-ok">
+                            <strong>Flight 3（P=28,I=50,FF=34）で安定：</strong>風耐性を考慮した実用設定。Roll Error: Normal=8.1, IU1=10.1, IU2=16.9。風ありでの安定を確認。
+                        </div>
+
+                        <div class="bb-analysis-box bb-ok">
+                            <strong>Tail Gain変更で改善：</strong>CW Yaw Stop Gain 100→115、CCW 80→95に変更。ノーマルモードのホバリング中テール揺れが改善。
+                        </div>
+
+                        <h5 class="bb-subsection-title">📋 現在の設定（④確定値）</h5>
+                        <table class="bb-table">
+                            <thead><tr><th></th><th>Profile #1 (Normal)</th><th>Profile #2 (IU1)</th><th>Profile #3 (IU2)</th></tr></thead>
+                            <tbody>
+                                <tr><td>Roll P</td><td>42</td><td>40</td><td>28</td></tr>
+                                <tr><td>Roll I</td><td>60</td><td>60</td><td>50</td></tr>
+                                <tr><td>Roll D</td><td>20</td><td>20</td><td>20</td></tr>
+                                <tr><td>Roll FF</td><td>55</td><td>50</td><td>34</td></tr>
+                                <tr><td>Pitch P</td><td>42</td><td>40</td><td>32</td></tr>
+                                <tr><td>Pitch I</td><td>60</td><td>60</td><td>52</td></tr>
+                                <tr><td>Pitch D</td><td>20</td><td>20</td><td>20</td></tr>
+                                <tr><td>Pitch FF</td><td>55</td><td>50</td><td>37</td></tr>
+                                <tr><td>Yaw P</td><td>100</td><td>80</td><td>70</td></tr>
+                                <tr><td>Yaw I</td><td>110</td><td>100</td><td>90</td></tr>
+                                <tr><td>Yaw D</td><td>5</td><td>5</td><td>5</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h5 class="bb-subsection-title">📊 全項目チェック（Flight 3）</h5>
+                        <table class="bb-table">
+                            <thead><tr><th>項目</th><th>結果</th><th>判定</th></tr></thead>
+                            <tbody>
+                                <tr><td>Pitch軸</td><td>Error 6.5〜6.6（全プロファイル）</td><td>✅ 正常</td></tr>
+                                <tr><td>Yaw軸</td><td>Normal=5.5, IU2=13.0</td><td>✅ 正常</td></tr>
+                                <tr><td>バッテリー</td><td>10.6V〜11.7V（3S）</td><td>✅ 正常</td></tr>
+                                <tr><td>ESC温度</td><td>22〜28°C</td><td>✅ 正常</td></tr>
+                                <tr><td>D-term</td><td>D=20でノイズ増幅なし</td><td>✅ 正常</td></tr>
+                                <tr><td>ヘッドスピード</td><td>Normal=2590, IU1=3058, IU2=3597</td><td>✅ 安定</td></tr>
+                                <tr><td>サーボ出力</td><td>リミット張り付きなし</td><td>✅ 正常</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- ==================== E8 ==================== -->
+                    <div class="bb-machine-section">
+                        <h4 class="bb-machine-title">🟢 JR E8 — 解析結果（④ Roll I=80成功＋Yawオーバーシュート発見）</h4>
+
+                        <div class="bb-info-box">
+                            <p><strong>フライト内容：</strong>Roll I=88→80の効果確認。IU1/IU2ホバリング・ピルエット。IU1でピルエット後のYawオーバーシュートを発見。</p>
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔍 分析結果</h5>
+
+                        <div class="bb-analysis-box bb-ok">
+                            <strong>Roll I=80は成功：</strong>全プロファイルでError改善。Normal 4.1→3.6（-12%）、IU1 6.9→5.7（-17%）、IU2 5.4→4.9（-9%）。流れの兆候なし。
+                        </div>
+
+                        <div class="bb-analysis-box bb-warning">
+                            <strong>IU1ピルエット後のモワモワ発見：</strong>ピルエット中にYaw I項が-292まで蓄積 → 停止時に+138に跳ね返り → 3-4cmのオーバーシュート。IU2では蓄積が-95と小さいため発生しない（RPMが高くテールが効くため）。
+                        </div>
+
+                        <div class="bb-analysis-box bb-info">
+                            <strong>対処：I-term Relax Cutoff調整：</strong>Yaw Cutoffを10→8に下げてピルエット中のI項蓄積速度を制限。ホバリングには影響せず、ピルエット停止後のモワモワだけを軽減する安全な対処。効果不十分なら6まで下げる余地あり。
+                        </div>
+
+                        <h5 class="bb-subsection-title">📊 Roll I=88 vs I=80 比較（ホバリング Error RMS）</h5>
+                        <table class="bb-table">
+                            <thead><tr><th>モード</th><th>軸</th><th>I=88 (前回)</th><th>I=80 (今回)</th><th>変化</th></tr></thead>
+                            <tbody>
+                                <tr><td>Normal</td><td>Roll</td><td>4.1</td><td>3.6</td><td style="color:green">↓ 改善</td></tr>
+                                <tr><td>Normal</td><td>Pitch</td><td>4.2</td><td>4.2</td><td>→ 同じ</td></tr>
+                                <tr><td>Normal</td><td>Yaw</td><td>3.8</td><td>2.5</td><td style="color:green">↓ 改善</td></tr>
+                                <tr><td>IU1</td><td>Roll</td><td>6.9</td><td>5.7</td><td style="color:green">↓ 改善</td></tr>
+                                <tr><td>IU1</td><td>Pitch</td><td>5.6</td><td>4.6</td><td style="color:green">↓ 改善</td></tr>
+                                <tr><td>IU2</td><td>Roll</td><td>5.4</td><td>4.9</td><td style="color:green">↓ 改善</td></tr>
+                                <tr><td>IU2</td><td>Pitch</td><td>4.8</td><td>4.7</td><td>→ 同じ</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h5 class="bb-subsection-title">📈 グラフデータ（④ E8）</h5>
+                        <div class="bb-graph-grid">
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/e8_005_tracking.png" alt="E8 Tracking" loading="lazy">
+                                <p class="bb-graph-caption">E8 Tracking — Roll I=80, Yaw I=120</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/e8_005_pid_components.png" alt="E8 PID Components" loading="lazy">
+                                <p class="bb-graph-caption">E8 PID Components — I項バランス改善</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/e8_005_roll_i_comparison.png" alt="E8 Roll I Comparison" loading="lazy">
+                                <p class="bb-graph-caption">Roll I=88 vs I=80 — 全プロファイルで改善</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/e8_005_yaw_pirouette_analysis.png" alt="E8 Yaw Pirouette" loading="lazy">
+                                <p class="bb-graph-caption">IU1 Yawオーバーシュート — I項蓄積の可視化</p>
+                            </div>
+                        </div>
+
+                        <h5 class="bb-subsection-title">📋 現在の設定（④確定値）</h5>
+                        <table class="bb-table">
+                            <thead><tr><th></th><th>Profile #1 (Normal)</th><th>Profile #2 (IU1)</th><th>Profile #3 (IU2)</th></tr></thead>
+                            <tbody>
+                                <tr><td>Roll P/I/D/FF</td><td>70 / 100 / 23 / 100</td><td>65 / 80 / 23 / 100</td><td>65 / 80 / 23 / 100</td></tr>
+                                <tr><td>Pitch P/I/D/FF</td><td>145 / 100 / 43 / 100</td><td>140 / 88 / 43 / 100</td><td>140 / 88 / 43 / 100</td></tr>
+                                <tr><td>Yaw P/I/D/Boost</td><td>150 / 200 / 0 / 20</td><td>90 / 120 / 5 / 10</td><td>90 / 120 / 5 / 5</td></tr>
+                                <tr><td>I-term Relax Yaw</td><td>10</td><td>8（変更予定）</td><td>10</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 次回やること -->
+                    <div class="bb-next-section">
                         <h4 class="bb-next-title">📝 次回やること</h4>
                         <ol class="bb-next-list">
-                            <li><strong>Forza450：</strong>IU2 Profile #3のI=52でフライト＆Blackbox取得 → 安定したらD=23に変更</li>
-                            <li><strong>E8：</strong>Yaw I=120でフライト＆Blackbox取得 → 安定したらRoll I=80に変更</li>
-                            <li><strong>RS7 Ultra：</strong>現状維持でデータ取得（比較用ベースライン）</li>
-                            <li>3機種の変更前後データを比較し、最終的なPID値を確定</li>
+                            <li><strong>Forza450：</strong>現在の設定（P=28,I=50,FF=34）で5フライト分のデータ蓄積 → 総合評価</li>
+                            <li><strong>E8：</strong>IU1 Yaw I-term Relax Cutoff=8でピルエットテスト → 不十分なら6に下げる</li>
+                            <li><strong>RS7 Ultra：</strong>5フライト分のベースラインデータ蓄積中 → まとめて解析予定</li>
                         </ol>
                     </div>
                 </div>
