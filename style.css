@@ -8380,6 +8380,14 @@ body.dark-mode .last-visited-indicator .indicator-dismiss {
     box-shadow: 0 5px 15px rgba(123, 31, 162, 0.4);
 }
 
+.edgetx-download-btn.update {
+    background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+}
+
+.edgetx-download-btn.update:hover {
+    box-shadow: 0 5px 15px rgba(46, 125, 50, 0.4);
+}
+
 /* オンラインマニュアル目次 */
 .edgetx-toc {
     background: #fff;
