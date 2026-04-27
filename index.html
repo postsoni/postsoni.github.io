@@ -2566,11 +2566,131 @@
 
                     <!-- 次回やること -->
                     <div class="bb-next-section">
+                        <h4 class="bb-next-title">📝 次回やること → ⑤で実施済み</h4>
+                        <ol class="bb-next-list">
+                            <li><strong>Forza450：</strong>現在の設定（P=28,I=50,FF=34）で5フライト分のデータ蓄積 → 総合評価（継続中）</li>
+                            <li><s><strong>E8：</strong>IU1 Yaw I-term Relax Cutoff=8でピルエットテスト → 不十分なら6に下げる</s> → ✅ ⑤で実施（Cutoff 8/6試行→Yaw PID再構築＋Stop Gain＋FF=80で解決）</li>
+                            <li><strong>RS7 Ultra：</strong>5フライト分のベースラインデータ蓄積中 → まとめて解析予定（継続中）</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- ⑤ 2026年4月27日フライト / 解析 — Yaw再構築＋FF=80の効果 -->
+                <div class="bb-session" id="session-5">
+                    <div class="bb-session-header">
+                        <h3 class="bb-session-title">⑤ 2026年4月27日フライト / 解析 — Yaw再構築＋FF=80（師匠アドバイス）</h3>
+                        <p class="bb-session-meta">風速 4〜5m/s ｜ フライト7回（試行錯誤含む）｜ 設定大幅変更</p>
+                    </div>
+
+                    <div class="bb-analysis-box">
+                        <strong>⑤の背景：</strong>④でIU1ピルエット後のYawオーバーシュート（I項蓄積→跳ね返り）が発覚。I-term Relax Cutoffを8→6と下げたが、今度は「惰性で流れてからスッと止まる」遅延が発生。Cutoffを下げすぎるとI項の復帰速度まで制限されることが判明。<br><br>
+                        体感ベースでの追い込みに切り替え、7フライトの試行錯誤の末、<strong>Yaw PID全体の再構築＋Yaw Stop Gain増加＋師匠のアドバイスによるFF=100→80</strong>の3軸対策でベストな状態に到達した。
+                    </div>
+
+                    <!-- E8 -->
+                    <div class="bb-machine-section">
+                        <h4 class="bb-machine-title">🟢 JR E8 — 解析結果（⑤ Yaw再構築＋FF=80）</h4>
+                        
+                        <div class="bb-analysis-box">
+                            <strong>変更内容（④→⑤）：</strong><br>
+                            <strong>Profile#2 (IU1)：</strong>Yaw P 90→97, Yaw I 120→135, Yaw D 5→12, Roll/Pitch FF 100→80, I-term Relax Yaw 10→8, Yaw Bandwidth 200→250<br>
+                            <strong>Profile#3 (IU2)：</strong>Roll/Pitch FF 100→80, I-term Relax Yaw 6→10（元に戻した）<br>
+                            <strong>Profile#2/#3共通：</strong>CW Yaw Stop Gain →130, CCW Yaw Stop Gain →78
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔑 最大の発見：FF=100→80の効果（師匠のアドバイス）</h5>
+                        <div class="bb-analysis-box">
+                            <strong>IU2 Roll PIDバランスの劇的改善：</strong><br>
+                            FF=100時代ではI項支配度が87%に達し、FFが応答の大部分を担ってP項が仕事をしない不健全な構造だった。FF=80にしたことで：<br>
+                            ・I支配度: 87% → <strong>50%</strong>（劇的改善）<br>
+                            ・FF比率: 6% → <strong>45%</strong>（FFが適切に仕事をするように）<br>
+                            ・P/I/FFの3者が均等に仕事をする健全な構造に変化<br>
+                            ・師匠の「ガクガクしなくてもピルエットフリップができる」アドバイスが数値で裏付けられた<br>
+                            ・体感：「操作しやすい環境になった」
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔑 Yaw Stop Gain +10の効果</h5>
+                        <div class="bb-analysis-box">
+                            <strong>ピルエット停止時のI項跳ね返りが激減：</strong><br>
+                            ・④では -292→+138 の大跳ね返り（swing=430）→ ⑤では最大swing=42程度に激減<br>
+                            ・IU2 Yaw Hover Error: ④=18 → ⑤=<strong>11.1</strong>（38%改善）<br>
+                            ・「ピタッと止まる」体感とデータが完全一致
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔑 「惰性で流れてスッと止まる」の正体</h5>
+                        <div class="bb-analysis-box">
+                            I-term Relax Cutoffを6まで下げた結果、I項の蓄積だけでなく<strong>復帰速度も制限されていた</strong>。スティックを戻してもI項が「待って」状態になり、やっと補正開始→スッと止まる、という遅延ループが発生。Cutoff=8に戻してYaw Stop Gain+10の組み合わせが正解だった。<strong>体感で辿り着いたルートがデータ上も理にかなっている。</strong>
+                        </div>
+
+                        <h5 class="bb-subsection-title">📊 IU2 ホバリング比較（④→⑤）</h5>
+                        <table class="bb-table">
+                            <thead>
+                                <tr><th>指標</th><th>④ (I=80, FF=100)</th><th>⑤ F007 (FF=80, StopGain+10)</th><th>変化</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Roll Hover Error</td><td>4.9</td><td>7.1</td><td>+45%（操作量増加・風の影響）</td></tr>
+                                <tr><td>Pitch Hover Error</td><td>—</td><td>6.6</td><td>—</td></tr>
+                                <tr><td>Yaw Hover Error</td><td>18.0</td><td><strong>11.1</strong></td><td><strong>-38%</strong></td></tr>
+                                <tr><td>Roll I支配度</td><td>74%</td><td><strong>50%</strong></td><td><strong>-24pt</strong></td></tr>
+                                <tr><td>Pirouette I-swing</td><td>430</td><td><strong>42</strong></td><td><strong>-90%</strong></td></tr>
+                            </tbody>
+                        </table>
+
+                        <h5 class="bb-subsection-title">📈 グラフデータ（⑤ E8）</h5>
+                        <div class="bb-graph-grid">
+                            <div class="bb-graph-item">
+                                <img src="blackbox/01_e8_007_tracking.png" alt="E8 Flight007 Tracking" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">E8 Tracking — Flight 007 (Best)</p>
+                            </div>
+                            <div class="bb-graph-item">
+                                <img src="blackbox/02_e8_007_pid_components.png" alt="E8 PID Components" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">E8 PID Components — FF=80でバランス改善</p>
+                            </div>
+                            <div class="bb-graph-item">
+                                <img src="blackbox/03_e8_ff_balance_comparison.png" alt="FF Balance Comparison" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">FF=100 vs FF=80 — I支配度87%→50%</p>
+                            </div>
+                            <div class="bb-graph-item">
+                                <img src="blackbox/04_e8_yaw_hover_timeline.png" alt="Yaw Hover Error Timeline" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">Yaw Hover Error推移 — 7フライトの改善過程</p>
+                            </div>
+                            <div class="bb-graph-item">
+                                <img src="blackbox/05_e8_007_pirouette_analysis.png" alt="Pirouette I-term Analysis" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">ピルエットI項分析 — 跳ね返り激減</p>
+                            </div>
+                            <div class="bb-graph-item">
+                                <img src="blackbox/06_e8_hover_error_all_flights.png" alt="Hover Error All Flights" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">IU2 Hover Error — 全7フライト比較</p>
+                            </div>
+                            <div class="bb-graph-item">
+                                <img src="blackbox/07_e8_iterm_dominance_timeline.png" alt="I-term Dominance Timeline" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">I支配度 vs FF比率の推移 — FF=80で均衡達成</p>
+                            </div>
+                        </div>
+
+                        <h5 class="bb-subsection-title">📋 現在の設定（⑤確定値）</h5>
+                        <table class="bb-table">
+                            <thead>
+                                <tr><th></th><th>Profile #1 (Normal)</th><th>Profile #2 (IU1)</th><th>Profile #3 (IU2)</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Roll P/I/D/FF</td><td>70 / 100 / 23 / 100</td><td>65 / 80 / 23 / <strong>80</strong></td><td>65 / 80 / 23 / <strong>80</strong></td></tr>
+                                <tr><td>Pitch P/I/D/FF</td><td>145 / 100 / 43 / 100</td><td>140 / 88 / 43 / <strong>80</strong></td><td>140 / 88 / 43 / <strong>80</strong></td></tr>
+                                <tr><td>Yaw P/I/D/Boost</td><td>150 / 200 / 0 / 20</td><td><strong>97</strong> / <strong>135</strong> / <strong>12</strong> / 10</td><td>90 / 120 / 5 / 5</td></tr>
+                                <tr><td>CW/CCW Stop Gain</td><td>115 / 95</td><td><strong>130</strong> / <strong>78</strong></td><td><strong>130</strong> / <strong>78</strong></td></tr>
+                                <tr><td>I-term Relax Yaw</td><td>10</td><td><strong>8</strong></td><td>10</td></tr>
+                                <tr><td>Yaw Bandwidth</td><td>200</td><td><strong>250</strong></td><td>250</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 次回やること -->
+                    <div class="bb-next-section">
                         <h4 class="bb-next-title">📝 次回やること</h4>
                         <ol class="bb-next-list">
-                            <li><strong>Forza450：</strong>現在の設定（P=28,I=50,FF=34）で5フライト分のデータ蓄積 → 総合評価</li>
-                            <li><strong>E8：</strong>IU1 Yaw I-term Relax Cutoff=8でピルエットテスト → 不十分なら6に下げる</li>
-                            <li><strong>RS7 Ultra：</strong>5フライト分のベースラインデータ蓄積中 → まとめて解析予定</li>
+                            <li><strong>E8：</strong>IU1で穏やかなフライト（ピルエット少なめ）のデータを5フライト分蓄積 → Yaw P97/I135/D12の正確な効果評価</li>
+                            <li><strong>Forza450：</strong>現在の設定（P=28,I=50,FF=34）で5フライト分のデータ蓄積 → 総合評価（継続中）</li>
+                            <li><strong>RS7 Ultra：</strong>5フライト分のベースラインデータ蓄積中 → まとめて解析予定（継続中）</li>
                         </ol>
                     </div>
                 </div>
@@ -4455,7 +4575,6 @@
     </footer>
 
     <!-- バージョン管理：サイト更新時は v=1.1.1, v=1.1.2 と変更してください -->
-    <script src="app.js?v=2.1.4
-    "></script>
+    <script src="app.js?v=2.1.2"></script>
 </body>
 </html>
