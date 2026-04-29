@@ -2689,7 +2689,165 @@
                         <h4 class="bb-next-title">📝 次回やること</h4>
                         <ol class="bb-next-list">
                             <li><strong>E8：</strong>IU1で穏やかなフライト（ピルエット少なめ）のデータを5フライト分蓄積 → Yaw P97/I135/D12の正確な効果評価</li>
-                            <li><strong>Forza450：</strong>現在の設定（P=28,I=50,FF=34）で5フライト分のデータ蓄積 → 総合評価（継続中）</li>
+                            <li><s><strong>Forza450：</strong>現在の設定（P=28,I=50,FF=34）で5フライト分のデータ蓄積 → 総合評価（継続中）</s> → ✅ ⑥でRotorflight 4.6.0-RC2 Mode 4へ移行、新規ベースライン取得開始</li>
+                            <li><strong>RS7 Ultra：</strong>5フライト分のベースラインデータ蓄積中 → まとめて解析予定（継続中）</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- ⑥ 2026年4月29日フライト / 解析 — Forza450 Rotorflight 4.6.0-RC2 Mode 4 移行 -->
+                <div class="bb-session" id="session-6">
+                    <div class="bb-session-header">
+                        <h3 class="bb-session-title">⑥ 2026年4月29日フライト / 解析 — Forza450 Rotorflight 4.6.0-RC2 Mode 4 移行ベースライン</h3>
+                        <p class="bb-session-meta">微風 ｜ フライト7セッション（合計約14分） ｜ Mode 3 → Mode 4 大規模移行</p>
+                    </div>
+
+                    <div class="bb-analysis-box">
+                        <strong>⑥の背景：</strong>Forza450 を実験機として Rotorflight 4.5.0/Mode 3 → 4.6.0-RC2/Mode 4 への大規模移行を実施。師匠の換算ルール（Pitch B-gain ×10, Roll B-gain ×1/5, Roll D-gain ×1/5, Yaw Precomp Cutoff ×1/10）をConfigurator 2.3.0-RC2 と Firmware 4.6.0-RC2 のソースコードレベルで完全検証してから投入。<br><br>
+                        <strong>Polar Coordinates ON / Cyclic Ring 125%</strong> も同時導入。Rates も 4.5.0時代の単軸操作感を維持しつつ Rotorflight 方式に切替。実機で動くことを最優先に「変更が無いところはそのまま、変更が大きいところだけ慎重に」のハイブリッド戦略で全 Profile に投入。④で確立した P=28/I=50/FF=34 の Mode 3 値は破棄、Mode 4 用の新規ベースラインを取得することが目的。
+                    </div>
+
+                    <!-- ==================== Forza450 ⑤ ==================== -->
+                    <div class="bb-machine-section">
+                        <h4 class="bb-machine-title">🟠 JR Forza450 — 解析結果（⑤ Rotorflight 4.6.0-RC2 Mode 4 移行・初回ベースライン）</h4>
+                        
+                        <div class="bb-analysis-box">
+                            <strong>移行内容（4.5.0/Mode 3 → 4.6.0-RC2/Mode 4）：</strong><br>
+                            <strong>Configurator：</strong>2.2.1 → 2.3.0-RC2 / <strong>Firmware：</strong>4.6.0 stable前のRC2を先行投入<br>
+                            <strong>PID Mode：</strong>3 → <strong>4</strong>（Polar Coordinates ON, Cyclic Ring 125%）<br>
+                            <strong>師匠の換算ルール適用：</strong>Pitch B-gain ×10, Roll B-gain ×1/5, Roll D-gain ×1/5, Yaw Precomp Cutoff ×1/10<br>
+                            <strong>ハイブリッド戦略：</strong>変更が無いところはそのまま、変更が大きいところだけ慎重に。P/I/F は Mode 3 値をほぼ維持、Roll D = 70-80（換算 100 × 0.7-0.8）、Yaw Precomp Cutoff = 80-120（公式 ×1/10 × 0.8）<br>
+                            <strong>Rates：</strong>Rotorflight 方式に切替（4.5.0時代の単軸操作感を維持、Cyclic Ring 125% で斜め時のみ制限）
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔑 移行の成功（コードレベルで裏取り済み）</h5>
+                        <div class="bb-analysis-box">
+                            <strong>Mode 4 のスケーリングはソースコード解析で 100% 正しさを証明：</strong><br>
+                            ・<code>pid.c</code> 行296で <code>Pitch B-gain ×10</code>（公式変更）<br>
+                            ・行241/307で <code>Roll D-gain, Roll B-gain ×0.2 (÷5)</code><br>
+                            ・行483/681で <code>Yaw Precomp Cutoff ×0.1 (÷10)</code><br>
+                            ・行616-624で <code>Roll/Pitch の I, O, F gain を強制同期</code><br>
+                            師匠の換算ルールが論理だけでなくコードでも完全一致 → 安心して実機投入できた
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔑 Roll/Pitch トラッキング：Mode 4 で完璧に追従</h5>
+                        <div class="bb-analysis-box">
+                            <strong>Setpoint vs Gyro の追従性能（Flight 005, 飛行中スティック操作領域のみ）：</strong><br>
+                            ・<strong>Roll RMS Error: 9.6 °/s</strong>（クラス上位水準）<br>
+                            ・<strong>Pitch RMS Error: 7.6 °/s</strong>（極めて優秀）<br>
+                            ・<strong>Yaw RMS Error: 10.7 °/s</strong>（ピルエット成分含む）<br>
+                            Mode 4移行による追従性能の劣化は認められず、むしろ理論通りの応答。換算PIDの正しさが実機データで裏付けられた。
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔑 重要発見：Yaw I-term の HS 依存オフセット</h5>
+                        <div class="bb-analysis-box">
+                            <strong>ホバ中のテール挙動は完璧 (Yaw gyro mean +0.22°/s, std 4.6°/s) だが、Yaw I-term が常に大きく負方向（-200〜-400）に蓄積：</strong><br>
+                            ・NORMAL帯 (2400-2700 RPM)：I-term中央値 <strong>-287</strong><br>
+                            ・IU1帯 (2900-3200 RPM)：中央値 <strong>-266</strong><br>
+                            ・IU2帯 (3400-3700 RPM)：中央値 <strong>-226</strong><br>
+                            Forza450 は右回りローターで反トルクが機首を左に振る。それを Yaw Precomp（Collective FF Gain = 40）と I-term の協調で打ち消しているが、<strong>Precomp の補償が約25%不足し、I-term が残り75%を肩代わりしている</strong>状態。HS が高いほど Precomp のスケーリング補正が効いて I-term の負担が減っている挙動と整合的。
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔑 体感の症状とデータの一致</h5>
+                        <div class="bb-analysis-box">
+                            <strong>「IU1/IU2 でスロットルを上げた時にほんの少し機首が左に流れる」という体感：</strong><br>
+                            ・Blackbox 1858 イベントの平均波形で、<strong>コレクティブ急上昇 +116ms 後に Yaw gyro が +10.5°/s（機首左回り）にピーク</strong><br>
+                            ・体感・データ・物理（右回りローターの反トルク = 左回りモーメント）が完全一致<br>
+                            ・I-term は遅い（応答が間に合わない）ため瞬間的に流れる → Collective Feedforward Gain で先回り補正する必要あり
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔑 ESCガバナーは完璧 — Rotorflightガバナー移行は急がない</h5>
+                        <div class="bb-analysis-box">
+                            <strong>HOBBYWING Platinum 60A V4 Store Governor の精度：</strong><br>
+                            ・NORMAL: 約2580 RPM（目標2600に対し ±20 RPM）<br>
+                            ・IU1: 約3070 RPM<br>
+                            ・IU2: 約3580 RPM<br>
+                            各段階の切替は段差なくスムース、ホールド精度極めて高い。<code>gov_mode = ELECTRIC</code> への移行は急ぐ必要なし。
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔑 移行学習曲線：操縦の落ち着き</h5>
+                        <div class="bb-analysis-box">
+                            <strong>5フライト（F003-F007）でヘッドスピード変動係数が改善：</strong><br>
+                            F003: 20.3% → F004: 23.7% → F005: 16.9% → F006: 17.3% → F007: 15.7%<br>
+                            新しいフィーリングに慣れる過程が数値で見える。トラッキング誤差も F005 でベスト（Roll 9.6, Pitch 7.6 °/s）。
+                        </div>
+
+                        <h5 class="bb-subsection-title">📊 Mode 4 移行ベースライン サマリ（Flight 005）</h5>
+                        <table class="bb-table">
+                            <thead>
+                                <tr><th>指標</th><th>Flight 005 結果</th><th>判定</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Roll Tracking RMS</td><td>9.6 °/s</td><td>✅ 優秀</td></tr>
+                                <tr><td>Pitch Tracking RMS</td><td>7.6 °/s</td><td>✅ 優秀</td></tr>
+                                <tr><td>Yaw Tracking RMS</td><td>10.7 °/s</td><td>✅ 良好</td></tr>
+                                <tr><td>HeadSpeed CV</td><td>16.9%</td><td>✅ 安定</td></tr>
+                                <tr><td>Vbat min（3S）</td><td>10.48 V (3.49 V/cell)</td><td>✅ 余裕あり</td></tr>
+                                <tr><td>ESC温度 max</td><td>38°C</td><td>✅ 低発熱</td></tr>
+                                <tr><td>定常発振</td><td>未検出（0.1%以下）</td><td>✅ 健全</td></tr>
+                                <tr><td>Yaw I-term中央値（NORMAL）</td><td>-287</td><td>⚠ Collective FF不足</td></tr>
+                                <tr><td>Collective急上昇後 Yaw peak</td><td>+10.5 °/s</td><td>⚠ 改善余地</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h5 class="bb-subsection-title">📈 グラフデータ（⑤ Forza450）</h5>
+                        <div class="bb-graph-grid">
+                            <div class="bb-graph-item">
+                                <img src="blackbox/01_forza450_005_tracking.png" alt="Forza450 Flight 005 Tracking" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">Tracking — Flight 005 (Best Baseline)</p>
+                            </div>
+                            <div class="bb-graph-item">
+                                <img src="blackbox/02_forza450_005_pid_components.png" alt="Forza450 PID Components" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">PID Components — Mode 4 baseline (Yaw I が常時 -263)</p>
+                            </div>
+                            <div class="bb-graph-item">
+                                <img src="blackbox/03_forza450_yaw_iterm_hs.png" alt="Yaw I-term HS Dependency" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">Yaw I-term の HS 段階別オフセット — 重要発見</p>
+                            </div>
+                            <div class="bb-graph-item">
+                                <img src="blackbox/04_forza450_collective_yaw_response.png" alt="Collective Yaw Response" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">Collective急上昇 → Yaw応答 — 体感の根拠</p>
+                            </div>
+                            <div class="bb-graph-item">
+                                <img src="blackbox/05_forza450_psd_comparison.png" alt="PSD Comparison" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">周波数解析 — 全5フライト × 3軸 PSD比較</p>
+                            </div>
+                            <div class="bb-graph-item">
+                                <img src="blackbox/06_forza450_governor_stability.png" alt="ESC Governor Stability" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">ESCガバナー精度 — ±20rpmで NORMAL/IU1/IU2 を保持</p>
+                            </div>
+                            <div class="bb-graph-item">
+                                <img src="blackbox/07_forza450_tracking_rms_timeline.png" alt="RMS Timeline" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">学習曲線 — F003〜F007 の RMS推移と HS安定性</p>
+                            </div>
+                        </div>
+
+                        <h5 class="bb-subsection-title">📋 現在の設定（⑤ベースライン値・フライト後 Collective FF=48 適用済み）</h5>
+                        <table class="bb-table">
+                            <thead>
+                                <tr><th></th><th>Profile #1 (NORMAL)</th><th>Profile #2 (IU1 / スポーツ)</th><th>Profile #3 (IU2 / 3D)</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Roll P/I/D/FF/B</td><td>42 / 60 / 80 / 55 / 0</td><td>40 / 60 / 80 / 50 / 0</td><td>28 / 40 / 70 / 34 / 0</td></tr>
+                                <tr><td>Pitch P/I/D/FF/B</td><td>42 / 60 / 20 / 55 / 0</td><td>40 / 60 / 20 / 50 / 0</td><td>30 / 40 / 20 / 34 / 0</td></tr>
+                                <tr><td>Yaw P/I/D/FF/B</td><td>95 / 110 / 5 / 0 / 0</td><td>100 / 108 / 7 / 0 / 0</td><td>70 / 90 / 7 / 0 / 0</td></tr>
+                                <tr><td>CW / CCW Stop Gain</td><td>115 / 95</td><td>95 / 75</td><td>85 / 65</td></tr>
+                                <tr><td>Yaw Precomp Cutoff</td><td>80</td><td>96</td><td>120</td></tr>
+                                <tr><td>Cyclic FF Gain</td><td>10</td><td>10</td><td>10</td></tr>
+                                <tr><td>Collective FF Gain</td><td>40</td><td><strong>48 (40→48)</strong></td><td><strong>48 (40→48)</strong></td></tr>
+                                <tr><td>共通設定</td><td colspan="3">PID Mode = 4 / Cyclic Ring = 125 / Polar Coordinates = ON</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 次回やること -->
+                    <div class="bb-next-section">
+                        <h4 class="bb-next-title">📝 次回やること</h4>
+                        <ol class="bb-next-list">
+                            <li><strong>Forza450：</strong>Collective FF Gain 40→48 の効果検証（Profile #2/#3）→ Yaw I-term 中央値が -250 から -150 程度に近づくか確認 → 必要に応じて 55、63 へ段階的調整</li>
+                            <li><strong>Forza450：</strong>テレメトリ Vcel 警告閾値を 3.50 V/cell に引き上げ（IU2 全力運用の安全マージン確保）</li>
+                            <li><strong>E8：</strong>IU1で穏やかなフライト（ピルエット少なめ）のデータを5フライト分蓄積 → Yaw P97/I135/D12の正確な効果評価（継続中）</li>
+                            <li><strong>E8 / RS7 Ultra：</strong>Forza450 の手順を踏襲して Mode 4 移行（4.6.0 stable リリース後）→ 機体ごとの Collective FF Gain 適正値を比較</li>
                             <li><strong>RS7 Ultra：</strong>5フライト分のベースラインデータ蓄積中 → まとめて解析予定（継続中）</li>
                         </ol>
                     </div>
