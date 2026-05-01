@@ -2897,13 +2897,13 @@
                             <strong>体感「ゆったりしたオーバーシュート」の正体：</strong><br>
                             ・Profile #2: linger平均59 deg/s、最大203 deg/s、減衰38ms<br>
                             ・Profile #3: linger平均58 deg/s、最大111 deg/s、減衰39ms<br>
-                            <strong>主因：Yaw I=135（#2）/120（#3）が動的応答に影響、止め際にI項が指す方向へオーバーシュート。</strong>F3C的優雅さでは許容、F3N的キレには不足。
+                            <strong>主因：Yaw I=135（#2）/120（#3）が動的応答に影響、止め際にI項が指す方向へオーバーシュート。</strong>スポーツフライト的優雅さでは許容、軽い3D的キレには不足。
                         </div>
 
                         <h5 class="bb-subsection-title">📋 次回フライト用 中間ステップ調整</h5>
                         <table class="bb-table">
                             <thead>
-                                <tr><th>項目</th><th>Profile #1</th><th>Profile #2 (F3C)</th><th>Profile #3 (F3N練習)</th></tr>
+                                <tr><th>項目</th><th>Profile #1</th><th>Profile #2 (スポーツフライト)</th><th>Profile #3 (軽い3D練習)</th></tr>
                             </thead>
                             <tbody>
                                 <tr><td>Roll P</td><td>75 維持</td><td>65 → <strong>70</strong> (+5)</td><td>65 → <strong>70</strong> (+5)</td></tr>
@@ -2917,7 +2917,7 @@
                             </tbody>
                         </table>
                         <p style="font-size: 0.9em; opacity: 0.85;">
-                            <strong>設計思想：</strong>Profile #2 は F3C的優雅さを保つ最小変更（+3〜+5刻み）。Profile #3 は F3N向けに +7刻みの中間ステップで余裕を測る。Yaw I は両プロファイルで「優雅さの溜め」として残す。Roll P を +5 に抑えたのは Roll軸ハンチング警戒（ヘリ特有のローター歳差遅延30ms@2240rpm）。
+                            <strong>設計思想：</strong>Profile #2 は スポーツフライト的優雅さを保つ最小変更（+3〜+5刻み）。Profile #3 は 軽い3D向けに +7刻みの中間ステップで余裕を測る。Yaw I は両プロファイルで「優雅さの溜め」として残す。Roll P を +5 に抑えたのは Roll軸ハンチング警戒（ヘリ特有のローター歳差遅延30ms@2240rpm）。
                         </p>
 
                         <h5 class="bb-subsection-title">📈 グラフデータ（⑦ E8 #007）</h5>
@@ -2958,8 +2958,8 @@
                         <h4 class="bb-machine-title">🔵 GOOSKY RS7 Ultra — 解析結果（⑦ #002 / 自由飛行・性能優秀機の本領発揮）</h4>
 
                         <div class="bb-analysis-box">
-                            <strong>フライトサマリ：</strong>3機の中で最も大きく、最も精密なフライト。Profile #2/#3 を主体に F3N寄りの演技を実施。<strong>3機の中で唯一 headspeed が完全に正常取得</strong> され、ESCガバナー（HOBBYWING 260A-HV V5 Storeガバナー）の異次元の安定性が判明。<br><br>
-                            <strong>ぽすとそにさんの体感：</strong>「全体的に E8 より良い飛び方」「Profile #3 のピルフリと縦メトロノームで反トルク方向に1〜2cm回る（F3N的にNG）」「Profile #3 の CW Yaw Stop=115 は高回転による連続ハンチング防止策」
+                            <strong>フライトサマリ：</strong>3機の中で最も大きく、最も精密なフライト。Profile #2/#3 を主体に 軽い3D寄りの演技を実施。<strong>3機の中で唯一 headspeed が完全に正常取得</strong> され、ESCガバナー（HOBBYWING 260A-HV V5 Storeガバナー）の異次元の安定性が判明。<br><br>
+                            <strong>ぽすとそにさんの体感：</strong>「全体的に E8 より良い飛び方」「Profile #3 のピルフリと縦メトロノームで反トルク方向に1〜2cm回る（軽い3D的にNG）」「Profile #3 の CW Yaw Stop=115 は高回転による連続ハンチング防止策」
                         </div>
 
                         <h5 class="bb-subsection-title">🔑 ESCガバナー精度：3機中最高、CV 1.20%の異次元</h5>
@@ -2994,7 +2994,7 @@
                         <h5 class="bb-subsection-title">📋 次回フライト用 中間ステップ調整</h5>
                         <table class="bb-table">
                             <thead>
-                                <tr><th>項目</th><th>Profile #2 (緩いF3C)</th><th>Profile #3 (F3N・キレ重視)</th></tr>
+                                <tr><th>項目</th><th>Profile #2 (緩いスポーツフライト)</th><th>Profile #3 (軽い3D・キレ重視)</th></tr>
                             </thead>
                             <tbody>
                                 <tr><td>Roll P</td><td>65 → <strong>70</strong> (+5)</td><td>65 → <strong>70</strong> (+5)</td></tr>
@@ -3007,7 +3007,7 @@
                             </tbody>
                         </table>
                         <p style="font-size: 0.9em; opacity: 0.85;">
-                            <strong>設計思想：</strong>Profile #2 は F3C的優雅さを保つ最小変更。<strong>Profile #3 は Collective FF を +7 で攻める</strong>と同時に、Stop Gainを +10 で攻める。「Collective FF が効くなら Stop Gain も上げられる」という補完関係を活用。Yaw I は維持で「優雅さの溜め」を残す。
+                            <strong>設計思想：</strong>Profile #2 は スポーツフライト的優雅さを保つ最小変更。<strong>Profile #3 は Collective FF を +7 で攻める</strong>と同時に、Stop Gainを +10 で攻める。「Collective FF が効くなら Stop Gain も上げられる」という補完関係を活用。Yaw I は維持で「優雅さの溜め」を残す。
                         </p>
 
                         <h5 class="bb-subsection-title">📈 グラフデータ（⑦ RS7 Ultra #002）</h5>
@@ -3069,7 +3069,7 @@
                             ・Forza450 全プロファイルで Pitch P_99% / I_99% peak 比 = <strong>0.04〜0.05</strong><br>
                             ・E8 (0.20〜0.31)、RS7 Ultra (0.14〜0.31) と比較して圧倒的に低い<br>
                             ・健全ラインは0.30〜0.80<br>
-                            <strong>Pitch P が "飾り" になっていて、I項とF項だけで動いている状態。</strong>「縦のキレが出ない」「F3N的に不足」の根本原因。Profile #3 で Pitch P=28 → 32 に上げたが、まだ不十分。
+                            <strong>Pitch P が "飾り" になっていて、I項とF項だけで動いている状態。</strong>「縦のキレが出ない」「軽い3D的に不足」の根本原因。Profile #3 で Pitch P=28 → 32 に上げたが、まだ不十分。
                         </div>
 
                         <h5 class="bb-subsection-title">🔑 Cross-Coupling 設計の見直し（最初期から触っていなかった値）</h5>
@@ -3084,7 +3084,7 @@
                         <h5 class="bb-subsection-title">📋 次回フライト用 中間ステップ調整 — Forza450 大幅再設計</h5>
                         <table class="bb-table">
                             <thead>
-                                <tr><th>項目</th><th>Profile #1 (ホバ)</th><th>Profile #2 (スポーツF3C)</th><th>Profile #3 (3D / F3N)</th></tr>
+                                <tr><th>項目</th><th>Profile #1 (ホバ)</th><th>Profile #2 (スポーツフライト)</th><th>Profile #3 (軽い3D)</th></tr>
                             </thead>
                             <tbody>
                                 <tr><td>Roll P/I/D/F/B</td><td>42/60/<strong>70</strong>/55/2</td><td><strong>36</strong>/60/<strong>70</strong>/40/0</td><td><strong>27</strong>/40/<strong>70</strong>/30/0</td></tr>
@@ -3234,7 +3234,7 @@
                                 <tr><td>Roll 追従誤差 (#3)</td><td>29.1%</td><td>31.3%</td><td>56.6% ⚠️ Pが眠ってる</td></tr>
                                 <tr><td>Pitch P/I peak比 (#3)</td><td>0.20</td><td>0.31</td><td><strong>0.05</strong> ❌ 眠ってる</td></tr>
                                 <tr><td>Yaw流れ最大 (#3)</td><td>59 deg/s</td><td>99 deg/s</td><td><strong>189 deg/s</strong> ⚠️</td></tr>
-                                <tr><td>主課題</td><td>F3N向けキレ追加、配線修理</td><td>ピルフリ・縦メトロノーム時のFF不足</td><td>ハンチング根絶、Pitch P 活性化</td></tr>
+                                <tr><td>主課題</td><td>軽い3D向けキレ追加、配線修理</td><td>ピルフリ・縦メトロノーム時のFF不足</td><td>ハンチング根絶、Pitch P 活性化</td></tr>
                                 <tr><td>主収穫</td><td>P項眠りの定量化、I項暴走否定</td><td>Yaw I の DCオフセット再確認</td><td><strong>13.65Hz共振の特定</strong></td></tr>
                             </tbody>
                         </table>
@@ -4696,7 +4696,7 @@
                             <span class="support-icon">🎓</span>
                             <div>
                                 <h4>操縦技術の向上</h4>
-                                <p>私もまだ若輩者なので、全ての操作ができるわけではありません。しかし、タミグラやF3A、F3Cについては少々理解のある方かと思われます。（操縦技術は大目に見ていただけると助かります。）</p>
+                                <p>私もまだ若輩者なので、全ての操作ができるわけではありません。しかし、タミグラやF3A、スポーツフライトについては少々理解のある方かと思われます。（操縦技術は大目に見ていただけると助かります。）</p>
                                 <p class="support-detail">その人に合った最適な練習方法や、欲しい商品と自分の手持ちのラジコンを比較しながらの向上練習or商品の購入順番の最適化をAIを活用しながら、最後に笑顔になれるように尽力します。</p>
                                 <div class="support-conversation">
                                     <p class="conversation-example">※ラジコン飛行機とラジコンカー、どちらも好きだけど、どちらも中途半端だからどのようにそれぞれ時間を割くのが自分には向いてたりするんですか？</p>
