@@ -2853,6 +2853,433 @@
                     </div>
                 </div>
 
+
+                <!-- ⑦ 2026年5月1日フライト / 解析 — 3機種総合解析 + Forza450 ハンチング真因特定 -->
+                <div class="bb-session" id="session-7">
+                    <div class="bb-session-header">
+                        <h3 class="bb-session-title">⑦ 2026年5月1日フライト / 解析 — 3機種総合解析 + Forza450 ハンチング真因13.65Hz共振の発見</h3>
+                        <p class="bb-session-meta">微風 ｜ 3機種フルフライト ｜ 各機Profile #1～#3を全段階使用 ｜ Rotorflight 4.6.0-RC2 / Configurator 2.3.0-RC2 (3機統一)</p>
+                    </div>
+
+                    <div class="bb-analysis-box">
+                        <strong>⑦の背景：</strong>2026年5月1日、E8 / RS7 Ultra / Forza450 の3機を同日に総合フライト。すべて Rotorflight 4.6.0-RC2 + Mode 4 環境で運用、それぞれの機体特性を体系的に比較できる初の機会となった。<br><br>
+                        <strong>本日最大の収穫：</strong>Forza450 が以前から悩まされていた <strong>「強い操作後の Roll 軸ハンチング」</strong> の真因を、Blackbox から <strong>13.65Hz のメインローター共振（51.2Hz の3.75次サブハーモニクス）</strong> として特定。これに対応する <strong>三重保護（Roll D 80→70、Roll Bandwidth 70→50、Roll D-term Cutoff 15-20→12）</strong> を全プロファイルに実装。<br><br>
+                        <strong>解析方針：</strong>各機ごとに「全体総評 → PID/FF/B割合の妥当性 → Yaw問題深掘り」の順で進め、最後に3機比較で全体像を把握。ぽすとそにさんの体感を起点に Blackbox で答え合わせする手法を継続。
+                    </div>
+
+                    <!-- ============== E8 #007 ============== -->
+                    <div class="bb-machine-section">
+                        <h4 class="bb-machine-title">🟢 JR E8 — 解析結果（⑦ #007 / Mode 4 + Profile別実機ベースライン）</h4>
+
+                        <div class="bb-analysis-box">
+                            <strong>フライトサマリ：</strong>381秒（6分20秒）の連続フライト。Profile #1 (33s) → #2 (44s) → #3 (134s・メイン) → #2 (63s) → #1 (27s) と段階的に試した教科書的なフライトプロファイル。3つのヘッドスピードバンドが明確に分離（637, 750, 900）。<br><br>
+                            <strong>ぽすとそにさんの体感：</strong>「とても素直で言う通りに動いている」「I項だけ異様に働いてP項が仕事してない可能性」「ヨーの止まりが弱い、ゆったりしたオーバーシュート」「IU2で急コレクティブ時にテール反トルク方向に流れる」
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔑 全体総評：素直さは本物、I項暴走はなし、D項振動もなし</h5>
+                        <div class="bb-analysis-box">
+                            <strong>仮説検証結果：</strong><br>
+                            ・「I項暴走？」 → ❌ 健全。F項（FF=80）が支配的に駆動 → I項が定常誤差を埋める Mode 4 の理想動作<br>
+                            ・「D項が振動原因？」 → ❌ FFTで200Hz超のノイズはわずか0.3〜6.7%、模範的<br>
+                            ・「P項が眠っている？」 → ⚠️ 部分的に正しい：Roll P/I peak比 0.04〜0.16（健全は0.3〜0.8）<br>
+                            ぽすとそにさんの体感「素直」が嘘でない理由は、<strong>F=80 が強力に仕事してP不足を補ってくれている</strong>から。
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔑 ESCガバナー安定性（headspeed=0問題の判明）</h5>
+                        <div class="bb-analysis-box">
+                            <strong>E8固有の配線問題が判明：</strong>Blackboxの <code>headspeed</code> フィールドが0のまま記録されない。2.2.1時代は反映されていたが、2.3.0-RC2 では完全停止。motor[0]も完全に固定値。<br><br>
+                            <strong>代替手段：</strong>ジャイロのローター2x周波数からRPMを間接推定 → Profile #1: 1554rpm (CV 4.34%), Profile #2: 1862rpm (CV 4.93%), Profile #3: 2252rpm (CV 3.22%)。<br>
+                            <strong>判断：</strong>NEXUS-XRガバナー（gov_mode=ELECTRIC）への移行は <strong>RPM正常取得が前提</strong> なので、E8では時期尚早。当面 ESC Storeガバナーで運用継続、4.6.0正式版リリース後に配線確認を実施。
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔑 Yaw止め時のオーバーシュート定量化</h5>
+                        <div class="bb-analysis-box">
+                            <strong>体感「ゆったりしたオーバーシュート」の正体：</strong><br>
+                            ・Profile #2: linger平均59 deg/s、最大203 deg/s、減衰38ms<br>
+                            ・Profile #3: linger平均58 deg/s、最大111 deg/s、減衰39ms<br>
+                            <strong>主因：Yaw I=135（#2）/120（#3）が動的応答に影響、止め際にI項が指す方向へオーバーシュート。</strong>F3C的優雅さでは許容、F3N的キレには不足。
+                        </div>
+
+                        <h5 class="bb-subsection-title">📋 次回フライト用 中間ステップ調整</h5>
+                        <table class="bb-table">
+                            <thead>
+                                <tr><th>項目</th><th>Profile #1</th><th>Profile #2 (F3C)</th><th>Profile #3 (F3N練習)</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Roll P</td><td>75 維持</td><td>65 → <strong>70</strong> (+5)</td><td>65 → <strong>70</strong> (+5)</td></tr>
+                                <tr><td>Pitch P</td><td>145 維持</td><td>140 → <strong>145</strong> (+5)</td><td>140 → <strong>147</strong> (+7)</td></tr>
+                                <tr><td>Yaw P</td><td>150 維持</td><td>97 → <strong>102</strong> (+5)</td><td>90 → <strong>97</strong> (+7)</td></tr>
+                                <tr><td>Yaw D</td><td>0 維持</td><td>12 維持</td><td>5 → <strong>3</strong> (-2)</td></tr>
+                                <tr><td>CW Yaw Stop</td><td>150 維持</td><td>137 → <strong>140</strong> (+3)</td><td>130 → <strong>137</strong> (+7)</td></tr>
+                                <tr><td>CCW Yaw Stop</td><td>130 維持</td><td>117 → <strong>120</strong> (+3)</td><td>110 → <strong>117</strong> (+7)</td></tr>
+                                <tr><td>Collective FF</td><td>23 維持</td><td>23 → <strong>28</strong> (+5)</td><td>23 → <strong>28</strong> (+5)</td></tr>
+                                <tr><td>Cyclic FF</td><td>3 維持</td><td>3 維持</td><td>10 維持</td></tr>
+                            </tbody>
+                        </table>
+                        <p style="font-size: 0.9em; opacity: 0.85;">
+                            <strong>設計思想：</strong>Profile #2 は F3C的優雅さを保つ最小変更（+3〜+5刻み）。Profile #3 は F3N向けに +7刻みの中間ステップで余裕を測る。Yaw I は両プロファイルで「優雅さの溜め」として残す。Roll P を +5 に抑えたのは Roll軸ハンチング警戒（ヘリ特有のローター歳差遅延30ms@2240rpm）。
+                        </p>
+
+                        <h5 class="bb-subsection-title">📈 グラフデータ（⑦ E8 #007）</h5>
+                        <div class="bb-graph-grid">
+                            <div class="bb-graph-item">
+                                <img src="blackbox/session7/e8_007_g1.png" alt="E8 #007 Overview" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">フライト全体像 — 3プロファイル試験の段階的な切替</p>
+                            </div>
+                            <div class="bb-graph-item">
+                                <img src="blackbox/session7/e8_007_g2.png" alt="E8 PID Contribution" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">PID寄与率 — F項が支配的、P項は小さめ</p>
+                            </div>
+                            <div class="bb-graph-item">
+                                <img src="blackbox/session7/e8_007_g3.png" alt="E8 Tracking" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">Setpoint vs Gyro 追従性（Profile #3 / 10秒窓）</p>
+                            </div>
+                            <div class="bb-graph-item">
+                                <img src="blackbox/session7/e8_007_g4.png" alt="E8 D-term FFT" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">D項FFT — 振動増幅なし（200Hz超ほぼゼロ）</p>
+                            </div>
+                            <div class="bb-graph-item">
+                                <img src="blackbox/session7/e8_007_g5.png" alt="E8 Yaw Drift" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">急コレクティブ→ヨー流れ — 純粋イベント抽出</p>
+                            </div>
+                            <div class="bb-graph-item">
+                                <img src="blackbox/session7/e8_007_g6.png" alt="E8 Yaw Stop" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">ヨー止め時オーバーシュート（lingering 残り回転）</p>
+                            </div>
+                            <div class="bb-graph-item">
+                                <img src="blackbox/session7/e8_007_g7.png" alt="E8 RPM Stability" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">RPM安定性 — ジャイロ振動からの間接推定</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ============== RS7 Ultra #002 ============== -->
+                    <div class="bb-machine-section">
+                        <h4 class="bb-machine-title">🔵 GOOSKY RS7 Ultra — 解析結果（⑦ #002 / 自由飛行・性能優秀機の本領発揮）</h4>
+
+                        <div class="bb-analysis-box">
+                            <strong>フライトサマリ：</strong>3機の中で最も大きく、最も精密なフライト。Profile #2/#3 を主体に F3N寄りの演技を実施。<strong>3機の中で唯一 headspeed が完全に正常取得</strong> され、ESCガバナー（HOBBYWING 260A-HV V5 Storeガバナー）の異次元の安定性が判明。<br><br>
+                            <strong>ぽすとそにさんの体感：</strong>「全体的に E8 より良い飛び方」「Profile #3 のピルフリと縦メトロノームで反トルク方向に1〜2cm回る（F3N的にNG）」「Profile #3 の CW Yaw Stop=115 は高回転による連続ハンチング防止策」
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔑 ESCガバナー精度：3機中最高、CV 1.20%の異次元</h5>
+                        <div class="bb-analysis-box">
+                            <strong>HOBBYWING 260A-HV V5 Store Governor の実測精度：</strong><br>
+                            ・Profile #2: 実測 2022 rpm（目標 1900）、CV <strong>1.36%</strong><br>
+                            ・Profile #3: 実測 2230 rpm（目標 2240）、CV <strong>1.20%</strong> ← <strong>3機中最高</strong><br>
+                            ・Profile #2/#3 で <strong>±50rpm 以内に99%収まる</strong>異次元の安定性<br>
+                            E8 (CV 4.93%) と比較して3〜4倍精密。電流容量の余裕（260A vs 130A）と機体慣性の大きさが効いている。
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔑 Yaw I項のDCオフセット — 正常な物理現象</h5>
+                        <div class="bb-analysis-box">
+                            <strong>過去議論にあった「RS7 のYaw I-term DCオフセット」の最新確認：</strong><br>
+                            ・Profile #1 安定ホバ中の Yaw I項 mean = <strong>-497</strong>（ゼロから大きく負側）<br>
+                            ・Profile #3 安定ホバ中の Yaw I項 mean = <strong>-494</strong><br>
+                            ・ピルフリ中 (CW回転) の Yaw I項 mean = <strong>-740 〜 -1004</strong><br>
+                            これは<strong>メインローター反トルク補正の物理現象</strong>。「異常」ではなく「正常な動作」。ピルフリで深まるのも反トルク負荷増のため。<br>
+                            <strong>判断：Yaw I は維持、変更不要（過去判断の再確認）</strong>
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔑 Profile #3 のピルフリ・縦メトロノーム問題</h5>
+                        <div class="bb-analysis-box">
+                            <strong>体感「反トルク方向に1〜2cm流れる」のデータ裏付け：</strong><br>
+                            ・純粋コレクティブ急上昇イベント 114件検出<br>
+                            ・<strong>Profile #3 反トルク方向流れ最大 99 deg/s</strong>（t=250.3s, dColl=-4000）<br>
+                            ・Profile #2 では最大53 deg/s ← #3が顕著に大きい<br>
+                            ・ピルフリ中の追従誤差最大 99 deg/s（t=250.6s）<br>
+                            <strong>主因切り分け：Collective FF=15が不足。Stop Gainではなく FF を上げるのが正解。</strong>
+                        </div>
+
+                        <h5 class="bb-subsection-title">📋 次回フライト用 中間ステップ調整</h5>
+                        <table class="bb-table">
+                            <thead>
+                                <tr><th>項目</th><th>Profile #2 (緩いF3C)</th><th>Profile #3 (F3N・キレ重視)</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Roll P</td><td>65 → <strong>70</strong> (+5)</td><td>65 → <strong>70</strong> (+5)</td></tr>
+                                <tr><td>Pitch P</td><td>105 維持</td><td>100 → <strong>105</strong> (+5)</td></tr>
+                                <tr><td>Yaw P</td><td>105 維持</td><td>100 維持</td></tr>
+                                <tr><td>Yaw I</td><td>100 維持</td><td>80 維持</td></tr>
+                                <tr><td>CW Yaw Stop</td><td>130 維持</td><td>115 → <strong>125</strong> (+10) ⚠️ハンチング警戒解除</td></tr>
+                                <tr><td>CCW Yaw Stop</td><td>110 維持</td><td>95 → <strong>105</strong> (+10)</td></tr>
+                                <tr><td>Collective FF</td><td>15 → <strong>18</strong> (+3)</td><td>15 → <strong>22</strong> (+7) ⭐主因対策</td></tr>
+                            </tbody>
+                        </table>
+                        <p style="font-size: 0.9em; opacity: 0.85;">
+                            <strong>設計思想：</strong>Profile #2 は F3C的優雅さを保つ最小変更。<strong>Profile #3 は Collective FF を +7 で攻める</strong>と同時に、Stop Gainを +10 で攻める。「Collective FF が効くなら Stop Gain も上げられる」という補完関係を活用。Yaw I は維持で「優雅さの溜め」を残す。
+                        </p>
+
+                        <h5 class="bb-subsection-title">📈 グラフデータ（⑦ RS7 Ultra #002）</h5>
+                        <div class="bb-graph-grid">
+                            <div class="bb-graph-item">
+                                <img src="blackbox/session7/rs7_002_g1.png" alt="RS7 Overview" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">フライト全体像 — headspeed正常取得 + Yaw I項のDCオフセット可視化</p>
+                            </div>
+                            <div class="bb-graph-item">
+                                <img src="blackbox/session7/rs7_002_g2.png" alt="RS7 PID Contribution" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">PID寄与率 — Yaw P/I peak比0.68 (Profile #2)、健全</p>
+                            </div>
+                            <div class="bb-graph-item">
+                                <img src="blackbox/session7/rs7_002_g3.png" alt="RS7 Tracking Pirofli" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">ピルフリ集中時間帯 (t=230〜250s) の追従性</p>
+                            </div>
+                            <div class="bb-graph-item">
+                                <img src="blackbox/session7/rs7_002_g4.png" alt="RS7 D-term FFT" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">D項FFT — Roll D=100運用でも振動なし</p>
+                            </div>
+                            <div class="bb-graph-item">
+                                <img src="blackbox/session7/rs7_002_g5.png" alt="RS7 Yaw Drift P3" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">Profile #3 急コレ→テール流れ最大99deg/s</p>
+                            </div>
+                            <div class="bb-graph-item">
+                                <img src="blackbox/session7/rs7_002_g6.png" alt="RS7 Pirofli Detail" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">ピルフリ詳細解析 — Yaw I項が-1000近くまで深まる</p>
+                            </div>
+                            <div class="bb-graph-item">
+                                <img src="blackbox/session7/rs7_002_g7.png" alt="RS7 HS Stability" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">HS安定性 — ±50rpm以内に99%収まる異次元の精度</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ============== Forza450 #004 ============== -->
+                    <div class="bb-machine-section">
+                        <h4 class="bb-machine-title">🟠 JR Forza450 — 解析結果（⑦ #004 / ほぼ完璧フライト・課題抽出）</h4>
+
+                        <div class="bb-analysis-box">
+                            <strong>フライトサマリ：</strong>270秒のフライト。Profile #1〜#3を全段階使用、IU1とIU2をやや IU1 多めで運用。3機中ヘッドスピード安定性最高（Profile #3: CV 1.10%）。<br><br>
+                            <strong>ぽすとそにさんの体感：</strong>「Profile #3 のピルフリ・縦メトロノームで反トルク方向に約15度瞬間的に回って戻る」「他の2機種よりも大幅に反トルク方向に回っている」「Roll方向にだけハンチングが出る、Roll P下げてもギリギリ」「キレを出したいけど出ない」<br><br>
+                            <strong>除外区間：</strong>t=145〜155s と t=250.8s〜は緊張による指の震えのため除外して解析。
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔑 ピルエット中ヨー19度オーバーシュートの正体</h5>
+                        <div class="bb-analysis-box">
+                            <strong>体感「角度15度ぐらい瞬間的に回って戻る」の特定：</strong><br>
+                            ・<strong>t=132.2秒</strong>のピルエット中（433 deg/s 右回転、894ms継続）<br>
+                            ・<strong>ヨー追従誤差最大 +189 deg/s、期間中の角度ずれ +19.4度</strong> ← 体感「15度」の正体<br>
+                            ・<strong>コレクティブ変動はゼロ</strong> = Collective FF では解決しない！<br>
+                            ・Roll/Pitch活動も小さい = サイクリック起源でもない<br>
+                            <strong>真因：純粋なピルエット中のヨー追従不良。Yaw P=70 が低すぎる + Cross-Coupling Ratio=0 でPitch起源の干渉が補正されていない。</strong>
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔑 Pitch P が完全に眠っている（重大発見）</h5>
+                        <div class="bb-analysis-box">
+                            <strong>3機の中で唯一の異常値：</strong><br>
+                            ・Forza450 全プロファイルで Pitch P_99% / I_99% peak 比 = <strong>0.04〜0.05</strong><br>
+                            ・E8 (0.20〜0.31)、RS7 Ultra (0.14〜0.31) と比較して圧倒的に低い<br>
+                            ・健全ラインは0.30〜0.80<br>
+                            <strong>Pitch P が "飾り" になっていて、I項とF項だけで動いている状態。</strong>「縦のキレが出ない」「F3N的に不足」の根本原因。Profile #3 で Pitch P=28 → 32 に上げたが、まだ不十分。
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔑 Cross-Coupling 設計の見直し（最初期から触っていなかった値）</h5>
+                        <div class="bb-analysis-box">
+                            <strong>Forza450 の Cross-Coupling Gain/Ratio は NEXUS-XR 初期搭載時から変更なし：</strong><br>
+                            ・Gain: 50 / 45 / 40（E8/RS7 のデフォルト 5 と比較して激高）<br>
+                            ・<strong>Ratio: 0 / 5 / 0</strong>（Pitch ⇄ Roll の双方向補正が片側に偏っている）<br><br>
+                            <strong>物理的意味：</strong>Ratio=0 は「Roll起源の干渉は補正、Pitch起源の干渉は無補正」という設定。これが「Roll方向にだけハンチングが出る」「Pitch起源の縦の流れが残る」の理論的根拠。<br>
+                            <strong>修正：全プロファイル Ratio を 10 に統一、Gain を 30/30/35 に適正化。</strong>
+                        </div>
+
+                        <h5 class="bb-subsection-title">📋 次回フライト用 中間ステップ調整 — Forza450 大幅再設計</h5>
+                        <table class="bb-table">
+                            <thead>
+                                <tr><th>項目</th><th>Profile #1 (ホバ)</th><th>Profile #2 (スポーツF3C)</th><th>Profile #3 (3D / F3N)</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Roll P/I/D/F/B</td><td>42/60/<strong>70</strong>/55/2</td><td><strong>36</strong>/60/<strong>70</strong>/40/0</td><td><strong>27</strong>/40/<strong>70</strong>/30/0</td></tr>
+                                <tr><td>Pitch P/I/D/F/B</td><td>42/60/20/55/4</td><td><strong>36</strong>/60/20/40/3</td><td><strong>32</strong>/40/20/30/5</td></tr>
+                                <tr><td>Yaw P/I/D/F/B</td><td>95/110/5/0/0</td><td>100/110/7/0/0</td><td>70/90/<strong>9</strong>/0/<strong>2</strong></td></tr>
+                                <tr><td><strong>Roll Bandwidth</strong></td><td>70 → <strong>50</strong></td><td>70 → <strong>50</strong></td><td>70 → <strong>50</strong></td></tr>
+                                <tr><td><strong>Roll D-term Cutoff</strong></td><td>15 → <strong>12</strong></td><td>18 → <strong>12</strong></td><td>20 → <strong>12</strong></td></tr>
+                                <tr><td>Cross-Coupling Gain</td><td>50 → <strong>30</strong></td><td>45 → <strong>30</strong></td><td>40 → <strong>35</strong></td></tr>
+                                <tr><td>Cross-Coupling Ratio</td><td>0 → <strong>10</strong> ⭐</td><td>5 → <strong>10</strong> ⭐</td><td>0 → <strong>10</strong> ⭐</td></tr>
+                                <tr><td>CW/CCW Stop Gain</td><td>115/95 維持</td><td>100/80 維持</td><td>100/80 維持</td></tr>
+                                <tr><td>Cyclic FF</td><td>10 維持</td><td>10 維持</td><td>10 → <strong>15</strong> (+5)</td></tr>
+                                <tr><td>Collective FF</td><td>18 → <strong>30</strong> (+12)</td><td>80 → <strong>50</strong> (-30)</td><td>60 → <strong>45</strong> (-15)</td></tr>
+                            </tbody>
+                        </table>
+                        <p style="font-size: 0.9em; opacity: 0.85;">
+                            <strong>設計思想：</strong>5つの大変革を同時実装。①ハンチング根絶（Roll D + Bandwidth + Cutoff の三重保護）、②Cross-Coupling再設計（最初期から未触の値を見直し）、③P項の活性化（眠っていたPitch P）、④Collective FFの現実化（過剰補正を適正値へ）、⑤Profile #3 Yawキレ追加（D+B強化）。
+                        </p>
+
+                        <h5 class="bb-subsection-title">📈 グラフデータ（⑦ Forza450 #004）</h5>
+                        <div class="bb-graph-grid">
+                            <div class="bb-graph-item">
+                                <img src="blackbox/session7/forza_004_g1.png" alt="Forza450 Overview" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">フライト全体像（除外区間マーキング、t=132.2sのピルエット強調）</p>
+                            </div>
+                            <div class="bb-graph-item">
+                                <img src="blackbox/session7/forza_004_g2.png" alt="Forza450 PID Contribution" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">PID寄与率 — Pitch P がほぼ機能していない（0.04〜0.05）</p>
+                            </div>
+                            <div class="bb-graph-item">
+                                <img src="blackbox/session7/forza_004_g3.png" alt="Forza450 Hunting FFT" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">ジャイロFFT — Profile #3 Roll軸に14.5Hzのハンチング前兆</p>
+                            </div>
+                            <div class="bb-graph-item">
+                                <img src="blackbox/session7/forza_004_g4.png" alt="Forza450 Problem Pirofli" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">問題のピルエット詳細（t=132.2s, 19.4度オーバーシュートの正体）</p>
+                            </div>
+                            <div class="bb-graph-item">
+                                <img src="blackbox/session7/forza_004_g5.png" alt="Forza450 D-term FFT" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">D項FFT — ノイズなし、健全</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ============== Forza450 #001 ハンチング深堀（最大の収穫）============== -->
+                    <div class="bb-machine-section" style="background: linear-gradient(135deg, rgba(231,76,60,0.08), rgba(255,140,0,0.05)); border-left: 4px solid #e74c3c;">
+                        <h4 class="bb-machine-title">🔴 JR Forza450 — 解析結果（⑦ 特別深堀 #001 ハンチング瞬間 / 真因 13.65Hz共振の特定）</h4>
+
+                        <div class="bb-analysis-box" style="background: rgba(231,76,60,0.12);">
+                            <strong>★ 本日最大の収穫 ★</strong><br>
+                            Forza450 で長年悩まされていた <strong>「強い操作後の Roll 軸ハンチング」</strong> の真因を、フライト #001 の Blackbox から完全特定。<strong>t=200.4秒（フライト開始から約2分0秒）から6.34秒間</strong>持続した、Roll軸 peak-to-peak 937 deg/s の凄まじいリミットサイクル発振を解析。<br><br>
+                            <strong>ぽすとそにさんの記憶：</strong>「2分0秒〜2分15秒の物凄いハンチング」「rollに右、pitchを前に入れた記憶」「強いアクションから起きていたことが多い」 → 全てデータと完全一致。
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔑 真因特定：13.65Hz はメインローター回転の3.75次サブハーモニクス共振</h5>
+                        <div class="bb-analysis-box">
+                            <strong>FFT解析でハンチング基本周波数を特定：</strong><br>
+                            ・ハンチング周波数 = <strong>13.65 Hz（周期 73.3 ms）</strong><br>
+                            ・ハンチング前ヘッドスピード = 3070 rpm<br>
+                            ・メインローター回転周波数 = 3070/60 = <strong>51.2 Hz</strong><br>
+                            ・<strong>51.2 / 3.75 = 13.65 Hz ← 完全一致</strong><br>
+                            つまり <strong>13.65Hz はローター回転の 3.75次サブハーモニクス</strong>。これは Forza450 の物理的固有振動で、機体特性として常に存在している周波数。
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔑 ハンチング発火の3条件（時系列で特定）</h5>
+                        <div class="bb-analysis-box">
+                            <strong>t=199.5〜200.4秒の0.9秒間に起きたこと：</strong><br><br>
+                            <strong>条件1：激しいサイクリック操作（演技中）</strong><br>
+                            ・Roll stick: +63 → +290（右に最大）<br>
+                            ・Pitch stick: +50 → +287（前に最大）<br>
+                            ・斜め前への急激な突っ込み or ループ系突入<br><br>
+                            <strong>条件2：マイナスコレクティブの急投入</strong><br>
+                            ・Coll: -22 → -29 → -37 まで深く<br>
+                            ・背面 / 急降下 / オートロ系の機動<br><br>
+                            <strong>条件3：Roll D=80 が13.65Hzに対して逆位相</strong><br>
+                            ・D項は角加速度に比例して90°位相を進めて応答<br>
+                            ・13.65Hz の周期 73ms に対して D項の応答遅延が "ちょうど逆位相"<br>
+                            ・本来は振動を抑制するべきD項が、<strong>正のフィードバック</strong>として働き発振<br><br>
+                            <strong>結果：6.34秒間の自己発振、HS 3070→2580rpmまで急降下</strong>
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔑 解決策：三重保護による物理的に成立しない設計</h5>
+                        <div class="bb-analysis-box" style="background: rgba(39,174,96,0.10); border-left: 3px solid #27ae60;">
+                            <strong>13.65Hz共振を物理的に成立させないための三段防御：</strong><br><br>
+                            <strong>① Roll D-term Cutoff: 15-20 → 12 Hz</strong>（最強の対策）<br>
+                            　13.65Hz は Cutoff より上 = D項に届く前に減衰される。<strong>D項が13.65Hzにそもそも反応しなくなる</strong>。<br><br>
+                            <strong>② Roll Bandwidth: 70 → 50 Hz</strong><br>
+                            　P/D の高周波応答全体を抑制。13.65Hz を含む高周波エネルギー全般を半減。<br><br>
+                            <strong>③ Roll D: 80 → 70</strong><br>
+                            　D項の振動応答そのものを 12.5% 弱める保険。<br><br>
+                            この3つの組合せで <strong>13.65Hz でのリミットサイクル発振が物理的に成立しなくなる</strong>。Profile #2 の Collective FF=80 や Profile #3 の Pitch P 不足など、別の課題に取り組める安全な土台が完成。
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔑 過去の試行錯誤との整合性</h5>
+                        <div class="bb-analysis-box">
+                            <strong>ぽすとそにさんが「Roll P下げてもギリギリ」と感じていた理由：</strong><br>
+                            ・1〜4回目フライトまで Roll D = 80 を維持（変更していなかった）<br>
+                            ・Roll P を下げる対処をしてきたが、根本原因（D項の位相干渉）は残ったまま<br>
+                            ・<strong>Roll P ではなく Roll D を下げる + Bandwidth/Cutoff 保護を入れるべきだった</strong><br><br>
+                            ハンチング発生時のヘッダー記録 <code>rollPID:40,60,80,50,1</code> から、Roll D=80 で運用していたことを確認。今回初めて Roll D を 80→70 に下げ、保護を加えることで、Roll P を再び攻める余地が生まれた。
+                        </div>
+
+                        <h5 class="bb-subsection-title">📊 ハンチング詳細データ</h5>
+                        <table class="bb-table">
+                            <thead>
+                                <tr><th>項目</th><th>値</th><th>意味</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>ハンチング開始</td><td>t=200.4s</td><td>フライト開始 (t=80.1s) から +120秒 = 体感「2分0秒」と一致</td></tr>
+                                <tr><td>持続時間</td><td>6.34秒</td><td>長時間の自己発振</td></tr>
+                                <tr><td>Roll Gyro 振幅</td><td>peak-to-peak 937 deg/s (±468)</td><td>異次元の発振強度</td></tr>
+                                <tr><td>基本周波数</td><td>13.65 Hz（周期 73.3 ms）</td><td>ローター3.75次サブハーモニクス</td></tr>
+                                <tr><td>Pitch Gyro 振幅</td><td>peak-to-peak 157 deg/s</td><td>Roll の 1/6（Pitch軸はハンチングしていない）</td></tr>
+                                <tr><td>HS 推移</td><td>3070 → 2580 rpm</td><td>急降下、ガバナーの限界に達した</td></tr>
+                                <tr><td>サーボ振幅</td><td>servo[2] peak-to-peak 301</td><td>機械的にも大きな振動</td></tr>
+                                <tr><td>Roll B-gain</td><td>0（ハンチング中も）</td><td>B項は仕事せず、D項単独が暴走</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h5 class="bb-subsection-title">📈 グラフデータ（⑦ Forza450 #001 ハンチング徹底解析）</h5>
+                        <div class="bb-graph-grid">
+                            <div class="bb-graph-item" style="grid-column: span 2;">
+                                <img src="blackbox/session7/forza_001_hunting.png" alt="Forza450 Hunting Analysis" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">ハンチング徹底解析 — t=200.4〜206.7s, Roll±468deg/s, 13.65Hz共振の完全可視化</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ============== 3機比較 ============== -->
+                    <div class="bb-machine-section">
+                        <h4 class="bb-machine-title">📊 3機種比較サマリ — 同日同条件で見えた個性</h4>
+
+                        <div class="bb-analysis-box">
+                            <strong>2026年5月1日、3機を同日にフライトした初の機会から見える各機の個性：</strong>
+                        </div>
+
+                        <h5 class="bb-subsection-title">📋 主要指標の3機比較</h5>
+                        <table class="bb-table">
+                            <thead>
+                                <tr><th>指標</th><th>🟢 E8 #007</th><th>🔵 RS7 Ultra #002</th><th>🟠 Forza450 #004</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>機体クラス</td><td>600 / 8S</td><td>700 / 12S</td><td>450 / 3S</td></tr>
+                                <tr><td>ESC</td><td>HOBBYWING 130A V4</td><td>HOBBYWING 260A V5</td><td>HOBBYWING 60A V4</td></tr>
+                                <tr><td>HS安定性 (Profile #2)</td><td>CV 4.93%（推定）</td><td>CV <strong>1.36%</strong></td><td>CV 2.20%</td></tr>
+                                <tr><td>HS安定性 (Profile #3)</td><td>CV 3.22%（推定）</td><td>CV 1.20%</td><td>CV <strong>1.10%</strong></td></tr>
+                                <tr><td>headspeed取得</td><td>❌ 配線問題で0</td><td>✅ 正常</td><td>✅ 正常</td></tr>
+                                <tr><td>Roll 追従誤差 (#3)</td><td>29.1%</td><td>31.3%</td><td>56.6% ⚠️ Pが眠ってる</td></tr>
+                                <tr><td>Pitch P/I peak比 (#3)</td><td>0.20</td><td>0.31</td><td><strong>0.05</strong> ❌ 眠ってる</td></tr>
+                                <tr><td>Yaw流れ最大 (#3)</td><td>59 deg/s</td><td>99 deg/s</td><td><strong>189 deg/s</strong> ⚠️</td></tr>
+                                <tr><td>主課題</td><td>F3N向けキレ追加、配線修理</td><td>ピルフリ・縦メトロノーム時のFF不足</td><td>ハンチング根絶、Pitch P 活性化</td></tr>
+                                <tr><td>主収穫</td><td>P項眠りの定量化、I項暴走否定</td><td>Yaw I の DCオフセット再確認</td><td><strong>13.65Hz共振の特定</strong></td></tr>
+                            </tbody>
+                        </table>
+
+                        <h5 class="bb-subsection-title">📋 機種別 Collective FF 適正値の発見</h5>
+                        <table class="bb-table">
+                            <thead>
+                                <tr><th>機種</th><th>Profile #1 (ホバ)</th><th>Profile #2</th><th>Profile #3</th><th>機体特性</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>RS7 Ultra (700/12S)</td><td>15</td><td>15→18</td><td>15→22</td><td>大型・慣性大、FF少なめでよい</td></tr>
+                                <tr><td>E8 (600/8S)</td><td>23</td><td>23→28</td><td>23→28</td><td>中型、中庸</td></tr>
+                                <tr><td>Forza450 (450/3S)</td><td>18→30</td><td>80→50</td><td>60→45</td><td>小型・電流余裕薄、FF多めだが過剰だった</td></tr>
+                            </tbody>
+                        </table>
+                        <p style="font-size: 0.9em; opacity: 0.85;">
+                            <strong>知見：</strong>従来は「小型機ほどCollective FFを盛る」と考えていたが、Forza450 の Profile #2 で FF=80 は過剰だった。<strong>機体クラスと電流容量の比</strong>が適正値を決める。Forza450 の場合、ハンチング根絶後は FF=50/45 が現実的。
+                        </p>
+
+                        <h5 class="bb-subsection-title">📈 3機比較サマリグラフ</h5>
+                        <div class="bb-graph-grid">
+                            <div class="bb-graph-item" style="grid-column: span 2;">
+                                <img src="blackbox/session7/comparison_3machines.png" alt="3 Machines Comparison" onclick="openBBImage(this)">
+                                <p class="bb-graph-caption">3機比較：HS安定性 / 追従誤差 / ヨー流れ / P項仕事ぶり</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 次回やること -->
+                    <div class="bb-next-section">
+                        <h4 class="bb-next-title">📝 次回やること（A戦略：堅実派）</h4>
+                        <ol class="bb-next-list">
+                            <li><strong>3機共通：</strong>今回設定した中間ステップ値で1〜2回フライトし、各変更の効果を体感で確認 → Blackbox再解析でデータ裏取り</li>
+                            <li><strong>Forza450：</strong>ハンチング保護（Roll D=70 + BW=50 + Cutoff=12）の効果検証が最優先。**強い斜め+マイナスコレクティブ**機動を意図的に試して、13.65Hz発振が再発しないことを確認</li>
+                            <li><strong>Forza450：</strong>Cross-Coupling Ratio=10 統一の効果検証 → Pitch起源の縦の流れが減ったか体感確認</li>
+                            <li><strong>Forza450 Profile #3：</strong>Pitch P=32 で「縦のキレ」を体感確認 → 不足なら次回 38 に進化（眠っていたPitch Pを段階的に活性化）</li>
+                            <li><strong>RS7 Ultra Profile #3：</strong>Collective FF=22 + Stop Gain 125/105 でピルフリ・縦メトロノーム時の反トルク流れが軽減したか確認 → 不足なら FF=25 へ</li>
+                            <li><strong>E8 Profile #3：</strong>Pitch P=147 / Yaw P=97 / Stop Gain 137/117 / Cyclic FF 10 / Collective FF 28 / Yaw D 3 の中間ステップで余裕を測る → +10統一案へ進化判断</li>
+                            <li><strong>E8：</strong>4.6.0 stable リリース後に headspeed=0 問題の配線確認実施 → 解決後に NEXUS-XR ガバナー（gov_mode=ELECTRIC）への移行検討</li>
+                            <li><strong>3機共通：</strong>本日の進化版設定で各2〜3フライト分の Blackbox 蓄積 → セッション⑧で総合再解析</li>
+                        </ol>
+                    </div>
+                </div>
+
+
                 <!-- 画像拡大モーダル -->
                 <div id="bb-image-modal" class="bb-modal" onclick="handleModalClick(event)">
                     <span class="bb-modal-close" onclick="closeBBImage()">&times;</span>
