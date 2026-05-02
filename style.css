@@ -9890,6 +9890,23 @@ body.dark-mode .last-visited-indicator .indicator-dismiss {
     margin-bottom: 30px;
 }
 
+/* ===== セッション間の余白統一（①〜⑦） ===== */
+.bb-log-entry,
+.bb-session-card,
+.bb-session {
+    margin-bottom: 60px;
+    padding-bottom: 60px;
+    border-bottom: 2px dashed #d0d7e0;
+}
+
+/* 最後のセッションには区切り線不要 */
+.bb-log-entry:last-of-type,
+.bb-session-card:last-of-type,
+.bb-session:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
 .bb-log-header {
     display: flex;
     align-items: center;
@@ -10197,6 +10214,186 @@ body.dark-mode .last-visited-indicator .indicator-dismiss {
     color: #444;
 }
 
+/* ===== ステータスバッジ（解析記録の進捗表示） ===== */
+.bb-status-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.bb-status-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #444;
+}
+
+.bb-status-list li:last-child {
+    border-bottom: none;
+}
+
+.bb-status-badge {
+    flex-shrink: 0;
+    display: inline-block;
+    min-width: 64px;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-family: 'Zen Kurenaido', cursive;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+}
+
+.bb-status-badge.done {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+}
+
+.bb-status-badge.ongoing {
+    background: #e3f2fd;
+    color: #1565c0;
+    border: 1px solid #90caf9;
+}
+
+.bb-status-badge.rejected {
+    background: #f5f5f5;
+    color: #666;
+    border: 1px solid #ccc;
+}
+
+.bb-status-badge.next {
+    background: #fff3e0;
+    color: #e65100;
+    border: 1px solid #ffcc80;
+}
+
+.bb-status-text {
+    flex: 1;
+}
+
+.bb-status-text .bb-status-result {
+    display: block;
+    margin-top: 4px;
+    color: #777;
+    font-size: 13px;
+}
+
+.bb-status-text .bb-status-note {
+    display: block;
+    margin-top: 6px;
+    padding: 6px 10px;
+    background: #fff8e1;
+    border-left: 3px solid #ffb74d;
+    color: #6d4c00;
+    font-size: 13px;
+    line-height: 1.6;
+    border-radius: 2px;
+}
+
+.bb-status-text .bb-status-note::before {
+    content: "📌 ";
+    margin-right: 2px;
+}
+
+/* ===== リード文（見出し直下の説明文） ===== */
+.bb-lead {
+    margin: 8px 0 18px;
+    padding: 10px 14px;
+    border-left: 3px solid #d0d7e0;
+    background: #fafbfc;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* ===== リード文・注意書き（方針変更の告知用） ===== */
+.bb-lead-note {
+    margin: 8px 0 18px;
+    padding: 10px 14px;
+    background: #fff8e1;
+    border-left: 3px solid #ffb74d;
+    color: #6d4c00;
+    font-size: 14px;
+    line-height: 1.7;
+    border-radius: 2px;
+}
+
+.bb-lead-note::before {
+    content: "📌 ";
+    margin-right: 4px;
+}
+
+/* ダークモード対応 */
+body.dark-mode .bb-status-list li {
+    border-bottom-color: #333;
+    color: #ccc;
+}
+
+body.dark-mode .bb-status-badge.done {
+    background: #1b3a1f;
+    color: #81c784;
+    border-color: #2e5a35;
+}
+
+body.dark-mode .bb-status-badge.ongoing {
+    background: #0d2a47;
+    color: #64b5f6;
+    border-color: #1e4976;
+}
+
+body.dark-mode .bb-status-badge.rejected {
+    background: #2a2a2a;
+    color: #999;
+    border-color: #444;
+}
+
+body.dark-mode .bb-status-badge.next {
+    background: #3d2814;
+    color: #ffb74d;
+    border-color: #6b4520;
+}
+
+body.dark-mode .bb-status-text .bb-status-result {
+    color: #999;
+}
+
+body.dark-mode .bb-status-text .bb-status-note {
+    background: #2d2515;
+    border-left-color: #b8860b;
+    color: #d4a857;
+}
+
+body.dark-mode .bb-lead {
+    background: #1e2329;
+    border-left-color: #444;
+    color: #bbb;
+}
+
+body.dark-mode .bb-lead-note {
+    background: #2d2515;
+    border-left-color: #b8860b;
+    color: #d4a857;
+}
+
+/* ===== ステータスバッジ レスポンシブ ===== */
+@media (max-width: 768px) {
+    .bb-status-list li {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .bb-status-badge {
+        align-self: flex-start;
+    }
+}
+
 /* 画像モーダル */
 .bb-modal {
     display: none;
@@ -10340,6 +10537,19 @@ body.dark-mode .bb-spec-table td {
 body.dark-mode .bb-log-entry {
     background: #2d2d2d;
     border-color: #3c4043;
+}
+
+/* ダークモード時のセッション区切り線 */
+body.dark-mode .bb-log-entry,
+body.dark-mode .bb-session-card,
+body.dark-mode .bb-session {
+    border-bottom-color: #444;
+}
+
+body.dark-mode .bb-log-entry:last-of-type,
+body.dark-mode .bb-session-card:last-of-type,
+body.dark-mode .bb-session:last-of-type {
+    border-bottom: none;
 }
 
 body.dark-mode .bb-log-header {
@@ -10504,6 +10714,14 @@ body.dark-mode .bb-next-list li {
 
     .bb-log-entry {
         padding: 18px;
+    }
+
+    /* モバイル時のセッション余白縮小 */
+    .bb-log-entry,
+    .bb-session-card,
+    .bb-session {
+        margin-bottom: 36px;
+        padding-bottom: 36px;
     }
 
     .bb-log-header h3 {
