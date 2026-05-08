@@ -359,6 +359,18 @@ const translations = {
             section4Title: '◆測定機器の導入',
             section4Text: 'アンプの電流値を正確に測定できるアナライザーを導入しました。これにより、より精密なセッティングとトラブルシューティングが可能になります。'
         },
+        newsSection2026May: {
+            date: '2026年5月9日',
+            newsTitle: 'フライト技術習得・Blackbox解析継続 & 活動報告',
+            section1Title: '◆お問い合わせ件数100件突破',
+            section1Text: 'お問い合わせ件数が累計100件を突破しました。皆さまからのご相談・ご支援に心より感謝申し上げます。',
+            section2Title: '◆Blackbox解析を継続中',
+            section2Text: 'GOOSKY RS7 Ultra・E8・Forza450 の3機体について、Rotorflight Firmware 4.6.0-RC2 環境下でのBlackbox解析を継続中です。3機種統一環境での比較データを蓄積しています。',
+            section3Title: '◆実機の新マニューバ習得中',
+            section3Text: '実機の技として、オーバスピード、ピルエットフリップ、ワンロール・ポゴが新たに加わりました。これに伴い、技と技を滑らかにつなぐためのマニューバ(次の技へ移行するための意図的な姿勢調整・流れ作り)を少しずつ練習中です。',
+            section4Title: '◆GOOSKY RS7 Ultra PID再追い込み',
+            section4Text: '2026年3月30日に完了報告した RS7 Ultra のPID調整について、Rotorflight Configurator 2.3.0-RC2 でさらに追い込みをかけ、より良いセッティングを模索中です。'
+        },
         newsSection2026Mar: {
             date: '2026年3月30日',
             newsTitle: 'フライト調整・ファームウェア統一 & 活動報告',
@@ -1271,13 +1283,25 @@ const translations = {
             section4Title: '◆Introduction of Measuring Equipment',
             section4Text: 'We have introduced an analyzer that can accurately measure ESC current values. This enables more precise settings and troubleshooting.'
         },
+        newsSection2026May: {
+            date: 'May 9, 2026',
+            newsTitle: 'Flight Skill Development, Blackbox Analysis & Activity Report',
+            section1Title: '◆Inquiries Exceed 100 Cases',
+            section1Text: 'Total inquiries have exceeded 100 cases. I sincerely thank everyone for your consultations and continued support.',
+            section2Title: '◆Blackbox Analysis Ongoing',
+            section2Text: 'Blackbox analysis is ongoing for three aircraft — the GOOSKY RS7 Ultra, E8, and Forza450 — under Rotorflight Firmware 4.6.0-RC2. We are accumulating comparative data across this unified three-aircraft environment.',
+            section3Title: '◆Practicing New Aerobatic Maneuvers',
+            section3Text: 'New maneuvers have been added to my actual flight repertoire: overspeed, piroflip, and one-roll pogo. Alongside these, I am gradually practicing transitional maneuvers — the deliberate inputs used to smoothly link one trick to the next, shaping flow and adjusting attitude in preparation for the following move.',
+            section4Title: '◆GOOSKY RS7 Ultra PID Further Refinement',
+            section4Text: 'Following the PID tuning completion reported on March 30, 2026, I am now further refining the RS7 Ultra PID settings using Rotorflight Configurator 2.3.0-RC2 to seek even better tuning.'
+        },
         newsSection2026Mar: {
             date: 'March 30, 2026',
             newsTitle: 'Flight Tuning, Firmware Unification & Activity Report',
             section1Title: '◆GOOSKY RS7 Ultra PID Tuning Complete',
             section1Text: 'PID tuning for the GOOSKY RS7 Ultra flight has been completed. Each axis has been tuned via Rotorflight, and stable flight characteristics have been confirmed.',
-            section2Title: '◆Right Pirouette Flip Achieved on E8',
-            section2Text: 'During practice, I was finally able to perform a right pirouette flip on the E8 in actual flight (though not on video). I will continue practicing and will also be tuning other aircraft.',
+            section2Title: '◆Right Piroflip Achieved on E8',
+            section2Text: 'During practice, I was finally able to perform a right piroflip on the E8 in actual flight (though not on video). I will continue practicing and will also be tuning other aircraft.',
             section3Title: '◆EdgeTX & ELRS Firmware Unified to Latest Stable Versions',
             section3Text: 'EdgeTX and ELRS firmware have been unified to the latest stable releases. These are official release versions, not test builds.',
             section4Title: '◆Inquiries Exceed 30 Cases',
@@ -2184,6 +2208,18 @@ const translations = {
             section3Text: '所有机械部件（舵机、电调、电机等）已到齐，目前正在进行组装和微调。完成后将提供飞行报告。',
             section4Title: '◆测量设备的引进',
             section4Text: '引进了可以准确测量电调电流值的分析仪。这使得更精确的设置和故障排除成为可能。'
+        },
+        newsSection2026May: {
+            date: '2026年5月9日',
+            newsTitle: '飞行技术掌握・黑匣子分析继续 & 活动报告',
+            section1Title: '◆咨询件数突破100件',
+            section1Text: '咨询件数累计突破100件。衷心感谢各位的咨询与持续支持。',
+            section2Title: '◆黑匣子分析持续进行中',
+            section2Text: 'GOOSKY RS7 Ultra・E8・Forza450 三台机体在 Rotorflight Firmware 4.6.0-RC2 环境下的黑匣子分析持续进行中。正在积累三机统一环境下的对比数据。',
+            section3Title: '◆实机新机动动作练习中',
+            section3Text: '实机技巧中新增了超速飞行(overspeed)、旋转翻转(piroflip)和单滚波戈(one-roll pogo)。伴随这些新技,我正在逐步练习过渡机动——即为了将各个技巧流畅衔接而进行的有意识操作(为了过渡到下一个技巧而做的姿态调整与流程衔接)。',
+            section4Title: '◆GOOSKY RS7 Ultra PID再次精调',
+            section4Text: '关于2026年3月30日报告完成的 RS7 Ultra PID调整,目前正使用 Rotorflight Configurator 2.3.0-RC2 进行进一步精调,以探索更优的设置。'
         },
         newsSection2026Mar: {
             date: '2026年3月30日',
