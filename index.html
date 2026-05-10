@@ -3483,6 +3483,365 @@
                 </div>
 
 
+                <!-- ⑧ 2026年5月10日フライト / 解析 — 3機種同日完成度検証 + Forza450 三重保護効果検証 + ピルエットフリップ実現 -->
+                <div class="bb-session" style="margin-top: 60px; padding-top: 60px; border-top: 2px dotted var(--border-color);">
+                    <div class="bb-session-header">
+                        <h3 class="bb-session-title">⑧ 2026年5月10日フライト / 解析 — 3機種同日完成度検証 + Forza450 三重保護効果検証 + ピルエットフリップ実現</h3>
+                        <p class="bb-session-meta">3機種同日フライト ｜ E8 2フライト・RS7 Ultra 5フライト・Forza450 2フライト ｜ Rotorflight 4.6.0-RC2 / Configurator 2.3.0-RC2 (3機統一)</p>
+                    </div>
+
+                    <div class="bb-analysis-box">
+                        <strong>⑧の背景：</strong>セッション⑦で実装した進化版設定を3機すべてで検証。E8 / RS7 Ultra / Forza450 を同日にフライトし、それぞれの調整が現場で機能するか、フライト所感とBlackboxデータで答え合わせを行った。<br><br>
+                        <strong>本日の主な収穫：</strong>① Forza450 — セッション⑦で実装した三重保護（Roll D=70 / Bandwidth=50 / D-term Cutoff=12）により <strong>13.65Hz共振帯のPSDピークが消失</strong>、<strong>ピルエットフリップ実行に成功</strong>。NEXUS-XR導入後（2025年12月頃）の調整課題が解決。② RS7 Ultra — 5フライトの段階的調整で <strong>Yaw P 100→110、Collective FF 22→30</strong> によりテール追従が「ピッタリついてくる」レベルに到達。③ E8 — 練習機として完成形に到達、次は自分に合うセッティング模索フェーズへ。<br><br>
+                        <strong>解析方針：</strong>各機ごとに「現場変更点 → フライト所感 → Blackboxデータで答え合わせ」の順で進行。フライト所感を起点とし数値で裏付ける手法を継続。
+                    </div>
+
+                    <!-- ============== E8 #001/#002 ============== -->
+                    <div class="bb-machine-section">
+                        <h4 class="bb-machine-title">🟢 JR E8 — 解析結果（⑧ #001/#002 / 変更前 vs 現場変更後の対照解析）</h4>
+
+                        <div class="bb-analysis-box">
+                            <strong>フライト構成：</strong>2フライト構成。#001はセッション⑦次回値そのままで離陸、感触から微調整の必要を判断し、現場で値を変更してから #002 を実施。同日・同風速・同操縦者の対照実験として理想的なペア。<br><br>
+                            <strong>現場変更点（3箇所）：</strong>① Profile #1 Collective FF 18→23 (+5)、② Profile #3 CW/CCW Yaw Stop 137/117→140/120 (+3/+3)、③ Profile #3 Collective FF 28→30 (+2)。Profile #2は使用用途（ストールターン中心）から変更不要と判断、維持。<br><br>
+                            <strong>フライト所感：</strong>「Profile #1は最初の浮きから安定した座り」「Profile #3は演技がやりやすい、メトロノームでもさらに速くできる余力あり」「テールのロック感が変わった、Profile #3で若干コレクティブ変化に追いつけなかったテールが追い付くイメージ」。フリップ・ピルエットフリップ・メトロノームでテール流れなし。
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔑 全体総評：練習機としての位置づけが確定</h5>
+                        <div class="bb-analysis-box">
+                            <strong>機体の到達点：</strong>セッション⑦から⑧にかけての PID調整は機体の問題解決を主目的としていたが、本セッションで <strong>E8は練習機として一段階完了した状態に到達</strong>。次回以降は機体側の調整課題ではなく、操縦者自身に合うセッティングを模索するフェーズに移行する。<br><br>
+                            <strong>現場知見：</strong>Cyclic Ring 100 + 控えめな最大ピッチ角でも横メトロノームが機敏に動作する事例が知られている。これは「最大値を絞ることで少しの操作量で機体が動く」原理による。本機の物理的余力（モーター・ブレード・配線）を考慮すると、スティック量を拡張する方向ではなく、入力に対する分解能を高める方向が適している。<br><br>
+                            <strong>機体の位置づけ：</strong>練習機として、無理な飛びを機械的に困難にすることで、過剰な挑戦を抑制する材料として活用。RS7 Ultraの高出力余力との対比で、E8は「機材の限界が自制装置」として機能している。
+                        </div>
+
+                        <h5 class="bb-subsection-title">📊 現場変更の効果検証 — Yaw流れ最大値の変化</h5>
+                        <div class="bb-analysis-box">
+                            <strong>Yaw setpoint &lt;30 deg/s時（テールを意図的に動かしてない時）の Yaw流れ最大値：</strong><br>
+                            ・Profile #1 ホバ: 148 → <strong>72</strong> deg/s（-51%）<br>
+                            ・Profile #2 スポーツ: 286 → 245 deg/s（-14%）<br>
+                            ・Profile #3 軽い3D: 280 → <strong>134</strong> deg/s（-52%）<br><br>
+                            <strong>Profile #2 motor[0] CV：</strong>1.12% → <strong>0.11%</strong>。Profile #1のCollective FF調整がProfile #2のmotor負荷も結果的に下げた可能性。フライト所感「メトロノームでさらに速くできる余力」と整合する。<br><br>
+                            <strong>Setpoint追従MAE：</strong>Profile #2/#3でMAE値はむしろ上昇しているが、これは setpoint絶対値が大きくなった（より積極的な操縦をした）ためで、追従品質低下ではなく操縦の積極性向上を示す指標として解釈できる。
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔍 Profile #3 テールロック解析 — 「コレクティブに追いつくテール」の数値根拠</h5>
+                        <div class="bb-analysis-box">
+                            <strong>コレクティブ変化率 vs Yaw Gyro 散布図（Yaw setpoint &lt;30時）：</strong><br>
+                            ・#001 変更前: コレクティブ変化率0付近で Yaw gyro が -200 deg/s まで縦方向に広がる（テールがコレクティブ変化に追従できなかった瞬間）<br>
+                            ・#002 変更後: 同領域でYaw gyroが ±100 deg/s 以内に収束（縦のスパイク消失）<br><br>
+                            <strong>時系列での確認：</strong>#002では Profile #3区間で Collective が -1000近傍までネガティブピッチ操作されているが、Yaw gyro は setpoint に追従し安定。フライト所感「コレクティブ変化に追いつけなかったテールが追い付くイメージ」のデータ的な裏付け。
+                        </div>
+
+                        <h5 class="bb-subsection-title">📊 グラフデータ（⑧ E8）</h5>
+                        <div class="bb-graph-grid">
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/e8_g1_profile_timeline.png" alt="E8 プロファイル時系列" loading="lazy">
+                                <p class="bb-graph-caption">プロファイル時系列 — motor[0]推移と Profile #1/#2/#3 の使い分け（#001変更前 vs #002変更後）</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/e8_g2_yaw_drift_hist.png" alt="E8 Yaw流れヒストグラム" loading="lazy">
+                                <p class="bb-graph-caption">Yaw流れヒストグラム — setpoint&lt;30時の|Yaw Gyro|分布、Profile #1/#3で右側の長い裾が短縮</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/e8_g3_p3_yaw_tracking.png" alt="E8 Profile #3 Yaw追従" loading="lazy">
+                                <p class="bb-graph-caption">Profile #3 Yaw追従時系列 — setpoint(濃)とgyro(水)が完全重畳、#002では-600deg/s近くまで攻めた区間も追従</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/e8_g4_mae_comparison.png" alt="E8 Setpoint追従MAE比較" loading="lazy">
+                                <p class="bb-graph-caption">Setpoint追従MAE — 3軸×3プロファイル比較、Profile #1で改善、#2/#3はより積極的操作の証拠</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/e8_g5_tail_lock_analysis.png" alt="E8 テールロック解析" loading="lazy">
+                                <p class="bb-graph-caption">Profile #3 テールロック解析 — Collective変化率 vs Yaw Gyro 散布図、変更後は縦スパイク消失</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/e8_g6_summary.png" alt="E8 変更前後サマリ" loading="lazy">
+                                <p class="bb-graph-caption">⑧ E8 主要指標サマリ — Yaw流れmax/p95、motor[0] CV を変更前後で対比</p>
+                            </div>
+                        </div>
+
+                        <h5 class="bb-subsection-title">📋 次回フライト試行項目（E8）</h5>
+                        <ul class="bb-status-list">
+                            <li>
+                                <span class="bb-status-badge next">次回</span>
+                                <span class="bb-status-text">
+                                    <strong>Cyclic Ring 125 → 110 試行</strong>：スティック分解能の細分化、繊細な刻み制御の追求。Polar Coordinates: ON維持。合わなければ125に戻す段階的撤退ルール
+                                </span>
+                            </li>
+                            <li>
+                                <span class="bb-status-badge ongoing">継続中</span>
+                                <span class="bb-status-text">
+                                    <strong>練習機としての運用</strong>：機体の調整課題から、操縦者自身に合うセッティング模索フェーズへ移行。最大ピッチ角は現状維持
+                                </span>
+                            </li>
+                            <li>
+                                <span class="bb-status-badge ongoing">継続中</span>
+                                <span class="bb-status-text">
+                                    <strong>headspeed=0 問題</strong>：ESC内蔵Storeガバナーで運用継続、配線修理は対象外。motor[0]ベースで解析を実施
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- ============== RS7 Ultra #001-#005 ============== -->
+                    <div class="bb-machine-section">
+                        <h4 class="bb-machine-title">🔵 GOOSKY RS7 Ultra — 解析結果（⑧ #001〜#005 / 5フライト段階的調整完成）</h4>
+
+                        <div class="bb-analysis-box">
+                            <strong>フライト構成：</strong>5フライト構成。途中で複数回降ろしながら現場で値を詰め、4回目でほぼ決定、5回目で最終調整＋実飛行という段階的アプローチ。1〜3回目は探索フェーズで値変更が反映されきっていない可能性あり、データとしての信頼度は4〜5回目が高い。<br><br>
+                            <strong>現場変更点（10箇所以上）：</strong>セッション⑦次回値から多数の項目に変更が入った。主要変更は <strong>Profile #3 Yaw P 100→110、Yaw F 0→3、Yaw B 3→7、CW/CCW Yaw Stop 125/105→140/120、Cyclic FF 3→10、Collective FF 22→30</strong>。Profile #1/#2もYaw Stopを+10アップ。Max Leveling Acceleration はMode 3時代からの値で対象外。<br><br>
+                            <strong>フライト所感：</strong>「1〜3回目はテールがコレクティブについてこない感覚」「Profile #1〜#2のテールすわりをもう少し良くしたい」「3回目時点でまだ#3はついてこない」「4回目でついてくるようになった」「<strong>5回目でピッタリついてくるようになった</strong>」。Collective FF途中段階は22→25→…と段階的に増量し、足りないと感じて30へ到達。
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔑 Profile #3 軽い3D — 5フライトの段階的改善</h5>
+                        <div class="bb-analysis-box">
+                            <strong>Yaw追従MAEの推移：</strong><br>
+                            ・#001: 16.1 deg/s（テール追従不足）<br>
+                            ・#002: 14.1 deg/s<br>
+                            ・#003: 14.7 deg/s（まだ追従しない）<br>
+                            ・#004: <strong>11.0 deg/s</strong>（「ついてくる」）<br>
+                            ・#005: <strong>10.9 deg/s</strong>（「ピッタリついてくる」）<br><br>
+                            <strong>Yaw流れ p95（テール意図的に動かしてない時）：</strong>46→41→39→33→<strong>31</strong> deg/s と一貫して低下。<br><br>
+                            <strong>headspeed CV（Profile #3 定常区間）：</strong>1.73%→2.15%→1.77%→1.88%→<strong>1.51%</strong>。ESC内蔵Storeガバナーの精度が最終フライトで最良値に到達。
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔍 #003 vs #005 テールロック解析 — Collective変化に対するテール応答</h5>
+                        <div class="bb-analysis-box">
+                            <strong>散布図での比較（Yaw setpoint &lt;30時のCollective変化率 vs Yaw Gyro）：</strong><br>
+                            ・#003 「ついてこない」: Yaw gyro が ±100 deg/s 以上の縦方向広がり（コレクティブ操作中のテール流れ）<br>
+                            ・#005 「ピッタリついてくる」: Yaw gyro が ±100 deg/s 以内に集中、縦のスパイク消失<br><br>
+                            <strong>時系列での確認：</strong>#005では Profile #3区間で Collective が -700〜+800 という広いレンジで激しく動いている（縦のメトロノーム・フリップ・ループ等）にもかかわらず、Yaw setpoint と Yaw gyro が時系列上ほぼ完全重畳。「ピッタリついてくる」のフライト所感が、激しい3D演技中でも維持されていることがデータ上で確認できる。
+                        </div>
+
+                        <h5 class="bb-subsection-title">📋 Profile別 使い分けと哲学的位置づけ</h5>
+                        <div class="bb-analysis-box">
+                            <strong>使用頻度：</strong>Profile #1（ホバ・離着陸）と Profile #3（軽い3D演技）が主体。Profile #2 はストールターンや軽い旋回中心の用途。<br><br>
+                            <strong>Profile #2 の役割（現場知見）：</strong>RS7 Ultra はパワー・余力ともに段違いに高い機体のため、3D練習を続けると疲労リスクが大きい。Profile #2 を意識的な遊覧フライト用として使い分けることで、「練習のし過ぎ」を防ぎ「楽しみ」を保つ調整装置として機能する。Profile選択自体が自己管理の手段となる、という哲学的な位置づけ。<br><br>
+                            <strong>Profile #2 の調整効果：</strong>Yaw Stop +10/+10 と Collective FF +2 により、Yaw流れ p95 が 41→19 (-55%) と低下。遊覧用途として完成形と判断。
+                        </div>
+
+                        <h5 class="bb-subsection-title">📊 グラフデータ（⑧ RS7 Ultra）</h5>
+                        <div class="bb-graph-grid">
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/rs7_g1_5flights_timeline.png" alt="RS7 Ultra 5フライトタイムライン" loading="lazy">
+                                <p class="bb-graph-caption">5フライトのプロファイル時系列 — motor[0]推移、#004で「ついてくる」起点・#005で「ピッタリついてくる」最終フライト</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/rs7_g2_evolution.png" alt="RS7 Ultra 5フライト推移" loading="lazy">
+                                <p class="bb-graph-caption">フライト推移 — Profile #3 Yaw追従MAE/Yaw流れp95、Profile #2/#1 のYaw流れ推移、調整完成過程</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/rs7_g3_p3_yaw_tracking.png" alt="RS7 Ultra Profile #3 Yaw追従" loading="lazy">
+                                <p class="bb-graph-caption">Profile #3 Yaw追従時系列 — #003「まだついてこない」 vs #005「ピッタリついてくる」、激しい3D演技中も完全重畳</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/rs7_g4_tail_lock.png" alt="RS7 Ultra テールロック解析" loading="lazy">
+                                <p class="bb-graph-caption">テールロック解析 — Collective変化率 vs Yaw Gyro 散布図と時系列、#005では Coll -700〜+800 の激変動中も Yaw完全追従</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/rs7_g5_governor_mae.png" alt="RS7 Ultra ガバナーとMAE" loading="lazy">
+                                <p class="bb-graph-caption">ESC内蔵ガバナー精度（HS CV%）と Profile #3 3軸追従MAE推移 — Yaw MAE 16.1→10.9 (-32%)</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/rs7_g6_summary.png" alt="RS7 Ultra 5フライトサマリ" loading="lazy">
+                                <p class="bb-graph-caption">⑧ RS7 Ultra 5フライト調整完成サマリ — Profile #3 主要指標推移と #001/#003/#005 比較表</p>
+                            </div>
+                        </div>
+
+                        <h5 class="bb-subsection-title">📋 次回フライト試行項目（RS7 Ultra）</h5>
+                        <ul class="bb-status-list">
+                            <li>
+                                <span class="bb-status-badge ongoing">継続中</span>
+                                <span class="bb-status-text">
+                                    <strong>Cyclic Ring 110</strong>：すでに本セッション後にProfile #2/#3で110に絞り適用済み。次回フライトで効果検証、特にProfile #2/#3で絞りの効果が出やすい範囲を中心に観察
+                                </span>
+                            </li>
+                            <li>
+                                <span class="bb-status-badge next">次回</span>
+                                <span class="bb-status-text">
+                                    <strong>Cyclic Ring さらなる絞り検討</strong>：110で良好なら100試行も視野。撤退ルール：合わなければ元値へ戻す
+                                </span>
+                            </li>
+                            <li>
+                                <span class="bb-status-badge done">完了</span>
+                                <span class="bb-status-text">
+                                    <strong>Profile #3 Yaw調整</strong>：Yaw P=110、Yaw F=3、Yaw B=7、Stop 140/120、Collective FF=30 で「ピッタリついてくる」レベルに到達
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- ============== Forza450 #001/#002 ============== -->
+                    <div class="bb-machine-section">
+                        <h4 class="bb-machine-title">🟠 JR Forza450 — 解析結果（⑧ #001/#002 / 三重保護効果検証 + ピルエットフリップ実現）</h4>
+
+                        <div class="bb-analysis-box">
+                            <strong>フライト構成：</strong>2フライト構成。#001は調整フェーズ（セッション⑦次回値そのままで離陸、Profile #2でアーミング）、#002はセッティングが綺麗にはまった本格フライト。中盤〜後半でピルエットフリップを実行。同日・同操縦者の対照ペア。<br><br>
+                            <strong>現場変更点（20箇所以上）：</strong>セッション⑦次回値から各Profileで詰めが入った。主要変更は <strong>Profile #3 全軸 P値+5〜+10アップ、Pitch D 20→25 (+5)、Yaw P 70→80 (+10)、Yaw Stop 100/80→110/90、Collective FF 45→35 (-10)</strong>。Profile #2も同様にPitch D +3、Yaw Stop +5/+5、Collective FF 50→40 (-10)。Profile #1はYaw P 95→100 (+5) のみ。<br><br>
+                            <strong>三重保護は全Profileで完全維持：</strong>Roll D=70、Roll Bandwidth=50、Roll D-term Cutoff=12 はセッション⑦の設計どおり全プロファイルで維持。<br><br>
+                            <strong>フライト所感：</strong>「ハンチングは再発なし」「安定感を強く感じた」「ピルエットフリップも安心して飛ばせた」。NEXUS-XR 導入（2025年12月頃）以降の調整課題が解決した本機にとって意義深いフライト。
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔑 13.65Hz共振帯チェック — 三重保護の効果検証</h5>
+                        <div class="bb-analysis-box">
+                            <strong>Profile #3 Roll Gyro PSD（Welch法、nperseg=8192）での周波数解析結果：</strong><br><br>
+                            ・#001 全帯域peak: 308 (deg/s)²/Hz at <strong>4.39Hz</strong>（操縦操作）<br>
+                            ・#001 13.65Hz帯（11.65〜15.65Hz）peak: <strong>7.06</strong>（全帯域peakの2.3%）<br><br>
+                            ・#002 全帯域peak: 301 (deg/s)²/Hz at <strong>6.84Hz</strong>（操縦操作）<br>
+                            ・#002 13.65Hz帯 peak: <strong>6.55</strong>（全帯域peakの2.2%）<br><br>
+                            <strong>13.65Hz共振帯はむしろ周辺周波数より低い谷となっており、共振由来のピークが見えない</strong>。三重保護の物理的設計どおり、13.65Hzでのリミットサイクル発振が成立しなくなったことが確認できる。<br><br>
+                            <strong>主要ピークの内訳：</strong>4.39Hz / 6.84Hz は操縦者の意図的操作（フリップ・メトロノーム等周期動作）、58Hz付近は メインローター回転（headspeed 3500rpm = 58.3Hz）の正常な振動。
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔑 ピルエットフリップ実行区間の詳細解析</h5>
+                        <div class="bb-analysis-box">
+                            <strong>#002 中盤〜後半に複数のピルエットフリップ候補区間を特定。</strong>判定基準：Profile #3区間内で Yaw 連続回転 + Pitch 大変動 + Collective 急変動が同時発生。<br><br>
+                            <strong>最有力候補 t=232.5秒付近：</strong><br>
+                            ・Yaw Gyro 最大: 603 deg/s（連続的な高速回転）<br>
+                            ・Pitch Gyro 最大: 184 deg/s（フリップ動作）<br>
+                            ・Collective range: <strong>-540〜+149</strong>（縦の回転動作で深い負ピッチを使用）<br>
+                            ・Roll: ±100 deg/s 程度に収束（規則的振動なし、13.65Hz共振の兆候なし）<br>
+                            ・<strong>4軸（Roll/Pitch/Yaw/Collective）すべてで setpoint と gyro がほぼ完全に重畳</strong><br><br>
+                            <strong>その他の候補：</strong>t=138.0秒（Yaw 600 deg/s + Coll -359〜+304）、t=184.5秒、t=203.7秒など複数。3D演技中のテール挙動が安定した状態で、フライト所感「安心して飛ばせた」を裏付ける。
+                        </div>
+
+                        <h5 class="bb-subsection-title">📊 Pitch P/I peak比の健全化 — 「眠っていたPitch P」の覚醒</h5>
+                        <div class="bb-analysis-box">
+                            <strong>セッション⑦時点：</strong>Profile #3 Pitch P/I peak比 = <strong>0.05</strong>（健全域 0.30〜0.80 から大きく外れ、P項が機能していない状態）<br><br>
+                            <strong>セッション⑧ #002（Pitch P 32→38 / +6 後）：</strong><br>
+                            ・Profile #1: <strong>0.26</strong>（健全域近く）<br>
+                            ・Profile #2: <strong>0.28</strong>（健全域近く）<br>
+                            ・Profile #3: <strong>0.21</strong>（セッション⑦比4倍以上）<br><br>
+                            Pitch P値の引き上げにより、Pitch軸でP項とI項の役割分担が健全化。フライト所感「経験則から入れた値がバッチリあっていた」が数値的に裏付けられる。
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔍 Roll Gyro振幅 — ハンチング再発無しの追加検証</h5>
+                        <div class="bb-analysis-box">
+                            <strong>Roll Gyro Peak-to-Peak 比較：</strong><br>
+                            ・セッション⑦時 Profile #3 共振時: <strong>937 deg/s</strong>（13.65Hzの規則的なリミットサイクル発振）<br>
+                            ・セッション⑧ #001 Profile #3: 452 deg/s<br>
+                            ・セッション⑧ #002 Profile #3: 705 deg/s（演技中のピーク値、規則振動ではなく操縦意図によるフリップ・メトロノーム動作の振幅）<br><br>
+                            #002の705 deg/sは積極的な3D演技に伴う通常の振幅であり、PSD解析で13.65Hz帯にピークが見えないことから、共振由来ではない。フライト所感「ハンチング再発なし」と整合する。
+                        </div>
+
+                        <h5 class="bb-subsection-title">📊 グラフデータ（⑧ Forza450）</h5>
+                        <div class="bb-graph-grid">
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/forza_g1_profile_timeline.png" alt="Forza450 プロファイル時系列" loading="lazy">
+                                <p class="bb-graph-caption">プロファイル時系列 — #001 調整フェーズ vs #002 セッティング完成（Profile #3 が66%を占める3D演技フライト）</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/forza_g2_fft_1365hz_check.png" alt="Forza450 13.65Hz共振帯PSD" loading="lazy">
+                                <p class="bb-graph-caption">13.65Hz共振帯チェック — Profile #3 Roll Gyro PSD、共振帯（赤色帯）に明確なピーク無し、三重保護の効果が物理的に確認</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/forza_g3_pirouette_flip.png" alt="Forza450 ピルエットフリップ詳細" loading="lazy">
+                                <p class="bb-graph-caption">ピルエットフリップ実行区間の4軸詳細 — t=232.5秒・t=138.0秒、Roll/Pitch/Yaw/Collective すべてで setpoint と gyro が重畳</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/forza_g4_yaw_drift_hist.png" alt="Forza450 Yaw流れヒストグラム" loading="lazy">
+                                <p class="bb-graph-caption">Yaw流れヒストグラム — Profile別、setpoint&lt;30時の|Yaw Gyro|分布</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/forza_g5_pitch_roll_health.png" alt="Forza450 PitchP/I比とRoll振幅" loading="lazy">
+                                <p class="bb-graph-caption">Pitch P/I peak比の健全化（セッション⑦ P#3=0.05 → ⑧ P#3=0.21）と Roll Gyro振幅比較</p>
+                            </div>
+                            <div class="bb-graph-item" onclick="openBBImage(this)">
+                                <img src="blackbox/forza_g6_summary.png" alt="Forza450 #001 vs #002サマリ" loading="lazy">
+                                <p class="bb-graph-caption">⑧ Forza450 主要指標サマリ — 13.65Hz共振克服とピルエットフリップ実現の総合まとめ</p>
+                            </div>
+                        </div>
+
+                        <h5 class="bb-subsection-title">📋 次回フライト試行項目（Forza450）</h5>
+                        <ul class="bb-status-list">
+                            <li>
+                                <span class="bb-status-badge done">完了</span>
+                                <span class="bb-status-text">
+                                    <strong>13.65Hz共振の物理的克服</strong>：三重保護（Roll D=70 / BW=50 / D-Cutoff=12）の効果を Blackbox PSD で検証、共振帯ピーク消失を確認。NEXUS-XR導入後の調整課題が解決
+                                </span>
+                            </li>
+                            <li>
+                                <span class="bb-status-badge done">完了</span>
+                                <span class="bb-status-text">
+                                    <strong>ピルエットフリップ実現</strong>：本機での3D機動が安定実行可能に。複数区間で4軸完全追従を確認
+                                </span>
+                            </li>
+                            <li>
+                                <span class="bb-status-badge next">次回</span>
+                                <span class="bb-status-text">
+                                    <strong>Cyclic Ring 110 → 100 試行</strong>：機体が比較的小型のためすでに110で運用中、さらに絞って100を試行。合わなければ110へ戻す
+                                </span>
+                            </li>
+                            <li>
+                                <span class="bb-status-badge ongoing">継続中</span>
+                                <span class="bb-status-text">
+                                    <strong>三重保護は聖域として維持</strong>：Roll D=70 / Bandwidth=50 / D-term Cutoff=12 は今後も動かさない設定として固定
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- ============== 3機総合まとめ ============== -->
+                    <div class="bb-machine-section">
+                        <h4 class="bb-machine-title">🎯 3機総合まとめ — セッション⑧の到達点と今後の方向性</h4>
+
+                        <div class="bb-analysis-box">
+                            <strong>3機それぞれの到達点：</strong><br><br>
+                            <strong>🟢 E8（450class / 8S）：</strong>機体の調整課題から、操縦者自身に合うセッティングを模索するフェーズへ移行。練習機としての位置づけが確定。<br><br>
+                            <strong>🔵 RS7 Ultra（700class / 12S）：</strong>5フライトの段階的調整で「ピッタリついてくる」レベルに到達。Profile #2 を遊覧フライト用として活用する哲学的位置づけが確立。<br><br>
+                            <strong>🟠 Forza450（450class / 3S）：</strong>13.65Hz共振の物理的克服とピルエットフリップ実現。NEXUS-XR導入（2025年12月頃）以降の調整課題が解決。
+                        </div>
+
+                        <h5 class="bb-subsection-title">🔑 3機共通テーマ — Cyclic Ring 絞り試行</h5>
+                        <div class="bb-analysis-box">
+                            <strong>機体スケールを越えた共通検証：</strong>セッション⑧後、3機すべてで Cyclic Ring を絞る方向へ調整。スティック分解能を細分化することで、繊細な刻み制御を実現する方向性。<br><br>
+                            <strong>原理（現場知見）：</strong>Cyclic Ring を絞ると、同じ物理スティック量に対するサイクリック実効指令の細分化が進む。最大値を絞ることで「少しの操作量で機体が動く」状態となり、最大ピッチ角を控えめにしても機敏な動きが可能になる。これは「省エネで機敏」を実現する設定方向。<br><br>
+                            <strong>各機の現状値と次回試行値：</strong><br>
+                            ・🔵 RS7 Ultra: 110（適用済み）→ 必要なら100<br>
+                            ・🟢 E8: 125 → 110<br>
+                            ・🟠 Forza450: 110 → 100<br><br>
+                            <strong>共通哲学：</strong>機体側ではなく操縦者の操作分解能を上げる方向に揃える。異なる機体スケール（450 / 700）で同一の操作哲学が通用するか、機体ごとに最適値が異なるかを並行検証する探索フェーズ。
+                        </div>
+
+                        <h5 class="bb-subsection-title">📋 解析方針の今後 — 練習主体への移行</h5>
+                        <div class="bb-analysis-box">
+                            <strong>セッション⑧をもって、Blackbox解析の頻度を見直す：</strong>これまで毎回フライトのたびに大規模解析を行ってきたが、3機すべてが完成度の高い状態に到達したため、今後は以下の方針で進める。<br><br>
+                            ・<strong>定例的な大規模解析は終了</strong>：練習をメインとし、Blackbox解析は「異変・違和感が発生したとき」「明確に上達したとき」など節目で実施する形へ移行<br>
+                            ・<strong>定例報告型の更新</strong>：上達のマイルストーンや新たな機動の習得時にデータを追加する形<br>
+                            ・<strong>異常検知型の解析</strong>：Forza450のハンチング問題のように、現場での違和感が出た場合は即座に解析を実施<br><br>
+                            セッション⑦で確立した「フライト所感を起点に Blackbox で答え合わせする手法」と、本セッションで確認できた3機の完成度を踏まえ、解析作業から練習作業へ重心を移す。
+                        </div>
+
+                        <h5 class="bb-subsection-title">📋 セッション⑧ 次回フライト試行項目まとめ</h5>
+                        <ul class="bb-status-list">
+                            <li>
+                                <span class="bb-status-badge next">次回</span>
+                                <span class="bb-status-text">
+                                    <strong>3機共通テーマ：Cyclic Ring 絞り検証</strong>。RS7 Ultra 110、E8 110、Forza450 100。各機で「自分に合う値」を模索
+                                </span>
+                            </li>
+                            <li>
+                                <span class="bb-status-badge ongoing">継続中</span>
+                                <span class="bb-status-text">
+                                    <strong>Forza450 三重保護の維持</strong>：Roll D=70 / Bandwidth=50 / D-term Cutoff=12 を聖域として固定、ハンチング再発監視は不要
+                                </span>
+                            </li>
+                            <li>
+                                <span class="bb-status-badge ongoing">継続中</span>
+                                <span class="bb-status-text">
+                                    <strong>練習主体への移行</strong>：定例的な大規模解析を終了、異変検知時または上達のマイルストーン時に解析を実施する形へ
+                                </span>
+                            </li>
+                            <li>
+                                <span class="bb-status-badge done">完了</span>
+                                <span class="bb-status-text">
+                                    <strong>3機すべて完成度の高い状態に到達</strong>：E8 練習機完成、RS7 Ultra 「ピッタリついてくる」到達、Forza450 13.65Hz共振克服とピルエットフリップ実現
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
                 <!-- 画像拡大モーダル -->
                 <div id="bb-image-modal" class="bb-modal" onclick="handleModalClick(event)">
                     <span class="bb-modal-close" onclick="closeBBImage()">&times;</span>
