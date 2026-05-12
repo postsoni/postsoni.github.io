@@ -1,52 +1,52 @@
 {
   "ELRS 本体": {
-    "id": "tag:github.com,2008:Repository/151064439/4.0.0",
-    "title": "ExpressLRS 4.0.0",
-    "checked_at": "2026-05-11T06:57:10.044283+00:00"
+    "id": "tag:github.com,2008:Repository/151064439/4.0.1",
+    "title": "ExpressLRS 4.0.1",
+    "checked_at": "2026-05-12T06:30:05.124445+00:00"
   },
   "ELRS Configurator": {
     "id": "tag:github.com,2008:Repository/332467095/v1.7.11",
     "title": "ExpressLRS Configurator 1.7.11",
-    "checked_at": "2026-05-11T06:57:10.635196+00:00"
+    "checked_at": "2026-05-12T06:30:05.565963+00:00"
   },
   "ELRS Backpack": {
     "id": "tag:github.com,2008:Repository/413766256/1.5.5",
     "title": "ExpressLRS Backpack V1.5.5",
-    "checked_at": "2026-05-11T06:57:11.254995+00:00"
+    "checked_at": "2026-05-12T06:30:06.043664+00:00"
   },
   "Rotorflight Firmware": {
     "id": "tag:github.com,2008:Repository/323129639/release/4.6.0-RC2",
     "title": "Rotorflight Release Candidate 4.6.0-RC2",
-    "checked_at": "2026-05-11T06:57:11.633247+00:00"
+    "checked_at": "2026-05-12T06:30:06.317842+00:00"
   },
   "Rotorflight Configurator": {
     "id": "tag:github.com,2008:Repository/323129693/release/2.3.0-RC2",
     "title": "Rotorflight Configurator Release Candidate 2.3.0-RC2",
-    "checked_at": "2026-05-11T06:57:11.988130+00:00"
+    "checked_at": "2026-05-12T06:30:06.571632+00:00"
   },
   "Rotorflight Lua Scripts (EdgeTX)": {
     "id": "tag:github.com,2008:Repository/411990273/release/2.3.0-RC2",
     "title": "Rotorflight Lua Scripts - Release Candidate 2.3.0-RC2",
-    "checked_at": "2026-05-11T06:57:12.314768+00:00"
+    "checked_at": "2026-05-12T06:30:06.790039+00:00"
   },
   "Rotorflight Blackbox": {
     "id": "tag:github.com,2008:Repository/323129763/release/2.3.0-RC2",
     "title": "Rotorflight Blackbox Release Candidate 2.3.0-RC2",
-    "checked_at": "2026-05-11T06:57:12.804764+00:00"
+    "checked_at": "2026-05-12T06:30:07.063414+00:00"
   },
   "Rotorflight Ethos Suite": {
     "id": "tag:github.com,2008:Repository/876239251/release/2.3.0-RC2",
     "title": "Rotorflight Lua Ethos Suite - Release Candidate 2.3.0-RC2",
-    "checked_at": "2026-05-11T06:57:13.177668+00:00"
+    "checked_at": "2026-05-12T06:30:07.378893+00:00"
   },
   "EdgeTX 本体": {
     "id": "tag:github.com,2008:Repository/364871330/v2.12.1",
     "title": "v2.12.1",
-    "checked_at": "2026-05-11T06:57:14.634912+00:00"
+    "checked_at": "2026-05-12T06:30:08.618890+00:00"
   },
   "EdgeTX SDカード": {
     "id": "tag:github.com,2008:Repository/371100585/latest",
     "title": "Latest",
-    "checked_at": "2026-05-11T06:57:15.652666+00:00"
+    "checked_at": "2026-05-12T06:30:09.476734+00:00"
   }
 }
