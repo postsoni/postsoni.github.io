@@ -337,7 +337,7 @@ const translations = {
         nav: {
             top: 'TOP', news: '最新の活動報告', gallery: '活動ギャラリー',
             roadmap: '初めての方へ', profile: 'プロフィール', sns: 'SNS',
-            activity: 'ブログアクセス', 'edgetx-manual': 'EdgeTXマニュアル', 'rotorflight-manual': 'Rotorflightマニュアル', 'rc-library': 'RC機器マニュアルPDF集', 'ai-games': 'AIラジコンゲーム', 'local-llm': 'ローカルLLMのAI開発', goods: 'グッズ', support: 'RC支援・サポート',
+            activity: 'ブログアクセス', 'blackbox-log': 'ブラックボックス解析ログ', 'edgetx-manual': 'EdgeTXマニュアル', 'rotorflight-manual': 'Rotorflightマニュアル', 'rc-library': 'RC機器マニュアルPDF集', 'ai-games': 'AIラジコンゲーム', 'local-llm': 'ローカルLLMのAI開発', goods: 'グッズ', support: 'RC支援・サポート',
             testimonials: 'サポートを受けた方の声', faq: 'よくある質問', partners: '提携サイト', contact: 'お問い合わせ'
         },
         sidebar: {
@@ -1295,7 +1295,7 @@ const translations = {
         nav: {
             top: 'TOP', news: 'Latest Updates', gallery: 'Gallery',
             roadmap: 'For Beginners', profile: 'Profile', sns: 'SNS',
-            activity: 'Blog', 'edgetx-manual': 'EdgeTX Manual', 'rotorflight-manual': 'Rotorflight Manual', 'rc-library': 'RC Equipment PDF Manuals', 'ai-games': 'AI RC Games', 'local-llm': 'Local LLM AI Development', goods: 'Goods', support: 'Support',
+            activity: 'Blog', 'blackbox-log': 'Blackbox Analysis Log', 'edgetx-manual': 'EdgeTX Manual', 'rotorflight-manual': 'Rotorflight Manual', 'rc-library': 'RC Equipment PDF Manuals', 'ai-games': 'AI RC Games', 'local-llm': 'Local LLM AI Development', goods: 'Goods', support: 'Support',
             testimonials: 'Testimonials', faq: 'FAQ', partners: 'Partners', contact: 'Contact'
         },
         sidebar: {
@@ -2255,7 +2255,7 @@ const translations = {
         nav: {
             top: '首页', news: '最新活动', gallery: '画廊',
             roadmap: '新手指南', profile: '简介', sns: '社交媒体',
-            activity: '博客', 'edgetx-manual': 'EdgeTX手册', 'rotorflight-manual': 'Rotorflight手册', 'rc-library': 'RC设备手册PDF集', 'ai-games': 'AI遥控游戏', 'local-llm': '本地LLM的AI开发', goods: '商品', support: '支援',
+            activity: '博客', 'blackbox-log': '黑匣子解析日志', 'edgetx-manual': 'EdgeTX手册', 'rotorflight-manual': 'Rotorflight手册', 'rc-library': 'RC设备手册PDF集', 'ai-games': 'AI遥控游戏', 'local-llm': '本地LLM的AI开发', goods: '商品', support: '支援',
             testimonials: '评价', faq: '常见问题', partners: '合作网站', contact: '联系我们'
         },
         sidebar: {
