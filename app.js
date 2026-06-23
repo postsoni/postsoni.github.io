@@ -359,6 +359,22 @@ const translations = {
             section4Title: '◆測定機器の導入',
             section4Text: 'アンプの電流値を正確に測定できるアナライザーを導入しました。これにより、より精密なセッティングとトラブルシューティングが可能になります。'
         },
+        newsSection2026Jun: {
+            date: '2026年6月23日',
+            newsTitle: '低回転フライト探求・RS7 Ultra PID完成 & 活動報告',
+            section1Title: '◆お問い合わせ件数120件突破',
+            section1Text: 'お問い合わせ件数が累計120件を突破しました。皆さまからのご相談・ご支援に心より感謝申し上げます。',
+            section2Title: '◆Blackbox解析を一度終了し、Forza450の低回転フライトのデータをとるためのPIDを模索中',
+            section2Text: 'NEXUS-XRの粘らないかもしれないジャイロ特性を理解するために、他のジャイロとも比較する予定が進んでおります。低回転はノーマルモードが1790RPM、IU1が1950RPM、IU2が2300RPMです。',
+            section3Title: '◆実機の新マニューバ習得中',
+            section3Text: '前回に引き続き、ピルエットを主体とした練習をしています。とくにマニューバにピルエットサークルなどを取り入れるためにシミュレーターも活用中です。',
+            section4Title: '◆GOOSKY RS7 Ultra PIDの完成',
+            section4Text: '2026年3月30日に完了報告した RS7 Ultra のPID調整について、Rotorflight Configurator 2.3.0-RC3 でさらに追い込みをかけた結果、最適なセッティングが完成いたしました。',
+            section5Title: '◆カルマート40α低翼モデルのスタントフライト練習',
+            section5Text: '2026年6月15日からカルマートを飛ばしておりますが、ロールの軸を綺麗に通すために、風速5m/s以下では毎回最低限1回は飛ばし、軸が通るように練習中です。着陸も今のところ一切跳ねておりませんが、今後は跳ねないとは限らないので落ち着いて着陸も練習継続中です。',
+            section6Title: '◆ファンフライ2号機の制作＆練習',
+            section6Text: '1号機が破損してしまったので、正確に2号機を作り、よりよいフライトを目指して反省点を踏まえつつ練習中です。特にトルクロールからのハンドキャッチができることが目標ですから、正確なフライトを目指しております。'
+        },
         newsSection2026May: {
             date: '2026年5月9日',
             newsTitle: 'フライト技術習得・Blackbox解析継続 & 活動報告',
@@ -1316,6 +1332,22 @@ const translations = {
             section3Text: 'All mechanical parts (servos, ESC, motor, etc.) have arrived, and assembly and fine-tuning are currently underway. We will deliver a flight report once completed.',
             section4Title: '◆Introduction of Measuring Equipment',
             section4Text: 'We have introduced an analyzer that can accurately measure ESC current values. This enables more precise settings and troubleshooting.'
+        },
+        newsSection2026Jun: {
+            date: 'June 23, 2026',
+            newsTitle: 'Exploring Low-Headspeed Flight, RS7 Ultra PID Complete & Activity Report',
+            section1Title: '◆Inquiries Exceed 120 Cases',
+            section1Text: 'Total inquiries have exceeded 120 cases. I sincerely thank everyone for your consultations and continued support.',
+            section2Title: '◆Concluding Blackbox Analysis for Now, Searching for a PID to Capture Low-Headspeed Flight Data on the Forza450',
+            section2Text: 'To understand the NEXUS-XR\'s gyro characteristics — which may not "hold" as firmly — I am moving forward with plans to compare it against other gyros. At low headspeed, Normal mode runs at 1790 RPM, IU1 at 1950 RPM, and IU2 at 2300 RPM.',
+            section3Title: '◆Practicing New Aerobatic Maneuvers',
+            section3Text: 'Continuing from last time, I am practicing with a focus on pirouettes. In particular, I am also using a simulator to incorporate elements such as pirouetting circles into my maneuvers.',
+            section4Title: '◆GOOSKY RS7 Ultra PID Completed',
+            section4Text: 'Following the PID tuning completion reported on March 30, 2026, I pushed the RS7 Ultra settings even further with Rotorflight Configurator 2.3.0-RC3, and the optimal tuning is now complete.',
+            section5Title: '◆Stunt Flight Practice with the Kalmato 40α Low-Wing Model',
+            section5Text: 'I have been flying the Kalmato since June 15, 2026. To draw a clean roll axis, I make at least one flight every time conditions allow (wind under 5 m/s), practicing to keep the axis true. My landings have not bounced at all so far, but since that may not always hold, I continue practicing calm, composed landings as well.',
+            section6Title: '◆Building & Practicing with the Second Fun-Fly Aircraft',
+            section6Text: 'Since the first aircraft was damaged, I built a precise second unit and am practicing toward better flights while reflecting on past lessons. In particular, my goal is to achieve a hand catch out of a torque roll, so I am aiming for precise flying.'
         },
         newsSection2026May: {
             date: 'May 9, 2026',
@@ -2276,6 +2308,22 @@ const translations = {
             section3Text: '所有机械部件（舵机、电调、电机等）已到齐，目前正在进行组装和微调。完成后将提供飞行报告。',
             section4Title: '◆测量设备的引进',
             section4Text: '引进了可以准确测量电调电流值的分析仪。这使得更精确的设置和故障排除成为可能。'
+        },
+        newsSection2026Jun: {
+            date: '2026年6月23日',
+            newsTitle: '低转速飞行探索・RS7 Ultra PID完成 & 活动报告',
+            section1Title: '◆咨询件数突破120件',
+            section1Text: '咨询件数累计突破120件。衷心感谢各位的咨询与持续支持。',
+            section2Title: '◆暂时结束黑匣子分析，正在为采集Forza450低转速飞行数据而探索PID',
+            section2Text: '为了理解NEXUS-XR可能不够「黏住」的陀螺仪特性，与其他陀螺仪进行对比的计划正在推进中。低转速下，普通模式为1790RPM、IU1为1950RPM、IU2为2300RPM。',
+            section3Title: '◆实机新机动动作练习中',
+            section3Text: '延续上次，我正在以旋转(pirouette)为主进行练习。特别是为了将旋转圆周(pirouetting circle)等动作融入机动之中，也在活用模拟器。',
+            section4Title: '◆GOOSKY RS7 Ultra PID完成',
+            section4Text: '关于2026年3月30日报告完成的 RS7 Ultra PID调整，使用 Rotorflight Configurator 2.3.0-RC3 进一步精调后，最优设置现已完成。',
+            section5Title: '◆カルマート(Kalmato)40α低翼机型的特技飞行练习',
+            section5Text: '自2026年6月15日起开始试飞Kalmato。为了让滚转轴线干净利落地通过，在风速5m/s以下时每次至少飞行一次，练习让轴线保持准确。目前着陆完全没有弹跳，但今后未必不会弹跳，因此也在继续练习沉着冷静的着陆。',
+            section6Title: '◆Fun-Fly第2号机的制作与练习',
+            section6Text: '由于1号机损坏，我精确地制作了2号机，在吸取反省要点的同时，朝着更好的飞行进行练习。特别是以能完成从扭矩滚转(torque roll)到手接(hand catch)为目标，力求精准的飞行。'
         },
         newsSection2026May: {
             date: '2026年5月9日',
