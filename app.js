@@ -337,7 +337,7 @@ const translations = {
         nav: {
             top: 'TOP', news: '最新の活動報告', gallery: '活動ギャラリー',
             roadmap: '初めての方へ', profile: 'プロフィール', sns: 'SNS',
-            activity: 'ブログアクセス', 'edgetx-manual': 'EdgeTXマニュアル', 'rotorflight-manual': 'Rotorflightマニュアル', 'rc-library': 'RC機器マニュアルPDF集', 'ai-games': 'AIラジコンゲーム', goods: 'グッズ', support: 'RC支援・サポート',
+            activity: 'ブログアクセス', 'edgetx-manual': 'EdgeTXマニュアル', 'rotorflight-manual': 'Rotorflightマニュアル', 'rc-library': 'RC機器マニュアルPDF集', 'ai-games': 'AIラジコンゲーム', 'local-llm': 'ローカルLLMのAI開発', goods: 'グッズ', support: 'RC支援・サポート',
             testimonials: 'サポートを受けた方の声', faq: 'よくある質問', partners: '提携サイト', contact: 'お問い合わせ'
         },
         sidebar: {
@@ -928,6 +928,37 @@ const translations = {
             shareCta: '🐦 結果はぜひXでシェアしてください！リプライしにいくかも！？',
             followBtn: '@postsoni をフォロー'
         },
+        localLlmSection: {
+            title: 'ローカルLLMのAI開発',
+            introTitle: 'ラジコンとAIの融合へ —— その第一歩として、ローカルLLMの構築を進めています。',
+            introDesc: 'ぽすとそに工房では、ラジコンとAIを融合させるという目標のもと、自分の手元で動くローカルLLM（大規模言語モデル）の構築に取り組んでいます。クラウドに頼らず、自分の環境で動かすことで、AIの仕組みそのものへより深く踏み込み、その洞察を日々学習しています。単に「AIを使う」のではなく、「AIを理解し、育てる」こと。それが、ラジコン文化の次の世代へ技術と知識を繋いでいくための、私たちなりのアプローチです。',
+            storyTitle: '💭 はじまりは、ただの好奇心でした',
+            storyP1: '正直に言えば、はじまりは、ただの好奇心でした。可愛いキャラクターが、決められた台詞をなぞるだけのゲームを——本当に人間のように受け答えするAIで超えられたら面白いんじゃないか。AIの仕組みをもっと理解したいという気持ちと、そんなものができたら遊びとして楽しいだろうな、という単純な動機。それが、ローカルLLMに触れてみた最初のきっかけでした。',
+            storyP2: 'ところが、手を動かしているうちに、少しずつローカルLLMのことが分かってきました。モデルの選び方、パラメータの詰め方、崩れ方の癖——触れば触るほど、これは「遊びどころの技術」ではないと感じるようになりました。',
+            storyP3: 'そして、ある考えが浮かびます。これは、ラジコンの役にも立つのではないか。いや、ラジコンだけじゃない。困っている専門分野や、いま静かに廃れようとしている文化を、AIが助けられるのではないか。',
+            storyP4: '恋愛シミュレーションを超えようとした好奇心が、気づけばもっと大きな問いに変わっていました。ファインチューニングや強化学習で、ラジコンの技術や専門知識をAIに宿せるなら——次の世代へ繋ぐための、新しい手段になるかもしれない。いまは、その「遊びだった現在地」から「役に立つ最終地点」までを、頭の中で一本の線につなぎ直している最中です。',
+            sekaiName: 'SEKAI',
+            sekaiTagline: 'ユーザーと1対1で向き合う、頼れる相談相手',
+            sekaiDesc1: 'SEKAIは、あなたと一対一で対話する単体のAIキャラクターです。RCに関する疑問や相談に、確かな知識とほんの少しの優しさで応えることを目指して、人格そのものを設計し直しました。',
+            sekaiDesc2: 'ローカルで動く言語モデルに音声合成と知識検索を組み合わせ、ただ答えるだけでなく、寄り添いながら一緒に考える存在へ。RCの楽しさを、誰かと分かち合うための試みです。',
+            sekaiSpecBrain: '頭脳: gemma4:12b',
+            sekaiSpecRag: '知識検索: ChromaDB',
+            sekaiSpecVoice: '声: Irodori-TTS（声クローン）',
+            tsubasaName: 'つばさ＆なぎさ',
+            tsubasaTagline: '姉妹2人の掛け合いを楽しむ、観賞＆参加型',
+            tsubasaDesc1: 'つばさとなぎさは、二人で一組のAIキャラクターです。一人のAIでは生まれない「対話」「掛け合い」「視点の違い」を表現するために生まれました。自動で進む二人の会話に、あなたが割り込んで参加することもできます。',
+            tsubasaDesc2: '二つの人格を一つのモデルで演じ分けるのは、1対1のSEKAIよりずっと難しい挑戦でした。だからこそ、6つのローカルLLMを比べる検証の主役にもなった二人です。',
+            tsubasaSpecBrain: '頭脳: cyberagent 日本語Nemo 12B',
+            tsubasaSpecVoice: '声: Irodori-TTS（声クローン）',
+            techTitle: '🛠️ 技術スタック・開発記録',
+            techDesc: 'ローカルLLMの構築から音声合成、知識検索の統合まで。RTX 4070 Ti（VRAM 12GB）という一般家庭向けのゲーミングPCで、キャラクター会話に最適なローカルLLMを探した検証の記録を公開します。6つのモデルを実際に試した長所・崩れ方・最終的にたどり着いた設定を、そのまままとめました。',
+            pdfTitle: 'ローカルLLMでキャラ会話を作る — 6モデル比較検証レポート',
+            pdfFeature1: '・検証した6つのローカルLLMの結果と判定',
+            pdfFeature2: '・VRAM 12GBで頭脳と声を同居させる構成',
+            pdfFeature3: '・最終的にたどり着いたパラメータと後処理の工夫',
+            pdfButton: '📥 PDFをダウンロード',
+            pdfNotice: '※このPDFは日本語のみの対応となります'
+        },
         goodsSection: {
             title: 'グッズ',
             pdfDownloadTitle: '📚 無料ダウンロード資料（日本語版）',
@@ -1264,7 +1295,7 @@ const translations = {
         nav: {
             top: 'TOP', news: 'Latest Updates', gallery: 'Gallery',
             roadmap: 'For Beginners', profile: 'Profile', sns: 'SNS',
-            activity: 'Blog', 'edgetx-manual': 'EdgeTX Manual', 'rotorflight-manual': 'Rotorflight Manual', 'rc-library': 'RC Equipment PDF Manuals', 'ai-games': 'AI RC Games', goods: 'Goods', support: 'Support',
+            activity: 'Blog', 'edgetx-manual': 'EdgeTX Manual', 'rotorflight-manual': 'Rotorflight Manual', 'rc-library': 'RC Equipment PDF Manuals', 'ai-games': 'AI RC Games', 'local-llm': 'Local LLM AI Development', goods: 'Goods', support: 'Support',
             testimonials: 'Testimonials', faq: 'FAQ', partners: 'Partners', contact: 'Contact'
         },
         sidebar: {
@@ -1857,6 +1888,37 @@ const translations = {
             shareCta: '🐦 Please share your results on X! We might reply!',
             followBtn: 'Follow @postsoni'
         },
+        localLlmSection: {
+            title: 'Local LLM AI Development',
+            introTitle: 'Toward fusing RC and AI — building a local LLM as the first step.',
+            introDesc: 'At Postsoni Workshop, with the goal of fusing RC and AI, we are working on building a local LLM (large language model) that runs on our own hardware. By running it in our own environment rather than relying on the cloud, we dig deeper into how AI itself works and keep learning from those insights every day. Not just "using AI," but "understanding and nurturing AI." That is our own approach to passing technology and knowledge on to the next generation of RC culture.',
+            storyTitle: '💭 It all started with simple curiosity',
+            storyP1: 'To be honest, it all started with simple curiosity. Could an AI that truly responds like a human surpass those old games where a cute character just reads pre-written lines? A wish to understand how AI works, plus the simple thought that it would be fun to play with something like that — that was the original spark for trying out a local LLM.',
+            storyP2: 'But as I kept working hands-on, I gradually came to understand local LLMs — how to choose models, how to tune parameters, the quirks of how they break down. The more I touched them, the more I felt this was not just a technology for play.',
+            storyP3: 'Then a thought occurred to me: this could be useful for RC, too. No — not just RC. AI might be able to help struggling specialized fields, and cultures that are quietly fading away.',
+            storyP4: 'The curiosity that began as an attempt to surpass a dating simulation had, before I knew it, turned into a much bigger question. If fine-tuning and reinforcement learning could embed RC techniques and expertise into an AI, it might become a new means of passing things on to the next generation. Right now, I am redrawing that line in my head — from the "present, where it was just play" to the "destination, where it becomes useful."',
+            sekaiName: 'SEKAI',
+            sekaiTagline: 'A reliable companion who faces you one-on-one',
+            sekaiDesc1: 'SEKAI is a single AI character that talks with you one-on-one. We redesigned its very personality, aiming for it to answer RC questions and consultations with solid knowledge and just a little kindness.',
+            sekaiDesc2: 'By combining a locally running language model with speech synthesis and knowledge retrieval, it becomes a presence that does not just answer, but thinks alongside you. It is an attempt to share the joy of RC with someone.',
+            sekaiSpecBrain: 'Brain: gemma4:12b',
+            sekaiSpecRag: 'Retrieval: ChromaDB',
+            sekaiSpecVoice: 'Voice: Irodori-TTS (voice clone)',
+            tsubasaName: 'Tsubasa & Nagisa',
+            tsubasaTagline: 'Enjoy the banter of two sisters — watch and join in',
+            tsubasaDesc1: 'Tsubasa and Nagisa are a pair of AI characters. They were born to express the "dialogue," "banter," and "different perspectives" that a single AI cannot produce. You can also jump in and join their auto-running conversation.',
+            tsubasaDesc2: 'Playing two distinct personalities with a single model was a far harder challenge than the one-on-one SEKAI. That is exactly why these two became the stars of our comparison of six local LLMs.',
+            tsubasaSpecBrain: 'Brain: cyberagent Japanese Nemo 12B',
+            tsubasaSpecVoice: 'Voice: Irodori-TTS (voice clone)',
+            techTitle: '🛠️ Tech Stack & Development Log',
+            techDesc: 'From building a local LLM to integrating speech synthesis and knowledge retrieval. We are publishing the record of our search for the best local LLM for character conversation on an ordinary home gaming PC — an RTX 4070 Ti (12GB VRAM). It compiles the strengths, breakdowns, and final settings we reached after actually trying six models.',
+            pdfTitle: 'Building Character Conversations with Local LLMs — 6-Model Comparison Report',
+            pdfFeature1: '・Results and verdicts for the six local LLMs tested',
+            pdfFeature2: '・A setup sharing brain and voice within 12GB of VRAM',
+            pdfFeature3: '・The final parameters and post-processing techniques we reached',
+            pdfButton: '📥 Download PDF',
+            pdfNotice: '※This PDF is available in Japanese only'
+        },
         goodsSection: {
             title: 'Goods',
             pdfDownloadTitle: '📚 Free Download Materials (Japanese Only)',
@@ -2193,7 +2255,7 @@ const translations = {
         nav: {
             top: '首页', news: '最新活动', gallery: '画廊',
             roadmap: '新手指南', profile: '简介', sns: '社交媒体',
-            activity: '博客', 'edgetx-manual': 'EdgeTX手册', 'rotorflight-manual': 'Rotorflight手册', 'rc-library': 'RC设备手册PDF集', 'ai-games': 'AI遥控游戏', goods: '商品', support: '支援',
+            activity: '博客', 'edgetx-manual': 'EdgeTX手册', 'rotorflight-manual': 'Rotorflight手册', 'rc-library': 'RC设备手册PDF集', 'ai-games': 'AI遥控游戏', 'local-llm': '本地LLM的AI开发', goods: '商品', support: '支援',
             testimonials: '评价', faq: '常见问题', partners: '合作网站', contact: '联系我们'
         },
         sidebar: {
@@ -2785,6 +2847,37 @@ const translations = {
             game5Desc: '体验RC生活！会是怎样的人生？',
             shareCta: '🐦 请在X上分享您的结果！我们可能会回复！',
             followBtn: '关注 @postsoni'
+        },
+        localLlmSection: {
+            title: '本地LLM的AI开发',
+            introTitle: '迈向遥控与AI的融合——作为第一步，我们正在构建本地LLM。',
+            introDesc: '在ぽすとそに工房，我们以融合遥控与AI为目标，致力于构建在自己手边运行的本地LLM（大语言模型）。不依赖云端，而是在自己的环境中运行，从而更深入地探究AI本身的机制，并每天从中学习其中的洞见。不只是「使用AI」，而是「理解并培育AI」。这就是我们为将技术与知识传承给下一代遥控文化而采取的独特方式。',
+            storyTitle: '💭 起点，只是单纯的好奇心',
+            storyP1: '说实话，起点只是单纯的好奇心。可爱的角色只是照本宣科地念出既定台词的游戏——若用真正能像人一样应答的AI，能否超越它，岂不是很有趣？想更深入理解AI机制的心情，加上「若能做出这样的东西，作为消遣一定很有意思」的单纯动机，便是我尝试接触本地LLM的最初契机。',
+            storyP2: '然而，在亲手操作的过程中，我渐渐了解了本地LLM——模型的选择、参数的调校、崩坏的癖性。越是接触，越觉得这绝非仅供消遣的技术。',
+            storyP3: '于是，一个念头浮现：这或许也能对遥控有所帮助。不，不只是遥控。AI或许还能帮助那些陷入困境的专业领域，以及正悄然衰退的文化。',
+            storyP4: '原本只是想超越恋爱模拟游戏的好奇心，不知不觉间已变成了更宏大的问题。倘若能通过微调与强化学习，将遥控的技术与专业知识赋予AI——那或许会成为传承给下一代的全新手段。如今，我正在脑海中将这条线重新连接起来——从「曾是消遣的现在」直到「能派上用场的终点」。',
+            sekaiName: 'SEKAI',
+            sekaiTagline: '与用户一对一相处的可靠商谈对象',
+            sekaiDesc1: 'SEKAI是与您一对一对话的单体AI角色。我们重新设计了它的人格本身，力求以可靠的知识和一点点温柔，回应有关遥控的疑问与商谈。',
+            sekaiDesc2: '将本地运行的语言模型与语音合成、知识检索相结合，使它不仅能回答，更能陪伴在侧、一同思考。这是与他人分享遥控乐趣的尝试。',
+            sekaiSpecBrain: '头脑: gemma4:12b',
+            sekaiSpecRag: '知识检索: ChromaDB',
+            sekaiSpecVoice: '声音: Irodori-TTS（声音克隆）',
+            tsubasaName: '翼＆渚',
+            tsubasaTagline: '欣赏姐妹二人的对话——可观赏，亦可参与',
+            tsubasaDesc1: '翼与渚是二人一组的AI角色。她们的诞生，是为了表现单个AI无法产生的「对话」「掛け合い」与「视角的差异」。您也可以插入并参与到她们自动进行的对话之中。',
+            tsubasaDesc2: '用一个模型分别演绎两种人格，是比一对一的SEKAI艰难得多的挑战。正因如此，这二人也成了比较六款本地LLM验证中的主角。',
+            tsubasaSpecBrain: '头脑: cyberagent 日语Nemo 12B',
+            tsubasaSpecVoice: '声音: Irodori-TTS（声音克隆）',
+            techTitle: '🛠️ 技术栈・开发记录',
+            techDesc: '从本地LLM的构建，到语音合成与知识检索的整合。我们公开了在RTX 4070 Ti（VRAM 12GB）这一面向普通家庭的游戏PC上，寻找最适合角色会话的本地LLM的验证记录。其中如实汇总了实际试用六款模型的长处、崩坏方式，以及最终得出的设置。',
+            pdfTitle: '用本地LLM制作角色会话 — 6款模型比较验证报告',
+            pdfFeature1: '・所验证的六款本地LLM的结果与判定',
+            pdfFeature2: '・在12GB VRAM中让头脑与声音共处的构成',
+            pdfFeature3: '・最终得出的参数与后处理的巧思',
+            pdfButton: '📥 下载PDF',
+            pdfNotice: '※此PDF仅提供日语版本'
         },
         goodsSection: {
             title: '商品',
@@ -3545,6 +3638,76 @@ function setLanguage(lang) {
         
         const shareCta = document.querySelector('#ai-games .ai-games-share-cta p');
         if (shareCta) shareCta.textContent = trans.aiGamesSection.shareCta;
+    }
+    
+    // ローカルLLMのAI開発セクション
+    const localLlmTitle = document.querySelector('#local-llm .section-title');
+    if (localLlmTitle) localLlmTitle.textContent = '🧠 ' + (trans.localLlmSection ? trans.localLlmSection.title : 'ローカルLLMのAI開発');
+    
+    if (trans.localLlmSection) {
+        const ll = trans.localLlmSection;
+        
+        // イントロ
+        const llIntroTitle = document.querySelector('#local-llm .llm-intro-content h3');
+        const llIntroDesc = document.querySelector('#local-llm .llm-intro-content p');
+        if (llIntroTitle) llIntroTitle.textContent = ll.introTitle;
+        if (llIntroDesc) llIntroDesc.textContent = ll.introDesc;
+        
+        // 動機ストーリー
+        const llStoryTitle = document.querySelector('#local-llm .llm-story-title');
+        const llStoryPs = document.querySelectorAll('#local-llm .llm-story p');
+        if (llStoryTitle) llStoryTitle.textContent = ll.storyTitle;
+        if (llStoryPs[0]) llStoryPs[0].textContent = ll.storyP1;
+        if (llStoryPs[1]) llStoryPs[1].textContent = ll.storyP2;
+        if (llStoryPs[2]) llStoryPs[2].textContent = ll.storyP3;
+        if (llStoryPs[3]) llStoryPs[3].textContent = ll.storyP4;
+        
+        // キャラクターカード（[0]=SEKAI, [1]=つばさ＆なぎさ）
+        const llCards = document.querySelectorAll('#local-llm .llm-char-card');
+        if (llCards[0]) {
+            const c = llCards[0];
+            const name = c.querySelector('h4');
+            const tagline = c.querySelector('.llm-char-tagline');
+            const descs = c.querySelectorAll('.llm-char-desc');
+            const specs = c.querySelectorAll('.llm-spec-tag');
+            if (name) name.textContent = ll.sekaiName;
+            if (tagline) tagline.textContent = ll.sekaiTagline;
+            if (descs[0]) descs[0].textContent = ll.sekaiDesc1;
+            if (descs[1]) descs[1].textContent = ll.sekaiDesc2;
+            if (specs[0]) specs[0].textContent = ll.sekaiSpecBrain;
+            if (specs[1]) specs[1].textContent = ll.sekaiSpecRag;
+            if (specs[2]) specs[2].textContent = ll.sekaiSpecVoice;
+        }
+        if (llCards[1]) {
+            const c = llCards[1];
+            const name = c.querySelector('h4');
+            const tagline = c.querySelector('.llm-char-tagline');
+            const descs = c.querySelectorAll('.llm-char-desc');
+            const specs = c.querySelectorAll('.llm-spec-tag');
+            if (name) name.textContent = ll.tsubasaName;
+            if (tagline) tagline.textContent = ll.tsubasaTagline;
+            if (descs[0]) descs[0].textContent = ll.tsubasaDesc1;
+            if (descs[1]) descs[1].textContent = ll.tsubasaDesc2;
+            if (specs[0]) specs[0].textContent = ll.tsubasaSpecBrain;
+            if (specs[1]) specs[1].textContent = ll.tsubasaSpecVoice;
+        }
+        
+        // 技術スタック・開発記録
+        const llTechTitle = document.querySelector('#local-llm .llm-tech-title');
+        const llTechDesc = document.querySelector('#local-llm .llm-tech-desc');
+        if (llTechTitle) llTechTitle.textContent = ll.techTitle;
+        if (llTechDesc) llTechDesc.textContent = ll.techDesc;
+        
+        const llPdfTitle = document.querySelector('#local-llm .pdf-content h4');
+        const llPdfFeatures = document.querySelectorAll('#local-llm .pdf-features li');
+        const llPdfBtn = document.querySelector('#local-llm .download-button span');
+        const llPdfNotice = document.querySelector('#local-llm .pdf-notice');
+        if (llPdfTitle) llPdfTitle.textContent = ll.pdfTitle;
+        if (llPdfFeatures[0]) llPdfFeatures[0].textContent = ll.pdfFeature1;
+        if (llPdfFeatures[1]) llPdfFeatures[1].textContent = ll.pdfFeature2;
+        if (llPdfFeatures[2]) llPdfFeatures[2].textContent = ll.pdfFeature3;
+        if (llPdfBtn) llPdfBtn.textContent = ll.pdfButton;
+        if (llPdfNotice) llPdfNotice.textContent = ll.pdfNotice;
     }
     
     // グッズセクション - PDFダウンロード

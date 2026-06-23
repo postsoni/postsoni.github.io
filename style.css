@@ -6952,6 +6952,244 @@ body.dark-mode .x-section {
     font-size: 18px;
 }
 
+/* ========================================
+   ローカルLLMのAI開発セクション
+   ======================================== */
+
+/* イントロ */
+.llm-intro {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    padding: 30px;
+    background: linear-gradient(135deg, #ede7f6 0%, #d1c4e9 100%);
+    border-radius: 20px;
+    border-left: 6px solid #7e57c2;
+    margin-bottom: 30px;
+}
+
+.llm-intro-icon {
+    font-size: 50px;
+    flex-shrink: 0;
+}
+
+.llm-intro-content h3 {
+    font-size: 20px;
+    color: #4527a0;
+    margin-bottom: 15px;
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+.llm-intro-content p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* 動機ストーリー */
+.llm-story {
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-left: 6px solid #5c6bc0;
+    margin-bottom: 30px;
+}
+
+.llm-story-title {
+    font-size: 19px;
+    color: #303f9f;
+    margin-bottom: 18px;
+    font-weight: bold;
+}
+
+.llm-story p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.9;
+    margin-bottom: 16px;
+}
+
+.llm-story p:last-child {
+    margin-bottom: 0;
+}
+
+/* キャラクターカードグリッド */
+.llm-char-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.llm-char-card {
+    padding: 28px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.llm-char-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #7e57c2, #5c6bc0, #42a5f5);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.llm-char-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(94, 107, 192, 0.25);
+    border-color: #7e57c2;
+}
+
+.llm-char-card:hover::before {
+    transform: scaleX(1);
+}
+
+.llm-char-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.llm-char-emoji {
+    font-size: 45px;
+    flex-shrink: 0;
+}
+
+.llm-char-titles h4 {
+    font-size: 20px;
+    color: #303f9f;
+    margin: 0 0 4px 0;
+    font-weight: bold;
+}
+
+.llm-char-tagline {
+    font-size: 13px;
+    color: #7e57c2;
+    margin: 0;
+    font-weight: 600;
+}
+
+.llm-char-desc {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 14px;
+}
+
+.llm-char-spec {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px dashed #d1c4e9;
+}
+
+.llm-spec-tag {
+    display: inline-block;
+    padding: 6px 14px;
+    background: linear-gradient(135deg, #ede7f6 0%, #e8eaf6 100%);
+    color: #4527a0;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Consolas', 'Courier New', monospace;
+}
+
+/* 技術スタック・開発記録カード */
+.llm-tech-card {
+    padding: 30px;
+    background: linear-gradient(135deg, #e3f2fd 0%, #e8eaf6 100%);
+    border-radius: 20px;
+    border-left: 6px solid #42a5f5;
+}
+
+.llm-tech-title {
+    font-size: 19px;
+    color: #1565c0;
+    margin-bottom: 14px;
+    font-weight: bold;
+}
+
+.llm-tech-desc {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+.llm-tech-card .pdf-download-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 24px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.llm-tech-card .pdf-icon {
+    font-size: 42px;
+    flex-shrink: 0;
+}
+
+.llm-tech-card .pdf-content h4 {
+    font-size: 16px;
+    color: #1565c0;
+    margin-bottom: 12px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.llm-tech-card .pdf-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 18px 0;
+}
+
+.llm-tech-card .pdf-features li {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.9;
+}
+
+.llm-tech-card .download-button {
+    display: inline-block;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #5c6bc0 0%, #3949ab 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.llm-tech-card .download-button:hover {
+    background: linear-gradient(135deg, #7986cb 0%, #5c6bc0 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(92, 107, 192, 0.4);
+}
+
+.llm-tech-card .pdf-notice {
+    font-size: 12px;
+    color: #888;
+    margin-top: 12px;
+}
+
 /* レスポンシブ */
 @media (max-width: 768px) {
     .ai-games-intro {
@@ -6991,6 +7229,56 @@ body.dark-mode .x-section {
     .game-play-btn {
         padding: 8px 15px;
         font-size: 12px;
+    }
+
+    .llm-intro {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 20px;
+    }
+
+    .llm-intro-icon {
+        font-size: 40px;
+    }
+
+    .llm-intro-content h3 {
+        font-size: 17px;
+    }
+
+    .llm-intro-content p,
+    .llm-story p {
+        font-size: 14px;
+    }
+
+    .llm-story {
+        padding: 24px 20px;
+    }
+
+    .llm-char-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .llm-char-card {
+        padding: 22px;
+    }
+
+    .llm-char-emoji {
+        font-size: 38px;
+    }
+
+    .llm-char-titles h4 {
+        font-size: 18px;
+    }
+
+    .llm-tech-card {
+        padding: 24px 20px;
+    }
+
+    .llm-tech-card .pdf-download-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
     }
 }
 
@@ -7044,6 +7332,89 @@ body.dark-mode .share-x-btn {
 
 body.dark-mode .share-x-btn:hover {
     background: #fff;
+}
+
+/* ========================================
+   ダークモード - ローカルLLMのAI開発
+   ======================================== */
+
+body.dark-mode .llm-intro {
+    background: linear-gradient(135deg, #311b92 0%, #4527a0 100%);
+    border-left-color: #b39ddb;
+}
+
+body.dark-mode .llm-intro-content h3 {
+    color: #d1c4e9;
+}
+
+body.dark-mode .llm-intro-content p,
+body.dark-mode .llm-story p,
+body.dark-mode .llm-char-desc,
+body.dark-mode .llm-tech-desc {
+    color: #e8eaed;
+}
+
+body.dark-mode .llm-story {
+    background: #2d2d2d;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-left-color: #7986cb;
+}
+
+body.dark-mode .llm-story-title {
+    color: #9fa8da;
+}
+
+body.dark-mode .llm-char-card {
+    background: #2d2d2d;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .llm-char-card:hover {
+    border-color: #b39ddb;
+    box-shadow: 0 8px 25px rgba(179, 157, 219, 0.2);
+}
+
+body.dark-mode .llm-char-titles h4 {
+    color: #e8eaed;
+}
+
+body.dark-mode .llm-char-tagline {
+    color: #b39ddb;
+}
+
+body.dark-mode .llm-char-spec {
+    border-top-color: #4527a0;
+}
+
+body.dark-mode .llm-spec-tag {
+    background: linear-gradient(135deg, #311b92 0%, #283593 100%);
+    color: #d1c4e9;
+}
+
+body.dark-mode .llm-tech-card {
+    background: linear-gradient(135deg, #0d47a1 0%, #283593 100%);
+    border-left-color: #64b5f6;
+}
+
+body.dark-mode .llm-tech-title {
+    color: #90caf9;
+}
+
+body.dark-mode .llm-tech-card .pdf-download-item {
+    background: #2d2d2d;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .llm-tech-card .pdf-content h4 {
+    color: #90caf9;
+}
+
+body.dark-mode .llm-tech-card .pdf-features li {
+    color: #e8eaed;
+}
+
+body.dark-mode .llm-tech-card .pdf-notice {
+    color: #9aa0a6;
 }
 
 /* ========================================

@@ -514,6 +514,7 @@
                     <a href="#" class="nav-item" data-tab="rotorflight-manual">📖 Rotorflightマニュアル</a>
                     <a href="#" class="nav-item" data-tab="rc-library">📚 RC機器マニュアルPDF集</a>
                     <a href="#" class="nav-item" data-tab="ai-games">🎮 AIラジコンゲーム</a>
+                    <a href="#" class="nav-item" data-tab="local-llm">🧠 ローカルLLMのAI開発</a>
                     <a href="#" class="nav-item" data-tab="goods">🛍️ グッズ</a>
                     <a href="#" class="nav-item" data-tab="support">🤝 RC支援・サポート</a>
                     <a href="#" class="nav-item" data-tab="testimonials">🎉 サポートを受けた方の声</a>
@@ -5198,6 +5199,89 @@
                     <a href="https://x.com/postsoni" target="_blank" class="share-x-btn">
                         <span>𝕏</span> @postsoni をフォロー
                     </a>
+                </div>
+            </section>
+
+            <!-- ローカルLLMのAI開発セクション -->
+            <section id="local-llm" class="content-section tab-content">
+                <div class="section-header">
+                    <h2 class="section-title">🧠 ローカルLLMのAI開発</h2>
+                </div>
+
+                <!-- イントロ -->
+                <div class="llm-intro scroll-animate fade-in">
+                    <div class="llm-intro-icon">🧠</div>
+                    <div class="llm-intro-content">
+                        <h3 data-i18n="localLlm.introTitle">ラジコンとAIの融合へ —— その第一歩として、ローカルLLMの構築を進めています。</h3>
+                        <p data-i18n="localLlm.introDesc">ぽすとそに工房では、ラジコンとAIを融合させるという目標のもと、自分の手元で動くローカルLLM（大規模言語モデル）の構築に取り組んでいます。クラウドに頼らず、自分の環境で動かすことで、AIの仕組みそのものへより深く踏み込み、その洞察を日々学習しています。単に「AIを使う」のではなく、「AIを理解し、育てる」こと。それが、ラジコン文化の次の世代へ技術と知識を繋いでいくための、私たちなりのアプローチです。</p>
+                    </div>
+                </div>
+
+                <!-- 動機（正直版） -->
+                <div class="llm-story scroll-animate fade-in">
+                    <h3 class="llm-story-title" data-i18n="localLlm.storyTitle">💭 はじまりは、ただの好奇心でした</h3>
+                    <p data-i18n="localLlm.storyP1">正直に言えば、はじまりは、ただの好奇心でした。可愛いキャラクターが、決められた台詞をなぞるだけのゲームを——本当に人間のように受け答えするAIで超えられたら面白いんじゃないか。AIの仕組みをもっと理解したいという気持ちと、そんなものができたら遊びとして楽しいだろうな、という単純な動機。それが、ローカルLLMに触れてみた最初のきっかけでした。</p>
+                    <p data-i18n="localLlm.storyP2">ところが、手を動かしているうちに、少しずつローカルLLMのことが分かってきました。モデルの選び方、パラメータの詰め方、崩れ方の癖——触れば触るほど、これは「遊びどころの技術」ではないと感じるようになりました。</p>
+                    <p data-i18n="localLlm.storyP3">そして、ある考えが浮かびます。これは、ラジコンの役にも立つのではないか。いや、ラジコンだけじゃない。困っている専門分野や、いま静かに廃れようとしている文化を、AIが助けられるのではないか。</p>
+                    <p data-i18n="localLlm.storyP4">恋愛シミュレーションを超えようとした好奇心が、気づけばもっと大きな問いに変わっていました。ファインチューニングや強化学習で、ラジコンの技術や専門知識をAIに宿せるなら——次の世代へ繋ぐための、新しい手段になるかもしれない。いまは、その「遊びだった現在地」から「役に立つ最終地点」までを、頭の中で一本の線につなぎ直している最中です。</p>
+                </div>
+
+                <!-- キャラクター紹介カード -->
+                <div class="llm-char-grid">
+                    <div class="llm-char-card scroll-animate fade-in">
+                        <div class="llm-char-header">
+                            <span class="llm-char-emoji">🌸</span>
+                            <div class="llm-char-titles">
+                                <h4 data-i18n="localLlm.sekaiName">SEKAI</h4>
+                                <p class="llm-char-tagline" data-i18n="localLlm.sekaiTagline">ユーザーと1対1で向き合う、頼れる相談相手</p>
+                            </div>
+                        </div>
+                        <p class="llm-char-desc" data-i18n="localLlm.sekaiDesc1">SEKAIは、あなたと一対一で対話する単体のAIキャラクターです。RCに関する疑問や相談に、確かな知識とほんの少しの優しさで応えることを目指して、人格そのものを設計し直しました。</p>
+                        <p class="llm-char-desc" data-i18n="localLlm.sekaiDesc2">ローカルで動く言語モデルに音声合成と知識検索を組み合わせ、ただ答えるだけでなく、寄り添いながら一緒に考える存在へ。RCの楽しさを、誰かと分かち合うための試みです。</p>
+                        <div class="llm-char-spec">
+                            <span class="llm-spec-tag" data-i18n="localLlm.sekaiSpecBrain">頭脳: gemma4:12b</span>
+                            <span class="llm-spec-tag" data-i18n="localLlm.sekaiSpecRag">知識検索: ChromaDB</span>
+                            <span class="llm-spec-tag" data-i18n="localLlm.sekaiSpecVoice">声: Irodori-TTS（声クローン）</span>
+                        </div>
+                    </div>
+
+                    <div class="llm-char-card scroll-animate fade-in">
+                        <div class="llm-char-header">
+                            <span class="llm-char-emoji">👭</span>
+                            <div class="llm-char-titles">
+                                <h4 data-i18n="localLlm.tsubasaName">つばさ＆なぎさ</h4>
+                                <p class="llm-char-tagline" data-i18n="localLlm.tsubasaTagline">姉妹2人の掛け合いを楽しむ、観賞＆参加型</p>
+                            </div>
+                        </div>
+                        <p class="llm-char-desc" data-i18n="localLlm.tsubasaDesc1">つばさとなぎさは、二人で一組のAIキャラクターです。一人のAIでは生まれない「対話」「掛け合い」「視点の違い」を表現するために生まれました。自動で進む二人の会話に、あなたが割り込んで参加することもできます。</p>
+                        <p class="llm-char-desc" data-i18n="localLlm.tsubasaDesc2">二つの人格を一つのモデルで演じ分けるのは、1対1のSEKAIよりずっと難しい挑戦でした。だからこそ、6つのローカルLLMを比べる検証の主役にもなった二人です。</p>
+                        <div class="llm-char-spec">
+                            <span class="llm-spec-tag" data-i18n="localLlm.tsubasaSpecBrain">頭脳: cyberagent 日本語Nemo 12B</span>
+                            <span class="llm-spec-tag" data-i18n="localLlm.tsubasaSpecVoice">声: Irodori-TTS（声クローン）</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 技術スタック・開発記録（PDF） -->
+                <div class="llm-tech-card scroll-animate fade-in">
+                    <h3 class="llm-tech-title" data-i18n="localLlm.techTitle">🛠️ 技術スタック・開発記録</h3>
+                    <p class="llm-tech-desc" data-i18n="localLlm.techDesc">ローカルLLMの構築から音声合成、知識検索の統合まで。RTX 4070 Ti（VRAM 12GB）という一般家庭向けのゲーミングPCで、キャラクター会話に最適なローカルLLMを探した検証の記録を公開します。6つのモデルを実際に試した長所・崩れ方・最終的にたどり着いた設定を、そのまままとめました。</p>
+
+                    <div class="pdf-download-item">
+                        <div class="pdf-icon">📄</div>
+                        <div class="pdf-content">
+                            <h4 data-i18n="localLlm.pdfTitle">ローカルLLMでキャラ会話を作る — 6モデル比較検証レポート</h4>
+                            <ul class="pdf-features">
+                                <li data-i18n="localLlm.pdfFeature1">・検証した6つのローカルLLMの結果と判定</li>
+                                <li data-i18n="localLlm.pdfFeature2">・VRAM 12GBで頭脳と声を同居させる構成</li>
+                                <li data-i18n="localLlm.pdfFeature3">・最終的にたどり着いたパラメータと後処理の工夫</li>
+                            </ul>
+                            <a href="local-llm-6models-comparison.pdf" class="download-button" download="local-llm-6models-comparison.pdf">
+                                <span data-i18n="localLlm.pdfButton">📥 PDFをダウンロード</span>
+                            </a>
+                            <p class="pdf-notice" data-i18n="localLlm.pdfNotice">※このPDFは日本語のみの対応となります</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
