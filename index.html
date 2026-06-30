@@ -519,6 +519,7 @@
                     <a href="#" class="nav-item" data-tab="support">🤝 RC支援・サポート</a>
                     <a href="#" class="nav-item" data-tab="testimonials">🎉 サポートを受けた方の声</a>
                     <a href="#" class="nav-item" data-tab="faq">❓ よくある質問</a>
+                    <a href="#" class="nav-item" data-tab="yougoshu">🔤 用語集</a>
                     <a href="#" class="nav-item" data-tab="partners">🤝 提携サイト</a>
                     <a href="#" class="nav-item" data-tab="contact">✉️ お問い合わせ</a>
                 </nav>
@@ -5670,6 +5671,95 @@
                         </div>
                     </div>
                 </div>
+            </section>
+
+            <!-- 用語集セクション（ハブ） -->
+            <section id="yougoshu" class="content-section tab-content">
+                <div class="section-header">
+                    <h2 class="section-title">🔤 用語集</h2>
+                </div>
+
+                <div class="yougoshu-hub">
+                    <p class="yougoshu-intro">
+                        ラジコンにまつわる「これ何だっけ？」を引くための用語集コーナーです。<br>
+                        まずはラジコン全般の用語集から。今後、分野ごとの用語集も少しずつ増やしていく予定です。
+                    </p>
+
+                    <div class="yougoshu-grid">
+                        <!-- ラジコン用語集カード -->
+                        <a href="rc_yougoshu.html" class="yougoshu-card">
+                            <div class="yougoshu-card-icon">🔧</div>
+                            <div class="yougoshu-card-body">
+                                <h3 class="yougoshu-card-title">ラジコン用語集</h3>
+                                <p class="yougoshu-card-desc">
+                                    カー・飛行機・ヘリ・ドローン・エンジンまで、陸モノ／空モノを横断した
+                                    用語辞典です。略称や別の言い回しでも検索でき、分野・レベルでしぼり込めます。
+                                </p>
+                                <div class="yougoshu-card-tags">
+                                    <span class="yougoshu-tag">563項目</span>
+                                    <span class="yougoshu-tag">16分野</span>
+                                    <span class="yougoshu-tag">検索対応</span>
+                                </div>
+                            </div>
+                            <div class="yougoshu-card-arrow">→</div>
+                        </a>
+
+                        <!-- 今後ここに別の用語集カードを追加していく -->
+                    </div>
+
+                    <p class="yougoshu-note">
+                        ※内容は一般的な解説です。法令や安全基準（航空法・機体重量の基準など）は地域・時期で変わるため、
+                        最新の公式情報・自治体・クラブで必ずご確認ください。
+                    </p>
+                </div>
+
+                <style>
+                .yougoshu-hub{max-width:860px;margin:0 auto;}
+                .yougoshu-intro{
+                    background:rgba(255,255,255,.92);
+                    border:2px dashed #ff9a76;border-radius:15px;
+                    padding:18px 20px;margin-bottom:22px;
+                    color:#555;line-height:1.9;font-family:'Yomogi',cursive;
+                }
+                .yougoshu-grid{display:flex;flex-direction:column;gap:16px;}
+                .yougoshu-card{
+                    display:flex;align-items:center;gap:16px;
+                    background:linear-gradient(135deg,#fff5f0 0%,#ffffff 100%);
+                    border:3px solid #ff9a76;border-radius:15px;
+                    padding:18px 20px;text-decoration:none;color:inherit;
+                    transition:all .18s ease;
+                }
+                .yougoshu-card:hover{
+                    border-color:#ff6b6b;transform:translateY(-3px);
+                    box-shadow:0 8px 20px rgba(255,154,118,.3);
+                }
+                .yougoshu-card-icon{font-size:2.4rem;flex-shrink:0;}
+                .yougoshu-card-body{flex:1;}
+                .yougoshu-card-title{
+                    font-family:'Zen Kurenaido',cursive;
+                    color:#ff6b6b;font-size:1.3rem;margin:0 0 6px;
+                }
+                .yougoshu-card-desc{color:#555;font-size:.92rem;margin:0 0 10px;line-height:1.7;}
+                .yougoshu-card-tags{display:flex;flex-wrap:wrap;gap:6px;}
+                .yougoshu-tag{
+                    font-size:.75rem;padding:3px 11px;border-radius:12px;
+                    background:#ffe4d9;color:#ff6b6b;
+                }
+                .yougoshu-card-arrow{
+                    font-size:1.6rem;color:#ff9a76;flex-shrink:0;
+                    transition:transform .18s ease;
+                }
+                .yougoshu-card:hover .yougoshu-card-arrow{transform:translateX(5px);color:#ff6b6b;}
+                .yougoshu-note{
+                    margin-top:22px;color:#999;font-size:.82rem;
+                    font-family:'Yomogi',cursive;line-height:1.7;text-align:center;
+                }
+                @media(max-width:600px){
+                    .yougoshu-card{flex-direction:column;text-align:center;}
+                    .yougoshu-card-arrow{transform:rotate(90deg);}
+                    .yougoshu-card:hover .yougoshu-card-arrow{transform:rotate(90deg) translateX(5px);}
+                }
+                </style>
             </section>
 
             <!-- 提携サイトセクション -->

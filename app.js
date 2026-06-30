@@ -168,12 +168,14 @@ function updateBreadcrumbEnhanced(tabId) {
         'top': 'TOP', 'news': '最新の活動報告', 'gallery': '活動ギャラリー',
         'roadmap': '初めての方へ', 'profile': 'プロフィール', 'sns': 'SNS',
         'activity': 'ブログアクセス', 'goods': 'グッズ', 'support': 'RC支援・サポート',
-        'testimonials': 'サポートを受けた方の声', 'faq': 'よくある質問', 'contact': 'お問い合わせ'
+        'testimonials': 'サポートを受けた方の声', 'faq': 'よくある質問',
+        'yougoshu': '用語集', 'contact': 'お問い合わせ'
     };
     const tabIcons = {
         'top': '🏠', 'news': '📰', 'gallery': '📸', 'roadmap': '🛤️',
         'profile': '👤', 'sns': '📱', 'activity': '📰', 'goods': '🛍️',
-        'support': '🤝', 'testimonials': '🎉', 'faq': '❓', 'contact': '✉️'
+        'support': '🤝', 'testimonials': '🎉', 'faq': '❓',
+        'yougoshu': '🔤', 'contact': '✉️'
     };
     if (tabId === 'top') {
         breadcrumb.innerHTML = `<span class="breadcrumb-item">${tabIcons[tabId]} ${tabNames[tabId]}</span>`;
