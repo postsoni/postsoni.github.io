@@ -361,6 +361,20 @@ const translations = {
             section4Title: '◆測定機器の導入',
             section4Text: 'アンプの電流値を正確に測定できるアナライザーを導入しました。これにより、より精密なセッティングとトラブルシューティングが可能になります。'
         },
+        newsSection2026Jul: {
+            date: '2026年7月21日',
+            newsTitle: 'お問い合わせ130件突破・機体運用の見直し & 活動報告',
+            section1Title: '◆お問い合わせ件数130件突破',
+            section1Text: 'お問い合わせ件数が累計130件を突破しました。日頃よりご相談・ご支援をお寄せいただき、心より感謝申し上げます。',
+            section2Title: '◆Forza450を中回転ヘリとして移行',
+            section2Text: 'これまで低回転フライトのデータ取りに使用していたForza450を、中回転域のヘリとして運用へ移行しました。機体ごとに役割を分けることで、それぞれの特性をより活かした調整・練習を進めております。',
+            section3Title: '◆M1V3PROを導入し、OFS3への理解を深めております',
+            section3Text: '新たにOMPHOBBY M1V3PROを導入いたしました。OFS3というシステムにての設定・挙動について理解を深めながら、機体特性の把握と最適化を進めております。',
+            section4Title: '◆基礎的な低翼機のスタントフライト',
+            section4Text: '低翼機による基礎的なスタントフライトについて、ある程度問題なく行えるようになってまいりました。引き続き丁寧なフライトを目指し、練習を継続いたします。',
+            section5Title: '◆湿気対策のPDF化を予定',
+            section5Text: '機体・メカ類の湿気対策について、何が有効かがまとまり次第、基礎的な対策方法をPDF資料として公開する予定です。準備が整い次第、あらためてご案内いたします。'
+        },
         newsSection2026Jun: {
             date: '2026年6月23日',
             newsTitle: '低回転フライト探求・RS7 Ultra PID完成 & 活動報告',
@@ -1335,6 +1349,20 @@ const translations = {
             section3Text: 'All mechanical parts (servos, ESC, motor, etc.) have arrived, and assembly and fine-tuning are currently underway. We will deliver a flight report once completed.',
             section4Title: '◆Introduction of Measuring Equipment',
             section4Text: 'We have introduced an analyzer that can accurately measure ESC current values. This enables more precise settings and troubleshooting.'
+        },
+        newsSection2026Jul: {
+            date: 'July 21, 2026',
+            newsTitle: 'Inquiries Exceed 130 Cases, Reviewing Aircraft Roles & Activity Report',
+            section1Title: '◆Inquiries Exceed 130 Cases',
+            section1Text: 'Total inquiries have exceeded 130 cases. I sincerely thank everyone for the consultations and support you continually send my way.',
+            section2Title: '◆Transitioning the Forza450 to a Mid-Headspeed Helicopter',
+            section2Text: 'I have transitioned the Forza450 — previously used to gather low-headspeed flight data — into operation as a mid-headspeed helicopter. By assigning distinct roles to each aircraft, I am advancing tuning and practice that make the most of each one\'s characteristics.',
+            section3Title: '◆Introduced the M1V3PRO, Deepening My Understanding of OFS3',
+            section3Text: 'I have newly introduced the OMPHOBBY M1V3PRO. While deepening my understanding of the settings and behavior within the OFS3 system, I am working to grasp the aircraft\'s characteristics and optimize it.',
+            section4Title: '◆Basic Stunt Flight with Low-Wing Aircraft',
+            section4Text: 'I have become able to perform basic stunt flight with low-wing aircraft reasonably well. I will continue practicing, aiming for careful, precise flying.',
+            section5Title: '◆Planning a PDF on Humidity Countermeasures',
+            section5Text: 'Regarding humidity countermeasures for aircraft and electronics, once I have determined what is effective, I plan to release a set of basic countermeasures as a PDF document. I will provide further details once preparations are complete.'
         },
         newsSection2026Jun: {
             date: 'June 23, 2026',
@@ -2312,6 +2340,20 @@ const translations = {
             section3Text: '所有机械部件（舵机、电调、电机等）已到齐，目前正在进行组装和微调。完成后将提供飞行报告。',
             section4Title: '◆测量设备的引进',
             section4Text: '引进了可以准确测量电调电流值的分析仪。这使得更精确的设置和故障排除成为可能。'
+        },
+        newsSection2026Jul: {
+            date: '2026年7月21日',
+            newsTitle: '咨询突破130件・机体运用的重新审视 & 活动报告',
+            section1Title: '◆咨询件数突破130件',
+            section1Text: '咨询件数累计突破130件。衷心感谢各位平日以来的咨询与支持。',
+            section2Title: '◆将Forza450移行为中转速直升机',
+            section2Text: '将此前用于采集低转速飞行数据的Forza450，移行为中转速区域运用的直升机。通过为每架机体划分不同的角色，正在推进更能发挥各自特性的调整与练习。',
+            section3Title: '◆导入M1V3PRO，正在加深对OFS3的理解',
+            section3Text: '新导入了OMPHOBBY M1V3PRO。在加深对OFS3这一系统的设置与动作特性理解的同时，正在推进对机体特性的掌握与优化。',
+            section4Title: '◆低翼机的基础特技飞行',
+            section4Text: '关于低翼机的基础特技飞行，现已能够较为顺利地进行。今后将继续以细致精准的飞行为目标坚持练习。',
+            section5Title: '◆计划将防潮对策整理为PDF',
+            section5Text: '关于机体与电子设备的防潮对策，待整理出何为有效方法后，计划将基础对策方法作为PDF资料公开。准备就绪后将另行通知。'
         },
         newsSection2026Jun: {
             date: '2026年6月23日',
