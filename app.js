@@ -422,6 +422,7 @@ const translations = {
             caption5: '現在発売されているヘリとMIXして、飛行可能状態にしております。詳しくはYouTubeの遊覧フライト動画にて閲覧可能です。',
             caption6: 'K110Sを分解清掃メンテを行い、マストの軸が見えないレベルでずれていることを確認。修理中の画像です。',
             caption7: '次世代のファンフライ機の制作です。作成の説明書は日本語ではありません、少々難しい図面でも作成しております。（バルサ機も同じように行えます。）',
+            caption8: '新型のヘリの組み立てなども問題なく行えます。フライト動画はYouTubeにあがっております。',
             badgeBefore: '修理前',
             badgeAfter: '修理後',
             badgeCompleted: '修理完了',
@@ -1398,6 +1399,7 @@ const translations = {
             caption5: 'Mixed with currently available helicopters to make it flight-ready. Details available in YouTube flight videos.',
             caption6: 'Disassembled and cleaned K110S, confirmed mast shaft misalignment at invisible level. Photo during repair.',
             caption7: 'Building next-generation fun fly aircraft. Instructions are not in Japanese, but we can build even with difficult diagrams. (Same process for balsa aircraft.)',
+            caption8: 'We can assemble new helicopter models without any issues. Flight videos are available on YouTube.',
             badgeBefore: 'Before Repair',
             badgeAfter: 'After Repair',
             badgeCompleted: 'Repair Complete',
@@ -2374,6 +2376,7 @@ const translations = {
             caption5: '与现在销售的直升机混合使用，使其处于可飞行状态。详情请参阅YouTube的飞行视频。',
             caption6: '对K110S进行拆解清洁维护，确认桅杆轴在不可见程度上偏移。维修中的照片。',
             caption7: '下一代趣味飞行机的制作。制作说明书不是日语，即使是较难的图纸也在制作中。（桐木机也可以同样制作。）',
+            caption8: '新型直升机的组装等也能顺利进行。飞行视频已上传至YouTube。',
             badgeBefore: '维修前',
             badgeAfter: '维修后',
             badgeCompleted: '维修完成',
@@ -3343,6 +3346,7 @@ function setLanguage(lang) {
     if (galleryCaptions[4]) galleryCaptions[4].textContent = trans.gallerySection.caption5;
     if (galleryCaptions[5]) galleryCaptions[5].textContent = trans.gallerySection.caption6;
     if (galleryCaptions[6]) galleryCaptions[6].textContent = trans.gallerySection.caption7;
+    if (galleryCaptions[7]) galleryCaptions[7].textContent = trans.gallerySection.caption8;
     
     // 活動ギャラリー - バッジ
     const galleryBadges = document.querySelectorAll('#gallery .related-badge');
