@@ -17,6 +17,7 @@ import json
 import os
 import smtplib
 import sys
+import time
 from datetime import datetime, timezone
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -239,65 +240,75 @@ def send_email(new_releases: list[dict], has_updates: bool) -> None:
 # Discord 通知
 # ============================================================
 
-def send_discord(new_releases: list[dict], has_updates: bool) -> None:
-    """リリース情報をDiscordに通知する（更新あり・なし両方）"""
-    webhook_url = os.environ.get("DISCORD_WEBHOOK_URL")
+def _collect_webhooks() -> list[tuple[str, str]]:
+    """環境変数から有効なWebhookを集める。未設定のものは自動でスキップ。"""
+    candidates = [
+        ("サーバー1", "DISCORD_WEBHOOK_URL"),
+        ("サーバー2", "DISCORD_WEBHOOK_URL_2"),
+    ]
+    return [(label, os.environ[key]) for label, key in candidates if os.environ.get(key)]
 
-    if not webhook_url:
-        print("警告: Discord Webhook URL が設定されていません。Discord送信をスキップします。")
-        return
 
-    today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
-
-    if has_updates:
-        # 更新ありの場合：Embedsで各リリースを表示
-        embeds = []
-        for r in new_releases:
-            color = 0xE53E3E if r["type"] == "正式リリース" else 0xED8936
-            embeds.append({
-                "title": f"{r['name']}",
-                "description": (
-                    f"**バージョン:** {r['title']}\n"
-                    f"**種別:** {r['type']}\n"
-                    f"**更新日時:** {r['updated']}\n"
-                    f"[📎 リリースページを開く →]({r['link']})"
-                ),
-                "color": color,
-            })
-
-        # Discordは1メッセージにつきEmbed最大10個
-        content = f"🚀 **RC アップデート通知** — {len(new_releases)}件の新リリース ({today})"
-
-        for i in range(0, len(embeds), 10):
-            chunk = embeds[i:i + 10]
-            payload = {"embeds": chunk}
-            if i == 0:
-                payload["content"] = content
-            try:
-                resp = requests.post(webhook_url, json=payload, timeout=10)
-                resp.raise_for_status()
-            except Exception as e:
-                print(f"❌ Discord送信失敗: {e}")
-                return
-
-    else:
-        # 更新なしの場合
-        payload = {
+def _build_discord_payloads(new_releases: list[dict], has_updates: bool, today: str) -> list[dict]:
+    """送信するpayloadを組み立てる（送信先に依らず内容は共通）。"""
+    if not has_updates:
+        return [{
             "content": f"✅ **RC アップデート通知** — 更新なし ({today})",
             "embeds": [{
                 "description": "本日のチェックでは、新しいリリースはありませんでした。\n全ての監視対象リポジトリは前回チェック時と同じ状態です。",
                 "color": 0x48BB78,
             }]
-        }
+        }]
+
+    embeds = []
+    for r in new_releases:
+        color = 0xE53E3E if r["type"] == "正式リリース" else 0xED8936
+        embeds.append({
+            "title": f"{r['name']}",
+            "description": (
+                f"**バージョン:** {r['title']}\n"
+                f"**種別:** {r['type']}\n"
+                f"**更新日時:** {r['updated']}\n"
+                f"[📎 リリースページを開く →]({r['link']})"
+            ),
+            "color": color,
+        })
+
+    # Discordは1メッセージにつきEmbed最大10個
+    content = f"🚀 **RC アップデート通知** — {len(new_releases)}件の新リリース ({today})"
+    payloads = []
+    for i in range(0, len(embeds), 10):
+        payload = {"embeds": embeds[i:i + 10]}
+        if i == 0:
+            payload["content"] = content
+        payloads.append(payload)
+    return payloads
+
+
+def send_discord(new_releases: list[dict], has_updates: bool) -> None:
+    """リリース情報を全てのDiscord Webhookに通知する（更新あり・なし両方）"""
+    webhooks = _collect_webhooks()
+    if not webhooks:
+        print("警告: Discord Webhook URL が設定されていません。Discord送信をスキップします。")
+        return
+
+    today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+    payloads = _build_discord_payloads(new_releases, has_updates, today)
+
+    success = 0
+    for label, url in webhooks:
         try:
-            resp = requests.post(webhook_url, json=payload, timeout=10)
-            resp.raise_for_status()
+            for idx, payload in enumerate(payloads):
+                resp = requests.post(url, json=payload, timeout=10)
+                resp.raise_for_status()
+                if idx < len(payloads) - 1:
+                    time.sleep(1)  # レート制限回避
+            print(f"✅ Discord送信成功: {label}")
+            success += 1
         except Exception as e:
-            print(f"❌ Discord送信失敗: {e}")
-            return
+            print(f"❌ Discord送信失敗: {label}: {e}")
 
-    print("✅ Discord送信成功")
-
+    print(f"Discord送信結果: {success}/{len(webhooks)} 件成功")
 
 # ============================================================
 # メイン
