@@ -499,7 +499,7 @@ const translations = {
             nameLabel: '名前',
             nameValue: 'ぽすとそに',
             ageLabel: '年齢',
-            ageValue: '33歳 (2026年現在)',
+            ageValue: '34歳 (2026年現在)',
             expertiseLabel: '専門分野',
             expertiseList: [
                 'ラジコン（カー、飛行機、ヘリ）の操作',
@@ -1133,7 +1133,7 @@ const translations = {
             title: 'ようこそ、ぽすとそに工房へ',
             greetingTitle: 'ぽすとそに ご挨拶',
             greeting: [
-                'はじめまして。「ぽすとそに」と申します。2026年現在、33歳の男性であり、まだ若輩者ではございますが、AI技術を積極的に取り入れながら、ラジコン(以下、RC)の魅力と技術を広めていきたいと考えております。',
+                'はじめまして。「ぽすとそに」と申します。2026年現在、34歳の男性であり、まだ若輩者ではございますが、AI技術を積極的に取り入れながら、ラジコン(以下、RC)の魅力と技術を広めていきたいと考えております。',
                 '私は、心身ともにいくつかの制約を抱えながらも、それを理由に立ち止まるのではなく、AIという新たな可能性を通じて乗り越えようと日々取り組んでおります。',
                 'RCという世界は、単なる「趣味」にとどまらず、機械と人の感覚が交わるリアルの領域だと感じています。人によっては便利さが進むほどに寂しさを覚える現代社会において、RCは手に取れる技術と体験が共存する、温かみのある文化だと思うのです。',
                 '私は、このRCの魅力を次の世代へと繋ぐ一人の担い手でありたいと考えています。現代技術と人の情熱が交わる場所にこそ、次の時代に残す価値があると信じています。',
@@ -1490,7 +1490,7 @@ const translations = {
             nameLabel: 'Name',
             nameValue: 'Postsoni',
             ageLabel: 'Age',
-            ageValue: '33 years old (as of 2026)',
+            ageValue: '34 years old (as of 2026)',
             expertiseLabel: 'Expertise',
             expertiseList: [
                 'RC operation (cars, planes, helicopters)',
@@ -2124,7 +2124,7 @@ const translations = {
             title: 'Welcome to Postsoni Workshop',
             greetingTitle: 'About Postsoni',
             greeting: [
-                'Hello, I am Postsoni. As of 2026, I am a 33-year-old male, and although I am still young, I am actively incorporating AI technology to spread the appeal and techniques of Radio Control (RC).',
+                'Hello, I am Postsoni. As of 2026, I am a 34-year-old male, and although I am still young, I am actively incorporating AI technology to spread the appeal and techniques of Radio Control (RC).',
                 'Despite facing some physical and mental challenges, I do not let them stop me. Instead, I strive to overcome them through the new possibilities that AI offers.',
                 'The world of RC is not just a "hobby" but a realm where machines and human senses intersect in reality. In today\'s society, where convenience can sometimes lead to loneliness, RC represents a warm culture where tangible technology and experience coexist.',
                 'I want to be someone who passes on the charm of RC to the next generation. I believe that where modern technology and human passion meet, there is value worth preserving for future times.',
@@ -2481,7 +2481,7 @@ const translations = {
             nameLabel: '姓名',
             nameValue: 'Postsoni',
             ageLabel: '年龄',
-            ageValue: '33岁（截至2026年）',
+            ageValue: '34岁（截至2026年）',
             expertiseLabel: '专业领域',
             expertiseList: [
                 '遥控操作（汽车、飞机、直升机）',
@@ -3115,7 +3115,7 @@ const translations = {
             title: '欢迎来到Postsoni工作室',
             greetingTitle: 'Postsoni 问候',
             greeting: [
-                '初次见面。我叫"Postsoni"。截至2026年，我是一名33岁的男性，虽然还很年轻，但我正在积极采用AI技术，希望传播遥控（以下简称RC）的魅力和技术。',
+                '初次见面。我叫"Postsoni"。截至2026年，我是一名34岁的男性，虽然还很年轻，但我正在积极采用AI技术，希望传播遥控（以下简称RC）的魅力和技术。',
                 '我虽然在身心上面临一些限制，但我不会因此停滞不前，而是通过AI这种新的可能性来克服它们。',
                 'RC的世界不仅仅是一种"爱好"，而是机械与人的感知交汇的真实领域。在现代社会中，便利性的提升有时会让人感到孤独，而RC则是一种可以触摸到技术与体验共存的温暖文化。',
                 '我希望成为将RC的魅力传递给下一代的人。我相信，在现代技术与人类热情交汇的地方，存在着值得留给未来时代的价值。',
