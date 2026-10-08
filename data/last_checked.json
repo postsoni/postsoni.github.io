@@ -2,51 +2,51 @@
   "ELRS 本体": {
     "id": "tag:github.com,2008:Repository/151064439/4.1.0",
     "title": "ExpressLRS 4.1.0",
-    "checked_at": "2026-10-07T10:36:59.585482+00:00"
+    "checked_at": "2026-10-08T10:58:09.473031+00:00"
   },
   "ELRS Configurator": {
     "id": "tag:github.com,2008:Repository/332467095/v1.8.3",
     "title": "ExpressLRS Configurator 1.8.3",
-    "checked_at": "2026-10-07T10:37:00.137578+00:00"
+    "checked_at": "2026-10-08T10:58:09.995628+00:00"
   },
   "ELRS Backpack": {
     "id": "tag:github.com,2008:Repository/413766256/1.5.9",
     "title": "ExpressLRS Backpack V1.5.9",
-    "checked_at": "2026-10-07T10:37:00.852386+00:00"
+    "checked_at": "2026-10-08T10:58:10.580435+00:00"
   },
   "Rotorflight Firmware": {
     "id": "tag:github.com,2008:Repository/323129639/release/4.6.0",
     "title": "Rotorflight Release 4.6.0",
-    "checked_at": "2026-10-07T10:37:01.535256+00:00"
+    "checked_at": "2026-10-08T10:58:11.081596+00:00"
   },
   "Rotorflight Configurator": {
     "id": "tag:github.com,2008:Repository/323129693/release/2.3.0",
     "title": "Rotorflight Configurator Release 2.3.0",
-    "checked_at": "2026-10-07T10:37:01.991639+00:00"
+    "checked_at": "2026-10-08T10:58:11.528857+00:00"
   },
   "Rotorflight Lua Scripts (EdgeTX)": {
     "id": "tag:github.com,2008:Repository/411990273/release/2.3.0",
     "title": "Rotorflight Lua Scripts - Release 2.3.0",
-    "checked_at": "2026-10-07T10:37:02.455303+00:00"
+    "checked_at": "2026-10-08T10:58:11.923085+00:00"
   },
   "Rotorflight Blackbox": {
     "id": "tag:github.com,2008:Repository/323129763/release/2.3.0",
     "title": "Rotorflight Blackbox Release 2.3.0",
-    "checked_at": "2026-10-07T10:37:02.936911+00:00"
+    "checked_at": "2026-10-08T10:58:12.271633+00:00"
   },
   "Rotorflight Ethos Suite": {
     "id": "tag:github.com,2008:Repository/876239251/snapshot/2.3.1-20260908",
     "title": "Rotorflight Lua Suite for Ethos - Snapshot 2.3.1-20260908",
-    "checked_at": "2026-10-07T10:37:03.497585+00:00"
+    "checked_at": "2026-10-08T10:58:12.744172+00:00"
   },
   "EdgeTX 本体": {
-    "id": "tag:github.com,2008:Repository/364871330/nightly",
-    "title": "Nightly Build",
-    "checked_at": "2026-10-07T10:37:05.038715+00:00"
+    "id": "tag:github.com,2008:Repository/364871330/v2.11.8",
+    "title": "v2.11.8",
+    "checked_at": "2026-10-08T10:58:13.909061+00:00"
   },
   "EdgeTX SDカード": {
     "id": "tag:github.com,2008:Repository/371100585/latest",
     "title": "Latest",
-    "checked_at": "2026-10-07T10:37:06.186596+00:00"
+    "checked_at": "2026-10-08T10:58:15.092189+00:00"
   }
 }
