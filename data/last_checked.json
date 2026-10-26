@@ -2,51 +2,51 @@
   "ELRS 本体": {
     "id": "tag:github.com,2008:Repository/151064439/4.1.0",
     "title": "ExpressLRS 4.1.0",
-    "checked_at": "2026-10-25T08:45:25.183298+00:00"
+    "checked_at": "2026-10-26T09:24:33.372679+00:00"
   },
   "ELRS Configurator": {
-    "id": "tag:github.com,2008:Repository/332467095/v1.8.3",
-    "title": "ExpressLRS Configurator 1.8.3",
-    "checked_at": "2026-10-25T08:45:25.641347+00:00"
+    "id": "tag:github.com,2008:Repository/332467095/v1.8.4",
+    "title": "ExpressLRS Configurator 1.8.4",
+    "checked_at": "2026-10-26T09:24:33.667650+00:00"
   },
   "ELRS Backpack": {
     "id": "tag:github.com,2008:Repository/413766256/1.5.9",
     "title": "ExpressLRS Backpack V1.5.9",
-    "checked_at": "2026-10-25T08:45:26.203943+00:00"
+    "checked_at": "2026-10-26T09:24:34.363013+00:00"
   },
   "Rotorflight Firmware": {
     "id": "tag:github.com,2008:Repository/323129639/release/4.6.0",
     "title": "Rotorflight Release 4.6.0",
-    "checked_at": "2026-10-25T08:45:26.653959+00:00"
+    "checked_at": "2026-10-26T09:24:34.793494+00:00"
   },
   "Rotorflight Configurator": {
     "id": "tag:github.com,2008:Repository/323129693/release/2.3.0",
     "title": "Rotorflight Configurator Release 2.3.0",
-    "checked_at": "2026-10-25T08:45:26.995394+00:00"
+    "checked_at": "2026-10-26T09:24:35.056344+00:00"
   },
   "Rotorflight Lua Scripts (EdgeTX)": {
     "id": "tag:github.com,2008:Repository/411990273/release/2.3.0",
     "title": "Rotorflight Lua Scripts - Release 2.3.0",
-    "checked_at": "2026-10-25T08:45:27.352593+00:00"
+    "checked_at": "2026-10-26T09:24:35.281691+00:00"
   },
   "Rotorflight Blackbox": {
     "id": "tag:github.com,2008:Repository/323129763/release/2.3.0",
     "title": "Rotorflight Blackbox Release 2.3.0",
-    "checked_at": "2026-10-25T08:45:27.690096+00:00"
+    "checked_at": "2026-10-26T09:24:35.642785+00:00"
   },
   "Rotorflight Ethos Suite": {
     "id": "tag:github.com,2008:Repository/876239251/snapshot/2.3.1-20260908",
     "title": "Rotorflight Lua Suite for Ethos - Snapshot 2.3.1-20260908",
-    "checked_at": "2026-10-25T08:45:28.163624+00:00"
+    "checked_at": "2026-10-26T09:24:36.313094+00:00"
   },
   "EdgeTX 本体": {
     "id": "tag:github.com,2008:Repository/364871330/nightly",
     "title": "Nightly Build",
-    "checked_at": "2026-10-25T08:45:29.267186+00:00"
+    "checked_at": "2026-10-26T09:24:37.385885+00:00"
   },
   "EdgeTX SDカード": {
     "id": "tag:github.com,2008:Repository/371100585/latest",
     "title": "Latest",
-    "checked_at": "2026-10-25T08:45:30.256012+00:00"
+    "checked_at": "2026-10-26T09:24:38.126774+00:00"
   }
 }
