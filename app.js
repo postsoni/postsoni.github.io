@@ -518,7 +518,7 @@ const translations = {
         },
         aiConsultation: {
             title: 'AIラジコン相談室',
-            description: '修理方法、機種選び、セッティング、パーツ入手など、どんな質問でもお気軽に！<br>AI（Claude）とぽすとそにが24時間以内に回答します。完全無料です。',
+            description: '修理方法、機種選び、セッティング、パーツ入手など、どんな質問でもお気軽に！<br>AI（Claude）とぽすとそにが、時間が空き次第なるべく早急に回答します。完全無料です。',
             button: '質問する（無料）',
             note: '※回答はnoteまたはウェブサイトで完全匿名にて公開し皆様の役に立つように記事に起こすこともありますが、身元は分からないのでご安心ください'
         },
@@ -1537,7 +1537,7 @@ const translations = {
         },
         aiConsultation: {
             title: 'AI RC Consultation',
-            description: 'Repair methods, model selection, settings, parts availability - any question is welcome!<br>AI (Claude) and Postsoni will respond within 24 hours. Completely free.',
+            description: 'Repair methods, model selection, settings, parts availability - any question is welcome!<br>AI (Claude) and Postsoni will respond as soon as possible, whenever time allows. Completely free.',
             button: 'Ask a Question (Free)',
             note: '*Answers may be published anonymously on note or our website as helpful articles, but your identity will remain completely confidential.'
         },
@@ -2556,7 +2556,7 @@ const translations = {
         },
         aiConsultation: {
             title: 'AI遥控模型咨询室',
-            description: '维修方法、机型选择、调试设置、零件获取等，任何问题都欢迎咨询！<br>AI（Claude）和Postsoni将在24小时内回复。完全免费。',
+            description: '维修方法、机型选择、调试设置、零件获取等，任何问题都欢迎咨询！<br>AI（Claude）和Postsoni将在有空时尽快回复。完全免费。',
             button: '提问（免费）',
             note: '※回答可能会以完全匿名的形式发布在note或网站上，作为对大家有用的文章，但您的身份信息绝对保密，请放心。'
         },
