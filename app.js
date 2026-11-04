@@ -1178,16 +1178,6 @@ const translations = {
             stat2Number: '100+', stat2Label: '修理依頼により<br>直ったラジコンの数',
             stat3Number: '20社+', stat3Label: '対応メーカー',
             stat4Number: '3年間', stat4Label: 'サポート活動',
-            monthlyTitle: '📅 今月の活動',
-            monthlyUpdated: '2025年3月8日更新',
-            monthlyRepairsTitle: '修理・改善されたラジコン',
-            monthlyRepairsCount: '5台',
-            monthlySupportedTitle: 'サポートした人数',
-            monthlySupportedCount: '5名',
-            monthlyNewModelTitle: '新作機体',
-            monthlyNewModelDetail: 'GOOSKY RS7 Ultra',
-            monthlyNewsTitle: '新着その他情報',
-            monthlyNewsDetail: 'TX16S mk2の詳細解説、GOOSKY RS7 Ultraの詳細理解、TX16S mk3やその他新作情報への知見、ELRSシステムの詳細理解（4.0.0対応）、X（旧Twitter）にて交流を広げられた',
             trustStatLabel1: '年の経験',
             trustStatLabel2: '修理実績',
             trustStatLabel3: '対応メーカー',
@@ -2197,16 +2187,6 @@ const translations = {
             stat2Number: '100+', stat2Label: 'RCs Repaired',
             stat3Number: '20+', stat3Label: 'Manufacturers',
             stat4Number: '3 Years', stat4Label: 'Support Activity',
-            monthlyTitle: '📅 This Month',
-            monthlyUpdated: 'Updated Mar 8, 2025',
-            monthlyRepairsTitle: 'RCs Repaired',
-            monthlyRepairsCount: '5 units',
-            monthlySupportedTitle: 'People Supported',
-            monthlySupportedCount: '5 people',
-            monthlyNewModelTitle: 'New Model',
-            monthlyNewModelDetail: 'GOOSKY RS7 Ultra',
-            monthlyNewsTitle: 'Latest Updates',
-            monthlyNewsDetail: 'Detailed TX16S mk2 guide, In-depth GOOSKY RS7 Ultra understanding, Insights on TX16S mk3 and other new releases, Detailed ELRS system understanding (v4.0.0), Expanded community connections on X (formerly Twitter)',
             trustStatLabel1: 'Years of Experience',
             trustStatLabel2: 'Repairs Completed',
             trustStatLabel3: 'Manufacturers Supported',
@@ -3216,16 +3196,6 @@ const translations = {
             stat2Number: '100+', stat2Label: '修好的RC',
             stat3Number: '20社+', stat3Label: '支持的制造商',
             stat4Number: '3年', stat4Label: '支持活动',
-            monthlyTitle: '📅 本月活动',
-            monthlyUpdated: '2025年3月8日更新',
-            monthlyRepairsTitle: '维修的RC',
-            monthlyRepairsCount: '5台',
-            monthlySupportedTitle: '支持的人数',
-            monthlySupportedCount: '5名',
-            monthlyNewModelTitle: '新机型',
-            monthlyNewModelDetail: 'GOOSKY RS7 Ultra',
-            monthlyNewsTitle: '最新更新',
-            monthlyNewsDetail: 'TX16S mk2详细解说、GOOSKY RS7 Ultra深入理解、TX16S mk3及其他新品资讯、ELRS系统详细理解（4.0.0版）、在X（原Twitter）上扩展了交流圈',
             trustStatLabel1: '年经验',
             trustStatLabel2: '维修实绩',
             trustStatLabel3: '支持制造商',
@@ -3538,27 +3508,6 @@ function setLanguage(lang) {
         if (statNumbers[3]) statNumbers[3].textContent = trans.topSection.stat4Number;
         if (statLabels[3]) statLabels[3].innerHTML = trans.topSection.stat4Label;
     }
-    
-    // TOPセクション - 今月の活動
-    const reportTitle = document.querySelector('.report-title');
-    const reportDate = document.querySelector('.report-date');
-    if (reportTitle) reportTitle.textContent = trans.topSection.monthlyTitle;
-    if (reportDate) reportDate.textContent = trans.topSection.monthlyUpdated;
-    
-    // TOPセクション - 今月の活動項目
-    const reportTitles = document.querySelectorAll('.report-content h4');
-    if (reportTitles[0]) reportTitles[0].textContent = trans.topSection.monthlyRepairsTitle;
-    if (reportTitles[1]) reportTitles[1].textContent = trans.topSection.monthlySupportedTitle;
-    if (reportTitles[2]) reportTitles[2].textContent = trans.topSection.monthlyNewModelTitle;
-    if (reportTitles[3]) reportTitles[3].textContent = trans.topSection.monthlyNewsTitle;
-    
-    // TOPセクション - 今月の活動数値と詳細
-    const reportNumbers = document.querySelectorAll('.report-number');
-    const reportDetails = document.querySelectorAll('.report-detail');
-    if (reportNumbers[0]) reportNumbers[0].textContent = trans.topSection.monthlyRepairsCount;
-    if (reportNumbers[1]) reportNumbers[1].textContent = trans.topSection.monthlySupportedCount;
-    if (reportDetails[0]) reportDetails[0].textContent = trans.topSection.monthlyNewModelDetail;
-    if (reportDetails[1]) reportDetails[1].textContent = trans.topSection.monthlyNewsDetail;
     
     // TOPセクション - 信頼性の統計
     const trustStatLabels = document.querySelectorAll('.trust-stats .stat-label');
