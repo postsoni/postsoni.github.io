@@ -10989,3 +10989,196 @@ body.dark-mode .bb-analysis-info {
     background: rgba(59, 130, 246, 0.1);
     color: #93c5fd;
 }
+
+/* ===== 2026-11 改善：TOP「初めての方へ」バッジ ===== */
+.guide-cta-badges {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.guide-cta-badges li {
+    background: rgba(255, 255, 255, 0.75);
+    color: #1565C0;
+    border: 1px solid rgba(25, 118, 210, 0.3);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+body.dark-mode .guide-cta-badges li {
+    background: #3a3a3a;
+    color: #e8eaed;
+    border-color: #5f6368;
+}
+
+/* ===== お問い合わせタブ：テンプレートの案内 ===== */
+.contact-template-note {
+    background: #fff7f2;
+    border-left: 4px solid #ff9a76;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 20px 0 10px 0;
+    line-height: 1.7;
+    color: #555;
+}
+
+body.dark-mode .contact-template-note {
+    background: #2d2d2d;
+    color: #e8eaed;
+    border-left-color: #ff9a76;
+}
+
+/* ===== 活動報告：過去分の折りたたみ ===== */
+.news-archive {
+    margin-top: 40px;
+    border: 2px dashed var(--border-color, #ddd);
+    border-radius: 12px;
+    padding: 0 20px;
+}
+
+.news-archive > summary {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 16px 0;
+    font-size: 1.05em;
+}
+
+.news-archive[open] > summary {
+    border-bottom: 1px solid var(--border-color, #ddd);
+    margin-bottom: 10px;
+}
+
+/* ===== Blackbox：セッション一覧 ===== */
+.bb-index {
+    margin: 30px 0 40px 0;
+    padding: 25px;
+    border-radius: 12px;
+    background: rgba(33, 150, 243, 0.06);
+    border: 1px solid rgba(33, 150, 243, 0.25);
+}
+
+.bb-index h3 {
+    margin: 0 0 8px 0;
+}
+
+.bb-index-desc {
+    margin: 0 0 15px 0;
+    font-size: 0.95em;
+    line-height: 1.7;
+}
+
+.bb-index-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.bb-filter-btn {
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 2px solid #2196F3;
+    background: transparent;
+    color: #1976D2;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.bb-filter-btn.active {
+    background: #2196F3;
+    color: #fff;
+}
+
+.bb-index-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bb-index-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    line-height: 1.6;
+}
+
+.bb-index-list li:last-child {
+    border-bottom: none;
+}
+
+.bb-index-list li.is-hidden {
+    display: none;
+}
+
+.bb-index-list a {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.bb-index-list a:hover {
+    text-decoration: underline;
+}
+
+.bb-index-tags {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-left: 6px;
+}
+
+.bb-index-tag {
+    font-size: 0.8em;
+    padding: 1px 10px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.06);
+    white-space: nowrap;
+}
+
+[id^="session-"] {
+    scroll-margin-top: 20px;
+}
+
+body.dark-mode .bb-index {
+    background: #2d2d2d;
+    border-color: #5f6368;
+}
+
+body.dark-mode .bb-filter-btn {
+    border-color: #8ab4f8;
+    color: #8ab4f8;
+}
+
+body.dark-mode .bb-filter-btn.active {
+    background: #8ab4f8;
+    color: #121212;
+}
+
+body.dark-mode .bb-index-list li {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .bb-index-tag {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    .guide-cta-badges li {
+        font-size: 13px;
+    }
+    .bb-index {
+        padding: 18px;
+    }
+}
+
+.bb-index-list a {
+    color: #1565C0;
+}
+
+body.dark-mode .bb-index-list a {
+    color: #8ab4f8;
+}

@@ -31,6 +31,9 @@ function initTabs() {
                 targetContent.classList.add('active');
                 currentTab = targetTab;
                 
+                // URLにタブ名を残す（共有・ブックマーク用。TOPのときは消す）
+                updateTabHash(targetTab === 'top' ? '' : targetTab);
+                
                 // モバイルでスクロール
                 if (window.innerWidth <= 768) {
                     setTimeout(() => {
@@ -39,6 +42,72 @@ function initTabs() {
                     }, 100);
                 }
             }
+        });
+    });
+}
+
+// ===== URLの # からタブ・セクションを開く（直リンク対応） =====
+// 例: https://postsoni.github.io/#blackbox-log → Blackboxタブ
+//     https://postsoni.github.io/#session-7  → Blackboxタブを開いて⑦へスクロール
+function updateTabHash(hash) {
+    try {
+        const url = hash ? '#' + hash : window.location.pathname + window.location.search;
+        history.replaceState(null, '', url);
+    } catch (e) {
+        // file:// などで失敗しても表示には影響させない
+    }
+}
+
+function openFromHash() {
+    const hash = decodeURIComponent(window.location.hash.replace(/^#/, ''));
+    if (!hash) return;
+    const target = document.getElementById(hash);
+    if (!target) return;
+
+    // 目的の要素が入っているタブを探す（タブそのものの場合も含む）
+    const tab = target.classList.contains('tab-content') ? target : target.closest('.tab-content');
+    if (!tab) return;
+
+    if (!tab.classList.contains('active')) {
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+        tab.classList.add('active');
+        const nav = document.querySelector(`.nav-item[data-tab="${tab.id}"]`);
+        if (nav) nav.classList.add('active');
+        currentTab = tab.id;
+    }
+
+    // タブ内の要素ならそこまでスクロール（アニメーション待ちのため少し遅らせる）
+    if (target !== tab) {
+        target.querySelectorAll('.scroll-animate').forEach(el => el.classList.add('is-visible'));
+        target.classList.add('is-visible');
+        const scrollToTarget = () => target.scrollIntoView({ behavior: 'auto', block: 'start' });
+        setTimeout(scrollToTarget, 150);
+        // 画像やフォントの読み込みで位置がずれるため、読み込み完了後にもう一度合わせる
+        if (document.readyState !== 'complete') {
+            window.addEventListener('load', () => setTimeout(scrollToTarget, 1100), { once: true });
+        }
+    }
+}
+
+function initHashLinks() {
+    openFromHash();
+    window.addEventListener('hashchange', openFromHash);
+}
+
+// ===== Blackbox解析ログ：セッション一覧の機体フィルタ =====
+function initBBIndexFilter() {
+    const buttons = document.querySelectorAll('.bb-filter-btn');
+    const items = document.querySelectorAll('.bb-index-list li');
+    if (!buttons.length) return;
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const machine = btn.getAttribute('data-machine');
+            buttons.forEach(b => b.classList.toggle('active', b === btn));
+            items.forEach(li => {
+                const machines = (li.getAttribute('data-machines') || '').split(' ');
+                li.classList.toggle('is-hidden', machine !== 'all' && !machines.includes(machine));
+            });
         });
     });
 }
@@ -360,6 +429,23 @@ const translations = {
             section3Text: '全メカ類（サーボ、アンプ、モーター等）が揃い、現在組み上げと微調整を行っています。完成次第、飛行レポートをお届けする予定です。',
             section4Title: '◆測定機器の導入',
             section4Text: 'アンプの電流値を正確に測定できるアナライザーを導入しました。これにより、より精密なセッティングとトラブルシューティングが可能になります。'
+        },
+        topIntro: {
+            badgeFree: '💰 完全無料のボランティア活動',
+            badgeNoSales: '🚫 商品の販売・注文受付はしていません',
+            badgeArea: '📍 札幌中心・オンライン相談は全国対応',
+            badgeReply: '⏰ 返信は通常1〜3日（体調により遅れる場合があります）'
+        },
+        consultTemplate: {
+            note: '📝 フォームには「相談テンプレート」ボタンがあります。機体名・送信機と受信機・症状・いつから・試したことを書いていただけると、やり取りが少なく済みます。'
+        },
+        bbIndex: {
+            title: '🗂️ 解析セッション一覧',
+            description: '機体で絞り込めます。各セッションの見出しをクリックすると、その解析へ移動します。URLの末尾が #session-番号 になるので、そのまま共有できます。',
+            filterAll: 'すべて'
+        },
+        newsArchive: {
+            summary2025: '📁 2025年の活動報告（3件）を開く'
         },
         newsSection2026Oct: {
             date: '2026年10月28日',
@@ -1367,6 +1453,23 @@ const translations = {
             section3Text: 'All mechanical parts (servos, ESC, motor, etc.) have arrived, and assembly and fine-tuning are currently underway. We will deliver a flight report once completed.',
             section4Title: '◆Introduction of Measuring Equipment',
             section4Text: 'We have introduced an analyzer that can accurately measure ESC current values. This enables more precise settings and troubleshooting.'
+        },
+        topIntro: {
+            badgeFree: '💰 Completely free volunteer activity',
+            badgeNoSales: '🚫 No product sales or orders',
+            badgeArea: '📍 Based in Sapporo, online consultations nationwide',
+            badgeReply: '⏰ Replies usually within 1–3 days (may be delayed for health reasons)'
+        },
+        consultTemplate: {
+            note: '📝 The form has a "consultation template" button. Including the model, transmitter and receiver, symptoms, when it started, and what you have tried saves back-and-forth.'
+        },
+        bbIndex: {
+            title: '🗂️ Analysis Session Index',
+            description: 'Filter by aircraft. Click a session title to jump to it. The URL ends with #session-number, so you can share it directly.',
+            filterAll: 'All'
+        },
+        newsArchive: {
+            summary2025: '📁 Show 2025 activity reports (3)'
         },
         newsSection2026Oct: {
             date: 'October 28, 2026',
@@ -2376,6 +2479,23 @@ const translations = {
             section3Text: '所有机械部件（舵机、电调、电机等）已到齐，目前正在进行组装和微调。完成后将提供飞行报告。',
             section4Title: '◆测量设备的引进',
             section4Text: '引进了可以准确测量电调电流值的分析仪。这使得更精确的设置和故障排除成为可能。'
+        },
+        topIntro: {
+            badgeFree: '💰 完全免费的志愿活动',
+            badgeNoSales: '🚫 不销售商品，也不接受订单',
+            badgeArea: '📍 以札幌为中心，线上咨询面向全国',
+            badgeReply: '⏰ 通常1〜3天内回复（可能因身体原因延迟）'
+        },
+        consultTemplate: {
+            note: '📝 表单中有"咨询模板"按钮。填写机型、遥控器和接收机、症状、开始时间以及已尝试的方法，可以减少来回沟通。'
+        },
+        bbIndex: {
+            title: '🗂️ 解析记录一览',
+            description: '可按机型筛选。点击标题即可跳转到对应解析。网址末尾会变为 #session-编号，可直接分享。',
+            filterAll: '全部'
+        },
+        newsArchive: {
+            summary2025: '📁 展开2025年的活动报告（3篇）'
         },
         newsSection2026Oct: {
             date: '2026年10月28日',
@@ -4529,6 +4649,8 @@ window.openContactForm = openContactForm;
 // ===== ページ読み込み時の初期化 =====
 document.addEventListener('DOMContentLoaded', () => {
     initTabs();
+    initHashLinks();
+    initBBIndexFilter();
     initFAQ();
     initVisitorCounter();
     initBackToTop();

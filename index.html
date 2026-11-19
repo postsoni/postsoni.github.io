@@ -404,13 +404,13 @@
     <link rel="preconnect" href="https://note.com">
     
     <!-- リソースのプリロード -->
-    <link rel="preload" href="style.css?v=1.8.1" as="style">
-    <link rel="preload" href="app.js?v=2.1.9" as="script">
+    <link rel="preload" href="style.css?v=1.8.2" as="style">
+    <link rel="preload" href="app.js?v=2.2.0" as="script">
     <link rel="preload" href="postsoni-icon.png" as="image">
     <link rel="preload" href="rc-plane-header.jpg" as="image">
     
     <!-- バージョン管理：サイト更新時は v=1.1.1, v=1.1.2 と変更してください -->
-    <link rel="stylesheet" href="style.css?v=1.8.1">
+    <link rel="stylesheet" href="style.css?v=1.8.2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Yomogi&family=Zen+Kurenaido&family=Shippori+Antique&display=swap" rel="stylesheet">
@@ -584,6 +584,24 @@
                 <div class="section-header">
                     <h2 class="section-title">🏠 ようこそ、ぽすとそに工房へ</h2>
                 </div>
+                <!-- 初心者向けガイドへの誘導（挨拶の前に配置） -->
+                <div class="beginner-guide-cta scroll-animate fade-in">
+                    <div class="guide-cta-content">
+                        <div class="guide-cta-icon">🛤️</div>
+                        <div class="guide-cta-text">
+                            <h3 class="guide-cta-title">ラジコンが初めての方へ</h3>
+                            <p class="guide-cta-description">「何から始めればいいの？」という疑問にお答えします。機体選びから基本操作まで、ステップバイステップでご案内します。</p>
+                            <ul class="guide-cta-badges">
+                                <li data-i18n="topIntro.badgeFree">💰 完全無料のボランティア活動</li>
+                                <li data-i18n="topIntro.badgeNoSales">🚫 商品の販売・注文受付はしていません</li>
+                                <li data-i18n="topIntro.badgeArea">📍 札幌中心・オンライン相談は全国対応</li>
+                                <li data-i18n="topIntro.badgeReply">⏰ 返信は通常1〜3日（体調により遅れる場合があります）</li>
+                            </ul>
+                            <a href="#" class="guide-cta-button" data-tab="roadmap">初心者ガイドを見る →</a>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="greeting-card scroll-animate fade-in">
                     <h3 class="greeting-title">ぽすとそに ご挨拶</h3>
                     <div class="greeting-content">
@@ -725,20 +743,6 @@
                         <div class="stat-item scroll-animate-item" data-delay="3">
                             <div class="stat-number">3年間</div>
                             <div class="stat-label">サポート活動</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 初心者向けガイドへの誘導 -->
-                <div class="beginner-guide-cta scroll-animate fade-in">
-                    <div class="guide-cta-content">
-                        <div class="guide-cta-icon">🛤️</div>
-                        <div class="guide-cta-text">
-                            <h3 class="guide-cta-title">ラジコンが初めての方へ</h3>
-                            <p class="guide-cta-description">「何から始めればいいの？」という疑問にお答えします。機体選びから基本操作まで、ステップバイステップでご案内します。</p>
-                            <a href="#" class="guide-cta-button" data-tab="roadmap">
-                                初心者ガイドを見る →
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -1058,6 +1062,9 @@
                         </div>
                     </div>
                     
+                    <!-- 2025年の活動報告（折りたたみ） -->
+                    <details class="news-archive">
+                        <summary data-i18n="newsArchive.summary2025">📁 2025年の活動報告（3件）を開く</summary>
                     <!-- RCアーカイブプロジェクト 2025年12月25日 -->
                     <div class="news-article" style="margin-top: 40px;">
                         <div class="news-header">
@@ -1311,6 +1318,7 @@
                             </div>
                         </div>
                     </div>
+                    </details>
                 </div>
             </section>
 
@@ -1791,8 +1799,30 @@
                     </div>
                 </div>
 
+                <!-- 解析セッション一覧（機体で絞り込み・直リンク） -->
+                <div class="bb-index" id="bb-index">
+                    <h3 data-i18n="bbIndex.title">🗂️ 解析セッション一覧</h3>
+                    <p class="bb-index-desc" data-i18n="bbIndex.description">機体で絞り込めます。各セッションの見出しをクリックすると、その解析へ移動します。URLの末尾が #session-番号 になるので、そのまま共有できます。</p>
+                    <div class="bb-index-filters">
+                        <button type="button" class="bb-filter-btn active" data-machine="all" data-i18n="bbIndex.filterAll">すべて</button>
+                        <button type="button" class="bb-filter-btn" data-machine="rs7">RS7 Ultra</button>
+                        <button type="button" class="bb-filter-btn" data-machine="e8">E8</button>
+                        <button type="button" class="bb-filter-btn" data-machine="forza">Forza450</button>
+                    </div>
+                    <ul class="bb-index-list">
+                        <li data-machines="rs7 e8"><a href="#session-1">① 2026年4月9日フライト / 4月12日解析 — 強風ホバリングテスト</a><span class="bb-index-tags"><span class="bb-index-tag">RS7 Ultra</span><span class="bb-index-tag">E8</span></span></li>
+                        <li data-machines="rs7 e8 forza"><a href="#session-2">② 2026年4月14日 — 3機種多機動テスト＋Forza450 PID変更前後比較</a><span class="bb-index-tags"><span class="bb-index-tag">RS7 Ultra</span><span class="bb-index-tag">E8</span><span class="bb-index-tag">Forza450</span></span></li>
+                        <li data-machines="e8 forza"><a href="#session-3">③ 2026年4月15日 — I項・D項の限界探索</a><span class="bb-index-tags"><span class="bb-index-tag">E8</span><span class="bb-index-tag">Forza450</span></span></li>
+                        <li data-machines="e8 forza"><a href="#session-4">④ 2026年4月16日 — 風耐性テスト＋Roll I最適化</a><span class="bb-index-tags"><span class="bb-index-tag">E8</span><span class="bb-index-tag">Forza450</span></span></li>
+                        <li data-machines="e8"><a href="#session-5">⑤ 2026年4月27日 — Yaw再構築＋FF=80 による3軸対策</a><span class="bb-index-tags"><span class="bb-index-tag">E8</span></span></li>
+                        <li data-machines="forza"><a href="#session-6">⑥ 2026年4月29日 — Forza450 Rotorflight 4.6.0-RC2 Mode 4 移行ベースライン</a><span class="bb-index-tags"><span class="bb-index-tag">Forza450</span></span></li>
+                        <li data-machines="rs7 e8 forza"><a href="#session-7">⑦ 2026年5月1日 — 3機種総合解析 + Forza450 ハンチング原因 13.65Hz 共振の特定</a><span class="bb-index-tags"><span class="bb-index-tag">RS7 Ultra</span><span class="bb-index-tag">E8</span><span class="bb-index-tag">Forza450</span></span></li>
+                        <li data-machines="rs7 e8 forza"><a href="#session-8">⑧ 2026年5月10日 — 3機種同日完成度検証 + Forza450 三重保護効果検証 + ピルエットフリップ実現</a><span class="bb-index-tags"><span class="bb-index-tag">RS7 Ultra</span><span class="bb-index-tag">E8</span><span class="bb-index-tag">Forza450</span></span></li>
+                    </ul>
+                </div>
+
                 <!-- ===== 解析①：2026年4月12日 ===== -->
-                <div class="bb-log-entry scroll-animate fade-in">
+                <div class="bb-log-entry scroll-animate fade-in" id="session-1">
                     <div class="bb-log-header">
                         <span class="bb-log-number">① </span>
                         <h3>2026年4月9日フライト / 4月12日解析 — 強風ホバリングテスト</h3>
@@ -2113,7 +2143,7 @@
                 </div>
 
                 <!-- ===== 解析②：2026年4月14日 ===== -->
-                <div class="bb-log-entry scroll-animate fade-in">
+                <div class="bb-log-entry scroll-animate fade-in" id="session-2">
                     <div class="bb-log-header">
                         <span class="bb-log-number">② </span>
                         <h3>2026年4月14日フライト / 解析 — 3機種多機動テスト＋Forza450 PID変更前後比較</h3>
@@ -2496,7 +2526,7 @@
                 <!-- ================================================================ -->
                 <!-- ③ 2026年4月15日フライト / 解析 — I項・D項の限界探索 -->
                 <!-- ================================================================ -->
-                <div class="bb-session-card scroll-animate fade-in">
+                <div class="bb-session-card scroll-animate fade-in" id="session-3">
                     <div class="bb-session-header">
                         <h3 class="bb-session-title">③ 2026年4月15日フライト / 解析 — I項・D項の限界探索</h3>
                         <div class="bb-session-line"></div>
@@ -2630,7 +2660,7 @@
                 <!-- ================================================================ -->
                 <!-- ④ 2026年4月16日フライト / 解析 — 風耐性テスト＋Roll I最適化 -->
                 <!-- ================================================================ -->
-                <div class="bb-session-card scroll-animate fade-in">
+                <div class="bb-session-card scroll-animate fade-in" id="session-4">
                     <div class="bb-session-header">
                         <h3 class="bb-session-title">④ 2026年4月16日フライト / 解析 — 風耐性テスト＋Roll I最適化</h3>
                         <div class="bb-session-line"></div>
@@ -2862,31 +2892,31 @@
                         <h5 class="bb-subsection-title">📊 グラフデータ（⑤ E8）</h5>
                         <div class="bb-graph-grid">
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/01_e8_007_tracking.png" alt="E8 Flight007 Tracking">
+                                <img loading="lazy" src="blackbox/01_e8_007_tracking.png" alt="E8 Flight007 Tracking">
                                 <p class="bb-graph-caption">E8 Tracking — Flight 007 (Best)</p>
                             </div>
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/02_e8_007_pid_components.png" alt="E8 PID Components">
+                                <img loading="lazy" src="blackbox/02_e8_007_pid_components.png" alt="E8 PID Components">
                                 <p class="bb-graph-caption">E8 PID Components — FF=80でバランス改善</p>
                             </div>
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/03_e8_ff_balance_comparison.png" alt="FF Balance Comparison">
+                                <img loading="lazy" src="blackbox/03_e8_ff_balance_comparison.png" alt="FF Balance Comparison">
                                 <p class="bb-graph-caption">FF=100 vs FF=80 — I支配度87%→50%</p>
                             </div>
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/04_e8_yaw_hover_timeline.png" alt="Yaw Hover Error Timeline">
+                                <img loading="lazy" src="blackbox/04_e8_yaw_hover_timeline.png" alt="Yaw Hover Error Timeline">
                                 <p class="bb-graph-caption">Yaw Hover Error推移 — 7フライトの改善過程</p>
                             </div>
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/05_e8_007_pirouette_analysis.png" alt="Pirouette I-term Analysis">
+                                <img loading="lazy" src="blackbox/05_e8_007_pirouette_analysis.png" alt="Pirouette I-term Analysis">
                                 <p class="bb-graph-caption">ピルエットI項分析 — 跳ね返り激減</p>
                             </div>
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/06_e8_hover_error_all_flights.png" alt="Hover Error All Flights">
+                                <img loading="lazy" src="blackbox/06_e8_hover_error_all_flights.png" alt="Hover Error All Flights">
                                 <p class="bb-graph-caption">IU2 Hover Error — 全7フライト比較</p>
                             </div>
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/07_e8_iterm_dominance_timeline.png" alt="I-term Dominance Timeline">
+                                <img loading="lazy" src="blackbox/07_e8_iterm_dominance_timeline.png" alt="I-term Dominance Timeline">
                                 <p class="bb-graph-caption">I支配度 vs FF比率の推移 — FF=80で均衡達成</p>
                             </div>
                         </div>
@@ -3033,31 +3063,31 @@
                         <h5 class="bb-subsection-title">📊 グラフデータ（⑤ Forza450）</h5>
                         <div class="bb-graph-grid">
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/01_forza450_005_tracking.png" alt="Forza450 Flight 005 Tracking">
+                                <img loading="lazy" src="blackbox/01_forza450_005_tracking.png" alt="Forza450 Flight 005 Tracking">
                                 <p class="bb-graph-caption">Tracking — Flight 005 (Best Baseline)</p>
                             </div>
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/02_forza450_005_pid_components.png" alt="Forza450 PID Components">
+                                <img loading="lazy" src="blackbox/02_forza450_005_pid_components.png" alt="Forza450 PID Components">
                                 <p class="bb-graph-caption">PID Components — Mode 4 baseline (Yaw I が常時 -263)</p>
                             </div>
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/03_forza450_yaw_iterm_hs.png" alt="Yaw I-term HS Dependency">
+                                <img loading="lazy" src="blackbox/03_forza450_yaw_iterm_hs.png" alt="Yaw I-term HS Dependency">
                                 <p class="bb-graph-caption">Yaw I-term の HS 段階別オフセット — 重要発見</p>
                             </div>
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/04_forza450_collective_yaw_response.png" alt="Collective Yaw Response">
+                                <img loading="lazy" src="blackbox/04_forza450_collective_yaw_response.png" alt="Collective Yaw Response">
                                 <p class="bb-graph-caption">Collective急上昇 → Yaw応答 — 体感の根拠</p>
                             </div>
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/05_forza450_psd_comparison.png" alt="PSD Comparison">
+                                <img loading="lazy" src="blackbox/05_forza450_psd_comparison.png" alt="PSD Comparison">
                                 <p class="bb-graph-caption">周波数解析 — 全5フライト × 3軸 PSD比較</p>
                             </div>
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/06_forza450_governor_stability.png" alt="ESC Governor Stability">
+                                <img loading="lazy" src="blackbox/06_forza450_governor_stability.png" alt="ESC Governor Stability">
                                 <p class="bb-graph-caption">ESCガバナー精度 — ±20rpmで NORMAL/IU1/IU2 を保持</p>
                             </div>
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/07_forza450_tracking_rms_timeline.png" alt="RMS Timeline">
+                                <img loading="lazy" src="blackbox/07_forza450_tracking_rms_timeline.png" alt="RMS Timeline">
                                 <p class="bb-graph-caption">学習曲線 — F003〜F007 の RMS推移と HS安定性</p>
                             </div>
                         </div>
@@ -3189,31 +3219,31 @@
                         <h5 class="bb-subsection-title">📊 グラフデータ（⑦ E8 #007）</h5>
                         <div class="bb-graph-grid">
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/session7/e8_007_g1.png" alt="E8 #007 Overview">
+                                <img loading="lazy" src="blackbox/session7/e8_007_g1.png" alt="E8 #007 Overview">
                                 <p class="bb-graph-caption">フライト全体像 — 3プロファイル試験の段階的な切替</p>
                             </div>
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/session7/e8_007_g2.png" alt="E8 PID Contribution">
+                                <img loading="lazy" src="blackbox/session7/e8_007_g2.png" alt="E8 PID Contribution">
                                 <p class="bb-graph-caption">PID寄与率 — F項が支配的、P項は小さめ</p>
                             </div>
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/session7/e8_007_g3.png" alt="E8 Tracking">
+                                <img loading="lazy" src="blackbox/session7/e8_007_g3.png" alt="E8 Tracking">
                                 <p class="bb-graph-caption">Setpoint vs Gyro 追従性（Profile #3 / 10秒窓）</p>
                             </div>
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/session7/e8_007_g4.png" alt="E8 D-term FFT">
+                                <img loading="lazy" src="blackbox/session7/e8_007_g4.png" alt="E8 D-term FFT">
                                 <p class="bb-graph-caption">D項FFT — 振動増幅なし（200Hz超ほぼゼロ）</p>
                             </div>
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/session7/e8_007_g5.png" alt="E8 Yaw Drift">
+                                <img loading="lazy" src="blackbox/session7/e8_007_g5.png" alt="E8 Yaw Drift">
                                 <p class="bb-graph-caption">急コレクティブ→ヨー流れ — 純粋イベント抽出</p>
                             </div>
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/session7/e8_007_g6.png" alt="E8 Yaw Stop">
+                                <img loading="lazy" src="blackbox/session7/e8_007_g6.png" alt="E8 Yaw Stop">
                                 <p class="bb-graph-caption">ヨー止め時オーバーシュート（lingering 残り回転）</p>
                             </div>
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/session7/e8_007_g7.png" alt="E8 RPM Stability">
+                                <img loading="lazy" src="blackbox/session7/e8_007_g7.png" alt="E8 RPM Stability">
                                 <p class="bb-graph-caption">RPM安定性 — ジャイロ振動からの間接推定</p>
                             </div>
                         </div>
@@ -3279,31 +3309,31 @@
                         <h5 class="bb-subsection-title">📊 グラフデータ（⑦ RS7 Ultra #002）</h5>
                         <div class="bb-graph-grid">
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/session7/rs7_002_g1.png" alt="RS7 Overview">
+                                <img loading="lazy" src="blackbox/session7/rs7_002_g1.png" alt="RS7 Overview">
                                 <p class="bb-graph-caption">フライト全体像 — headspeed正常取得 + Yaw I項のDCオフセット可視化</p>
                             </div>
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/session7/rs7_002_g2.png" alt="RS7 PID Contribution">
+                                <img loading="lazy" src="blackbox/session7/rs7_002_g2.png" alt="RS7 PID Contribution">
                                 <p class="bb-graph-caption">PID寄与率 — Yaw P/I peak比0.68 (Profile #2)、健全</p>
                             </div>
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/session7/rs7_002_g3.png" alt="RS7 Tracking Pirofli">
+                                <img loading="lazy" src="blackbox/session7/rs7_002_g3.png" alt="RS7 Tracking Pirofli">
                                 <p class="bb-graph-caption">ピルフリ集中時間帯 (t=230〜250s) の追従性</p>
                             </div>
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/session7/rs7_002_g4.png" alt="RS7 D-term FFT">
+                                <img loading="lazy" src="blackbox/session7/rs7_002_g4.png" alt="RS7 D-term FFT">
                                 <p class="bb-graph-caption">D項FFT — Roll D=100運用でも振動なし</p>
                             </div>
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/session7/rs7_002_g5.png" alt="RS7 Yaw Drift P3">
+                                <img loading="lazy" src="blackbox/session7/rs7_002_g5.png" alt="RS7 Yaw Drift P3">
                                 <p class="bb-graph-caption">Profile #3 急コレ→テール流れ最大99deg/s</p>
                             </div>
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/session7/rs7_002_g6.png" alt="RS7 Pirofli Detail">
+                                <img loading="lazy" src="blackbox/session7/rs7_002_g6.png" alt="RS7 Pirofli Detail">
                                 <p class="bb-graph-caption">ピルフリ詳細解析 — Yaw I項が-1000近くまで深まる</p>
                             </div>
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/session7/rs7_002_g7.png" alt="RS7 HS Stability">
+                                <img loading="lazy" src="blackbox/session7/rs7_002_g7.png" alt="RS7 HS Stability">
                                 <p class="bb-graph-caption">HS 安定性 — ±50rpm 以内に99%収まる極めて高い精度</p>
                             </div>
                         </div>
@@ -3372,23 +3402,23 @@
                         <h5 class="bb-subsection-title">📊 グラフデータ（⑦ Forza450 #004）</h5>
                         <div class="bb-graph-grid">
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/session7/forza_004_g1.png" alt="Forza450 Overview">
+                                <img loading="lazy" src="blackbox/session7/forza_004_g1.png" alt="Forza450 Overview">
                                 <p class="bb-graph-caption">フライト全体像（除外区間マーキング、t=132.2sのピルエット強調）</p>
                             </div>
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/session7/forza_004_g2.png" alt="Forza450 PID Contribution">
+                                <img loading="lazy" src="blackbox/session7/forza_004_g2.png" alt="Forza450 PID Contribution">
                                 <p class="bb-graph-caption">PID寄与率 — Pitch P がほぼ機能していない（0.04〜0.05）</p>
                             </div>
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/session7/forza_004_g3.png" alt="Forza450 Hunting FFT">
+                                <img loading="lazy" src="blackbox/session7/forza_004_g3.png" alt="Forza450 Hunting FFT">
                                 <p class="bb-graph-caption">ジャイロFFT — Profile #3 Roll軸に14.5Hzのハンチング前兆</p>
                             </div>
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/session7/forza_004_g4.png" alt="Forza450 Problem Pirofli">
+                                <img loading="lazy" src="blackbox/session7/forza_004_g4.png" alt="Forza450 Problem Pirofli">
                                 <p class="bb-graph-caption">問題のピルエット詳細（t=132.2s, 19.4度オーバーシュートの正体）</p>
                             </div>
                             <div class="bb-graph-item" onclick="openBBImage(this)">
-                                <img src="blackbox/session7/forza_004_g5.png" alt="Forza450 D-term FFT">
+                                <img loading="lazy" src="blackbox/session7/forza_004_g5.png" alt="Forza450 D-term FFT">
                                 <p class="bb-graph-caption">D項FFT — ノイズなし、健全</p>
                             </div>
                         </div>
@@ -3472,7 +3502,7 @@
                         <h5 class="bb-subsection-title">📊 グラフデータ（⑦ Forza450 #001 ハンチング詳細解析）</h5>
                         <div class="bb-graph-grid">
                             <div class="bb-graph-item" onclick="openBBImage(this)" style="grid-column: span 2;">
-                                <img src="blackbox/session7/forza_001_hunting.png" alt="Forza450 Hunting Analysis">
+                                <img loading="lazy" src="blackbox/session7/forza_001_hunting.png" alt="Forza450 Hunting Analysis">
                                 <p class="bb-graph-caption">ハンチング詳細解析 — t=200.4〜206.7s, Roll ±468 deg/s, 13.65Hz 共振の可視化</p>
                             </div>
                         </div>
@@ -3523,7 +3553,7 @@
                         <h5 class="bb-subsection-title">📊 3機比較サマリグラフ</h5>
                         <div class="bb-graph-grid">
                             <div class="bb-graph-item" onclick="openBBImage(this)" style="grid-column: span 2;">
-                                <img src="blackbox/session7/comparison_3machines.png" alt="3 Machines Comparison">
+                                <img loading="lazy" src="blackbox/session7/comparison_3machines.png" alt="3 Machines Comparison">
                                 <p class="bb-graph-caption">3機比較：HS安定性 / 追従誤差 / ヨー流れ / P項仕事ぶり</p>
                             </div>
                         </div>
@@ -3587,7 +3617,7 @@
 
 
                 <!-- ⑧ 2026年5月10日フライト / 解析 — 3機種同日完成度検証 + Forza450 三重保護効果検証 + ピルエットフリップ実現 -->
-                <div class="bb-session" style="margin-top: 60px; padding-top: 60px; border-top: 2px dotted var(--border-color);">
+                <div class="bb-session" id="session-8" style="margin-top: 60px; padding-top: 60px; border-top: 2px dotted var(--border-color);">
                     <div class="bb-session-header">
                         <h3 class="bb-session-title">⑧ 2026年5月10日フライト / 解析 — 3機種同日完成度検証 + Forza450 三重保護効果検証 + ピルエットフリップ実現</h3>
                         <p class="bb-session-meta">3機種同日フライト ｜ E8 2フライト・RS7 Ultra 5フライト・Forza450 2フライト ｜ Rotorflight 4.6.0-RC2 / Configurator 2.3.0-RC2 (3機統一)</p>
@@ -3949,7 +3979,7 @@
                 <div id="bb-image-modal" class="bb-modal" onclick="handleModalClick(event)">
                     <span class="bb-modal-close" onclick="closeBBImage()">&times;</span>
                     <div class="bb-modal-img-container" id="bb-modal-container">
-                        <img id="bb-modal-img" class="bb-modal-img" src="" alt="">
+                        <img loading="lazy" id="bb-modal-img" class="bb-modal-img" src="" alt="">
                     </div>
                     <div class="bb-modal-controls">
                         <button class="bb-modal-btn" onclick="toggleZoom(event)">🔍 Zoom</button>
@@ -6005,6 +6035,8 @@
                         </div>
                     </div>
                     
+                    <p class="contact-template-note" data-i18n="consultTemplate.note">📝 フォームには「相談テンプレート」ボタンがあります。機体名・送信機と受信機・症状・いつから・試したことを書いていただけると、やり取りが少なく済みます。</p>
+                    
                     <p class="contact-notice" data-i18n="contact.volunteerNotice">※このフォームは商業目的ではなく、ボランティア活動に関するお問い合わせ専用です。</p>
                     <button onclick="openContactForm()" class="contact-button">
                         <span data-i18n="contact.openFormButton">📧 お問い合わせフォームを開く</span>
@@ -6029,6 +6061,6 @@
     </footer>
 
     <!-- バージョン管理：サイト更新時は v=1.1.1, v=1.1.2 と変更してください -->
-    <script src="app.js?v=2.1.9"></script>
+    <script src="app.js?v=2.2.1"></script>
 </body>
 </html>
