@@ -7483,7 +7483,7 @@ select:focus-visible {
     transform: translateX(5px);
 }
 
-.step-number {
+.contact-step .step-number {
     width: 50px;
     height: 50px;
     background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
@@ -7497,13 +7497,13 @@ select:focus-visible {
     flex-shrink: 0;
 }
 
-.step-content h4 {
+.contact-step .step-content h4 {
     font-size: 16px;
     color: #333;
     margin-bottom: 5px;
 }
 
-.step-content p {
+.contact-step .step-content p {
     font-size: 14px;
     color: #666;
     margin: 0;
@@ -7613,17 +7613,17 @@ select:focus-visible {
         gap: 15px;
     }
     
-    .step-number {
+    .contact-step .step-number {
         width: 40px;
         height: 40px;
         font-size: 20px;
     }
     
-    .step-content h4 {
+    .contact-step .step-content h4 {
         font-size: 14px;
     }
     
-    .step-content p {
+    .contact-step .step-content p {
         font-size: 13px;
     }
     
@@ -11181,4 +11181,16 @@ body.dark-mode .bb-index-tag {
 
 body.dark-mode .bb-index-list a {
     color: #8ab4f8;
+}
+
+/* ===== 2026-11 修正：サイト内検索のボタンが右にはみ出る問題 ===== */
+.search-input {
+    min-width: 0;
+    width: 100%;
+}
+
+.search-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding: 10px 14px;
 }
