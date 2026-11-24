@@ -10,15 +10,16 @@ const translations = {
             title: "RCアーカイブ",
             subtitle: "絶版から現代までのラジコンデータベース",
             backToMain: "← メインサイトに戻る",
+            preparing: "準備中",
             stats: {
                 models: "登録機種数",
                 manufacturers: "メーカー数",
-                guides: "修理ガイド"
+                guides: "機体データ"
             },
             databaseLink: {
                 title: "📋 機種情報を検索",
                 button: "📋 機種データベース一覧を見る →",
-                desc: "100機種の詳細情報・修理ガイドを掲載中"
+                desc: "158機種の機体データを掲載中"
             },
             search: {
                 title: "🔍 機種を検索",
@@ -59,8 +60,8 @@ const translations = {
             about: {
                 title: "📖 アーカイブについて",
                 desc1: "このアーカイブは、絶版機種から現代の最新機種まで、ラジコンの歴史と技術を後世に残すためのデータベースです。",
-                desc2: "取扱説明書、修理ガイド、パーツ互換情報など、ラジコン文化の保存と継承を目的としています。",
-                desc3: "ぽすとそに工房の19年間の修理経験と、100件以上の修理実績をもとに構築されています。"
+                desc2: "機体スペック、取扱説明書、パーツ互換情報など、ラジコン文化の保存と継承を目的としています。",
+                desc3: "ぽすとそに工房の19年間の修理経験と、140件以上の修理実績をもとに構築されています。"
             },
             footer: {
                 license: "このアーカイブは非営利・教育目的で運営されています。<br>著作権は各メーカーに帰属します。"
@@ -72,15 +73,16 @@ const translations = {
             title: "RC Archive",
             subtitle: "Database from Vintage to Modern RC Models",
             backToMain: "← Back to Main Site",
+            preparing: "Coming soon",
             stats: {
                 models: "Registered Models",
                 manufacturers: "Manufacturers",
-                guides: "Repair Guides"
+                guides: "Model Data"
             },
             databaseLink: {
                 title: "📋 Search Model Information",
                 button: "📋 View Model Database →",
-                desc: "100 models with detailed information and repair guides"
+                desc: "Data on 158 models"
             },
             search: {
                 title: "🔍 Search Models",
@@ -121,8 +123,8 @@ const translations = {
             about: {
                 title: "📖 About This Archive",
                 desc1: "This archive is a database dedicated to preserving the history and technology of RC models, from vintage discontinued models to the latest modern releases.",
-                desc2: "The archive aims to preserve and pass on RC culture through instruction manuals, repair guides, and parts compatibility information.",
-                desc3: "Built upon 19 years of repair experience and over 100 repair cases by Postsoni Workshop."
+                desc2: "The archive aims to preserve and pass on RC culture through model specifications, instruction manuals, and parts compatibility information.",
+                desc3: "Built upon 19 years of repair experience and over 140 repair cases by Postsoni Workshop."
             },
             footer: {
                 license: "This archive is operated for non-profit and educational purposes.<br>All copyrights belong to respective manufacturers."
@@ -134,15 +136,16 @@ const translations = {
             title: "RC资料库",
             subtitle: "从绝版到现代的遥控模型数据库",
             backToMain: "← 返回主站",
+            preparing: "准备中",
             stats: {
                 models: "已登录机型数",
                 manufacturers: "制造商数",
-                guides: "维修指南"
+                guides: "机体数据"
             },
             databaseLink: {
                 title: "📋 搜索机型信息",
                 button: "📋 查看机型数据库 →",
-                desc: "已收录100种机型的详细信息和维修指南"
+                desc: "已收录158种机型的机体数据"
             },
             search: {
                 title: "🔍 搜索机型",
@@ -183,8 +186,8 @@ const translations = {
             about: {
                 title: "📖 关于资料库",
                 desc1: "本资料库是一个旨在为后代保存遥控模型历史和技术的数据库，从绝版机型到现代最新机型。",
-                desc2: "通过说明书、维修指南、零件兼容性信息等，旨在保存和传承遥控模型文化。",
-                desc3: "基于Postsoni工房19年的维修经验和100多个维修案例构建。"
+                desc2: "通过机体规格、说明书、零件兼容性信息等，旨在保存和传承遥控模型文化。",
+                desc3: "基于Postsoni工房19年的维修经验和140多个维修案例构建。"
             },
             footer: {
                 license: "本资料库为非营利和教育目的运营。<br>版权归各制造商所有。"

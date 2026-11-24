@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>機種データベース一覧 | RCアーカイブ</title>
     <meta name="description" content="ぽすとそに工房が独自に調査したものや修理サポートの経験がある機種の情報をまとめたデータベース">
-    <link rel="stylesheet" href="archive.css">
+    <link rel="stylesheet" href="archive.css?v=1.1.0">
 </head>
 <body>
     <!-- パンくずナビゲーション -->
@@ -54,7 +54,7 @@
             </div>
             <div class="stat-card">
                 <div class="stat-number">158</div>
-                <div class="stat-label">修理ガイド数</div>
+                <div class="stat-label">機体データ数</div>
             </div>
         </section>
 
@@ -92,7 +92,7 @@
                         <option value="">すべて</option>
                         <option value="現行販売中">現行販売中</option>
                         <option value="生産終了">生産終了</option>
-                        <option value="開発終了">開発終了</option>
+                        <option value="プロトタイプ">プロトタイプ</option>
                     </select>
                 </div>
 
@@ -1158,12 +1158,12 @@
                     </tr>
 
                     <!-- TRF404X -->
-                    <tr class="model-row" data-category="ラジコンカー" data-manufacturer="タミヤ" data-status="試作車両" data-keywords="TRF404X TRF 404X プロトタイプ 試作 ツーリングカー 2ベルト カーボン">
+                    <tr class="model-row" data-category="ラジコンカー" data-manufacturer="タミヤ" data-status="プロトタイプ" data-keywords="TRF404X TRF 404X プロトタイプ 試作 ツーリングカー 2ベルト カーボン">
                         <td><span class="category-badge car">ラジコンカー</span></td>
                         <td>タミヤ</td>
                         <td><strong>TRF404X</strong></td>
                         <td>1998年</td>
-                        <td><span class="status-badge prototype">試作車両</span></td>
+                        <td><span class="status-badge prototype">プロトタイプ</span></td>
                         <td>詳細不明</td>
                         <td><a href="models/tamiya-trf404x.html" class="detail-link">詳細を見る →</a></td>
                     </tr>
@@ -1912,6 +1912,18 @@
             document.getElementById('noResults').style.display = visibleCount === 0 ? 'block' : 'none';
         }
 
+        // URLの ?maker= / ?category= で最初から絞り込む（アーカイブトップのカードから）
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const makers = { tamiya: 'タミヤ', kyosho: '京商', jrpropo: 'JR PROPO' };
+            const categories = { car: 'ラジコンカー', heli: 'ラジコンヘリ', plane: 'ラジコン飛行機' };
+            const maker = makers[params.get('maker')];
+            const category = categories[params.get('category')];
+            if (maker) document.getElementById('manufacturerFilter').value = maker;
+            if (category) document.getElementById('categoryFilter').value = category;
+            if (maker || category) filterModels();
+        });
+
         function resetFilters() {
             document.getElementById('categoryFilter').value = '';
             document.getElementById('manufacturerFilter').value = '';
@@ -1921,6 +1933,6 @@
         }
     </script>
 
-    <script src="archive.js"></script>
+    <script src="archive.js?v=1.1.0"></script>
 </body>
 </html>
