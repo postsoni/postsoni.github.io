@@ -593,7 +593,7 @@ const translations = {
                 purpose: {
                     title: '🎯 アーカイブの目的',
                     item1: '✅ 絶版機種の情報保存 - 取扱説明書や修理ガイドを永続的に記録',
-                    item2: '✅ 技術継承 - 19年間の修理経験と100件以上の実績をデータ化',
+                    item2: '✅ 技術継承 - 19年間の修理経験と150件以上の実績をデータ化',
                     item3: '✅ 情報更新 - データ不備があれば随時訂正・更新',
                     item4: '✅ コミュニティ協力 - 機種情報をお持ちの方からの情報提供を歓迎'
                 },
@@ -649,7 +649,7 @@ const translations = {
             passionText2: 'ラジコンを取り巻く現実は厳しいものがあります。高齢化が進み、若い世代は別の娯楽に流れ、走らせたり飛ばしたりできる場所も年々減っています。「ラジコンは趣味として高級品」「敷居が高い」「初心者お断り」というイメージが先行し、始める前から諦めてしまう人も少なくありません。SNSでの交流やゲーム、ゲーム実況が主流の今、手を動かして何かを作り上げる楽しさは、なかなか伝わりにくい時代です。',
             passionText3: 'それでも、私はこの文化を記録し続けます。',
             passionText4: 'たとえ今の時代に多くの人を呼び込めなくても、技術や知識を丁寧に残しておくことで、いつか誰かがそれを見つけてくれるかもしれない。10年後か、50年後か、もしかしたら私が生きていない未来かもしれません。それでも、ネットという海に「タイムカプセル」として潜らせておけば、必要とする誰かに届く可能性がある。そう信じています。',
-            passionText5: 'この活動は、商売ではなく、個人的な想いで始まった活動です。睡眠が不安定な中での活動であり、決して派手なものではありません。それでも、19年間ラジコンと向き合ってきた経験と、100台以上の修理実績があります。それらを記録し、共有し、次世代へ繋ぐ。それが、今の私にできることです。',
+            passionText5: 'この活動は、商売ではなく、個人的な想いで始まった活動です。睡眠が不安定な中での活動であり、決して派手なものではありません。それでも、19年間ラジコンと向き合ってきた経験と、150件以上の修理実績があります。それらを記録し、共有し、次世代へ繋ぐ。それが、今の私にできることです。',
             passionText6: 'もしあなたが「ラジコンをやってみたい」「昔やっていたけど、また始めたい」と少しでも思ってくださったなら、それだけで嬉しいです。ともに、この文化を歩んでいきましょう。'
         },
         snsSection: {
@@ -1300,7 +1300,7 @@ const translations = {
                 '温かみのあるオレンジ系カラーデザイン',
                 '手書き風フォント（Yomogi）による親しみやすいUI'
             ],
-            phase1Result: '成果: すべてのデバイスで快適に閲覧可能、視覚的に魅力的なデザイン実現',
+            phase1Result: '目指した改善: すべてのデバイスで快適に閲覧可能、視覚的に魅力的なデザイン実現',
             phase2Title: '⚡ Phase 2: 機能拡張',
             phase2Purpose: '目的: インタラクティブな体験の提供',
             phase2Items: [
@@ -1310,7 +1310,7 @@ const translations = {
                 'スクロールアニメーション',
                 '活動統計の可視化（数字カウントアップ）'
             ],
-            phase2Result: '成果: ユーザーエンゲージメント向上、視覚的なフィードバックで操作性UP',
+            phase2Result: '目指した改善: ユーザーエンゲージメント向上、視覚的なフィードバックで操作性UP',
             phase3Title: '🔍 Phase 3: SEO強化',
             phase3Purpose: '目的: Google検索での上位表示',
             phase3Items: [
@@ -1321,7 +1321,7 @@ const translations = {
                 'sitemap.xml / robots.txt 作成',
                 'Google Search Console 連携'
             ],
-            phase3Result: '成果: 検索エンジンでの表示改善、リッチリザルト表示対応、SEO評価向上',
+            phase3Result: '目指した改善: 検索エンジンでの表示改善、リッチリザルト表示対応、SEO評価向上',
             phase4Title: '📚 Phase 4: コンテンツ充実',
             phase4Purpose: '目的: ユーザーの疑問を徹底解消',
             phase4Items: [
@@ -1332,7 +1332,7 @@ const translations = {
                 'サイト内検索機能追加',
                 '詳細な回答（料金目安、所要時間、対応範囲）'
             ],
-            phase4Result: '成果: ユーザーの疑問解消率UP、コンバージョン率向上',
+            phase4Result: '目指した改善: ユーザーの疑問解消率UP、コンバージョン率向上',
             phase5Title: '🚄 Phase 5: パフォーマンス最適化',
             phase5Purpose: '目的: 表示速度の劇的改善',
             phase5Items: [
@@ -1341,7 +1341,7 @@ const translations = {
                 '画像遅延読み込み強化: データ量 40-60% 削減',
                 'リソースヒント: DNS Prefetch, Preconnect'
             ],
-            phase5Result: '成果: 初回訪問FCP 30-50%改善、2回目以降表示時間80-90%改善、オフライン対応、Core Web Vitals大幅改善',
+            phase5Result: '目指した改善: 初回訪問FCP 30-50%改善、2回目以降表示時間80-90%改善、オフライン対応、Core Web Vitals大幅改善',
             phase6Title: '📱 Phase 6: モバイル体験最適化',
             phase6Purpose: '目的: スマホでの快適性を追求',
             phase6Items: [
@@ -1352,7 +1352,7 @@ const translations = {
                 'フォントサイズ: 16px固定（iOS自動ズーム防止）',
                 'JavaScript最適化: タップフィードバック、スクロール最適化'
             ],
-            phase6Result: '成果: 誤タップ率70-80%削減、読書体験50%以上改善、滞在時間20-40%増加予測',
+            phase6Result: '目指した改善: 誤タップ率70-80%削減、読書体験50%以上改善、滞在時間20-40%増加',
             phase7Title: '♿ Phase 7: アクセシビリティ強化',
             phase7Purpose: '目的: すべての人が使えるウェブサイトへ',
             phase7Items: [
@@ -1366,8 +1366,8 @@ const translations = {
                 'フォーカスインジケーター強化',
                 'WCAG 2.1 AA基準準拠'
             ],
-            phase7Result: '成果: Lighthouseスコア90-100点、すべてのユーザーが利用可能、キーボード操作可能率100%',
-            effectsTitle: '📈 総合的な改善効果',
+            phase7Result: '目指した改善: Lighthouseスコア90-100点、すべてのユーザーが利用可能、キーボード操作可能率100%',
+            effectsTitle: '🎯 改善を目指した施策と目標',
             effectsPerformance: '⚡ パフォーマンス',
             effectsPerformanceItems: [
                 '初回表示速度: 50-70% 向上',
@@ -1382,7 +1382,7 @@ const translations = {
             ],
             effectsSEO: '🔍 SEO',
             effectsSEOItems: [
-                '検索順位: 大幅向上',
+                '検索順位: 向上',
                 '検索流入: +50-100%',
                 'リッチリザルト表示対応'
             ],
@@ -1613,7 +1613,7 @@ const translations = {
                 purpose: {
                     title: '🎯 Archive Purpose',
                     item1: '✅ Preservation of Discontinued Model Information - Permanently recording instruction manuals and repair guides',
-                    item2: '✅ Technology Succession - Converting 19 years of repair experience and 100+ cases into data',
+                    item2: '✅ Technology Succession - Converting 19 years of repair experience and 150+ cases into data',
                     item3: '✅ Information Updates - Prompt corrections and updates for any data discrepancies',
                     item4: '✅ Community Collaboration - Welcoming information contributions from those with model knowledge'
                 },
@@ -1669,7 +1669,7 @@ const translations = {
             passionText2: 'The reality surrounding RC is harsh. The hobby is aging, younger generations are turning to other entertainments, and places to drive or fly are decreasing year by year. Images like "RC is an expensive hobby," "high barrier to entry," and "beginners not welcome" prevail, causing many to give up before starting. In today\'s era dominated by social media and gaming/game streaming, the joy of creating something with your hands is hard to convey.',
             passionText3: 'Still, I continue to document this culture.',
             passionText4: 'Even if I can\'t attract many people in this era, by carefully preserving techniques and knowledge, someone might find them someday. Maybe in 10 years, 50 years, or perhaps in a future I won\'t see. Still, I believe that by letting it drift as a "time capsule" in the ocean of the internet, it might reach someone who needs it.',
-            passionText5: 'This activity isn\'t business—it started from personal passion. It\'s conducted with unstable sleep patterns and is far from glamorous. Yet, I have 19 years of RC experience and over 100 repair cases. Recording, sharing, and passing these to the next generation—that\'s what I can do now.',
+            passionText5: 'This activity isn\'t business—it started from personal passion. It\'s conducted with unstable sleep patterns and is far from glamorous. Yet, I have 19 years of RC experience and over 150 repair cases. Recording, sharing, and passing these to the next generation—that\'s what I can do now.',
             passionText6: 'If you\'ve thought even a little "I want to try RC" or "I used to do it, maybe I\'ll start again," that alone makes me happy. Let\'s walk this culture together.'
         },
         snsSection: {
@@ -2320,7 +2320,7 @@ const translations = {
                 'Warm orange color design',
                 'Friendly UI with handwritten-style font (Yomogi)'
             ],
-            phase1Result: 'Results: Comfortable viewing on all devices, visually attractive design achieved',
+            phase1Result: 'Intended improvements: Comfortable viewing on all devices, visually attractive design achieved',
             phase2Title: '⚡ Phase 2: Feature Expansion',
             phase2Purpose: 'Purpose: Provide interactive experience',
             phase2Items: [
@@ -2330,7 +2330,7 @@ const translations = {
                 'Scroll animations',
                 'Activity statistics visualization (number count-up)'
             ],
-            phase2Result: 'Results: Improved user engagement, enhanced usability with visual feedback',
+            phase2Result: 'Intended improvements: Improved user engagement, enhanced usability with visual feedback',
             phase3Title: '🔍 Phase 3: SEO Enhancement',
             phase3Purpose: 'Purpose: Top ranking in Google search',
             phase3Items: [
@@ -2341,7 +2341,7 @@ const translations = {
                 'sitemap.xml / robots.txt creation',
                 'Google Search Console integration'
             ],
-            phase3Result: 'Results: Improved search engine display, rich results support, enhanced SEO evaluation',
+            phase3Result: 'Intended improvements: Improved search engine display, rich results support, enhanced SEO evaluation',
             phase4Title: '📚 Phase 4: Content Enrichment',
             phase4Purpose: 'Purpose: Thoroughly resolve user questions',
             phase4Items: [
@@ -2352,7 +2352,7 @@ const translations = {
                 'Site search function added',
                 'Detailed answers (cost estimates, time required, coverage)'
             ],
-            phase4Result: 'Results: Improved question resolution rate, increased conversion rate',
+            phase4Result: 'Intended improvements: Improved question resolution rate, increased conversion rate',
             phase5Title: '🚄 Phase 5: Performance Optimization',
             phase5Purpose: 'Purpose: Dramatic improvement in display speed',
             phase5Items: [
@@ -2361,7 +2361,7 @@ const translations = {
                 'Enhanced image lazy loading: 40-60% data reduction',
                 'Resource hints: DNS Prefetch, Preconnect'
             ],
-            phase5Result: 'Results: 30-50% FCP improvement on first visit, 80-90% improvement on subsequent visits, offline support, significant Core Web Vitals improvement',
+            phase5Result: 'Intended improvements: 30-50% FCP improvement on first visit, 80-90% improvement on subsequent visits, offline support, significant Core Web Vitals improvement',
             phase6Title: '📱 Phase 6: Mobile Experience Optimization',
             phase6Purpose: 'Purpose: Pursue comfort on smartphones',
             phase6Items: [
@@ -2372,7 +2372,7 @@ const translations = {
                 'Font size: 16px fixed (prevent iOS auto-zoom)',
                 'JavaScript optimization: tap feedback, scroll optimization'
             ],
-            phase6Result: 'Results: 70-80% reduction in mistaps, 50%+ improvement in reading experience, 20-40% predicted increase in dwell time',
+            phase6Result: 'Intended improvements: 70-80% reduction in mistaps, 50%+ improvement in reading experience, 20-40% increase in dwell time',
             phase7Title: '♿ Phase 7: Accessibility Enhancement',
             phase7Purpose: 'Purpose: Website for everyone',
             phase7Items: [
@@ -2386,8 +2386,8 @@ const translations = {
                 'Enhanced focus indicators',
                 'WCAG 2.1 AA compliance'
             ],
-            phase7Result: 'Results: Lighthouse score 90-100, available to all users, 100% keyboard operability',
-            effectsTitle: '📈 Overall Improvement Results',
+            phase7Result: 'Intended improvements: Lighthouse score 90-100, available to all users, 100% keyboard operability',
+            effectsTitle: '🎯 Targeted Improvements and Goals',
             effectsPerformance: '⚡ Performance',
             effectsPerformanceItems: [
                 'Initial display speed: 50-70% improvement',
@@ -2402,7 +2402,7 @@ const translations = {
             ],
             effectsSEO: '🔍 SEO',
             effectsSEOItems: [
-                'Search ranking: Significantly improved',
+                'Search ranking: Improved',
                 'Search traffic: +50-100%',
                 'Rich results display support'
             ],
@@ -2689,7 +2689,7 @@ const translations = {
             passionText2: 'RC所面临的现实是严峻的。老龄化在加剧，年轻一代转向其他娱乐，可以驾驶或飞行的场所也在逐年减少。"RC作为爱好是高级品"、"门槛高"、"不欢迎初学者"等印象先行，许多人在开始前就放弃了。在社交媒体和游戏或游戏实况主导的今天，用手创造东西的乐趣很难传达。',
             passionText3: '即便如此，我仍会继续记录这一文化。',
             passionText4: '即使在这个时代无法吸引许多人，通过细心地保存技术和知识，也许有一天会有人发现它们。可能是10年后、50年后，或者是我不在世的未来。即便如此，我相信，只要将它作为"时间胶囊"沉入互联网的海洋，就有可能到达需要它的人手中。',
-            passionText5: '这项活动不是生意，而是出于个人热情开始的。在睡眠不稳定的情况下进行活动，绝不华丽。但我有19年的RC经验和100多个维修案例。记录、分享并传承给下一代——这就是我现在能做的。',
+            passionText5: '这项活动不是生意，而是出于个人热情开始的。在睡眠不稳定的情况下进行活动，绝不华丽。但我有19年的RC经验和150多个维修案例。记录、分享并传承给下一代——这就是我现在能做的。',
             passionText6: '如果您哪怕有一点"想尝试RC"或"以前玩过，也许会重新开始"的想法，仅此就让我很高兴。让我们一起走过这一文化吧。'
         },
         snsSection: {
@@ -3340,7 +3340,7 @@ const translations = {
                 '温暖的橙色系配色设计',
                 '使用手写风格字体（Yomogi）的亲切UI'
             ],
-            phase1Result: '成果：所有设备都能舒适浏览，实现视觉上有吸引力的设计',
+            phase1Result: '目标改善：所有设备都能舒适浏览，实现视觉上有吸引力的设计',
             phase2Title: '⚡ Phase 2：功能扩展',
             phase2Purpose: '目的：提供交互式体验',
             phase2Items: [
@@ -3350,7 +3350,7 @@ const translations = {
                 '滚动动画',
                 '活动统计可视化（数字递增）'
             ],
-            phase2Result: '成果：用户参与度提升，通过视觉反馈提高操作性',
+            phase2Result: '目标改善：用户参与度提升，通过视觉反馈提高操作性',
             phase3Title: '🔍 Phase 3：SEO强化',
             phase3Purpose: '目的：在Google搜索中获得高排名',
             phase3Items: [
@@ -3361,7 +3361,7 @@ const translations = {
                 'sitemap.xml / robots.txt 创建',
                 'Google Search Console 集成'
             ],
-            phase3Result: '成果：搜索引擎显示改善，支持富媒体结果，SEO评价提升',
+            phase3Result: '目标改善：搜索引擎显示改善，支持富媒体结果，SEO评价提升',
             phase4Title: '📚 Phase 4：内容充实',
             phase4Purpose: '目的：彻底解决用户疑问',
             phase4Items: [
@@ -3372,7 +3372,7 @@ const translations = {
                 '站内搜索功能添加',
                 '详细回答（费用参考、所需时间、对应范围）'
             ],
-            phase4Result: '成果：用户疑问解决率UP，转化率提升',
+            phase4Result: '目标改善：用户疑问解决率UP，转化率提升',
             phase5Title: '🚄 Phase 5：性能优化',
             phase5Purpose: '目的：显示速度的显著改善',
             phase5Items: [
@@ -3381,7 +3381,7 @@ const translations = {
                 '图片延迟加载强化：数据量削减40-60%',
                 '资源提示：DNS Prefetch、Preconnect'
             ],
-            phase5Result: '成果：首次访问FCP改善30-50%，第二次以后显示时间改善80-90%，离线支持，Core Web Vitals大幅改善',
+            phase5Result: '目标改善：首次访问FCP改善30-50%，第二次以后显示时间改善80-90%，离线支持，Core Web Vitals大幅改善',
             phase6Title: '📱 Phase 6：移动体验优化',
             phase6Purpose: '目的：追求智能手机的舒适性',
             phase6Items: [
@@ -3392,7 +3392,7 @@ const translations = {
                 '字体大小：16px固定（防止iOS自动缩放）',
                 'JavaScript优化：点击反馈、滚动优化'
             ],
-            phase6Result: '成果：误触率削减70-80%，阅读体验改善50%以上，停留时间预计增加20-40%',
+            phase6Result: '目标改善：误触率削减70-80%，阅读体验改善50%以上，停留时间增加20-40%',
             phase7Title: '♿ Phase 7：可访问性强化',
             phase7Purpose: '目的：所有人都能使用的网站',
             phase7Items: [
@@ -3406,8 +3406,8 @@ const translations = {
                 '焦点指示器强化',
                 'WCAG 2.1 AA标准准拠'
             ],
-            phase7Result: '成果：Lighthouse分数90-100分，所有用户都可使用，键盘操作可能率100%',
-            effectsTitle: '📈 综合改善效果',
+            phase7Result: '目标改善：Lighthouse分数90-100分，所有用户都可使用，键盘操作可能率100%',
+            effectsTitle: '🎯 改进措施与目标',
             effectsPerformance: '⚡ 性能',
             effectsPerformanceItems: [
                 '首次显示速度：提高50-70%',
@@ -3422,7 +3422,7 @@ const translations = {
             ],
             effectsSEO: '🔍 SEO',
             effectsSEOItems: [
-                '搜索排名：大幅提升',
+                '搜索排名：提升',
                 '搜索流量：+50-100%',
                 '富媒体结果显示对应'
             ],

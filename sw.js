@@ -1,92 +1,67 @@
 // Service Worker - ぽすとそに工房
-const CACHE_NAME = 'postsoni-koubou-v1.7.6';
-const OFFLINE_URL = 'offline.html';
+// 方針：ネットにつながるときは「必ず最新」を表示し、つながらないときだけ保存版を使う（ネットワーク優先）
+const CACHE_NAME = 'postsoni-koubou-v1.8.0';
+const OFFLINE_URL = '/offline.html';
 
-// キャッシュするファイル
+// 圏外でも最低限表示できるように、最初に保存しておくファイル
 const CACHE_FILES = [
     '/',
     '/index.html',
     '/style.css',
     '/app.js',
+    '/offline.html',
     '/postsoni-icon.png',
     '/favicon.ico',
     '/rc-plane-header.jpg'
 ];
 
-// インストール時
+// インストール時：保存しておくファイルを取得し、すぐに新しい版へ切り替える
 self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CACHE_NAME)
-            .then(cache => {
-                console.log('キャッシュを開きました');
-                return cache.addAll(CACHE_FILES);
-            })
-            .then(() => {
-                return self.skipWaiting();
-            })
+            .then(cache => cache.addAll(CACHE_FILES))
+            .then(() => self.skipWaiting())
     );
 });
 
-// アクティベート時（古いキャッシュを削除）
+// 有効化時：古い版の保存データを削除し、開いているページもすぐ新しい版の管理下に置く
 self.addEventListener('activate', event => {
     event.waitUntil(
-        caches.keys().then(cacheNames => {
-            return Promise.all(
+        caches.keys()
+            .then(cacheNames => Promise.all(
                 cacheNames
                     .filter(cacheName => cacheName !== CACHE_NAME)
-                    .map(cacheName => {
-                        console.log('古いキャッシュを削除:', cacheName);
-                        return caches.delete(cacheName);
-                    })
-            );
-        }).then(() => {
-            return self.clients.claim();
-        })
+                    .map(cacheName => caches.delete(cacheName))
+            ))
+            .then(() => self.clients.claim())
     );
 });
 
-// フェッチ時
+// 読み込み時：ネットワーク優先
 self.addEventListener('fetch', event => {
-    // APIリクエストはキャッシュしない
-    if (event.request.url.includes('api.rss2json.com') ||
-        event.request.url.includes('note.com') ||
-        event.request.url.includes('youtube.com')) {
-        return fetch(event.request);
-    }
-    
+    const request = event.request;
+
+    // 送信（GET以外）と、外部サイト（note・YouTube・訪問者カウンターなど）には関わらない
+    if (request.method !== 'GET') return;
+    if (new URL(request.url).origin !== self.location.origin) return;
+
     event.respondWith(
-        caches.match(event.request)
+        fetch(request)
             .then(response => {
-                // キャッシュがあれば返す
-                if (response) {
-                    // バックグラウンドで更新
-                    fetch(event.request).then(fetchResponse => {
-                        if (fetchResponse && fetchResponse.status === 200) {
-                            caches.open(CACHE_NAME).then(cache => {
-                                cache.put(event.request, fetchResponse.clone());
-                            });
-                        }
-                    }).catch(() => {});
-                    
-                    return response;
+                // 最新版が取れたら、圏外のときのために保存しておく
+                if (response && response.status === 200 && response.type === 'basic') {
+                    const copy = response.clone();
+                    caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
                 }
-                
-                // キャッシュがなければネットワークから取得
-                return fetch(event.request).then(fetchResponse => {
-                    // 成功したらキャッシュに保存
-                    if (fetchResponse && fetchResponse.status === 200 && fetchResponse.type === 'basic') {
-                        const responseToCache = fetchResponse.clone();
-                        caches.open(CACHE_NAME).then(cache => {
-                            cache.put(event.request, responseToCache);
-                        });
-                    }
-                    return fetchResponse;
-                }).catch(() => {
-                    // オフラインの場合
-                    if (event.request.mode === 'navigate') {
-                        return caches.match(OFFLINE_URL);
-                    }
-                });
+                return response;
             })
+            .catch(() =>
+                // ネットにつながらないときだけ、保存版を使う
+                caches.match(request).then(cached => {
+                    if (cached) return cached;
+                    if (request.mode === 'navigate') return caches.match(OFFLINE_URL);
+                    return Response.error();
+                })
+            )
     );
 });

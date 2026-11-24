@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>オフラインです | ぽすとそに工房</title>
+    <link rel="icon" href="/favicon.ico">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            font-family: "Hiragino Sans", "Yu Gothic UI", "Meiryo", sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #2c3e50;
+        }
+        .card {
+            width: 100%;
+            max-width: 460px;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 36px 28px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .icon { width: 72px; height: 72px; border-radius: 50%; margin-bottom: 12px; }
+        h1 { font-size: 1.4em; margin: 0 0 12px; }
+        p { line-height: 1.8; margin: 0 0 8px; }
+        .sub { font-size: 0.85em; color: #7f8c8d; }
+        button {
+            margin-top: 20px;
+            padding: 12px 36px;
+            border: none;
+            border-radius: 999px;
+            background: #667eea;
+            color: #ffffff;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover { background: #5568d3; }
+        @media (prefers-color-scheme: dark) {
+            .card { background: #1e1e1e; color: #e8eaed; }
+            .sub { color: #9aa0a6; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img class="icon" src="/postsoni-icon.png" alt="">
+        <h1>📡 オフラインです</h1>
+        <p>インターネットにつながっていないため、ページを表示できませんでした。</p>
+        <p>電波の良い場所で、もう一度お試しください。</p>
+        <p class="sub">You are offline. Please check your connection.<br>您目前处于离线状态，请检查网络连接。</p>
+        <button type="button" onclick="location.reload()">🔄 再読み込み</button>
+    </div>
+</body>
+</html>

@@ -3744,7 +3744,6 @@ body.dark-mode .gallery-link-button {
 }
 
 /* === お気軽にご相談ください（CTA） === */
-body.dark-mode .consultation-cta,
 body.dark-mode .contact-cta,
 body.dark-mode div[style*="background: linear-gradient(135deg, #fff5f0"],
 body.dark-mode div[style*="background: linear-gradient(135deg, #ffe4d9"] {
@@ -3752,12 +3751,10 @@ body.dark-mode div[style*="background: linear-gradient(135deg, #ffe4d9"] {
     border-color: #f28b82 !important;
 }
 
-body.dark-mode .consultation-cta h3,
 body.dark-mode .contact-cta h3 {
     color: #f28b82 !important;
 }
 
-body.dark-mode .consultation-cta p,
 body.dark-mode .contact-cta p {
     color: #e8eaed !important;
 }
