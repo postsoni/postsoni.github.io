@@ -404,13 +404,13 @@
     <link rel="preconnect" href="https://note.com">
     
     <!-- リソースのプリロード -->
-    <link rel="preload" href="style.css?v=1.8.5" as="style">
-    <link rel="preload" href="app.js?v=2.2.6" as="script">
+    <link rel="preload" href="style.css?v=1.8.6" as="style">
+    <link rel="preload" href="app.js?v=2.2.7" as="script">
     <link rel="preload" href="postsoni-icon.png" as="image">
     <link rel="preload" href="rc-plane-header.jpg" as="image">
     
     <!-- バージョン管理：サイト更新時は v=1.1.1, v=1.1.2 と変更してください -->
-    <link rel="stylesheet" href="style.css?v=1.8.5">
+    <link rel="stylesheet" href="style.css?v=1.8.6">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Yomogi&family=Zen+Kurenaido&family=Shippori+Antique&display=swap" rel="stylesheet">
@@ -4043,13 +4043,13 @@
                 <div class="edgetx-intro scroll-animate fade-in">
                     <div class="edgetx-intro-icon">📚</div>
                     <div class="edgetx-intro-content">
-                        <h3 data-i18n="edgetxManualSection.introTitle">EdgeTX & TX16S 完全日本語マニュアル</h3>
-                        <p data-i18n="edgetxManualSection.introDesc">RadioMaster TX16S向けのEdgeTX日本語マニュアルです。これから初めて操作する初心者様組や、フタバ・JR PROPOからの乗り換え組にもわかりやすく丁寧な解説を心がけました。</p>
+                        <h3 data-i18n="edgetxManualSection.introTitle">EdgeTX v2.12.5 実践ガイド（第1版）</h3>
+                        <p data-i18n="edgetxManualSection.introDesc">RadioMaster TX16S（MK2・MK3で確認）で使う EdgeTX v2.12.5 の実践ガイドです。どの機体にも共通する基礎をまとめた「共通編」と、ELRS・Rotorflight とつなぐ「ヘリ編」の2冊に分けました。これまでのマニュアルを見直し、第1版として作り直しています。</p>
                         <div class="edgetx-features">
-                            <span class="edgetx-feature" data-i18n="edgetxManualSection.feature1">✓ 全56ページ</span>
-                            <span class="edgetx-feature" data-i18n="edgetxManualSection.feature2">✓ 7章構成</span>
-                            <span class="edgetx-feature" data-i18n="edgetxManualSection.feature3">✓ ヘリコプター設定対応</span>
-                            <span class="edgetx-feature" data-i18n="edgetxManualSection.feature4">✓ シミュレーター設定解説</span>
+                            <span class="edgetx-feature" data-i18n="edgetxManualSection.feature1">✓ 共通編 23ページ</span>
+                            <span class="edgetx-feature" data-i18n="edgetxManualSection.feature2">✓ ヘリ編 24ページ</span>
+                            <span class="edgetx-feature" data-i18n="edgetxManualSection.feature3">✓ TX16S MK2・MK3で確認</span>
+                            <span class="edgetx-feature" data-i18n="edgetxManualSection.feature4">✓ 用語集つき</span>
                         </div>
                     </div>
                 </div>
@@ -4074,36 +4074,55 @@
                     </div>
                 </div>
                 
-                <!-- PDFダウンロード -->
+                <!-- PDFダウンロード（第1版） -->
                 <div class="edgetx-download scroll-animate fade-in">
                     <h4 class="edgetx-download-title" data-i18n="edgetxManualSection.downloadTitle">📥 PDFダウンロード</h4>
                     <div class="edgetx-download-card">
                         <div class="edgetx-download-info">
                             <div class="edgetx-download-icon">📄</div>
                             <div class="edgetx-download-details">
-                                <h5 data-i18n="edgetxManualSection.pdfTitle">EdgeTX日本語マニュアル 完全版</h5>
-                                <p data-i18n="edgetxManualSection.pdfInfo">Version 1.0.1 | 全56ページ | 約280KB</p>
-                                <p class="edgetx-download-date" data-i18n="edgetxManualSection.pdfDate">発行日：2026年1月</p>
+                                <h5 data-i18n="edgetxManualSection.v1CommonTitle">EdgeTX v2.12.5 実践ガイド 共通編（第1版）</h5>
+                                <p data-i18n="edgetxManualSection.v1CommonDesc">キーの意味・ミキサー・飛行モード・スペシャルファンクション・Lua・ELRS など、どの機体にも共通する基礎</p>
+                                <p data-i18n="edgetxManualSection.v1CommonInfo">全23ページ ｜ 約1.9MB</p>
+                                <p class="edgetx-download-date" data-i18n="edgetxManualSection.v1Date">発行日：2026年11月</p>
                             </div>
                         </div>
-                        <a href="downloads/EdgeTX_Manual_Complete_v1.0.1_JP.pdf" onclick="downloadFile(event, 'downloads/EdgeTX_Manual_Complete_v1.0.1_JP.pdf', 'EdgeTX_Manual_Complete_v1.0.1_JP.pdf')" class="edgetx-download-btn" data-i18n="edgetxManualSection.pdfButton">
-                            📥 PDFをダウンロード
-                        </a>
+                        <a href="downloads/EdgeTX_v2_12_5_Guide_Common_v1.pdf" onclick="downloadFile(event, 'downloads/EdgeTX_v2_12_5_Guide_Common_v1.pdf', 'EdgeTX_v2.12.5_実践ガイド_共通編_第1版.pdf')" class="edgetx-download-btn" data-i18n="edgetxManualSection.pdfButton">📥 PDFをダウンロード</a>
                     </div>
-                    
-                    <!-- v1.0.2 修正記事 -->
                     <div class="edgetx-download-card" style="margin-top: 15px;">
                         <div class="edgetx-download-info">
-                            <div class="edgetx-download-icon">🔄</div>
+                            <div class="edgetx-download-icon">🚁</div>
                             <div class="edgetx-download-details">
-                                <h5 data-i18n="edgetxManualSection.updateTitle">v1.0.2 修正記事</h5>
-                                <p data-i18n="edgetxManualSection.updateInfo">Version 1.0.2 | 全3ページ | 約74KB</p>
-                                <p class="edgetx-download-date" data-i18n="edgetxManualSection.updateDate">発行日：2026年4月</p>
+                                <h5 data-i18n="edgetxManualSection.v1HeliTitle">EdgeTX v2.12.5 実践ガイド ヘリ編（第1版）</h5>
+                                <p data-i18n="edgetxManualSection.v1HeliDesc">NEXUS-XR（Rotorflight）と ELRS でつなぐ、ぽすとそにのヘリの設定例</p>
+                                <p data-i18n="edgetxManualSection.v1HeliInfo">全24ページ ｜ 約1.8MB</p>
+                                <p class="edgetx-download-date" data-i18n="edgetxManualSection.v1Date">発行日：2026年11月</p>
                             </div>
                         </div>
-                        <a href="downloads/EdgeTX_Manual_Update_v1_0_2_JP.pdf" onclick="downloadFile(event, 'downloads/EdgeTX_Manual_Update_v1_0_2_JP.pdf', 'EdgeTX_Manual_Update_v1_0_2_JP.pdf')" class="edgetx-download-btn update" data-i18n="edgetxManualSection.updateButton">
-                            📥 修正記事をダウンロード
-                        </a>
+                        <a href="downloads/EdgeTX_v2_12_5_Guide_Heli_v1.pdf" onclick="downloadFile(event, 'downloads/EdgeTX_v2_12_5_Guide_Heli_v1.pdf', 'EdgeTX_v2.12.5_実践ガイド_ヘリ編_第1版.pdf')" class="edgetx-download-btn" data-i18n="edgetxManualSection.pdfButton">📥 PDFをダウンロード</a>
+                    </div>
+                    <p class="manual-glossary-lead" data-i18n="edgetxManualSection.glLead">💡 分からない言葉はこちら</p>
+                    <div class="edgetx-download-card">
+                        <div class="edgetx-download-info">
+                            <div class="edgetx-download-icon">📘</div>
+                            <div class="edgetx-download-details">
+                                <h5 data-i18n="edgetxManualSection.glTitle">マニュアルを読むうえで分かりにくい用語集（第1版）</h5>
+                                <p data-i18n="edgetxManualSection.glDesc">EdgeTX・ELRS・Rotorflight・ヘリ・飛行機の横文字や略語を、やさしい言葉で解説</p>
+                                <p data-i18n="edgetxManualSection.glInfo">全18ページ・110語 ｜ 約190KB</p>
+                            </div>
+                        </div>
+                        <a href="downloads/RC_Manual_Glossary_v1.pdf" onclick="downloadFile(event, 'downloads/RC_Manual_Glossary_v1.pdf', 'マニュアルを読むうえで分かりにくい用語集_第1版.pdf')" class="edgetx-download-btn secondary" data-i18n="edgetxManualSection.glButton">📥 用語集をダウンロード</a>
+                    </div>
+                    <div class="edgetx-download-card" style="margin-top: 15px;">
+                        <div class="edgetx-download-info">
+                            <div class="edgetx-download-icon">🚁</div>
+                            <div class="edgetx-download-details">
+                                <h5 data-i18n="edgetxManualSection.rfLinkTitle">Rotorflight編（第1版）もあります</h5>
+                                <p data-i18n="edgetxManualSection.rfLinkDesc">フライトコントローラー（NEXUS-XR）側の設定を、飛ばせる状態まで解説しています</p>
+                                <p data-i18n="edgetxManualSection.rfLinkNote">Rotorflight 4.6.0／Configurator 2.3.0 対応 ｜ 全51ページ</p>
+                            </div>
+                        </div>
+                        <a href="#" data-tab="rotorflight-manual" class="edgetx-download-btn update" data-i18n="edgetxManualSection.rfLinkButton">🚁 Rotorflight編へ</a>
                     </div>
                     
                     <!-- 音声ファイル一覧表 -->
@@ -4122,7 +4141,19 @@
                     </div>
                 </div>
                 
-                <!-- オンラインマニュアル目次 -->
+                <!-- これまでの版（公開終了・記録のみ） -->
+                <div class="manual-past-box scroll-animate fade-in">
+                    <h4 class="manual-past-title" data-i18n="edgetxManualSection.pastTitle">🗂 これまでの版（公開終了）</h4>
+                    <p class="manual-past-desc" data-i18n="edgetxManualSection.pastDesc">以下は以前公開していた版です。内容を見直して更新し、上の第1版として作り直しました。</p>
+                    <ul class="manual-past-list">
+                        <li data-i18n="edgetxManualSection.pastItem1">EdgeTX日本語マニュアル 完全版 Version 1.0.1（全56ページ・2026年1月）</li>
+                        <li data-i18n="edgetxManualSection.pastItem2">v1.0.2 修正記事（全3ページ・2026年4月）</li>
+                    </ul>
+                </div>
+                
+                <!-- 旧版のオンラインマニュアル目次（たたんで参考として残す） -->
+                <details class="manual-old-toc">
+                <summary class="manual-old-toc-summary" data-i18n="edgetxManualSection.oldTocSummary">旧版（Version 1.0.x）のオンライン目次（参考・クリックで開く）</summary>
                 <div class="edgetx-toc scroll-animate fade-in">
                     <h4 class="edgetx-toc-title" data-i18n="edgetxManualSection.tocTitle">📖 オンラインマニュアル（目次）</h4>
                     <p class="edgetx-toc-description" data-i18n="edgetxManualSection.tocDesc">クリックすると各章の内容を展開できます。</p>
@@ -4346,10 +4377,13 @@
                     </div>
                 </div>
                 
+                </details>
+                
                 <!-- 更新履歴 -->
                 <div class="edgetx-changelog scroll-animate fade-in">
                     <h4 class="edgetx-changelog-title" data-i18n="edgetxManualSection.changelogTitle">📝 更新履歴</h4>
                     <ul class="edgetx-changelog-list">
+                        <li data-i18n="edgetxManualSection.changelogEntry3"><strong>2026年11月28日</strong> - 第1版（共通編・ヘリ編）公開（Version 1.0.x を見直して作り直し）</li>
                         <li data-i18n="edgetxManualSection.changelogEntry2"><strong>2026年4月26日</strong> - Version 1.0.2 公開</li>
                         <li data-i18n="edgetxManualSection.changelogEntry1"><strong>2026年1月1日</strong> - Version 1.0.1 公開（初版）</li>
                     </ul>
@@ -4376,13 +4410,13 @@
                 <div class="rotorflight-intro scroll-animate fade-in">
                     <div class="rotorflight-intro-icon">🚁</div>
                     <div class="rotorflight-intro-content">
-                        <h3 data-i18n="rotorflightManualSection.introTitle">Rotorflight Configurator 2.2.1 完全日本語マニュアル</h3>
-                        <p data-i18n="rotorflightManualSection.introDesc">RCヘリコプター専用フライトコントローラー設定ソフトウェアの完全解説マニュアルです。Rotorflightを初めて使う方、従来のRCヘリ用ジャイロから移行する方、設定項目の意味を理解したい方に向けて作成しました。</p>
+                        <h3 data-i18n="rotorflightManualSection.introTitle">Rotorflight編（ファームウェア4.6.0／Configurator 2.3.0）第1版</h3>
+                        <p data-i18n="rotorflightManualSection.introDesc">ぽすとそにの FORZA450 を例に、Rotorflight の設定を「飛ばせる状態」になるまで、実際の作業の順番で解説したガイドです。全タブの地図、つなぎ方、飛ばすまでの最低限、飛ばしたあとに知りたい補足のタブまでまとめました。これまでのマニュアル（Configurator 2.2.1 版）を見直し、第1版として作り直しています。</p>
                         <div class="rotorflight-features">
-                            <span class="rotorflight-feature" data-i18n="rotorflightManualSection.feature1">✓ 全63ページ</span>
-                            <span class="rotorflight-feature" data-i18n="rotorflightManualSection.feature2">✓ 27章構成</span>
-                            <span class="rotorflight-feature" data-i18n="rotorflightManualSection.feature3">✓ ヘリコプター専用FC</span>
-                            <span class="rotorflight-feature" data-i18n="rotorflightManualSection.feature4">✓ NEXUS-XR対応</span>
+                            <span class="rotorflight-feature" data-i18n="rotorflightManualSection.feature1">✓ 全51ページ</span>
+                            <span class="rotorflight-feature" data-i18n="rotorflightManualSection.feature2">✓ 飛ばせる状態まで</span>
+                            <span class="rotorflight-feature" data-i18n="rotorflightManualSection.feature3">✓ NEXUS-XR対応</span>
+                            <span class="rotorflight-feature" data-i18n="rotorflightManualSection.feature4">✓ 用語集つき</span>
                         </div>
                     </div>
                 </div>
@@ -4406,254 +4440,59 @@
                     </div>
                 </div>
                 
-                <!-- PDFダウンロード：第一版 -->
+                <!-- PDFダウンロード（第1版：Rotorflight 4.6.0） -->
                 <div class="rotorflight-download scroll-animate fade-in">
                     <h4 class="rotorflight-download-title" data-i18n="rotorflightManualSection.downloadTitle">📥 PDFダウンロード</h4>
-                    
-                    <!-- 第一版 -->
-                    <div class="rotorflight-edition-label">
-                        <span class="rotorflight-edition-badge" data-i18n="rotorflightManualSection.v1Badge">第一版</span>
-                        <span class="rotorflight-edition-text" data-i18n="rotorflightManualSection.v1Label">Rotorflight Configurator 日本語化マニュアル ver1.0</span>
-                    </div>
-                    <p class="rotorflight-edition-desc" data-i18n="rotorflightManualSection.v1Desc">Rotorflight Configuratorの全体像と各タブの基本的な操作の流れをまとめた概要ガイドです。初めてRotorflightに触れる方や、全体の構成を把握したい方に向けた入門用マニュアルです。</p>
                     <div class="rotorflight-download-card">
                         <div class="rotorflight-download-info">
                             <div class="rotorflight-download-icon">📄</div>
                             <div class="rotorflight-download-details">
-                                <h5 data-i18n="rotorflightManualSection.pdfTitle">Rotorflight Configurator 2.2.1 日本語化マニュアル ver1.0（第一版）</h5>
-                                <p data-i18n="rotorflightManualSection.pdfInfo">Version 1.0.0 | 全63ページ | 約1.2MB</p>
-                                <p class="rotorflight-download-date" data-i18n="rotorflightManualSection.pdfDate">発行日：2026年1月</p>
+                                <h5 data-i18n="rotorflightManualSection.v3Title">Rotorflight編（ファームウェア4.6.0／Configurator 2.3.0）第1版</h5>
+                                <p data-i18n="rotorflightManualSection.v3Desc">全タブの地図・つなぎ方・飛ばすまでの最低限・補足のタブ（Presets・Sensors・Blackbox・CLI）</p>
+                                <p data-i18n="rotorflightManualSection.v3Info">全51ページ ｜ 約3.8MB</p>
+                                <p class="rotorflight-download-date" data-i18n="rotorflightManualSection.v3Date">発行日：2026年11月</p>
                             </div>
                         </div>
-                        <a href="downloads/Rotorflight_Configurator_2.2.1_JP.pdf" onclick="downloadFile(event, 'downloads/Rotorflight_Configurator_2.2.1_JP.pdf', 'Rotorflight_Configurator_2.2.1_JP.pdf')" class="rotorflight-download-btn" data-i18n="rotorflightManualSection.pdfButton">
-                            📥 PDFをダウンロード
-                        </a>
+                        <a href="downloads/Rotorflight_4_6_0_Guide_v1.pdf" onclick="downloadFile(event, 'downloads/Rotorflight_4_6_0_Guide_v1.pdf', 'Rotorflight編_FW4.6.0_Configurator2.3.0_第1版.pdf')" class="rotorflight-download-btn" data-i18n="rotorflightManualSection.pdfButton">📥 PDFをダウンロード</a>
+                    </div>
+                    <p class="manual-glossary-lead" data-i18n="rotorflightManualSection.glLead">💡 分からない言葉はこちら</p>
+                    <div class="rotorflight-download-card">
+                        <div class="rotorflight-download-info">
+                            <div class="rotorflight-download-icon">📘</div>
+                            <div class="rotorflight-download-details">
+                                <h5 data-i18n="rotorflightManualSection.glTitle">マニュアルを読むうえで分かりにくい用語集（第1版）</h5>
+                                <p data-i18n="rotorflightManualSection.glDesc">EdgeTX・ELRS・Rotorflight・ヘリ・飛行機の横文字や略語を、やさしい言葉で解説</p>
+                                <p data-i18n="rotorflightManualSection.glInfo">全18ページ・110語 ｜ 約190KB</p>
+                            </div>
+                        </div>
+                        <a href="downloads/RC_Manual_Glossary_v1.pdf" onclick="downloadFile(event, 'downloads/RC_Manual_Glossary_v1.pdf', 'マニュアルを読むうえで分かりにくい用語集_第1版.pdf')" class="rotorflight-download-btn" data-i18n="rotorflightManualSection.glButton">📥 用語集をダウンロード</a>
+                    </div>
+                    <div class="rotorflight-download-card" style="margin-top: 15px;">
+                        <div class="rotorflight-download-info">
+                            <div class="rotorflight-download-icon">📖</div>
+                            <div class="rotorflight-download-details">
+                                <h5 data-i18n="rotorflightManualSection.edgeLinkTitle">送信機（EdgeTX）側の設定はこちら</h5>
+                                <p data-i18n="rotorflightManualSection.edgeLinkDesc">EdgeTX v2.12.5 実践ガイド（共通編・ヘリ編）で解説しています</p>
+                                <p data-i18n="rotorflightManualSection.edgeLinkNote">TX16S MK2・MK3で確認 ｜ 共通編 23ページ・ヘリ編 24ページ</p>
+                            </div>
+                        </div>
+                        <a href="#" data-tab="edgetx-manual" class="rotorflight-download-btn" data-i18n="rotorflightManualSection.edgeLinkButton">📖 EdgeTX実践ガイドへ</a>
                     </div>
                 </div>
                 
-                <!-- PDFダウンロード：第二版（セクション別詳細マニュアル） -->
-                <div class="rotorflight-download rotorflight-download-v2 scroll-animate fade-in">
-                    <div class="rotorflight-edition-label">
-                        <span class="rotorflight-edition-badge rotorflight-edition-badge-v2" data-i18n="rotorflightManualSection.v2Badge">第二版</span>
-                        <span class="rotorflight-edition-text" data-i18n="rotorflightManualSection.v2Label">Rotorflight Configurator 日本語化マニュアル ver1.1（セクション別）</span>
-                    </div>
-                    <p class="rotorflight-edition-desc" data-i18n="rotorflightManualSection.v2Desc">第一版の内容をさらに掘り下げ、Configuratorの各セクション（タブ画面）ごとに、設定項目の数値の意味や効果を日本語で詳しく解説したマニュアルです。英語表記の設定画面を日本語で理解したい方、より細かいチューニングを行いたい方に向けて作成しました。</p>
-                    <p class="rotorflight-edition-note" data-i18n="rotorflightManualSection.v2Note">※ 必要なセクションだけを個別にダウンロードできます。</p>
-                    
-                    <div class="rotorflight-section-pdf-list">
-                        <!-- 1. Status -->
-                        <div class="rotorflight-section-pdf-item">
-                            <div class="rotorflight-section-pdf-info">
-                                <span class="rotorflight-section-pdf-number">01</span>
-                                <div class="rotorflight-section-pdf-details">
-                                    <h5 data-i18n="rotorflightManualSection.sec01Title">Status編</h5>
-                                    <p data-i18n="rotorflightManualSection.sec01Desc">ステータス画面 ― FC情報・ジャイロプレビュー・アーミング状態の確認</p>
-                                </div>
-                            </div>
-                            <a href="downloads/Rotorflight_2.2.1_マニュアル_Status編.pdf" onclick="downloadFile(event, 'downloads/Rotorflight_2.2.1_マニュアル_Status編.pdf', 'Rotorflight_2.2.1_マニュアル_Status編.pdf')" class="rotorflight-section-pdf-btn" data-i18n="rotorflightManualSection.secPdfBtn">📥 PDF</a>
-                        </div>
-                        <!-- 2. Setup -->
-                        <div class="rotorflight-section-pdf-item">
-                            <div class="rotorflight-section-pdf-info">
-                                <span class="rotorflight-section-pdf-number">02</span>
-                                <div class="rotorflight-section-pdf-details">
-                                    <h5 data-i18n="rotorflightManualSection.sec02Title">Setup編</h5>
-                                    <p data-i18n="rotorflightManualSection.sec02Desc">初期設定 ― キャリブレーション・バックアップ・リストアの手順</p>
-                                </div>
-                            </div>
-                            <a href="downloads/Rotorflight_2.2.1_マニュアル_Setup編.pdf" onclick="downloadFile(event, 'downloads/Rotorflight_2.2.1_マニュアル_Setup編.pdf', 'Rotorflight_2.2.1_マニュアル_Setup編.pdf')" class="rotorflight-section-pdf-btn" data-i18n="rotorflightManualSection.secPdfBtn">📥 PDF</a>
-                        </div>
-                        <!-- 3. Configuration -->
-                        <div class="rotorflight-section-pdf-item">
-                            <div class="rotorflight-section-pdf-info">
-                                <span class="rotorflight-section-pdf-number">03</span>
-                                <div class="rotorflight-section-pdf-details">
-                                    <h5 data-i18n="rotorflightManualSection.sec03Title">Configuration編</h5>
-                                    <p data-i18n="rotorflightManualSection.sec03Desc">基本構成 ― 機体タイプ・テールローター・ボード設定の詳細</p>
-                                </div>
-                            </div>
-                            <a href="downloads/Rotorflight_2.2.1_マニュアル_Configuration編.pdf" onclick="downloadFile(event, 'downloads/Rotorflight_2.2.1_マニュアル_Configuration編.pdf', 'Rotorflight_2.2.1_マニュアル_Configuration編.pdf')" class="rotorflight-section-pdf-btn" data-i18n="rotorflightManualSection.secPdfBtn">📥 PDF</a>
-                        </div>
-                        <!-- 4. Presets -->
-                        <div class="rotorflight-section-pdf-item">
-                            <div class="rotorflight-section-pdf-info">
-                                <span class="rotorflight-section-pdf-number">04</span>
-                                <div class="rotorflight-section-pdf-details">
-                                    <h5 data-i18n="rotorflightManualSection.sec04Title">Presets編</h5>
-                                    <p data-i18n="rotorflightManualSection.sec04Desc">プリセット ― 機体別プリセットの適用と管理</p>
-                                </div>
-                            </div>
-                            <a href="downloads/Rotorflight_2.2.1_マニュアル_Presets編.pdf" onclick="downloadFile(event, 'downloads/Rotorflight_2.2.1_マニュアル_Presets編.pdf', 'Rotorflight_2.2.1_マニュアル_Presets編.pdf')" class="rotorflight-section-pdf-btn" data-i18n="rotorflightManualSection.secPdfBtn">📥 PDF</a>
-                        </div>
-                        <!-- 5. Receiver -->
-                        <div class="rotorflight-section-pdf-item">
-                            <div class="rotorflight-section-pdf-info">
-                                <span class="rotorflight-section-pdf-number">05</span>
-                                <div class="rotorflight-section-pdf-details">
-                                    <h5 data-i18n="rotorflightManualSection.sec05Title">Receiver編</h5>
-                                    <p data-i18n="rotorflightManualSection.sec05Desc">受信機設定 ― プロトコル選択・チャンネルマップ・RSSI設定</p>
-                                </div>
-                            </div>
-                            <a href="downloads/Rotorflight_2.2.1_マニュアル_Receiver編.pdf" onclick="downloadFile(event, 'downloads/Rotorflight_2.2.1_マニュアル_Receiver編.pdf', 'Rotorflight_2.2.1_マニュアル_Receiver編.pdf')" class="rotorflight-section-pdf-btn" data-i18n="rotorflightManualSection.secPdfBtn">📥 PDF</a>
-                        </div>
-                        <!-- 6. Failsafe -->
-                        <div class="rotorflight-section-pdf-item">
-                            <div class="rotorflight-section-pdf-info">
-                                <span class="rotorflight-section-pdf-number">06</span>
-                                <div class="rotorflight-section-pdf-details">
-                                    <h5 data-i18n="rotorflightManualSection.sec06Title">Failsafe編</h5>
-                                    <p data-i18n="rotorflightManualSection.sec06Desc">フェイルセーフ ― 信号喪失時の動作設定と安全対策</p>
-                                </div>
-                            </div>
-                            <a href="downloads/Rotorflight_2.2.1_マニュアル_Failsafe編.pdf" onclick="downloadFile(event, 'downloads/Rotorflight_2.2.1_マニュアル_Failsafe編.pdf', 'Rotorflight_2.2.1_マニュアル_Failsafe編.pdf')" class="rotorflight-section-pdf-btn" data-i18n="rotorflightManualSection.secPdfBtn">📥 PDF</a>
-                        </div>
-                        <!-- 7. Power -->
-                        <div class="rotorflight-section-pdf-item">
-                            <div class="rotorflight-section-pdf-info">
-                                <span class="rotorflight-section-pdf-number">07</span>
-                                <div class="rotorflight-section-pdf-details">
-                                    <h5 data-i18n="rotorflightManualSection.sec07Title">Power編</h5>
-                                    <p data-i18n="rotorflightManualSection.sec07Desc">電源・バッテリー ― 電圧/電流センサーの設定とキャリブレーション</p>
-                                </div>
-                            </div>
-                            <a href="downloads/Rotorflight_2.2.1_マニュアル_Power編.pdf" onclick="downloadFile(event, 'downloads/Rotorflight_2.2.1_マニュアル_Power編.pdf', 'Rotorflight_2.2.1_マニュアル_Power編.pdf')" class="rotorflight-section-pdf-btn" data-i18n="rotorflightManualSection.secPdfBtn">📥 PDF</a>
-                        </div>
-                        <!-- 8. Motors -->
-                        <div class="rotorflight-section-pdf-item">
-                            <div class="rotorflight-section-pdf-info">
-                                <span class="rotorflight-section-pdf-number">08</span>
-                                <div class="rotorflight-section-pdf-details">
-                                    <h5 data-i18n="rotorflightManualSection.sec08Title">Motors編</h5>
-                                    <p data-i18n="rotorflightManualSection.sec08Desc">モーター設定 ― ESCプロトコル・テレメトリ・ガバナー設定</p>
-                                </div>
-                            </div>
-                            <a href="downloads/Rotorflight_2.2.1_マニュアル_Motors編.pdf" onclick="downloadFile(event, 'downloads/Rotorflight_2.2.1_マニュアル_Motors編.pdf', 'Rotorflight_2.2.1_マニュアル_Motors編.pdf')" class="rotorflight-section-pdf-btn" data-i18n="rotorflightManualSection.secPdfBtn">📥 PDF</a>
-                        </div>
-                        <!-- 9. Servos -->
-                        <div class="rotorflight-section-pdf-item">
-                            <div class="rotorflight-section-pdf-info">
-                                <span class="rotorflight-section-pdf-number">09</span>
-                                <div class="rotorflight-section-pdf-details">
-                                    <h5 data-i18n="rotorflightManualSection.sec09Title">Servos編</h5>
-                                    <p data-i18n="rotorflightManualSection.sec09Desc">サーボ設定 ― サーボの割当・トラベル・リバース・速度設定</p>
-                                </div>
-                            </div>
-                            <a href="downloads/Rotorflight_2.2.1_マニュアル_Servos編.pdf" onclick="downloadFile(event, 'downloads/Rotorflight_2.2.1_マニュアル_Servos編.pdf', 'Rotorflight_2.2.1_マニュアル_Servos編.pdf')" class="rotorflight-section-pdf-btn" data-i18n="rotorflightManualSection.secPdfBtn">📥 PDF</a>
-                        </div>
-                        <!-- 10. Mixer -->
-                        <div class="rotorflight-section-pdf-item">
-                            <div class="rotorflight-section-pdf-info">
-                                <span class="rotorflight-section-pdf-number">10</span>
-                                <div class="rotorflight-section-pdf-details">
-                                    <h5 data-i18n="rotorflightManualSection.sec10Title">Mixer編</h5>
-                                    <p data-i18n="rotorflightManualSection.sec10Desc">ミキサー ― スワッシュプレート設定・ブレード角度キャリブレーション</p>
-                                </div>
-                            </div>
-                            <a href="downloads/Rotorflight_2.2.1_マニュアル_Mixer編.pdf" onclick="downloadFile(event, 'downloads/Rotorflight_2.2.1_マニュアル_Mixer編.pdf', 'Rotorflight_2.2.1_マニュアル_Mixer編.pdf')" class="rotorflight-section-pdf-btn" data-i18n="rotorflightManualSection.secPdfBtn">📥 PDF</a>
-                        </div>
-                        <!-- 11. Gyro -->
-                        <div class="rotorflight-section-pdf-item">
-                            <div class="rotorflight-section-pdf-info">
-                                <span class="rotorflight-section-pdf-number">11</span>
-                                <div class="rotorflight-section-pdf-details">
-                                    <h5 data-i18n="rotorflightManualSection.sec11Title">Gyro編</h5>
-                                    <p data-i18n="rotorflightManualSection.sec11Desc">ジャイロ設定 ― フィルター・RPMフィルター・ダイナミックノッチ</p>
-                                </div>
-                            </div>
-                            <a href="downloads/Rotorflight_2.2.1_マニュアル_Gyro編.pdf" onclick="downloadFile(event, 'downloads/Rotorflight_2.2.1_マニュアル_Gyro編.pdf', 'Rotorflight_2.2.1_マニュアル_Gyro編.pdf')" class="rotorflight-section-pdf-btn" data-i18n="rotorflightManualSection.secPdfBtn">📥 PDF</a>
-                        </div>
-                        <!-- 12. Rates -->
-                        <div class="rotorflight-section-pdf-item">
-                            <div class="rotorflight-section-pdf-info">
-                                <span class="rotorflight-section-pdf-number">12</span>
-                                <div class="rotorflight-section-pdf-details">
-                                    <h5 data-i18n="rotorflightManualSection.sec12Title">Rates編</h5>
-                                    <p data-i18n="rotorflightManualSection.sec12Desc">レート設定 ― 操縦感度・回転レート・エキスポの調整</p>
-                                </div>
-                            </div>
-                            <a href="downloads/Rotorflight_2.2.1_マニュアル_Rates編.pdf" onclick="downloadFile(event, 'downloads/Rotorflight_2.2.1_マニュアル_Rates編.pdf', 'Rotorflight_2.2.1_マニュアル_Rates編.pdf')" class="rotorflight-section-pdf-btn" data-i18n="rotorflightManualSection.secPdfBtn">📥 PDF</a>
-                        </div>
-                        <!-- 13. Profiles -->
-                        <div class="rotorflight-section-pdf-item">
-                            <div class="rotorflight-section-pdf-info">
-                                <span class="rotorflight-section-pdf-number">13</span>
-                                <div class="rotorflight-section-pdf-details">
-                                    <h5 data-i18n="rotorflightManualSection.sec13Title">Profiles編</h5>
-                                    <p data-i18n="rotorflightManualSection.sec13Desc">プロファイル ― PIDチューニング・レスキュー・ヘッドスピード管理</p>
-                                </div>
-                            </div>
-                            <a href="downloads/Rotorflight_2.2.1_マニュアル_Profiles編.pdf" onclick="downloadFile(event, 'downloads/Rotorflight_2.2.1_マニュアル_Profiles編.pdf', 'Rotorflight_2.2.1_マニュアル_Profiles編.pdf')" class="rotorflight-section-pdf-btn" data-i18n="rotorflightManualSection.secPdfBtn">📥 PDF</a>
-                        </div>
-                        <!-- 14. Modes -->
-                        <div class="rotorflight-section-pdf-item">
-                            <div class="rotorflight-section-pdf-info">
-                                <span class="rotorflight-section-pdf-number">14</span>
-                                <div class="rotorflight-section-pdf-details">
-                                    <h5 data-i18n="rotorflightManualSection.sec14Title">Modes編</h5>
-                                    <p data-i18n="rotorflightManualSection.sec14Desc">フライトモード ― ARM・レスキュー・スタビライズモードの設定</p>
-                                </div>
-                            </div>
-                            <a href="downloads/Rotorflight_2.2.1_マニュアル_Modes編.pdf" onclick="downloadFile(event, 'downloads/Rotorflight_2.2.1_マニュアル_Modes編.pdf', 'Rotorflight_2.2.1_マニュアル_Modes編.pdf')" class="rotorflight-section-pdf-btn" data-i18n="rotorflightManualSection.secPdfBtn">📥 PDF</a>
-                        </div>
-                        <!-- 15. Adjustments -->
-                        <div class="rotorflight-section-pdf-item">
-                            <div class="rotorflight-section-pdf-info">
-                                <span class="rotorflight-section-pdf-number">15</span>
-                                <div class="rotorflight-section-pdf-details">
-                                    <h5 data-i18n="rotorflightManualSection.sec15Title">Adjustments編</h5>
-                                    <p data-i18n="rotorflightManualSection.sec15Desc">調整スロット ― AUXチャンネルによるパラメータ動的変更</p>
-                                </div>
-                            </div>
-                            <a href="downloads/Rotorflight_2.2.1_マニュアル_Adjustments編.pdf" onclick="downloadFile(event, 'downloads/Rotorflight_2.2.1_マニュアル_Adjustments編.pdf', 'Rotorflight_2.2.1_マニュアル_Adjustments編.pdf')" class="rotorflight-section-pdf-btn" data-i18n="rotorflightManualSection.secPdfBtn">📥 PDF</a>
-                        </div>
-                        <!-- 16. Beepers -->
-                        <div class="rotorflight-section-pdf-item">
-                            <div class="rotorflight-section-pdf-info">
-                                <span class="rotorflight-section-pdf-number">16</span>
-                                <div class="rotorflight-section-pdf-details">
-                                    <h5 data-i18n="rotorflightManualSection.sec16Title">Beepers編</h5>
-                                    <p data-i18n="rotorflightManualSection.sec16Desc">ビープ音 ― 各種警告音・通知音の有効化と設定</p>
-                                </div>
-                            </div>
-                            <a href="downloads/Rotorflight_2.2.1_マニュアル_Beepers編.pdf" onclick="downloadFile(event, 'downloads/Rotorflight_2.2.1_マニュアル_Beepers編.pdf', 'Rotorflight_2.2.1_マニュアル_Beepers編.pdf')" class="rotorflight-section-pdf-btn" data-i18n="rotorflightManualSection.secPdfBtn">📥 PDF</a>
-                        </div>
-                        <!-- 17. Sensors -->
-                        <div class="rotorflight-section-pdf-item">
-                            <div class="rotorflight-section-pdf-info">
-                                <span class="rotorflight-section-pdf-number">17</span>
-                                <div class="rotorflight-section-pdf-details">
-                                    <h5 data-i18n="rotorflightManualSection.sec17Title">Sensors編</h5>
-                                    <p data-i18n="rotorflightManualSection.sec17Desc">センサー ― 各種センサーの有効化・トレンド表示・動作確認</p>
-                                </div>
-                            </div>
-                            <a href="downloads/Rotorflight_2.2.1_マニュアル_Sensors編.pdf" onclick="downloadFile(event, 'downloads/Rotorflight_2.2.1_マニュアル_Sensors編.pdf', 'Rotorflight_2.2.1_マニュアル_Sensors編.pdf')" class="rotorflight-section-pdf-btn" data-i18n="rotorflightManualSection.secPdfBtn">📥 PDF</a>
-                        </div>
-                        <!-- 18. Blackbox -->
-                        <div class="rotorflight-section-pdf-item">
-                            <div class="rotorflight-section-pdf-info">
-                                <span class="rotorflight-section-pdf-number">18</span>
-                                <div class="rotorflight-section-pdf-details">
-                                    <h5 data-i18n="rotorflightManualSection.sec18Title">Blackbox編</h5>
-                                    <p data-i18n="rotorflightManualSection.sec18Desc">ログ記録 ― フライトログの記録設定とデータ分析</p>
-                                </div>
-                            </div>
-                            <a href="downloads/Rotorflight_2.2.1_マニュアル_Blackbox編.pdf" onclick="downloadFile(event, 'downloads/Rotorflight_2.2.1_マニュアル_Blackbox編.pdf', 'Rotorflight_2.2.1_マニュアル_Blackbox編.pdf')" class="rotorflight-section-pdf-btn" data-i18n="rotorflightManualSection.secPdfBtn">📥 PDF</a>
-                        </div>
-                        <!-- 19. CLI -->
-                        <div class="rotorflight-section-pdf-item">
-                            <div class="rotorflight-section-pdf-info">
-                                <span class="rotorflight-section-pdf-number">19</span>
-                                <div class="rotorflight-section-pdf-details">
-                                    <h5 data-i18n="rotorflightManualSection.sec19Title">CLI編</h5>
-                                    <p data-i18n="rotorflightManualSection.sec19Desc">コマンドライン ― CLIコマンドによる設定・バックアップ・リストア</p>
-                                </div>
-                            </div>
-                            <a href="downloads/Rotorflight_2.2.1_マニュアル_CLI編.pdf" onclick="downloadFile(event, 'downloads/Rotorflight_2.2.1_マニュアル_CLI編.pdf', 'Rotorflight_2.2.1_マニュアル_CLI編.pdf')" class="rotorflight-section-pdf-btn" data-i18n="rotorflightManualSection.secPdfBtn">📥 PDF</a>
-                        </div>
-                    </div>
+                <!-- これまでの版（公開終了・記録のみ） -->
+                <div class="manual-past-box scroll-animate fade-in">
+                    <h4 class="manual-past-title" data-i18n="rotorflightManualSection.pastTitle">🗂 これまでの版（公開終了）</h4>
+                    <p class="manual-past-desc" data-i18n="rotorflightManualSection.pastDesc">以下は以前公開していた版です。内容を見直して更新し、上の第1版として作り直しました。</p>
+                    <ul class="manual-past-list">
+                        <li data-i18n="rotorflightManualSection.pastItem1">Rotorflight Configurator 2.2.1 日本語化マニュアル ver1.0（第一版・全63ページ・2026年1月）</li>
+                        <li data-i18n="rotorflightManualSection.pastItem2">Rotorflight Configurator 日本語化マニュアル ver1.1（第二版・セクション別19本・2026年2月）</li>
+                    </ul>
                 </div>
                 
-                <!-- オンラインマニュアル目次 -->
+                <!-- 旧版のオンラインマニュアル目次（たたんで参考として残す） -->
+                <details class="manual-old-toc">
+                <summary class="manual-old-toc-summary" data-i18n="rotorflightManualSection.oldTocSummary">旧版（Configurator 2.2.1）のオンライン目次（参考・クリックで開く）</summary>
                 <div class="rotorflight-toc scroll-animate fade-in">
                     <h4 class="rotorflight-toc-title" data-i18n="rotorflightManualSection.tocTitle">📖 オンラインマニュアル（目次）</h4>
                     <p class="rotorflight-toc-description" data-i18n="rotorflightManualSection.tocDesc">クリックすると各章の内容を展開できます。</p>
@@ -5064,10 +4903,13 @@
                     </div>
                 </div>
                 
+                </details>
+                
                 <!-- 更新履歴 -->
                 <div class="rotorflight-changelog scroll-animate fade-in">
                     <h4 class="rotorflight-changelog-title" data-i18n="rotorflightManualSection.changelogTitle">📝 更新履歴</h4>
                     <ul class="rotorflight-changelog-list">
+                        <li data-i18n="rotorflightManualSection.changelogEntry3"><strong>2026年11月28日</strong> - 第1版（Rotorflight 4.6.0／Configurator 2.3.0）公開（Configurator 2.2.1 版を見直して作り直し）</li>
                         <li data-i18n="rotorflightManualSection.changelogEntry1"><strong>2026年2月8日</strong> - Version 1.1 公開（第二版）</li>
                         <li data-i18n="rotorflightManualSection.changelogEntry2"><strong>2026年1月28日</strong> - Version 1.0 公開（初版）</li>
                     </ul>
@@ -5795,6 +5637,24 @@
                             <div class="yougoshu-card-arrow">→</div>
                         </a>
 
+                        <!-- マニュアルを読むうえで分かりにくい用語集（PDF） -->
+                        <a href="downloads/RC_Manual_Glossary_v1.pdf" onclick="downloadFile(event, 'downloads/RC_Manual_Glossary_v1.pdf', 'マニュアルを読むうえで分かりにくい用語集_第1版.pdf')" class="yougoshu-card">
+                            <div class="yougoshu-card-icon">📘</div>
+                            <div class="yougoshu-card-body">
+                                <h3 class="yougoshu-card-title">マニュアルを読むうえで分かりにくい用語集（PDF）</h3>
+                                <p class="yougoshu-card-desc">
+                                    EdgeTX・ELRS・Rotorflight・ヘリ・飛行機のマニュアルで出てくる横文字や略語を、
+                                    やさしい言葉でまとめたPDFです。
+                                </p>
+                                <div class="yougoshu-card-tags">
+                                    <span class="yougoshu-tag">110語</span>
+                                    <span class="yougoshu-tag">18ページ</span>
+                                    <span class="yougoshu-tag">PDF</span>
+                                </div>
+                            </div>
+                            <div class="yougoshu-card-arrow">📥</div>
+                        </a>
+
                         <!-- 今後ここに別の用語集カードを追加していく -->
                     </div>
 
@@ -6040,6 +5900,6 @@
     </footer>
 
     <!-- バージョン管理：サイト更新時は v=1.1.1, v=1.1.2 と変更してください -->
-    <script src="app.js?v=2.2.6"></script>
+    <script src="app.js?v=2.2.7"></script>
 </body>
 </html>

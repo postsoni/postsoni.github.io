@@ -11065,3 +11065,67 @@ body.dark-mode .bb-index-list a {
     white-space: nowrap;
     padding: 10px 14px;
 }
+
+/* ===== マニュアル第1版：用語集への案内・これまでの版・旧目次（2026-11-28） ===== */
+.manual-glossary-lead {
+    margin: 22px 0 8px;
+    font-weight: 700;
+    color: #2b6cb0;
+}
+.manual-past-box {
+    margin: 20px 0;
+    padding: 14px 18px;
+    border: 1px dashed #b8c2cc;
+    border-radius: 10px;
+    background: rgba(247, 249, 251, 0.85);
+    font-size: 0.88em;
+    color: #5a6470;
+}
+.manual-past-title {
+    margin: 0 0 6px;
+    font-size: 1em;
+    color: #5a6470;
+}
+.manual-past-desc {
+    margin: 0 0 6px;
+}
+.manual-past-list {
+    margin: 0;
+    padding-left: 1.3em;
+}
+.manual-past-list li {
+    margin: 2px 0;
+}
+.manual-old-toc {
+    margin: 20px 0;
+    border: 1px solid #d5dce3;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.6);
+}
+.manual-old-toc-summary {
+    cursor: pointer;
+    padding: 12px 16px;
+    font-weight: 700;
+    color: #5a6470;
+}
+.manual-old-toc[open] .manual-old-toc-summary {
+    border-bottom: 1px solid #d5dce3;
+}
+.dark-mode .manual-glossary-lead {
+    color: #90cdf4;
+}
+.dark-mode .manual-past-box {
+    background: rgba(30, 41, 59, 0.6);
+    border-color: #4a5568;
+    color: #cbd5e0;
+}
+.dark-mode .manual-past-title {
+    color: #cbd5e0;
+}
+.dark-mode .manual-old-toc {
+    background: rgba(30, 41, 59, 0.5);
+    border-color: #4a5568;
+}
+.dark-mode .manual-old-toc-summary {
+    color: #cbd5e0;
+}
